@@ -20,7 +20,7 @@ a{color:inherit}
 .wrap--narrow{max-width:760px}
 .center{text-align:center}
 .eyebrow{font-size:13px;letter-spacing:.35em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:18px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#E0B24B,#C6892E);color:#20140a;font-weight:700;padding:16px 30px;border-radius:8px;text-decoration:none;font-size:16px;box-shadow:0 8px 22px rgba(160,110,30,.3);transition:transform .15s;cursor:pointer;border:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1.4;gap:10px;background:linear-gradient(135deg,#E0B24B,#C6892E);color:#20140a;font-weight:700;padding:16px 30px;border-radius:8px;text-decoration:none;font-size:16px;box-shadow:0 8px 22px rgba(160,110,30,.3);transition:transform .15s;cursor:pointer;border:0}
 .btn:hover{transform:translateY(-2px)}
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:#F3E5E7;text-decoration:none;font-weight:500;border-bottom:1px solid var(--gold);padding-bottom:3px}
 
@@ -190,9 +190,12 @@ footer.site{background:#2b1720;color:#c3a3ad;text-align:center;padding:40px 24px
 footer.site b{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-size:17px;letter-spacing:.08em}
 footer.site a{color:var(--gold-lt)}
 footer.site .js-line,footer.site a[href^="tel:"]{white-space:nowrap}
-footer.site .legal{display:inline-block;margin-top:12px;font-size:12.5px;line-height:1.9;opacity:.72;color:#c3a3ad}
+footer.site .legal{display:block;margin-top:12px;font-size:12.5px;line-height:1.9;opacity:.72;color:#c3a3ad}
 footer.site .legal a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 footer.site .legal a:hover{color:var(--gold-lt)}
+footer.site .legal-links{display:flex;justify-content:center;flex-wrap:wrap;margin-top:4px}
+footer.site .legal-links a{padding:0 14px}
+footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 
 /* 浮動 LINE */
 .line-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#06C755;color:#fff;min-width:220px;padding:12px 18px;border-radius:8px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-decoration:none;box-shadow:0 10px 26px rgba(6,199,85,.4);line-height:1.35}
@@ -396,4 +399,5 @@ footer.site .legal a:hover{color:var(--gold-lt)}
   .location-trust{padding:48px 20px}
   .location-facts{padding:22px 20px}
   .location-facts>div:not(.location-actions){grid-template-columns:1fr;gap:3px}
+  .btn{font-size:15px;padding:14px 24px}
 }
