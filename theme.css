@@ -186,7 +186,7 @@ a{color:inherit}
 .note-safety{font-size:14px;color:var(--muted);background:var(--cream);border:1px dashed var(--line-lt);border-radius:10px;padding:14px 18px;margin:24px 0}
 
 /* FOOTER */
-footer.site{background:#2b1720;color:#c3a3ad;text-align:center;padding:40px 24px;font-size:14px}
+footer.site{background:#2b1720;color:#c3a3ad;text-align:center;padding:40px 24px;font-size:14px;word-break:keep-all}
 footer.site b{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-size:17px;letter-spacing:.08em}
 footer.site a{color:var(--gold-lt)}
 footer.site .js-line,footer.site a[href^="tel:"]{white-space:nowrap}
