@@ -2,7 +2,7 @@
    只要改這一行，全站「加 LINE」按鈕就會全部連過去 */
 var LINE_URL = "https://lin.ee/5rWzdNd";
 var GA_MEASUREMENT_ID = "G-6X3PD7NMMG";
-var META_PIXEL_ID = "1014795777662144";
+var META_PIXEL_ID = "1594348069032790";
 
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
