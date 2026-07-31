@@ -137,6 +137,9 @@ a{color:inherit}
 .price-card::after{bottom:10px;right:10px;border-left:0;border-top:0}
 .price-card .ptag{display:inline-block;background:rgba(212,197,150,.15);color:var(--gold-lt);font-size:12px;font-weight:700;letter-spacing:.16em;padding:6px 14px;border-radius:999px}
 .price-card .pname{color:#eadfe2;margin:14px 0 4px;font-weight:500}
+.price-compare{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:16px auto 6px}
+.price-compare span{color:#cdb8c0;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(255,255,255,.58);font-weight:700}
+.price-compare b{display:inline-flex;align-items:center;border:1px solid rgba(224,178,75,.45);background:rgba(224,178,75,.14);color:var(--gold-lt);border-radius:999px;padding:4px 11px;font-size:13px;line-height:1.4}
 .price-card .amt{font-family:"Noto Serif TC",serif;font-weight:900;font-size:46px;color:#fff;line-height:1.1}
 .price-card .amt small{font-size:15px;font-weight:600;color:var(--gold-lt)}
 .price-card .pmeta{color:#cdb9c1;font-size:14px;margin-top:12px;border-top:1px solid rgba(255,255,255,.13);padding-top:14px}
@@ -222,6 +225,7 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 .trust-grid>div{text-align:center;padding:4px 16px;border-right:1px solid var(--line)}
 .trust-grid>div:last-child{border-right:0}
 .trust-grid b{display:block;color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-size:20px;line-height:1.35}
+.trust-grid del{color:#c9b0ba;font-size:.82em;margin-right:5px;text-decoration-thickness:2px;text-decoration-color:rgba(255,255,255,.65)}
 .trust-grid span{display:block;color:#dbc8ce;font-size:12.5px;margin-top:4px}
 
 .concern-section{background:var(--paper)}
@@ -239,12 +243,23 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 .assessment-points span{position:absolute;left:20px;top:20px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--gold-lt);color:#3a1c28;font-family:"Noto Serif TC",serif;font-weight:900}
 .assessment-points h3{font-size:19px;margin-bottom:4px}
 .assessment-points p{font-size:14px;color:#e0c9d1}
+.fit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;max-width:1040px;margin:0 auto}
+.fit-grid>div{background:#fff;border:1px solid var(--line-lt);border-left:4px solid var(--pink);border-radius:8px;padding:22px 20px}
+.fit-grid b{display:block;color:var(--green-dk);font-family:"Noto Serif TC",serif;font-size:18px;line-height:1.5;margin-bottom:7px}
+.fit-grid span{display:block;color:var(--muted);font-size:14px;line-height:1.8}
+.check-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:30px 0 6px}
+.check-list>div{background:var(--paper);border:1px solid var(--line-lt);border-radius:8px;padding:18px 20px}
+.check-list b{display:block;color:var(--green-dk);font-family:"Noto Serif TC",serif;font-size:17px;margin-bottom:5px}
+.check-list span{display:block;color:var(--muted);font-size:14px;line-height:1.8}
 .assessment-samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:900px;margin:28px auto 10px}
 .assessment-samples figure{background:#fff}
 .assessment-samples img{width:100%;aspect-ratio:1/1.16;object-fit:contain;background:#fff}
 .assessment-samples figcaption{text-align:center;color:var(--green-dk);font-weight:700;font-size:14px;padding:11px 14px;border-top:1px solid var(--line-lt)}
 .assessment-disclaimer{font-size:13px;color:var(--muted);margin-top:14px}
 .section-action{margin-top:34px}
+.after-assessment{background:var(--paper);border:1px solid var(--line-lt);border-left:4px solid var(--gold);border-radius:8px;padding:28px 32px}
+.after-assessment p{color:var(--muted);margin-bottom:12px}
+.after-assessment p:last-child{margin-bottom:0}
 
 .process-section{background:#fff}
 .steps--light li{background:var(--paper);border-color:var(--line-lt);color:var(--muted)}
@@ -316,6 +331,9 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 .content-bridge-grid>div{background:#fff;border:1px solid var(--line-lt);border-radius:8px;padding:28px}
 .content-bridge h2{font-size:22px;color:var(--green-dk);margin-bottom:7px}
 .content-bridge p{color:var(--muted);font-size:14px;margin-bottom:12px}
+.mini-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.mini-links a{display:inline-flex;align-items:center;background:var(--cream);border:1px solid var(--line-lt);border-radius:999px;color:var(--green-dk);font-size:13px;font-weight:700;text-decoration:none;padding:8px 12px}
+.mini-links a:hover{border-color:var(--gold);color:var(--pink)}
 .featured-resource-mini{display:grid!important;grid-template-columns:110px 1fr;gap:20px;align-items:center}
 .featured-resource-mini img{width:110px;aspect-ratio:3/4;object-fit:cover;border-radius:6px;border:1px solid var(--line-lt)}
 .featured-resource-mini h2{font-size:20px}
@@ -363,6 +381,8 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
   .trust-grid>div:nth-child(3),.trust-grid>div:nth-child(4){border-bottom:0}
   .concern-grid{grid-template-columns:1fr}
   .assessment-grid{grid-template-columns:1fr;gap:28px}
+  .fit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .check-list{grid-template-columns:1fr}
   .assessment-samples{grid-template-columns:1fr;max-width:520px}
   .testimonial-grid{grid-template-columns:1fr}
   .testimonial-grid blockquote{min-height:0}
@@ -385,9 +405,14 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
   .hero .cta{gap:18px}
   .hero .btn{width:100%;justify-content:center;text-align:center}
   .trust-grid b{font-size:17px}
+  .trust-grid del{display:block;margin:0 0 2px}
+  .price-compare{gap:8px;margin-top:14px}
   .concern{padding:19px 20px}
   .assessment-points>div{padding:18px 18px 18px 62px}
   .assessment-points span{left:16px;top:18px}
+  .fit-grid{grid-template-columns:1fr}
+  .fit-grid>div{padding:20px 18px}
+  .after-assessment{padding:24px 20px}
   .offer-section .price-card{padding-left:20px;padding-right:20px}
   .offer-section .price-card>.btn{width:100%;justify-content:center;text-align:center;padding-left:16px;padding-right:16px}
   .featured-content{padding:58px 0 44px}
