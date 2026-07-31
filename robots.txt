@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://melvinlin07-maker.github.io/yoga-site/sitemap.xml
+Sitemap: https://sinyanyoga.com.tw/sitemap.xml
