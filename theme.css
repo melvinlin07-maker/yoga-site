@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap');
+/* 字型改由各頁 <head> 的 <link rel="preconnect"> + stylesheet 載入，
+   避免 CSS @import 造成渲染阻塞、拖慢首屏（Core Web Vitals）。 */
 /* ============================================================
    鑫彥瑜珈 — 共用設計（比照撥筋 home-preview：梅子紅＋金＋粉米白）
    ============================================================ */
 :root{
   --green-dk:#43222f; --green:#6d3a4c; --green2:#371c27;
   --gold:#C6A15B; --gold-lt:#DcC084; --cream:#F7ECEB; --paper:#FCF5F3;
-  --ink:#2b1e23; --muted:#77626a; --line:rgba(255,255,255,.14); --line-lt:#ecdcde;
+  --ink:#2b1e23; --muted:#5f4b53; --line:rgba(255,255,255,.14); --line-lt:#ecdcde;
   --pink:#b0507a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -448,3 +449,12 @@ footer.site b .fb-tag{white-space:nowrap}
 .local-search-proof p{color:var(--muted);max-width:720px;margin:0 auto 22px;text-wrap:pretty}
 .local-proof-actions{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
 @media(max-width:640px){.topic-return{display:block}.topic-return a{display:inline-block;margin:8px 14px 0 0}.local-search-proof{padding:48px 0}}
+
+/* 無障礙：鍵盤操作的聚焦外框（滑鼠點擊不會顯示，僅鍵盤 Tab 導覽時出現） */
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.btn:focus-visible,.line-float:focus-visible{outline-color:#3a1c28}
+/* 尊重使用者「減少動態」偏好，關閉位移動畫 */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .btn:hover,.tile:hover,.featured-post:hover,.content-paths>a:hover{transform:none}
+}
