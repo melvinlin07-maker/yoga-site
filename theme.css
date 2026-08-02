@@ -542,7 +542,37 @@ footer.site b .fb-tag{white-space:nowrap}
 }
 
 .tile--featured {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-left: none;
+  overflow: hidden;
   border-color: rgba(225, 173, 55, .4);
+}
+
+.tile--featured img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.tile--featured > span {
+  margin: 18px 22px 0;
+}
+
+.tile--featured h3 {
+  margin: 8px 22px 8px;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--green-dk);
+}
+
+.tile--featured p {
+  margin: 0 22px 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 @media (max-width: 760px) {
