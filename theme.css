@@ -52,7 +52,7 @@ a{color:inherit}
 .hero--short .wrap{padding:70px 24px 76px}
 .hero-box{max-width:640px}
 .hero h1{font-size:clamp(30px,4.4vw,52px);font-weight:900;line-height:1.32;letter-spacing:.01em;margin-bottom:24px}
-.hero p{font-size:17px;color:#f0e5e7;margin-bottom:34px;max-width:560px}
+.hero p{font-size:17px;color:#f0e5e7;margin-bottom:34px;max-width:560px;text-wrap:balance}
 .hero .cta{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
 
 /* SECTIONS */
@@ -66,7 +66,7 @@ a{color:inherit}
 .sec-head h1,.sec-head h2{font-size:clamp(24px,3.2vw,38px);font-weight:900;line-height:1.4;color:var(--green-dk)}
 .section--dark .sec-head h1,.section--dark .sec-head h2{color:#fff}
 .sec-head .eyebrow{display:block}
-.sec-head p{color:var(--muted);margin-top:14px}
+.sec-head p{color:var(--muted);margin-top:14px;text-wrap:balance}
 .section--dark .sec-head p{color:#e7d4da}
 
 /* STORY (關於) */
