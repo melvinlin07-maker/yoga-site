@@ -204,7 +204,7 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 /* 浮動 LINE */
 .line-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#06C755;color:#fff;min-width:220px;padding:12px 18px;border-radius:8px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-decoration:none;box-shadow:0 10px 26px rgba(6,199,85,.4);line-height:1.35}
 .line-float span{font-size:12px;font-weight:600;opacity:.9}
-.line-float b{font-size:14px;font-weight:800}
+.line-float b{font-size:14px;font-weight:800;text-wrap:balance}
 
 /* 文章：延伸閱讀 + 柔色 PDF 導流框 */
 .related{border-top:1px solid var(--line-lt);margin-top:38px;padding-top:22px}
@@ -407,7 +407,7 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
   .decision-head{display:none}
   .line-float{left:12px;right:12px;bottom:10px;min-width:0;padding:10px 16px;align-items:center;text-align:center}
   .line-float span{display:none}
-  .line-float b{font-size:15px}
+  .line-float b{font-size:15px;text-wrap:balance}
 }
 
 @media(max-width:520px){
