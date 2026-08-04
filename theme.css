@@ -447,7 +447,7 @@ footer.site b .fb-tag{white-space:nowrap}
 .local-search-proof .wrap{max-width:820px}
 .local-search-proof h2{font-size:clamp(22px,3vw,32px);line-height:1.45;color:var(--green-dk);margin:6px 0 12px}
 .local-search-proof p{color:var(--muted);max-width:720px;margin:0 auto 22px;text-wrap:pretty}
-.local-proof-actions{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap}
+.local-proof-actions{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px}
 @media(max-width:640px){.topic-return{display:block}.topic-return a{display:inline-block;margin:8px 14px 0 0}.local-search-proof{padding:48px 0}}
 
 /* 無障礙：鍵盤操作的聚焦外框（滑鼠點擊不會顯示，僅鍵盤 Tab 導覽時出現） */
