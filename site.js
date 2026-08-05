@@ -47,15 +47,24 @@ document.addEventListener("DOMContentLoaded", function () {
     a.addEventListener("click", function (event) {
       event.preventDefault();
 
+      // 每頁可用 <body data-lead-value / data-lead-name / data-lead-category> 覆寫；
+      // 未設定時沿用預設（AI 體態檢測、199），確保其他既有頁面行為不變。
+      var body = document.body;
+      var leadValue = Number(body.getAttribute("data-lead-value")) || 199;
+      var leadName = body.getAttribute("data-lead-name") || "LINE AI posture assessment reservation";
+      var leadCategory = body.getAttribute("data-lead-category") || "AI posture assessment";
+
       gtag("event", "line_reservation_click", {
         link_url: LINE_URL,
         link_text: a.textContent.trim(),
-        page_path: window.location.pathname
+        page_path: window.location.pathname,
+        value: leadValue,
+        currency: "TWD"
       });
       fbq("track", "Lead", {
-        content_name: "LINE AI posture assessment reservation",
-        content_category: "AI posture assessment",
-        value: 199,
+        content_name: leadName,
+        content_category: leadCategory,
+        value: leadValue,
         currency: "TWD"
       });
 
