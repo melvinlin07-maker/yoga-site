@@ -1,6 +1,7 @@
 /* Shared site scripts.
    Update LINE_URL to change all LINE reservation buttons. */
 var LINE_URL = "https://lin.ee/5rWzdNd";
+var LINE_OA_ID = "@561wigip";
 var GA_MEASUREMENT_ID = "G-6X3PD7NMMG";
 var META_PIXEL_ID = "1594348069032790";
 
@@ -68,8 +69,15 @@ document.addEventListener("DOMContentLoaded", function () {
         currency: "TWD"
       });
 
+      // 若頁面 <body> 設定 data-line-message，開啟 LINE 官方帳號聊天室並預填該文字；
+      // 未設定時維持原行為（開啟 LINE_URL），不影響其他既有頁面。
+      var lineMessage = body.getAttribute("data-line-message");
+      var openUrl = lineMessage
+        ? "https://line.me/R/oaMessage/" + encodeURIComponent(LINE_OA_ID) + "/?" + encodeURIComponent(lineMessage)
+        : LINE_URL;
+
       window.setTimeout(function () {
-        window.open(LINE_URL, "_blank", "noopener");
+        window.open(openUrl, "_blank", "noopener");
       }, 400);
     });
   });
