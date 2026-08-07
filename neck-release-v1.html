@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>［測試版・非正式頁］一對一肩頸調整｜高雄左營｜鑫彥瑜珈</title>
+<meta name="description" content="高雄左營・近巨蛋捷運 一對一肩頸調整：60 分鐘只調你的肩頸——50 分鐘一對一瑜伽調整，從用力習慣改起；10 分鐘深層筋膜放鬆，把自己伸展鬆不到的深層加強鬆開。原價 NT$2000，首次到店、事先透過 LINE 預約，每人限一次，首次優惠 NT$1200。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
+<link rel="stylesheet" href="theme.css?v=10">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+/* ============ 一對一肩頸調整・頁內樣式（不動 theme.css） ============ */
+.hero-trust{margin-top:14px;color:#f2e8ea;font-size:14px;font-weight:600;line-height:1.7}
+.hero-trust b{color:var(--gold-lt)}
+.hero-trust .g{color:#f2e8ea}
+
+/* Hero 50+10 公式膠囊 */
+.hero-formula{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero-formula .hf{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px);border-radius:999px;padding:7px 16px;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.5px}
+.hero-formula .hf b{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-size:16px;margin-right:2px}
+.hero-formula .hf-op{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px}
+.hero-formula .hf--sum{background:var(--gold);border-color:var(--gold)}
+
+/* 章節標記 */
+.chap{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.chap b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:15px;letter-spacing:2px;color:var(--gold)}
+.chap span{flex:1;height:1px;background:var(--line-lt,#e8dfe3);max-width:80px}
+.chap i{font-style:normal;font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--pink)}
+
+/* ---- CH.01 互動自測 ---- */
+.nr-check{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.nr-check .ck{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1.5px solid var(--line-lt,#e8dfe3);border-radius:14px;padding:16px 18px;cursor:pointer;user-select:none;transition:.18s;box-shadow:0 4px 14px rgba(67,34,47,.05)}
+.nr-check .ck .box{flex:0 0 22px;height:22px;margin-top:1px;border:2px solid #cbb9c0;border-radius:7px;position:relative;transition:.18s;background:#fff}
+.nr-check .ck .box::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;opacity:0;transform:scale(.4);transition:.18s}
+.nr-check .ck p{margin:0;font-size:15px;line-height:1.65;color:var(--ink);font-weight:500}
+.nr-check .ck small{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:2px}
+.nr-check .ck.on{border-color:var(--gold);background:#fdf9f2;box-shadow:0 6px 18px rgba(176,141,87,.16)}
+.nr-check .ck.on .box{background:var(--gold);border-color:var(--gold)}
+.nr-check .ck.on .box::after{opacity:1;transform:scale(1)}
+.nr-verdict{margin-top:22px;background:var(--green-dk);color:#f3e9ec;border-radius:16px;padding:24px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.nr-verdict .num{font-family:"Noto Serif TC",serif;font-weight:900;font-size:44px;line-height:1;color:var(--gold-lt);min-width:74px;text-align:center}
+.nr-verdict .num small{display:block;font-size:12.5px;font-weight:600;letter-spacing:2px;color:#d8c3ca;margin-top:4px}
+.nr-verdict .msg{flex:1;min-width:220px}
+.nr-verdict .msg b{display:block;font-size:17.5px;margin-bottom:4px;color:#fff}
+.nr-verdict .msg p{margin:0;font-size:14.5px;line-height:1.75;color:#e4d4da}
+
+/* ---- CH.02 惡性循環 ---- */
+.nr-loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px;position:relative}
+.nr-loop .lp{position:relative;background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:14px;padding:20px 16px 18px;margin:0 14px;text-align:center;box-shadow:0 5px 16px rgba(67,34,47,.06)}
+.nr-loop .lp:not(:last-child)::after{content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:900;color:#c9b6bd;z-index:2}
+.nr-loop .lp .no{display:inline-block;font-family:"Noto Serif TC",serif;font-weight:900;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.nr-loop .lp b{display:block;font-size:15.5px;color:var(--ink);margin-bottom:6px}
+.nr-loop .lp p{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.nr-loop .lp--cut{border:2px dashed var(--pink)}
+.nr-loop-back{text-align:center;margin-top:18px;color:var(--muted);font-size:14px;font-weight:600}
+.nr-loop-back b{color:var(--pink)}
+.nr-cut-note{max-width:560px;margin:26px auto 0;text-align:center;background:#fdf4f8;border:1px solid #ecd3de;border-radius:14px;padding:18px 22px;font-size:15.5px;line-height:1.8;color:var(--ink)}
+.nr-cut-note b{color:var(--pink)}
+
+/* ---- CH.03 公式 ---- */
+.nr-formula{display:grid;grid-template-columns:1fr auto 1fr auto 1.15fr;align-items:stretch;gap:14px;margin-top:8px}
+.nr-formula .f-card{background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:16px;padding:26px 24px;box-shadow:0 6px 20px rgba(67,34,47,.06)}
+.nr-formula .f-op{display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;font-weight:900;font-size:34px;color:var(--gold)}
+.nr-formula .f-min{font-family:"Noto Serif TC",serif;font-weight:900;font-size:40px;line-height:1;color:var(--green-dk)}
+.nr-formula .f-min small{font-size:15px;font-weight:700;color:var(--muted);margin-left:4px}
+.nr-formula .f-kind{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:999px;margin:12px 0 10px}
+.nr-formula .f-card--a .f-kind{background:#eef1ec;color:var(--green-dk)}
+.nr-formula .f-card--p .f-kind{background:#f4ecef;color:var(--pink)}
+.nr-formula .f-card b{display:block;font-size:16.5px;color:var(--ink);margin-bottom:6px}
+.nr-formula .f-card p{margin:0;font-size:14px;line-height:1.75;color:var(--muted)}
+.nr-formula .f-card--sum{background:var(--green-dk);border-color:var(--green-dk);box-shadow:0 14px 34px rgba(67,34,47,.28)}
+.nr-formula .f-card--sum .f-sum-tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:999px;background:var(--gold);color:#fff;margin-bottom:12px}
+.nr-formula .f-card--sum b{color:#fff;font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.5}
+.nr-formula .f-card--sum p{color:#e4d4da}
+.pull-quote{max-width:760px;margin:36px auto 0;text-align:center;font-family:"Noto Serif TC",serif;font-weight:700;font-size:23px;line-height:1.7;color:var(--green-dk)}
+.pull-quote b{color:var(--gold);white-space:nowrap}
+
+/* ---- CH.03b 三方對照 ---- */
+.nr-compare{margin-top:34px;overflow-x:auto}
+.nr-compare table{width:100%;border-collapse:separate;border-spacing:0;min-width:560px}
+.nr-compare th,.nr-compare td{padding:13px 14px;font-size:14.5px;text-align:center;border-bottom:1px solid var(--line-lt,#e8dfe3)}
+.nr-compare th{font-size:14px;letter-spacing:.5px}
+.nr-compare th:first-child,.nr-compare td:first-child{text-align:left;color:var(--ink);font-weight:600;width:38%}
+.nr-compare thead th{border-bottom:2px solid var(--green-dk);color:var(--muted)}
+.nr-compare .col-hl{background:#fdf9f2;color:var(--green-dk);font-weight:900}
+.nr-compare thead .col-hl{color:var(--green-dk);font-size:15px}
+.nr-compare .y{color:var(--gold);font-weight:900;font-size:16px}
+.nr-compare .n{color:#c9b6bd}
+.nr-compare .h{color:var(--muted);font-size:13px}
+.nr-compare tbody tr:last-child td{border-bottom:none}
+
+/* ---- CH.04 60 分鐘旅程 ---- */
+.nr-journey{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:8px}
+.nr-journey .jn{position:relative;background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:16px;padding:24px 22px;box-shadow:0 6px 20px rgba(67,34,47,.06);display:flex;flex-direction:column}
+.nr-journey .jn .t{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.nr-journey .jn .t b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;color:var(--green-dk)}
+.nr-journey .jn .t span{font-size:12.5px;font-weight:700;color:var(--pink);letter-spacing:1px}
+.nr-journey .jn .bar{height:5px;border-radius:99px;background:#f0e7ea;margin:10px 0 16px;overflow:hidden}
+.nr-journey .jn .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-lt,#d9bd8a))}
+.nr-journey .jn h3{font-size:16.5px;color:var(--ink);margin:0 0 8px}
+.nr-journey .jn p{margin:0 0 14px;font-size:14px;line-height:1.8;color:var(--muted);flex:1}
+.nr-journey .jn .feel{background:#faf6ef;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 14px;font-size:13.5px;line-height:1.7;color:var(--ink)}
+.nr-journey .jn .feel b{color:var(--gold);font-size:12px;letter-spacing:1.5px;display:block;margin-bottom:2px}
+
+/* ---- 評論 ---- */
+.assess-reviews{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.assess-reviews .ar{background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-left:3px solid var(--gold);border-radius:12px;padding:22px 22px 18px;margin:0;box-shadow:0 6px 20px rgba(67,34,47,.06)}
+.assess-reviews .ar-stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+.assess-reviews .ar p{color:var(--ink);font-size:15.5px;line-height:1.85;margin:0 0 12px}
+.assess-reviews .ar cite{color:var(--muted);font-size:13.5px;font-style:normal;font-weight:600}
+.ar-band{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:28px;text-align:center}
+.ar-band span{color:var(--muted);font-size:14px}
+.ar-band b{display:block;font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;color:var(--green-dk);line-height:1.1}
+
+/* ---- 價格卡 value stack ---- */
+.nr-stack{max-width:430px;margin:0 auto 18px;text-align:left}
+.nr-stack li{display:flex;justify-content:space-between;gap:14px;padding:9px 2px;border-bottom:1px dashed rgba(255,255,255,.18);font-size:14.5px;color:#e9dce1}
+.nr-stack li b{color:#fff;font-weight:600}
+.nr-stack li span{color:var(--gold-lt);font-weight:700;white-space:nowrap}
+
+/* ---- 手機底部固定 CTA ---- */
+.nr-sticky{display:none}
+@media(max-width:640px){
+  .line-float{display:none!important}
+  .nr-sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green-dk);padding:10px 14px calc(10px + env(safe-area-inset-bottom));align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(43,30,35,.25)}
+  .nr-sticky .p{flex:1;line-height:1.35}
+  .nr-sticky .p del{display:block;color:#c8b2ba;font-size:12px}
+  .nr-sticky .p b{color:#fff;font-size:17px;font-family:"Noto Serif TC",serif}
+  .nr-sticky .p b small{font-size:11.5px;color:var(--gold-lt);font-weight:700;margin-left:4px}
+  .nr-sticky a{flex:0 0 auto;background:var(--gold);color:#fff;font-weight:900;font-size:15px;border-radius:999px;padding:12px 22px;text-decoration:none}
+  body{padding-bottom:74px}
+}
+
+/* ---- RWD ---- */
+@media(max-width:920px){
+  .nr-formula{grid-template-columns:1fr;gap:10px}
+  .nr-formula .f-op{padding:2px 0}
+  .nr-loop{grid-template-columns:1fr 1fr;row-gap:26px}
+  .nr-loop .lp{margin:0 20px 0 6px}
+  .nr-loop .lp:nth-child(2)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+  .nr-loop .lp:nth-child(4)::after{display:none}
+}
+@media(max-width:640px){
+  .nr-check{grid-template-columns:1fr}
+  .nr-journey{grid-template-columns:1fr}
+  .assess-reviews{grid-template-columns:1fr}
+  .ar-band{gap:20px}
+  .pull-quote{font-size:20px}
+  .nr-loop{grid-template-columns:1fr}
+  .nr-loop .lp{margin:0 6px}
+  .nr-loop .lp:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="鑫彥瑜珈">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="一對一肩頸調整｜高雄左營・原價 NT$2000・首次 NT$1200">
+<meta property="og:description" content="60 分鐘只調你的肩頸：50 分鐘一對一瑜伽調整，從用力習慣改起；10 分鐘深層筋膜放鬆加強。原價 NT$2000，首次到店 NT$1200，需事先透過 LINE 預約，每人限一次。">
+<meta property="og:url" content="https://sinyanyoga.com.tw/neck-release.html">
+<meta property="og:image" content="https://sinyanyoga.com.tw/assets/wall-rope-teacher.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sinyanyoga.com.tw/neck-release.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://sinyanyoga.com.tw/neck-release.html#service",
+      "name": "一對一肩頸調整",
+      "description": "高雄左營一對一肩頸調整，60 分鐘只針對肩頸：50 分鐘一對一瑜伽調整，從用力習慣改起；10 分鐘深層筋膜放鬆，把自己伸展鬆不到的深層加強鬆開。此服務為運動放鬆與姿勢調整，非醫療行為，不做疾病治療或診斷。",
+      "serviceType": "一對一瑜伽肩頸調整與深層筋膜放鬆",
+      "areaServed": {
+        "@type": "City",
+        "name": "高雄市"
+      },
+      "provider": {
+        "@type": "HealthClub",
+        "@id": "https://sinyanyoga.com.tw/#organization",
+        "name": "鑫彥瑜珈運動館",
+        "telephone": "+886-7-556-7387",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "新庄仔路726號3樓",
+          "addressLocality": "左營區",
+          "addressRegion": "高雄市",
+          "postalCode": "813",
+          "addressCountry": "TW"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "首次一對一肩頸調整：原價 NT$2000，首次 NT$1200",
+        "price": "1200",
+        "priceCurrency": "TWD",
+        "url": "https://sinyanyoga.com.tw/neck-release.html",
+        "availability": "https://schema.org/InStock",
+        "description": "一對一肩頸調整原價 NT$2000。首次到店限定 NT$1200，需事先透過 LINE 預約，每人限一次。預約以 LINE 回覆確認的時段為準。"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sinyanyoga.com.tw/neck-release.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "既然要鬆肩頸，為什麼不整堂都做筋膜放鬆就好？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "因為肩頸會緊，多半跟頭部前傾、聳肩、胸口打不開等用力習慣有關。單純放鬆能把當下緊的地方鬆開，但用力習慣沒改，過幾天容易又緊回來。所以這堂課用 50 分鐘一對一瑜伽調整，從用力習慣改起；最後 10 分鐘再用深層筋膜放鬆，把你自己伸展鬆不到的深層加強鬆開。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "原價 NT$2000、首次 NT$1200 包含什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "包含一次 60 分鐘的一對一肩頸調整：50 分鐘老師一對一瑜伽調整，10 分鐘深層筋膜放鬆。原價 NT$2000，首次到店優惠 NT$1200。此服務為運動放鬆與姿勢調整，非醫療行為。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "誰可以使用首次 NT$1200 優惠？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "限第一次到鑫彥瑜珈體驗一對一肩頸調整的訪客，每人限一次。請事先透過 LINE 預約，並以 LINE 回覆確認的時段為準。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "深層筋膜放鬆是用什麼做的？會很痛嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程尾聲，老師會運用專業牛角器具，針對你自己伸展鬆不到的深層肩頸，慢慢做筋膜放鬆。力道會依你的感受調整，以放鬆、舒緩緊繃為主，不是越痛越好。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完全沒有瑜伽基礎、身體很硬，也可以做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。這是一對一課程，老師會依你的柔軟度與肩頸狀況安排動作，不需要先具備瑜伽基礎。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "做完一定要報名長期課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不用。完成這次一對一肩頸調整後，是否進一步安排課程由你決定，沒有推銷壓力。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- SEO-GEO:PAGE-GRAPH -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/neck-release.html#webpage","url":"https://sinyanyoga.com.tw/neck-release.html","name":"把肩頸鬆開，也教它不再緊回來。","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":{"@id":"https://sinyanyoga.com.tw/#organization"},"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/neck-release.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"一對一肩頸調整","item":"https://sinyanyoga.com.tw/neck-release.html"}]}]}</script>
+<!-- /SEO-GEO:PAGE-GRAPH -->
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="assessment.html">AI 體態檢測</a></li>
+    <li><a href="classes.html">課程方式</a></li>
+    <li><a href="know-yoga.html">認識瑜伽</a></li>
+    <li><a href="blog.html">部落格</a></li>
+    <li><a href="about.html">關於鑫彥</a></li>
+    <li><a href="neck-release.html">一對一調整</a></li>
+  </ul>
+  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$1200 肩頸調整</a>
+  <button class="nav-toggle" aria-label="選單">☰</button>
+</div></nav>
+
+<header class="hero hero--short">
+  <img src="assets/wall-rope-teacher.jpg" alt="鑫彥瑜珈老師一對一協助學員做肩頸調整">
+  <div class="wrap"><div class="hero-box">
+    <div class="eyebrow">高雄左營 · 近巨蛋捷運 · 60 分鐘一對一 · 只調你的肩頸</div>
+    <h1>把肩頸鬆開，<br>也教它不再緊回來。</h1>
+    <p>按摩完很鬆、兩三天又緊回來——問題從來不是你按得不夠，是沒有人改掉讓它變緊的用力習慣。這堂課，一次處理「鬆開」和「不再緊回來」兩件事。</p>
+    <div class="hero-formula" aria-label="課程組合">
+      <span class="hf"><b>50</b>分鐘・一對一瑜伽調整</span>
+      <span class="hf-op">＋</span>
+      <span class="hf"><b>10</b>分鐘・深層筋膜放鬆</span>
+      <span class="hf-op">＝</span>
+      <span class="hf hf--sum">鬆得掉，也留得住</span>
+    </div>
+    <div class="cta"><a href="#" class="btn js-line">預約首次 NT$1200 一對一肩頸調整</a></div>
+    <p class="hero-note">原價 NT$2,000 · 首次到店 NT$1,200 · 事先透過 LINE 預約 · 每人限一次</p>
+    <p class="hero-trust">⭐ Google <b>4.9★</b> · <span class="g">79 則真實好評</span> · 高雄左營在地教學 <b>10 年+</b></p>
+  </div></div>
+</header>
+
+<section class="trust-strip" aria-label="一對一肩頸調整方案摘要">
+  <div class="wrap trust-grid">
+    <div><b>60 分⁠鐘</b><span>一對一・只調肩頸</span></div>
+    <div><b><del>NT$2,000</del> NT$1,200</b><span>首次到店優惠</span></div>
+    <div><b>50 練＋10 放⁠鬆</b><span>主動調整＋深層放鬆</span></div>
+    <div><b>不強⁠迫購⁠課</b><span>下一步由你決定</span></div>
+  </div>
+</section>
+
+<!-- CH.01 互動自測 -->
+<section class="section section--cream"><div class="wrap wrap--narrow">
+  <div class="chap"><b>01</b><span></span><i>先誠實勾選</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>你的肩頸，中了幾項？</h2>
+    <p>點一下就能勾選。不用客氣，這裡沒有人會給你打分數——除了你的肩頸。</p>
+  </div>
+  <div class="nr-check" id="nrCheck">
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>下午開始，脖子又沉又卡<small>坐愈久愈明顯，轉個頭都覺得緊</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>按摩完很舒服，兩三天就打回原形<small>只好一直回去按，變成固定開銷</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>肩膀常常不自覺聳起來<small>被提醒才發現，放下來沒多久又聳回去</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>胸口悶悶的、呼吸偏淺<small>深呼吸的時候，覺得肩頸跟著出力</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>自己拉筋，抓不到「真的鬆開」的感覺<small>動作有做，但深處那一塊就是搆不到</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>睡醒肩頸就是緊的<small>明明睡了一晚，起床卻像沒休息到</small></p></div>
+  </div>
+  <div class="nr-verdict" id="nrVerdict" aria-live="polite">
+    <div class="num"><span id="nrNum">0</span><small>／ 6 項</small></div>
+    <div class="msg" id="nrMsg">
+      <b>勾勾看，讓肩頸自己說話。</b>
+      <p>每一項，都是肩頸長期替你「代班出力」留下的痕跡。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- CH.02 惡性循環 -->
+<section class="section"><div class="wrap">
+  <div class="chap"><b>02</b><span></span><i>看懂循環</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>為什麼按了這麼多次，肩頸還是緊？</h2>
+    <p>不是你選的店不好，也不是你不夠認真放鬆。是這個循環，從來沒有被切斷過。</p>
+  </div>
+  <div class="nr-loop">
+    <div class="lp"><span class="no">STEP 1</span><b>肩頸又緊了</b><p>久坐、看螢幕、壓力，肩頸開始又沉又卡。</p></div>
+    <div class="lp"><span class="no">STEP 2</span><b>去按摩、放鬆</b><p>當下真的很舒服，覺得這次有救了。</p></div>
+    <div class="lp"><span class="no">STEP 3</span><b>鬆了兩、三天</b><p>頭幾天很輕鬆，你以為問題解決了。</p></div>
+    <div class="lp lp--cut"><span class="no">STEP 4</span><b>舊的用力習慣回來</b><p>頭又前傾、肩又聳起——然後回到 STEP 1。</p></div>
+  </div>
+  <p class="nr-loop-back">↺ 然後回到第一格，<b>無限輪迴</b>——你付的每一次費用，都只買到「兩三天的鬆」。</p>
+  <div class="nr-cut-note">這堂課要切的，就是 <b>STEP 4</b>：不只把緊的鬆開，還花 50 分鐘<b>改掉讓它變緊的用力習慣</b>，循環才會真的停下來。</div>
+</div></section>
+
+<!-- CH.03 方法：公式＋對照 -->
+<section class="section section--cream"><div class="wrap">
+  <div class="chap"><b>03</b><span></span><i>這堂課的做法</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>「那我直接去放鬆就好，幹嘛練 50 分鐘瑜伽？」</h2>
+    <p>問得好——答案是：肩頸會緊，多半不是肩頸的錯。是頭前傾、聳肩、胸口打不開，讓它整天替別人出力。所以這堂課，把兩件事放進同一個 60 分鐘。</p>
+  </div>
+  <div class="nr-formula">
+    <div class="f-card f-card--a">
+      <div class="f-min">50<small>分鐘</small></div>
+      <span class="f-kind">主動・一對一瑜伽調整</span>
+      <b>改掉讓它變緊的用力習慣</b>
+      <p>老師一對一針對你的肩頸：把該打開的胸口打開、把該醒的肌肉叫醒。這是任何放鬆都做不到、也最需要時間的部分。</p>
+    </div>
+    <div class="f-op">＋</div>
+    <div class="f-card f-card--p">
+      <div class="f-min">10<small>分鐘</small></div>
+      <span class="f-kind">被動・深層筋膜放鬆</span>
+      <b>鬆開你自己搆不到的深層</b>
+      <p>老師運用專業牛角器具，針對你自己伸展鬆不到的深層肩頸慢慢放鬆，力道依你的感受調整，讓當天更徹底、更有感。</p>
+    </div>
+    <div class="f-op">＝</div>
+    <div class="f-card f-card--sum">
+      <span class="f-sum-tag">這堂課給你的</span>
+      <b>鬆得掉，<br>也留得住。</b>
+      <p>當天鬆開是基本；更重要的是身體記住新的用力方式，不再走回 STEP 4。</p>
+    </div>
+  </div>
+  <p class="pull-quote">深層筋膜放鬆把<b>「已經緊的」</b>鬆開；<br>瑜伽調整讓它<b>「不再緊回來」</b>。</p>
+
+  <div class="nr-compare" aria-label="與其他選擇的差別">
+    <table>
+      <thead><tr>
+        <th>你可能試過的</th><th>按摩・紓壓</th><th>一般團體課</th><th class="col-hl">這堂課</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>當下就覺得鬆</td><td class="y">✓</td><td class="h">△ 看課程</td><td class="col-hl y">✓</td></tr>
+        <tr><td>找出「你為什麼緊」</td><td class="n">✗</td><td class="h">△ 老師顧不到每個人</td><td class="col-hl y">✓</td></tr>
+        <tr><td>改掉用錯力的習慣</td><td class="n">✗</td><td class="h">△ 動作是共通的</td><td class="col-hl y">✓</td></tr>
+        <tr><td>鬆到自己搆不到的深層</td><td class="h">△ 看師傅</td><td class="n">✗</td><td class="col-hl y">✓</td></tr>
+        <tr><td>60 分鐘只看你一個人</td><td class="n">✗</td><td class="n">✗</td><td class="col-hl y">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<!-- CH.04 60 分鐘旅程 -->
+<section class="section"><div class="wrap">
+  <div class="chap"><b>04</b><span></span><i>你的 60 分鐘</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>走進教室之後，這一小時怎麼過</h2>
+    <p>每一段都有明確的目的——也有你「當場就感覺得到」的變化。</p>
+  </div>
+  <div class="nr-journey">
+    <div class="jn">
+      <div class="t"><b>0–10</b><span>分鐘・先看懂你</span></div>
+      <div class="bar"><i style="width:17%"></i></div>
+      <h3>看你的肩頸平常怎麼用</h3>
+      <p>老師先觀察你的頭頸位置、肩線高低、胸口開合與呼吸——找出讓肩頸一直緊的用力習慣，這堂課要調的重點，從這裡定。</p>
+      <div class="feel"><b>你會感覺到</b>「原來我平常都這樣用脖子」——很多人第一次被點出來，就恍然大悟。</div>
+    </div>
+    <div class="jn">
+      <div class="t"><b>10–50</b><span>分鐘・主動調整</span></div>
+      <div class="bar"><i style="width:66%"></i></div>
+      <h3>針對你的肩頸，把用錯力的地方調回來</h3>
+      <p>老師一對一帶你做：該打開的胸口打開、該醒的肌肉叫醒，從源頭改掉讓肩頸緊的用力方式。動作依你的柔軟度安排，零基礎完全可以。</p>
+      <div class="feel"><b>你會感覺到</b>肩膀慢慢「放回原位」、呼吸變深——不是硬拉，是身體自己願意鬆。</div>
+    </div>
+    <div class="jn">
+      <div class="t"><b>50–60</b><span>分鐘・深層放鬆</span></div>
+      <div class="bar"><i style="width:100%"></i></div>
+      <h3>用專業牛角器具，鬆開最深的那一層</h3>
+      <p>課程尾聲，老師針對你自己伸展搆不到的深層肩頸，用牛角器具慢慢做筋膜放鬆。力道依你的感受調整，以舒緩為主，不是越痛越好。</p>
+      <div class="feel"><b>你會感覺到</b>卡了很久的那一塊，終於被「摸到、鬆到」——這是整堂課最多人回味的 10 分鐘。</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 現場實拍 -->
+<section class="section section--cream"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow" style="color:var(--pink)">現場實拍</div>
+    <h2>一對一，老師的眼睛只在你身上</h2>
+    <p>不是跟著團課做完就好。整堂課老師看著你的肩頸，一邊調整、一邊放鬆，隨時依你的感受調整力道與動作。</p>
+  </div>
+  <div class="assessment-photo-grid">
+    <!-- 待替換：老師牛角深層筋膜放鬆／一對一肩頸調整實拍照 -->
+    <figure class="frame assessment-photo assessment-photo--wide">
+      <img src="assets/assessment-consult-wide.jpg" alt="鑫彥瑜珈老師一對一為學員做肩頸調整">
+      <figcaption>一對一調整，只針對你的肩頸</figcaption>
+    </figure>
+    <figure class="frame assessment-photo assessment-photo--main">
+      <img src="assets/assessment-consult-main.jpg" alt="老師針對學員肩頸做深層筋膜放鬆">
+      <figcaption>課程尾聲，深層筋膜放鬆加強打開</figcaption>
+    </figure>
+    <figure class="frame assessment-photo assessment-photo--portrait">
+      <img src="assets/assessment-consult-portrait.jpg" alt="學員於鑫彥瑜珈接受一對一肩頸放鬆">
+      <figcaption>力道依你的感受調整，以放鬆為主</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- 帶走的 -->
+<section class="section section--dark"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">這堂課結束後</div><h2>你會帶走的，不只是「當下很鬆」</h2></div>
+  <div class="cards">
+    <div class="card"><div class="body"><span class="tag">01</span><h3>肩頸當場放鬆</h3><p>經過調整與深層筋膜放鬆，肩頸的緊繃、沉重感當場就有明顯不同。</p></div></div>
+    <div class="card"><div class="body"><span class="tag">02</span><h3>知道自己為什麼緊</h3><p>老師會告訴你，是頭前傾、聳肩還是胸口太緊，讓你的肩頸一直卡住。</p></div></div>
+    <div class="card"><div class="body"><span class="tag">03</span><h3>可以帶回家的方向</h3><p>依當天狀況，給你一兩個日常可以留意、避免又緊回來的小提醒。</p></div></div>
+  </div>
+</div></section>
+
+<!-- 評論 -->
+<section class="section"><div class="wrap wrap--narrow">
+  <div class="sec-head"><div class="eyebrow" style="color:var(--pink)">學員怎麼說</div><h2>被老師調整過肩頸的人，怎麼說</h2></div>
+  <div class="assess-reviews">
+    <blockquote class="ar">
+      <div class="ar-stars">★★★★★</div>
+      <p>今天體驗 AI 檢測與調整，身體狀況沒有想像中的好，經過老師的調整，覺得肩頸放鬆了，腰部感覺比較鬆了，很棒的一次體驗。</p>
+      <cite>— 黃之柔 · Google 評論</cite>
+    </blockquote>
+    <blockquote class="ar">
+      <div class="ar-stars">★★★★★</div>
+      <p>接觸瑜伽之後，感覺身體變得比較輕鬆，老師教學很專業，一直強調呼吸正位，練完感覺身體好像變健康了，很棒的體驗喔。</p>
+      <cite>— 顏珮緹 · Facebook 推薦</cite>
+    </blockquote>
+  </div>
+  <div class="ar-band">
+    <span><b>4.9★</b>Google 平均評分</span>
+    <span><b>79</b>則真實好評</span>
+    <span><b>10 年+</b>高雄左營在地教學</span>
+  </div>
+  <div class="center" style="margin-top:26px"><a class="text-link" href="reviews.html">看更多學員見證 →</a></div>
+</div></section>
+
+<!-- 價格卡 -->
+<section class="section section--dark offer-section"><div class="wrap wrap--narrow center">
+  <div class="sec-head">
+    <div class="eyebrow">首次到店方案</div>
+    <h2>先用一堂課，把肩頸真的鬆開一次</h2>
+  </div>
+  <div class="price-card">
+    <span class="ptag">FIRST VISIT · 首次到店限定</span>
+    <p class="pname">一對一肩頸調整（50 分鐘瑜伽調整 ＋ 10 分鐘深層筋膜放鬆）</p>
+    <ul class="nr-stack">
+      <li><b>一對一瑜伽肩頸調整 50 分鐘</b><span>整堂只看你一個人</span></li>
+      <li><b>牛角深層筋膜放鬆 10 分鐘</b><span>鬆你搆不到的深層</span></li>
+      <li><b>肩頸用力習慣解讀</b><span>知道自己為什麼緊</span></li>
+      <li><b>帶回家的日常提醒</b><span>避免又緊回來</span></li>
+    </ul>
+    <p class="price-compare"><span>原價 NT$2,000</span><b>首次到店優惠</b></p>
+    <p class="amt"><small>首次一對一肩頸調整</small><br>NT$1,200</p>
+    <ul class="offer-details">
+      <li>所需時間：約 60 分鐘（50 分鐘調整 ＋ 10 分鐘放鬆）</li>
+      <li>優惠資格：首次到店、事先透過 LINE 預約，每人限一次</li>
+      <li>一對一名額有限，預約以 LINE 回覆確認的時段為準</li>
+      <li>結束後不強迫報名課程</li>
+    </ul>
+    <a href="#" class="btn js-line">預約首次 NT$1200 一對一肩頸調整</a>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="section section--cream"><div class="wrap wrap--narrow">
+  <div class="sec-head"><div class="eyebrow" style="color:var(--pink)">常見問題</div><h2>關於一對一肩頸調整，常見問題</h2></div>
+  <div class="faq" id="faq">
+    <details><summary>既然要鬆肩頸，為什麼不整堂都做筋膜放鬆就好？</summary><p>因為肩頸會緊，多半跟頭部前傾、聳肩、胸口打不開等用力習慣有關。單純放鬆能把當下緊的地方鬆開，但用力習慣沒改，過幾天容易又緊回來。所以這堂課用 50 分鐘一對一瑜伽調整，從用力習慣改起；最後 10 分鐘再用深層筋膜放鬆，把你自己伸展鬆不到的深層加強鬆開。</p></details>
+    <details><summary>原價 NT$2,000、首次 NT$1,200 包含什麼？</summary><p>包含一次 60 分鐘的一對一肩頸調整：50 分鐘老師一對一瑜伽調整，10 分鐘深層筋膜放鬆。原價 NT$2,000，首次到店優惠 NT$1,200。此服務為運動放鬆與姿勢調整，非醫療行為。</p></details>
+    <details><summary>誰可以使用首次 NT$1,200 優惠？</summary><p>限第一次到鑫彥瑜珈體驗一對一肩頸調整的訪客，每人限一次。請事先透過 LINE 預約，並以 LINE 回覆確認的時段為準。</p></details>
+    <details><summary>深層筋膜放鬆是用什麼做的？會很痛嗎？</summary><p>課程尾聲，老師會運用專業牛角器具，針對你自己伸展鬆不到的深層肩頸，慢慢做筋膜放鬆。力道會依你的感受調整，以放鬆、舒緩緊繃為主，不是越痛越好。</p></details>
+    <details><summary>完全沒有瑜伽基礎、身體很硬，也可以做嗎？</summary><p>可以。這是一對一課程，老師會依你的柔軟度與肩頸狀況安排動作，不需要先具備瑜伽基礎。</p></details>
+    <details><summary>做完一定要報名長期課程嗎？</summary><p>不用。完成這次一對一肩頸調整後，是否進一步安排課程由你決定，沒有推銷壓力。</p></details>
+  </div>
+</div></section>
+
+<section class="content-bridge"><div class="wrap content-bridge-grid">
+  <div>
+    <span class="secondary-label">還沒準備預約</span>
+    <h2>先搞懂你的肩頸為什麼一直緊</h2>
+    <p>這幾篇會幫你看懂：肩頸反覆緊，到底是姿勢、代償，還是用力方式的問題。</p>
+    <a class="text-link" href="know-yoga.html">進入認識瑜伽 →</a>
+    <div class="mini-links" aria-label="相關肩頸文章">
+      <a href="blog-recurring-neck-tightness-not-just-neck.html">肩頸反覆緊怎麼辦</a>
+      <a href="blog-forward-head-daily.html">頭部前傾與日常習慣</a>
+      <a href="blog-posture-bracing-compensation.html">越撐越累的代償</a>
+    </div>
+  </div>
+  <div class="featured-resource-mini">
+    <img src="assets/res-neck-selftest.jpg" alt="肩頸壓力自測免費資源">
+    <div><span class="secondary-label">本期免費資源</span><h2>《肩頸壓力自測》</h2><p>想先在家整理肩頸狀態，可透過 LINE 免費索取。</p><a class="text-link" href="resources.html">查看免費資源 →</a></div>
+  </div>
+</div></section>
+
+<section class="cta-band">
+  <div class="eyebrow" style="justify-content:center">鬆一次，也讓它記得住</div>
+  <h2>預約你的第一次一對一肩頸調整</h2>
+  <p>加入 LINE 安排到店時段。約 60 分鐘，50 分鐘一對一瑜伽調整 ＋ 10 分鐘深層筋膜放鬆；原價 NT$2,000，首次到店優惠 NT$1,200，每人限一次。</p>
+  <a href="#" class="btn js-line">預約首次 NT$1200 一對一肩頸調整</a>
+  <span class="cta-location">高雄市左營區新庄仔路 726 號 3 樓</span>
+</section>
+
+<footer class="site">
+  <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$1200 肩頸調整</a><br>
+  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>
+  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
+</footer>
+
+<a class="line-float js-line" href="#" aria-label="預約首次 NT$1200 一對一肩頸調整">
+  <span>LINE 預約</span>
+  <b>原⁠價 NT$2000｜首⁠次 NT$1200 肩⁠頸調⁠整</b>
+</a>
+
+<!-- 手機底部固定 CTA -->
+<div class="nr-sticky">
+  <div class="p"><del>原價 NT$2,000</del><b>NT$1,200<small>首次・一對一肩頸調整</small></b></div>
+  <a href="#" class="js-line">LINE 預約</a>
+</div>
+
+<script src="site.js?v=4"></script>
+<script>
+/* CH.01 互動自測 */
+(function(){
+  var wrap=document.getElementById('nrCheck');if(!wrap)return;
+  var numEl=document.getElementById('nrNum'),msgEl=document.getElementById('nrMsg');
+  var msgs=[
+    ['勾勾看，讓肩頸自己說話。','每一項，都是肩頸長期替你「代班出力」留下的痕跡。'],
+    ['你的肩頸已經在跟你講話了。','有一項成立，通常代表它已經緊了一陣子——趁還沒變成常態，先看懂它。'],
+    ['這不是巧合，是同一件事的兩個面向。','中兩項以上，多半指向同一個源頭：用力習慣。這正是這堂課 50 分鐘在改的事。'],
+    ['你不是不夠放鬆，是一直用錯力。','中三項，代表放鬆完會「緊回來」幾乎是必然——單靠按摩，很難走出這個循環。'],
+    ['你的肩頸，替你扛太久了。','中四項以上，別再只是「撐著」。60 分鐘一對一，把它真的鬆開一次，也改掉讓它緊的習慣。'],
+    ['幾乎全中——它真的很需要這 60 分鐘。','先把肩頸鬆開一次，再學會不讓它緊回來。首次 NT$1,200，每人限一次。'],
+    ['全中。今天就是預約的好日子。','別讓它再替你扛下去。透過 LINE 預約，我們幫你安排一對一時段。']
+  ];
+  wrap.querySelectorAll('.ck').forEach(function(ck){
+    function toggle(){
+      ck.classList.toggle('on');
+      ck.setAttribute('aria-checked',ck.classList.contains('on')?'true':'false');
+      var n=wrap.querySelectorAll('.ck.on').length;
+      numEl.textContent=n;
+      var m=msgs[Math.min(n,msgs.length-1)];
+      msgEl.innerHTML='<b>'+m[0]+'</b><p>'+m[1]+'</p>';
+    }
+    ck.addEventListener('click',toggle);
+    ck.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}});
+  });
+})();
+</script>
+</body>
+</html>

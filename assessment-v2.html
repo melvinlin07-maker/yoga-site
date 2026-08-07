@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>［測試版・非正式頁］AI 體態檢測｜鑫彥瑜珈</title>
+<meta name="description" content="高雄左營・近巨蛋捷運 AI 體態檢測：約 20 分鐘，包含現場拍攝、姿勢角度分析與老師當面解讀。原價 NT$699，首次到店、事先透過 LINE 預約，每人限一次，首次優惠 NT$199。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
+<link rel="stylesheet" href="theme.css?v=10">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+/* ============ AI 體態檢測 V2・頁內樣式（不動 theme.css） ============ */
+.hero-trust{margin-top:14px;color:#f2e8ea;font-size:14px;font-weight:600;line-height:1.7}
+.hero-trust b{color:var(--gold-lt)}
+.hero-trust .g{color:#f2e8ea}
+
+/* Hero 公式膠囊 */
+.hero-formula{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero-formula .hf{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(4px);border-radius:999px;padding:7px 16px;color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.5px}
+.hero-formula .hf b{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-size:16px;margin-right:2px}
+.hero-formula .hf-op{color:var(--gold-lt);font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px}
+.hero-formula .hf--sum{background:var(--gold);border-color:var(--gold)}
+
+/* 章節標記 */
+.chap{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.chap b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:15px;letter-spacing:2px;color:var(--gold)}
+.chap span{flex:1;height:1px;background:var(--line-lt,#e8dfe3);max-width:80px}
+.chap i{font-style:normal;font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--pink)}
+
+/* ---- CH.01 互動自測 ---- */
+.nr-check{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.nr-check .ck{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1.5px solid var(--line-lt,#e8dfe3);border-radius:14px;padding:16px 18px;cursor:pointer;user-select:none;transition:.18s;box-shadow:0 4px 14px rgba(67,34,47,.05)}
+.nr-check .ck .box{flex:0 0 22px;height:22px;margin-top:1px;border:2px solid #cbb9c0;border-radius:7px;position:relative;transition:.18s;background:#fff}
+.nr-check .ck .box::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;opacity:0;transform:scale(.4);transition:.18s}
+.nr-check .ck p{margin:0;font-size:15px;line-height:1.65;color:var(--ink);font-weight:500}
+.nr-check .ck small{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:2px}
+.nr-check .ck.on{border-color:var(--gold);background:#fdf9f2;box-shadow:0 6px 18px rgba(176,141,87,.16)}
+.nr-check .ck.on .box{background:var(--gold);border-color:var(--gold)}
+.nr-check .ck.on .box::after{opacity:1;transform:scale(1)}
+.nr-verdict{margin-top:22px;background:var(--green-dk);color:#f3e9ec;border-radius:16px;padding:24px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.nr-verdict .num{font-family:"Noto Serif TC",serif;font-weight:900;font-size:44px;line-height:1;color:var(--gold-lt);min-width:74px;text-align:center}
+.nr-verdict .num small{display:block;font-size:12.5px;font-weight:600;letter-spacing:2px;color:#d8c3ca;margin-top:4px}
+.nr-verdict .msg{flex:1;min-width:220px}
+.nr-verdict .msg b{display:block;font-size:17.5px;margin-bottom:4px;color:#fff}
+.nr-verdict .msg p{margin:0;font-size:14.5px;line-height:1.75;color:#e4d4da}
+
+/* ---- CH.02 猜的循環 ---- */
+.nr-loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px;position:relative}
+.nr-loop .lp{position:relative;background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:14px;padding:20px 16px 18px;margin:0 14px;text-align:center;box-shadow:0 5px 16px rgba(67,34,47,.06)}
+.nr-loop .lp:not(:last-child)::after{content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:900;color:#c9b6bd;z-index:2}
+.nr-loop .lp .no{display:inline-block;font-family:"Noto Serif TC",serif;font-weight:900;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.nr-loop .lp b{display:block;font-size:15.5px;color:var(--ink);margin-bottom:6px}
+.nr-loop .lp p{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.nr-loop .lp--cut{border:2px dashed var(--pink)}
+.nr-loop-back{text-align:center;margin-top:18px;color:var(--muted);font-size:14px;font-weight:600}
+.nr-loop-back b{color:var(--pink)}
+.nr-cut-note{max-width:560px;margin:26px auto 0;text-align:center;background:#fdf4f8;border:1px solid #ecd3de;border-radius:14px;padding:18px 22px;font-size:15.5px;line-height:1.8;color:var(--ink)}
+.nr-cut-note b{color:var(--pink)}
+
+/* ---- CH.03 公式 ---- */
+.nr-formula{display:grid;grid-template-columns:1fr auto 1fr auto 1.15fr;align-items:stretch;gap:14px;margin-top:8px}
+.nr-formula .f-card{background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:16px;padding:26px 24px;box-shadow:0 6px 20px rgba(67,34,47,.06)}
+.nr-formula .f-op{display:flex;align-items:center;justify-content:center;font-family:"Noto Serif TC",serif;font-weight:900;font-size:34px;color:var(--gold)}
+.nr-formula .f-min{font-family:"Noto Serif TC",serif;font-weight:900;font-size:40px;line-height:1;color:var(--green-dk)}
+.nr-formula .f-min small{font-size:15px;font-weight:700;color:var(--muted);margin-left:4px}
+.nr-formula .f-kind{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:999px;margin:12px 0 10px}
+.nr-formula .f-card--a .f-kind{background:#eef1ec;color:var(--green-dk)}
+.nr-formula .f-card--p .f-kind{background:#f4ecef;color:var(--pink)}
+.nr-formula .f-card b{display:block;font-size:16.5px;color:var(--ink);margin-bottom:6px}
+.nr-formula .f-card p{margin:0;font-size:14px;line-height:1.75;color:var(--muted)}
+.nr-formula .f-card--sum{background:var(--green-dk);border-color:var(--green-dk);box-shadow:0 14px 34px rgba(67,34,47,.28)}
+.nr-formula .f-card--sum .f-sum-tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:999px;background:var(--gold);color:#fff;margin-bottom:12px}
+.nr-formula .f-card--sum b{color:#fff;font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.5}
+.nr-formula .f-card--sum p{color:#e4d4da}
+.pull-quote{max-width:760px;margin:36px auto 0;text-align:center;font-family:"Noto Serif TC",serif;font-weight:700;font-size:23px;line-height:1.7;color:var(--green-dk)}
+.pull-quote b{color:var(--gold);white-space:nowrap}
+
+/* 報告樣本併入 CH.03 */
+.assessment-samples{margin-top:34px}
+
+/* ---- CH.03b 三方對照 ---- */
+.nr-compare{margin-top:34px;overflow-x:auto}
+.nr-compare table{width:100%;border-collapse:separate;border-spacing:0;min-width:560px}
+.nr-compare th,.nr-compare td{padding:13px 14px;font-size:14.5px;text-align:center;border-bottom:1px solid var(--line-lt,#e8dfe3)}
+.nr-compare th{font-size:14px;letter-spacing:.5px}
+.nr-compare th:first-child,.nr-compare td:first-child{text-align:left;color:var(--ink);font-weight:600;width:38%}
+.nr-compare thead th{border-bottom:2px solid var(--green-dk);color:var(--muted)}
+.nr-compare .col-hl{background:#fdf9f2;color:var(--green-dk);font-weight:900}
+.nr-compare thead .col-hl{color:var(--green-dk);font-size:15px}
+.nr-compare .y{color:var(--gold);font-weight:900;font-size:16px}
+.nr-compare .n{color:#c9b6bd}
+.nr-compare .h{color:var(--muted);font-size:13px}
+.nr-compare tbody tr:last-child td{border-bottom:none}
+
+/* ---- CH.04 20 分鐘旅程 ---- */
+.nr-journey{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:8px}
+.nr-journey .jn{position:relative;background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-radius:16px;padding:24px 22px;box-shadow:0 6px 20px rgba(67,34,47,.06);display:flex;flex-direction:column}
+.nr-journey .jn .t{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.nr-journey .jn .t b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;color:var(--green-dk)}
+.nr-journey .jn .t span{font-size:12.5px;font-weight:700;color:var(--pink);letter-spacing:1px}
+.nr-journey .jn .bar{height:5px;border-radius:99px;background:#f0e7ea;margin:10px 0 16px;overflow:hidden}
+.nr-journey .jn .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-lt,#d9bd8a))}
+.nr-journey .jn h3{font-size:16.5px;color:var(--ink);margin:0 0 8px}
+.nr-journey .jn p{margin:0 0 14px;font-size:14px;line-height:1.8;color:var(--muted);flex:1}
+.nr-journey .jn .feel{background:#faf6ef;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:10px 14px;font-size:13.5px;line-height:1.7;color:var(--ink)}
+.nr-journey .jn .feel b{color:var(--gold);font-size:12px;letter-spacing:1.5px;display:block;margin-bottom:2px}
+
+/* ---- 評論 ---- */
+.assess-reviews{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.assess-reviews .ar{background:#fff;border:1px solid var(--line-lt,#e8dfe3);border-left:3px solid var(--gold);border-radius:12px;padding:22px 22px 18px;margin:0;box-shadow:0 6px 20px rgba(67,34,47,.06)}
+.assess-reviews .ar-stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+.assess-reviews .ar p{color:var(--ink);font-size:15.5px;line-height:1.85;margin:0 0 12px}
+.assess-reviews .ar cite{color:var(--muted);font-size:13.5px;font-style:normal;font-weight:600}
+.ar-band{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:28px;text-align:center}
+.ar-band span{color:var(--muted);font-size:14px}
+.ar-band b{display:block;font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;color:var(--green-dk);line-height:1.1}
+
+/* ---- 價格卡 value stack ---- */
+.nr-stack{max-width:430px;margin:0 auto 18px;text-align:left}
+.nr-stack li{display:flex;justify-content:space-between;gap:14px;padding:9px 2px;border-bottom:1px dashed rgba(255,255,255,.18);font-size:14.5px;color:#e9dce1}
+.nr-stack li b{color:#fff;font-weight:600}
+.nr-stack li span{color:var(--gold-lt);font-weight:700;white-space:nowrap}
+
+/* ---- 手機底部固定 CTA ---- */
+.nr-sticky{display:none}
+@media(max-width:640px){
+  .line-float{display:none!important}
+  .nr-sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green-dk);padding:10px 14px calc(10px + env(safe-area-inset-bottom));align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(43,30,35,.25)}
+  .nr-sticky .p{flex:1;line-height:1.35}
+  .nr-sticky .p del{display:block;color:#c8b2ba;font-size:12px}
+  .nr-sticky .p b{color:#fff;font-size:17px;font-family:"Noto Serif TC",serif}
+  .nr-sticky .p b small{font-size:11.5px;color:var(--gold-lt);font-weight:700;margin-left:4px}
+  .nr-sticky a{flex:0 0 auto;background:var(--gold);color:#fff;font-weight:900;font-size:15px;border-radius:999px;padding:12px 22px;text-decoration:none}
+  body{padding-bottom:74px}
+}
+
+/* ---- RWD ---- */
+@media(max-width:920px){
+  .nr-formula{grid-template-columns:1fr;gap:10px}
+  .nr-formula .f-op{padding:2px 0}
+  .nr-loop{grid-template-columns:1fr 1fr;row-gap:26px}
+  .nr-loop .lp{margin:0 20px 0 6px}
+  .nr-loop .lp:nth-child(2)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+  .nr-loop .lp:nth-child(4)::after{display:none}
+}
+@media(max-width:640px){
+  .nr-check{grid-template-columns:1fr}
+  .nr-journey{grid-template-columns:1fr}
+  .assess-reviews{grid-template-columns:1fr}
+  .ar-band{gap:20px}
+  .pull-quote{font-size:20px}
+  .nr-loop{grid-template-columns:1fr}
+  .nr-loop .lp{margin:0 6px}
+  .nr-loop .lp:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%)}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="鑫彥瑜珈">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="AI 體態檢測｜高雄左營・原價 NT$699・首次 NT$199">
+<meta property="og:description" content="約 20 分鐘，包含現場拍攝、姿勢角度分析與老師當面解讀。原價 NT$699，首次到店 NT$199，需事先透過 LINE 預約，每人限一次。">
+<meta property="og:url" content="https://sinyanyoga.com.tw/assessment.html">
+<meta property="og:image" content="https://sinyanyoga.com.tw/assets/wall-rope-suspension.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sinyanyoga.com.tw/assessment.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://sinyanyoga.com.tw/assessment.html#service",
+      "name": "AI 體態檢測",
+      "description": "高雄左營現場 AI 姿勢分析，包含現場拍攝、姿勢角度分析與老師當面解讀，約 20 分鐘。此服務為運動功能性姿勢評估，非醫學診斷。",
+      "serviceType": "AI 體態檢測與姿勢分析",
+      "areaServed": {
+        "@type": "City",
+        "name": "高雄市"
+      },
+      "provider": {
+        "@type": "HealthClub",
+        "@id": "https://sinyanyoga.com.tw/#organization",
+        "name": "鑫彥瑜珈運動館",
+        "telephone": "+886-7-556-7387",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "新庄仔路726號3樓",
+          "addressLocality": "左營區",
+          "addressRegion": "高雄市",
+          "postalCode": "813",
+          "addressCountry": "TW"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "首次體態了解方案：原價 NT$699，首次 NT$199",
+        "price": "199",
+        "priceCurrency": "TWD",
+        "url": "https://sinyanyoga.com.tw/assessment.html",
+        "availability": "https://schema.org/InStock",
+        "description": "AI 體態檢測原價 NT$699。首次到店限定 NT$199，需事先透過 LINE 預約，每人限一次。預約以 LINE 回覆確認的時段為準。"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sinyanyoga.com.tw/assessment.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "檢測要到現場做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的。檢測在高雄左營教室進行，老師會在現場協助拍攝、查看姿勢角度並當面解讀。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "原價 NT$699、首次 NT$199 包含什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "包含一次 AI 體態檢測的現場拍攝、姿勢角度分析，以及老師當面解讀。原價 NT$699，首次到店優惠 NT$199。此評估不是醫學診斷。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "誰可以使用首次 NT$199 優惠？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "限第一次到鑫彥瑜珈體驗 AI 體態檢測的訪客，每人限一次。請事先透過 LINE 預約，並以 LINE 回覆確認的時段為準。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "檢測需要多少時間？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "現場檢測與老師解讀約 20 分鐘，實際時間會依當天狀況略有不同。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "檢測完一定要報名課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不用。老師完成解讀後，是否進一步安排課程由訪客自行決定，沒有推銷壓力。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完全沒基礎、身體很硬，也能檢測嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。檢測是為了先了解目前的體態，不需要先具備瑜伽基礎。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- SEO-GEO:PAGE-GRAPH -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/assessment.html#webpage","url":"https://sinyanyoga.com.tw/assessment.html","name":"先搞清楚你的體態，再開始練。","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":{"@id":"https://sinyanyoga.com.tw/#organization"},"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/assessment.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"AI 體態檢測","item":"https://sinyanyoga.com.tw/assessment.html"}]}]}</script>
+<!-- /SEO-GEO:PAGE-GRAPH -->
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="assessment.html" class="active">AI 體態檢測</a></li>
+    <li><a href="classes.html">課程方式</a></li>
+    <li><a href="know-yoga.html">認識瑜伽</a></li>
+    <li><a href="blog.html">部落格</a></li>
+    <li><a href="about.html">關於鑫彥</a></li>
+    <li><a href="neck-release.html">一對一調整</a></li>
+  </ul>
+  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$199 檢測</a>
+  <button class="nav-toggle" aria-label="選單">☰</button>
+</div></nav>
+
+<header class="hero hero--short">
+<img src="assets/wall-rope-suspension.jpg" alt="鑫彥瑜珈壁繩瑜伽懸吊伸展課程">
+  <div class="wrap"><div class="hero-box">
+    <div class="eyebrow">高雄左營 · 近巨蛋捷運 · 約 20 分鐘 · 老師現場解讀</div>
+    <h1>先搞清楚你的體態，<br>再開始練。</h1>
+    <p>你覺得「怪怪的」，但說不出哪裡怪——那就別再猜了。20 分鐘，AI 把你的肩線、頭頸、脊椎、骨盆角度量出來，老師再當面講到你聽得懂。</p>
+    <div class="hero-formula" aria-label="檢測組合">
+      <span class="hf"><b>AI</b>把角度量出來</span>
+      <span class="hf-op">＋</span>
+      <span class="hf"><b>老師</b>講到你聽得懂</span>
+      <span class="hf-op">＝</span>
+      <span class="hf hf--sum">看得懂的下一步</span>
+    </div>
+    <div class="cta"><a href="#" class="btn js-line">預約首次 NT$199 AI 體態檢測</a></div>
+    <p class="hero-note">原價 NT$699 · 首次到店 NT$199 · 事先透過 LINE 預約 · 每人限一次</p>
+    <p class="hero-trust">⭐ Google <b>4.9★</b> · <span class="g">79 則真實好評</span> · 高雄左營在地教學 <b>10 年+</b></p>
+  </div></div>
+</header>
+
+<section class="trust-strip" aria-label="AI 體態檢測方案摘要">
+  <div class="wrap trust-grid">
+    <div><b>約 20 分⁠鐘</b><span>現場檢測與解讀</span></div>
+    <div><b><del>NT$699</del> NT$199</b><span>首次到店優惠</span></div>
+    <div><b>老⁠師解⁠讀</b><span>不是只看機器分數</span></div>
+    <div><b>不強⁠迫購⁠課</b><span>下一步由你決定</span></div>
+  </div>
+</section>
+
+<!-- CH.01 互動自測 -->
+<section class="section section--cream"><div class="wrap wrap--narrow">
+  <div class="chap"><b>01</b><span></span><i>先誠實勾選</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>這些「怪怪的」，你中了幾項？</h2>
+    <p>點一下就能勾選。說不出哪裡怪沒關係——先勾出「有感覺」的，剩下的交給檢測。</p>
+  </div>
+  <div class="nr-check" id="nrCheck">
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>站直沒多久，又縮回去駝著<small>覺得挺胸很累，好像不是自己的姿勢</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>拍照才發現：頭往前伸、肩膀一高一低<small>自己照鏡子看不出來，照片一拍就現形</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>肩頸常緊，按完沒幾天又回來<small>一直處理「緊」，但不知道緊是從哪來的</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>總覺得骨盆歪歪的、身體有一邊比較卡<small>走路、站姿、坐姿，左右就是不太一樣</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>有在運動，但不確定自己姿勢對不對<small>怕練錯越練越糟，又沒人幫你看</small></p></div>
+    <div class="ck" role="checkbox" aria-checked="false" tabindex="0"><span class="box"></span><p>鏡子裡覺得體態怪，又說不出哪裡怪<small>只有「感覺」，沒有「答案」</small></p></div>
+  </div>
+  <div class="nr-verdict" id="nrVerdict" aria-live="polite">
+    <div class="num"><span id="nrNum">0</span><small>／ 6 項</small></div>
+    <div class="msg" id="nrMsg">
+      <b>勾勾看，把「感覺」變成「線索」。</b>
+      <p>你勾的每一項，都是檢測當天可以直接拿出來問老師的問題。</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- CH.02 猜的循環 -->
+<section class="section"><div class="wrap">
+  <div class="chap"><b>02</b><span></span><i>看懂循環</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>為什麼查了那麼多，體態還是老樣子？</h2>
+    <p>不是你不夠認真。是你一直在用「別人的答案」，練「自己的身體」。</p>
+  </div>
+  <div class="nr-loop">
+    <div class="lp"><span class="no">STEP 1</span><b>覺得體態怪怪的</b><p>駝背、高低肩、骨盆歪——但只有感覺，沒有答案。</p></div>
+    <div class="lp"><span class="no">STEP 2</span><b>上網查、對號入座</b><p>看文章、滑影片，越查越覺得自己什麼都有。</p></div>
+    <div class="lp"><span class="no">STEP 3</span><b>照著影片練、去按摩</b><p>跟著做了一陣子，有時有感、有時沒感。</p></div>
+    <div class="lp lp--cut"><span class="no">STEP 4</span><b>沒對到你的問題</b><p>影片是拍給所有人的，不是拍給你的——然後回到 STEP 1。</p></div>
+  </div>
+  <p class="nr-loop-back">↺ 然後回到第一格，<b>繼續猜</b>——最貴的不是檢測費，是你猜錯方向的那幾個月。</p>
+  <div class="nr-cut-note">這次檢測要切的，就是 <b>STEP 4</b>：花 20 分鐘把你的角度<b>實際量出來</b>，從此不用再拿別人的答案套自己的身體。</div>
+</div></section>
+
+<!-- CH.03 方法：公式＋報告樣本＋對照 -->
+<section class="section section--cream"><div class="wrap">
+  <div class="chap"><b>03</b><span></span><i>這個檢測的做法</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>「AI 檢測，不就是機器給個分數嗎？」</h2>
+    <p>如果只有機器，那確實沒什麼——所以這 20 分鐘裡，真正值錢的是後半段：老師把數字翻譯成你聽得懂的下一步。</p>
+  </div>
+  <div class="nr-formula">
+    <div class="f-card f-card--a">
+      <div class="f-min">AI<small>量化</small></div>
+      <span class="f-kind">現場拍攝・姿勢角度分析</span>
+      <b>把「感覺怪」變成「看得見」</b>
+      <p>現場拍攝後，AI 呈現你的肩線高低、頭部前傾、脊椎與骨盆角度——不是憑印象，是把角度實際量出來。</p>
+    </div>
+    <div class="f-op">＋</div>
+    <div class="f-card f-card--p">
+      <div class="f-min">老師<small>解讀</small></div>
+      <span class="f-kind">當面一對一說明</span>
+      <b>把數字翻譯成「聽得懂」</b>
+      <p>老師當場陪你看報告：哪個角度值得留意、跟你平常的緊繃有什麼關聯、可以先從哪裡開始——不是給個分數就結束。</p>
+    </div>
+    <div class="f-op">＝</div>
+    <div class="f-card f-card--sum">
+      <span class="f-sum-tag">你會得到的</span>
+      <b>看得懂的<br>下一步。</b>
+      <p>走出教室時，你知道自己的體態現況、優先順序,以及要不要練、怎麼練——由你決定。</p>
+    </div>
+  </div>
+  <p class="pull-quote">AI 把角度<b>量出來</b>；<br>老師把角度變成<b>你聽得懂的下一步</b>。</p>
+
+  <div class="assessment-samples">
+    <figure class="frame">
+      <img src="assets/assessment-sample.jpg" alt="AI 體態檢測正面姿勢分析範例">
+      <figcaption>正面姿勢分析範例</figcaption>
+    </figure>
+    <figure class="frame">
+      <img src="assets/assessment-side-sample.jpg" alt="AI 體態檢測側面姿勢分析範例">
+      <figcaption>側面姿勢分析範例</figcaption>
+    </figure>
+  </div>
+  <p class="center assessment-disclaimer">實際檢測報告範例 · 運動功能性姿勢評估，非醫學診斷。</p>
+
+  <div class="nr-compare" aria-label="與其他方式的差別">
+    <table>
+      <thead><tr>
+        <th>想搞懂體態，你可以</th><th>上網自己查</th><th>直接開始上課</th><th class="col-hl">先做這個檢測</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>知道自己實際的姿勢角度</td><td class="n">✗ 用猜的</td><td class="n">✗</td><td class="col-hl y">✓</td></tr>
+        <tr><td>有人針對「你」解讀</td><td class="n">✗</td><td class="h">△ 團課顧不到每個人</td><td class="col-hl y">✓</td></tr>
+        <tr><td>20 分鐘就有結果</td><td class="h">△ 越查越亂</td><td class="n">✗ 要上好幾堂</td><td class="col-hl y">✓</td></tr>
+        <tr><td>入門成本</td><td class="h">免費，但容易套錯</td><td class="h">整期課費</td><td class="col-hl y">NT$199</td></tr>
+        <tr><td>之後怎麼練，有明確方向</td><td class="n">✗</td><td class="h">△ 邊上邊摸索</td><td class="col-hl y">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<!-- CH.04 20 分鐘旅程 -->
+<section class="section"><div class="wrap">
+  <div class="chap"><b>04</b><span></span><i>你的 20 分鐘</i></div>
+  <div class="sec-head" style="text-align:left">
+    <h2>走進教室之後，這 20 分鐘怎麼過</h2>
+    <p>不用換裝備、不用先熱身，身體很硬也完全沒問題——你只要人到就好。</p>
+  </div>
+  <div class="nr-journey">
+    <div class="jn">
+      <div class="t"><b>0–5</b><span>分鐘・現場拍攝</span></div>
+      <div class="bar"><i style="width:25%"></i></div>
+      <h3>站好，交給 AI</h3>
+      <p>老師協助你完成正面與側面的拍攝，AI 開始分析你的肩線、頭頸、脊椎與骨盆角度。全程就是自然站好，不需要任何基礎。</p>
+      <div class="feel"><b>你會感覺到</b>比想像中簡單——很多人最緊張的就是這段，結果 5 分鐘就結束了。</div>
+    </div>
+    <div class="jn">
+      <div class="t"><b>5–12</b><span>分鐘・看見自己</span></div>
+      <div class="bar"><i style="width:60%"></i></div>
+      <h3>你的角度，第一次攤在眼前</h3>
+      <p>報告出來：肩線差多少、頭前傾多少度、骨盆往哪偏——平常只能「感覺」的東西，第一次變成看得見的畫面和數字。</p>
+      <div class="feel"><b>你會感覺到</b>「原來是這裡」——很多人看到側面照的那一刻，就明白自己為什麼一直緊。</div>
+    </div>
+    <div class="jn">
+      <div class="t"><b>12–20</b><span>分鐘・老師解讀</span></div>
+      <div class="bar"><i style="width:100%"></i></div>
+      <h3>把數字變成你的下一步</h3>
+      <p>老師當面說明：哪些角度值得優先留意、跟你日常的痠緊有什麼關聯、如果想調整可以從哪開始。想繼續就聊，不想就帶著報告回家——沒有推銷。</p>
+      <div class="feel"><b>你會感覺到</b>踏實——「怪怪的」終於有了名字和方向，接下來要不要練、怎麼練，你自己說了算。</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 現場實拍 -->
+<section class="section section--cream"><div class="wrap">
+  <div class="sec-head">
+    <div class="eyebrow" style="color:var(--pink)">現場解讀實拍</div>
+    <h2>不是只看報告，老師會當面陪你看懂</h2>
+    <p>你看到的不只是數值。現場會由老師協助說明姿勢畫面、身體觀察，以及後續可以先留意的方向。</p>
+  </div>
+  <div class="assessment-photo-grid">
+    <figure class="frame assessment-photo assessment-photo--wide">
+      <img src="assets/assessment-consult-wide.jpg" alt="阿美老師在鑫彥瑜珈接待區為學員現場說明 AI 體態檢測結果">
+      <figcaption>現場解讀檢測畫面與姿勢觀察</figcaption>
+    </figure>
+    <figure class="frame assessment-photo assessment-photo--main">
+      <img src="assets/assessment-consult-main.jpg" alt="阿美老師拿著平板為學員說明 AI 體態檢測結果">
+      <figcaption>老師當面陪你看懂，不是自己猜數字</figcaption>
+    </figure>
+    <figure class="frame assessment-photo assessment-photo--portrait">
+      <img src="assets/assessment-consult-portrait.jpg" alt="鑫彥瑜珈學員於現場接受 AI 體態檢測解讀">
+      <figcaption>現場一對一說明，更容易問清楚自己的狀況</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- 帶走的 -->
+<section class="section section--dark"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow">檢測完你會拿到</div><h2>一份看得懂的「體態成績單」</h2></div>
+  <div class="cards">
+    <div class="card"><div class="body"><span class="tag">01</span><h3>姿勢角度畫面</h3><p>從報告中查看肩線、頭部、脊椎與骨盆等姿勢角度。</p></div></div>
+    <div class="card"><div class="body"><span class="tag">02</span><h3>老師當面解讀</h3><p>由老師協助閱讀畫面，不需要自己猜測數字代表什麼。</p></div></div>
+    <div class="card"><div class="body"><span class="tag">03</span><h3>優先觀察方向</h3><p>依當天檢測結果，討論目前可以先留意的身體使用方式。</p></div></div>
+  </div>
+</div></section>
+
+<!-- 評論 -->
+<section class="section"><div class="wrap wrap--narrow">
+  <div class="sec-head"><div class="eyebrow" style="color:var(--pink)">學員怎麼說</div><h2>做過檢測的人，怎麼說</h2></div>
+  <div class="assess-reviews">
+    <blockquote class="ar">
+      <div class="ar-stars">★★★★★</div>
+      <p>今天體驗 AI 檢測與調整，身體狀況沒有想像中的好，經過老師的調整，覺得肩頸放鬆了，腰部感覺比較鬆了，很棒的一次體驗。</p>
+      <cite>— 黃之柔 · Google 評論</cite>
+    </blockquote>
+    <blockquote class="ar">
+      <div class="ar-stars">★★★★★</div>
+      <p>用姿勢檢測來評估身體結構，讓我們進入課程後能以更標準的動作來學習，避免運動傷害產生，是很好的瑜珈運動館。</p>
+      <cite>— 徐芳芳 · Google 評論</cite>
+    </blockquote>
+  </div>
+  <div class="ar-band">
+    <span><b>4.9★</b>Google 平均評分</span>
+    <span><b>75</b>則 Google 真實好評</span>
+    <span><b>10 年+</b>高雄左營在地教學</span>
+  </div>
+  <div class="center" style="margin-top:26px"><a class="text-link" href="reviews.html">看更多學員見證 →</a></div>
+</div></section>
+
+<!-- 價格卡 -->
+<section class="section section--dark offer-section"><div class="wrap wrap--narrow center">
+  <div class="sec-head">
+    <div class="eyebrow">首次到店方案</div>
+    <h2>先用一次檢測，了解自己的體態</h2>
+  </div>
+  <div class="price-card">
+    <span class="ptag">FIRST VISIT · 首次到店限定</span>
+    <p class="pname">AI 體態檢測（現場拍攝、姿勢角度分析、老師當面解讀）</p>
+    <ul class="nr-stack">
+      <li><b>現場拍攝＋AI 姿勢角度分析</b><span>把角度實際量出來</span></li>
+      <li><b>老師一對一當面解讀</b><span>不用自己猜數字</span></li>
+      <li><b>體態成績單</b><span>肩線・頭頸・脊椎・骨盆</span></li>
+      <li><b>優先觀察方向</b><span>之後怎麼練，有方向</span></li>
+    </ul>
+    <p class="price-compare"><span>原價 NT$699</span><b>首次到店優惠</b></p>
+    <p class="amt"><small>首次體態了解方案</small><br>NT$199</p>
+    <ul class="offer-details">
+      <li>所需時間：約 20 分鐘</li>
+      <li>優惠資格：首次到店、事先透過 LINE 預約，每人限一次</li>
+      <li>預約是否成立，以 LINE 回覆確認的時段為準</li>
+      <li>檢測後不強迫報名課程</li>
+    </ul>
+    <a href="#" class="btn js-line">預約首次 NT$199 AI 體態檢測</a>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="section section--cream"><div class="wrap wrap--narrow">
+  <div class="sec-head"><div class="eyebrow" style="color:var(--pink)">常見問題</div><h2>關於檢測，常見問題</h2></div>
+  <div class="faq" id="faq">
+    <details><summary>檢測要到現場做嗎？</summary><p>是的。檢測在高雄左營教室進行，老師會在現場協助拍攝、查看姿勢角度並當面解讀。</p></details>
+    <details><summary>原價 NT$699、首次 NT$199 包含什麼？</summary><p>包含一次 AI 體態檢測的現場拍攝、姿勢角度分析，以及老師當面解讀。原價 NT$699，首次到店優惠 NT$199。此評估不是醫學診斷。</p></details>
+    <details><summary>誰可以使用首次 NT$199 優惠？</summary><p>限第一次到鑫彥瑜珈體驗 AI 體態檢測的訪客，每人限一次。請事先透過 LINE 預約，並以 LINE 回覆確認的時段為準。</p></details>
+    <details><summary>檢測需要多少時間？</summary><p>現場檢測與老師解讀約 20 分鐘，實際時間會依當天狀況略有不同。</p></details>
+    <details><summary>檢測完一定要報名課程嗎？</summary><p>不用。老師完成解讀後，是否進一步安排課程由你決定，沒有推銷壓力。</p></details>
+    <details><summary>完全沒基礎、身體很硬，也能檢測嗎？</summary><p>可以。檢測是為了先了解目前的體態，不需要先具備瑜伽基礎。</p></details>
+  </div>
+</div></section>
+
+<section class="content-bridge"><div class="wrap content-bridge-grid">
+  <div>
+    <span class="secondary-label">還沒準備預約</span>
+    <h2>先從認識瑜伽開始</h2>
+    <p>壁繩、瑜伽動作與新手練習，整理成三條容易閱讀的入門路徑。</p>
+    <a class="text-link" href="know-yoga.html">進入認識瑜伽 →</a>
+    <div class="mini-links" aria-label="相關體態文章">
+      <a href="blog-rounded-shoulder-self-test.html">圓肩自我檢查</a>
+      <a href="blog-forward-head-daily.html">頭部前傾與日常習慣</a>
+      <a href="blog-uneven-shoulders-hips.html">左右不平衡怎麼觀察</a>
+    </div>
+  </div>
+  <div class="featured-resource-mini">
+    <img src="assets/res-neck-selftest.jpg" alt="肩頸壓力自測免費資源">
+    <div><span class="secondary-label">本期免費資源</span><h2>《肩頸壓力自測》</h2><p>想先在家整理肩頸狀態，可透過 LINE 免費索取。</p><a class="text-link" href="resources.html">查看免費資源 →</a></div>
+  </div>
+</div></section>
+
+<!-- AI-ASSESSMENT-READING:START -->
+<section class="section ai-assessment-reading" aria-labelledby="ai-reading-title"><div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">預約前先判斷</p>
+        <h2 id="ai-reading-title">還不確定自己適不適合 AI 體態檢測？</h2>
+        <p>這 6 篇判斷文會把「上課、按摩、先檢測、先觀察」分清楚，讓你在預約前更知道自己想問什麼。</p>
+      </div>
+      <div class="series-grid">
+          <a class="series-card" href="blog-class-massage-or-ai-assessment.html">
+            <span>判斷文</span>
+            <strong>你需要的是上課、按摩，還是先做一次 AI 體態檢測？</strong>
+          </a>
+          <a class="series-card" href="blog-no-pain-ai-posture-assessment.html">
+            <span>分流文</span>
+            <strong>明明沒有很痛，為什麼身體還是怪怪的？這 5 種狀況適合先做體態檢測</strong>
+          </a>
+          <a class="series-card" href="blog-recurring-neck-tightness-not-just-neck.html">
+            <span>肩頸</span>
+            <strong>肩頸反覆緊，不一定是肩頸的問題：什麼時候不該再一直拉？</strong>
+          </a>
+          <a class="series-card" href="blog-posture-bracing-compensation.html">
+            <span>代償</span>
+            <strong>越想把姿勢撐好，越累？你可能在用補償代替調整</strong>
+          </a>
+          <a class="series-card" href="blog-rounded-shoulders-hunchback-uneven-shoulders-different.html">
+            <span>體態</span>
+            <strong>看起來都是「姿勢不好」：圓肩、駝背、高低肩，為什麼不能用同一套方法處理？</strong>
+          </a>
+          <a class="series-card" href="blog-who-needs-ai-posture-assessment.html">
+            <span>決策文</span>
+            <strong>哪些人不必急著做 AI 體態檢測？先用這份判斷表決定</strong>
+          </a>
+      </div>
+    </div></section>
+<!-- AI-ASSESSMENT-READING:END -->
+<section class="cta-band">
+  <div class="eyebrow" style="justify-content:center">看清楚，才知道怎麼開始</div>
+  <h2>預約你的首次 AI 體態檢測</h2>
+  <p>加入 LINE 安排到店時段。約 20 分鐘，包含現場拍攝、姿勢角度分析與老師當面解讀；原價 NT$699，首次到店優惠 NT$199。</p>
+  <a href="#" class="btn js-line">預約首次 NT$199 AI 體態檢測</a>
+  <span class="cta-location">高雄市左營區新庄仔路 726 號 3 樓</span>
+</section>
+
+<footer class="site">
+  <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$199 AI 體態檢測</a><br>
+  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>
+  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
+</footer>
+
+<a class="line-float js-line" href="#" aria-label="預約首次 NT$199 AI 體態檢測">
+  <span>LINE 預約</span>
+  <b>原⁠價 NT$699｜首⁠次 NT$199 AI 檢⁠測</b>
+</a>
+
+<!-- 手機底部固定 CTA -->
+<div class="nr-sticky">
+  <div class="p"><del>原價 NT$699</del><b>NT$199<small>首次・AI 體態檢測</small></b></div>
+  <a href="#" class="js-line">LINE 預約</a>
+</div>
+
+<script src="site.js?v=4"></script>
+<script>
+/* CH.01 互動自測 */
+(function(){
+  var wrap=document.getElementById('nrCheck');if(!wrap)return;
+  var numEl=document.getElementById('nrNum'),msgEl=document.getElementById('nrMsg');
+  var msgs=[
+    ['勾勾看，把「感覺」變成「線索」。','你勾的每一項，都是檢測當天可以直接拿出來問老師的問題。'],
+    ['有感覺，就值得看一眼。','一項成立，通常不是最近才開始的——20 分鐘就能知道它是不是姿勢角度造成的。'],
+    ['這兩件事，可能是同一個原因。','中兩項以上，常常指向同一個姿勢源頭——與其分開猜，不如一次量清楚。'],
+    ['你已經「感覺」很久了，該「看見」了。','中三項，代表光靠感覺和上網查已經不夠——把角度量出來，才知道該從哪裡開始。'],
+    ['別再猜了，猜不出來的。','中四項以上，身體給你的訊號已經夠多了。20 分鐘、NT$199，把答案一次看清楚。'],
+    ['幾乎全中——你最需要的就是一份答案。','與其繼續累積「怪怪的」，不如花 20 分鐘讓 AI 和老師告訴你到底是哪裡。'],
+    ['全中。今天就是看清楚的好日子。','透過 LINE 預約首次檢測，把這 6 個「怪怪的」，變成一份看得懂的體態成績單。']
+  ];
+  wrap.querySelectorAll('.ck').forEach(function(ck){
+    function toggle(){
+      ck.classList.toggle('on');
+      ck.setAttribute('aria-checked',ck.classList.contains('on')?'true':'false');
+      var n=wrap.querySelectorAll('.ck.on').length;
+      numEl.textContent=n;
+      var m=msgs[Math.min(n,msgs.length-1)];
+      msgEl.innerHTML='<b>'+m[0]+'</b><p>'+m[1]+'</p>';
+    }
+    ck.addEventListener('click',toggle);
+    ck.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}});
+  });
+})();
+</script>
+</body>
+</html>
