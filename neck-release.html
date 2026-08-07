@@ -435,7 +435,7 @@
   }
 </style>
 </head>
-<body data-lead-value="1500" data-lead-name="AI posture assessment + 1-on-1 neck release" data-lead-category="1-on-1 neck & shoulder release" data-line-message="我想了解 AI 體態檢測＋一對一肩頸調整 NT$1,500">
+<body data-lead-value="1500" data-lead-name="AI posture assessment + 1-on-1 neck release" data-lead-category="1-on-1 neck & shoulder release" data-line-message="我想了解 AI 體態檢測＋一對一肩頸調整 NT$1,500" data-line-event="Contact">
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="index.html">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
@@ -779,7 +779,7 @@
         <p>我們會在你方便的時段跟你聯絡，<br>確認你的首次檢測與調整。</p>
       </div>
 
-      <p class="rf-side">還有問題想先問？<a id="sideLine" href="#" target="_blank" rel="noopener">加 LINE 聊聊 →</a></p>
+      <p class="rf-side">還有問題想先問？<a id="sideLine" class="js-line" href="#" target="_blank" rel="noopener">加 LINE 聊聊 →</a></p>
     </div>
 
     <div class="faq" style="margin-top:90px">
@@ -832,7 +832,7 @@
 </div>
 
 <noscript><style>.fade{opacity:1!important;transform:none!important}</style></noscript>
-<script src="site.js?v=4"></script>
+<script src="site.js?v=5"></script>
 <script>
 // 進場淡入
 if('IntersectionObserver' in window){
@@ -867,13 +867,10 @@ window.addEventListener('scroll', function(){
   dock.classList.toggle('show', y > window.innerHeight*1.1 && fTop > window.innerHeight*.5);
 },{passive:true});
 
-// 側門 LINE（不計入 Lead）
-var sideLine = document.getElementById('sideLine');
-if(sideLine && typeof LINE_URL !== 'undefined'){ sideLine.href = LINE_URL; }
+// 側門 LINE：交給 site.js 的 .js-line 統一處理（送出 Contact 事件，見 body[data-line-event]）
 
 // ═══ 預約表單（正門）═══
-// TODO: 接上 n8n 後，把 WEBHOOK_URL 換成 n8n 的 Webhook 網址。
-var WEBHOOK_URL = "";
+var WEBHOOK_URL = "https://melvinlin07-n8n.zeabur.app/webhook/neck-release-lead";
 var form = document.getElementById('reserveForm');
 var errEl = document.getElementById('rf-err');
 form.addEventListener('submit', function(e){

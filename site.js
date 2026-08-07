@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
       var leadValue = Number(body.getAttribute("data-lead-value")) || 199;
       var leadName = body.getAttribute("data-lead-name") || "LINE AI posture assessment reservation";
       var leadCategory = body.getAttribute("data-lead-category") || "AI posture assessment";
+      // 頁面可用 <body data-line-event="Contact"> 把 LINE 點擊降級成「詢問」事件，
+      // 讓真正的轉換（如站內表單）保留 Lead 給廣告優化用。未設定時維持原行為（Lead），不影響其他既有頁面。
+      var lineEventName = body.getAttribute("data-line-event") || "Lead";
 
       gtag("event", "line_reservation_click", {
         link_url: LINE_URL,
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         value: leadValue,
         currency: "TWD"
       });
-      fbq("track", "Lead", {
+      fbq("track", lineEventName, {
         content_name: leadName,
         content_category: leadCategory,
         value: leadValue,
