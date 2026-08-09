@@ -142,6 +142,9 @@
 
   .fade{opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease}
   .fade.in{opacity:1; transform:none}
+  /* Hero 首屏：改用純 CSS 進場動畫，載入即淡入，不等 JS，避免首屏內容被判定為「長時間空白」拖垮 FCP/LCP */
+  .open .fade{animation:heroReveal .9s ease both}
+  @keyframes heroReveal{from{opacity:0; transform:translateY(26px)} to{opacity:1; transform:none}}
 
   /* ═══ Hero：診斷主導 ═══ */
   .open{min-height:auto; padding:76px 24px 84px; overflow:hidden}
