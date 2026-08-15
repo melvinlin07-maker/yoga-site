@@ -63,9 +63,20 @@
 
 ## 3. Working tree(本機狀態)
 
-**網站程式碼:無修改中的檔案。** 沒有 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
+> ⚠️ **本節已過期(基準是舊 commit `3943a1b`)。以下記錄 2026-08-15 對話中新增的異動,尚未 commit / push / 部署,僅存在本機。**
 
-**但 working tree 並非完全空白** — 存在 untracked 檔案,詳見第 4 節。描述時應使用「網站程式碼無異動」而非籠統的「working tree 乾淨」。
+**2026-08-15 新增的本機異動(未部署):**
+- **全站 56 篇 blog 文章**新增「30秒重點」TL;DR 摘要區塊 + 「常見問題」FAQ 手風琴區塊 + 對應的 `FAQPage` JSON-LD schema。內容皆從各篇文章既有文字改寫,未新增未查證的說法,未加強醫療/療效宣稱。
+- `index.html` 的 Organization(`HealthClub`)schema 新增 `employee` → 新的 `Person` 節點,登記阿美老師(黃淑美)的職稱與證照(取自 `about.html` 既有簡介文字,未新增新資訊)。
+- 修正 `blog-stiff-neck-crick.html`、`blog-stiff-body-wall-rope.html` 的縮圖重複問題(原本共用 `art07.jpg`/`art05.jpg`),改用專屬圖 `blog-stiffneck.jpg`、`blog-wallropebody.jpg`,`blog.html` 索引縮圖同步更新。
+- 清除 `blog-who-needs-ai-posture-assessment.html` 內殘留的內部草稿筆記(「CTA 建議：」「錨文字：」「Q1～Q4」裸文字段落),內容已保留在正式 FAQ 區塊中,未遺失資訊。
+
+**已知仍待處理(低優先,未動):**
+- `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` 這三張壁繩教學圖跨 9–14 個頁面共用(含非 blog 頁面)。已評估視覺重複感低、對 SEO 影響小,列為低優先,尚未處理。
+
+**其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
+
+**working tree 並非完全空白** — 存在 untracked 檔案,詳見第 4 節。描述時應使用「網站程式碼無異動」而非籠統的「working tree 乾淨」(此描述現已不成立,見上方 2026-08-15 異動)。
 
 ---
 
@@ -150,7 +161,9 @@
 
 > **注意:** 預填訊息目前只能分辨「**哪一頁 / 哪個方案 / 哪個商業版本**」,**無法分辨「哪一則廣告」**。廣告層級歸因缺口見第 8 節。
 
-- **需外部查核:** 哪些頁面已完成真機測試確認 LINE CTA 可正常開啟並預填成功;目前盤點範圍內**沒有找到任何測試紀錄或標記**,一律視為未驗證
+- **✅ 2026-08-14 已驗證(手機實測,`neck-release.html`):** 點擊 LINE CTA 會正確開啟 `line.me/R/oaMessage/@561wigip/?...` 深連結,直接跳進「鑫彥瑜珈運動館」官方帳號(manager.line.biz 後台核對,300 位好友)聊天室,並成功帶入預填文字。
+  > ⚠️ **桌機瀏覽器行為差異(非錯誤):** 同一連結在桌機瀏覽器(無 LINE 桌面 App)點擊會退回顯示 `line.me` 一般宣傳頁,不會開啟聊天室。這是 `oaMessage` 深連結在無 App 環境下的正常行為,**不代表帳號設定錯誤**,真實客群多為手機瀏覽器,以手機實測結果為準。
+  > **尚待查核範圍:** 僅 `neck-release.html` 一頁完成手機實測;其餘頁面(`assessment.html` 等)LINE CTA 是否成功仍未驗證。
 
 ---
 
@@ -194,6 +207,15 @@
 > **全站沒有任何 UTM / query string / referrer 讀取邏輯。**
 > 實查確認:`URLSearchParams`、`location.search`、`utm_`、`document.referrer` 在全部 96 個 HTML 與 `site.js` 中**皆不存在**。
 > 表單 payload 的 `page` 僅為 `location.pathname`(**不含 query string**),`source` 為寫死字串 `'neck-release'`。
+>
+> **2026-08-14 部分緩解(僅 GA4 層級,未動網站程式碼):** 已在 Meta Ads Manager 中,對當下唯一在投的廣告(2026.08.11-新的開發潛在lead-38-58-(6心理)-鑫彥3KM-20萬,廣告 ID `120254482908190350`)的「網址參數」欄位設定 `utm_source=facebook&utm_medium=paid-social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}`,GA4 可依此拆廣告活動/組合/廣告名稱看流量。
+> **僅套用於這一則廣告,非帳戶層級預設**——之後新建廣告需另外設定或用「建立複本」延續。此舉**不解決** lead 層級歸因(見上方候選方案②,仍需改 `site.js`,尚未採用)。
+>
+> **新廣告要貼的網址參數(複製下面這串,貼到該廣告編輯畫面的「網址參數」欄位):**
+> ```
+> utm_source=facebook&utm_medium=paid-social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}
+> ```
+> 從零建立的新廣告需手動貼;用「建立複本」複製已貼過的廣告則會自動延續,不用重貼。
 
 **影響:** 漏斗第一層「廣告 → Lead」**目前完全無法歸因**。現況只能知道 lead 來自哪一頁,**無法知道來自哪一則廣告、哪一組受眾**。
 對應的候選解法見第 11 節(尚未採用)。
@@ -399,7 +421,7 @@
 1. ~~GitHub Pages 部署是否等於 repo~~ → ✅ **2026-08-09 已驗證一致**(線上 `site.js?v=5`、GA4/Pixel、body `data-*`、表單四欄、webhook URL 全吻合)
 2. ~~n8n webhook 是否實測跑通~~ → ✅ **2026-08-09 已驗證**:endpoint 回 `200 {"ok":true}`、CORS preflight 正確放行正式網域(`Access-Control-Allow-Origin: https://sinyanyoga.com.tw`)、表單送出後 Google 試算表新增列 + LINE 通知皆成功(使用者確認)
 3. `neck-release.html` 表單送出的 Meta Pixel `Lead` 與 GA4 `generate_lead` — 程式碼已確認接線(`neck-release.html:900-901`),webhook 收單鏈已驗證;但**客戶端事件實際發射尚未直接觀測**(2026-08-09 瀏覽器實測被安全閘擋下)。⚠️ 結構性風險仍在:`done()` 於 fetch 失敗時仍會發射事件(`neck-release.html:912`),webhook 若曾故障會誤報成功
-4. 全站 LINE CTA 真機測試狀態(repo 內零測試紀錄,一律視為未驗證)
+4. 全站 LINE CTA 真機測試狀態 → **`neck-release.html` 已於 2026-08-14 手機實測通過**(詳見第 7 節);**其餘頁面仍未驗證**
 
 ### 外部後台類(常設查核項)
 5. **各 Landing Page 目前是否仍有 Meta 廣告投放 → 一律以當下 Meta Ads 後台為準,本文件不寫死**
