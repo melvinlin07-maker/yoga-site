@@ -612,6 +612,15 @@
         });
         trackV4MetaEvent("V4LineClick", { cta_location: ctaLocation });
         trackV4MetaLead();
+
+        // Phase 1 shadow event. Button text is "我想看清楚自己的結果" — an interest/understand
+        // CTA, not explicit reservation wording — so this is cta_purpose "contact", never
+        // ReservationIntent. No offer/value metadata attached (see site.js LineClick contract).
+        trackV4MetaEvent("LineClick", {
+          page_path: window.location.pathname,
+          cta_location: ctaLocation,
+          cta_purpose: "contact"
+        });
       });
     });
 

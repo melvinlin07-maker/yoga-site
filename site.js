@@ -72,6 +72,37 @@ document.addEventListener("DOMContentLoaded", function () {
         currency: "TWD"
       });
 
+      // ── Phase 1 shadow events (migration, does not replace legacy Lead/Contact above) ──
+      // Button-level classification takes priority; unclassified buttons still get LineClick
+      // (with no offer/value guessing) but never ReservationIntent.
+      var linePurpose = a.getAttribute("data-line-purpose") || "";
+      var ctaLocation = a.getAttribute("data-cta-location") || "unspecified";
+      var offer = a.getAttribute("data-offer") || "";
+
+      var lineClickParams = {
+        page_path: window.location.pathname,
+        cta_location: ctaLocation,
+        cta_purpose: linePurpose || "unclassified"
+      };
+      if (offer) lineClickParams.offer = offer;
+      fbq("trackCustom", "LineClick", lineClickParams);
+
+      // ReservationIntent requires the button's own explicit reservation wording
+      // (data-line-purpose="reservation"), never inferred from the offer/destination alone.
+      if (linePurpose === "reservation") {
+        var reservationParams = {
+          page_path: window.location.pathname,
+          cta_location: ctaLocation
+        };
+        if (offer) reservationParams.offer = offer;
+        var offerValue = a.getAttribute("data-offer-value");
+        if (offerValue) {
+          reservationParams.value = Number(offerValue);
+          reservationParams.currency = "TWD";
+        }
+        fbq("trackCustom", "ReservationIntent", reservationParams);
+      }
+
       // 若頁面 <body> 設定 data-line-message，開啟 LINE 官方帳號聊天室並預填該文字；
       // 未設定時維持原行為（開啟 LINE_URL），不影響其他既有頁面。
       var lineMessage = body.getAttribute("data-line-message");
