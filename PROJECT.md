@@ -19,42 +19,42 @@
 
 ## 2. Production(已正式上線 / 可公開索引)
 
-以下頁面為公開、可被索引的正式頁面(HEAD `3943a1b` 版本,**96 個 HTML 檔案平鋪於根目錄,無子目錄**):
+以下頁面為公開、可被索引的正式頁面(2026-08-21 實查,**111 個 HTML 檔案平鋪於根目錄,無子目錄**):
 
 - `index.html`(首頁)
 - `assessment.html`(AI 體態檢測,正式引流頁)
 - `neck-release.html`(一對一肩頸調整正式頁,已整併取代舊實驗版,已接 n8n webhook)
 - `about.html`、`about-poses.html`、`about-wall-rope.html`
 - `classes.html`、`contact.html`、`know-yoga.html`、`practice-guide.html`
-- `blog.html` + **46 篇** `blog-*.html` 文章
+- `blog.html` + **59 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
 - `privacy.html`、`terms.html`、`disclaimer.html`
 
-> **數量修正紀錄(2026-08-08):** 前一版本記載為 50 篇 blog + 25 篇 pose,實查為 **46 篇 blog + 27 篇 pose**,總數 96 不變。sitemap 內的 blog(46)與 pose(27)數量與實檔完全一致,三方交叉驗證通過。
+> **數量修正紀錄(2026-08-21):** 依 `SEO_CONTENT_SOP.md` 流程新增 3 篇 blog(`blog-first-time-ai-assessment.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-choosing-first-class-format.html`,已 commit `1f1ef40` 並 push),56 篇 → **59 篇 blog**,總數 107 → **111 個 HTML**(此外前次 107 的統計本身有 1 個微小落差未追溯成因,以本次逐檔 exact-match 重新核對過的 111 為準)。sitemap 內 blog(59)與 pose(27)數量與實檔完全一致。
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
 **站上公開價格:** 僅出現 NT$199 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
 
 **共用檔案(Production,全站生效):**
-- `site.js?v=5` — **94 頁引用**,版本號一致
-- `theme.css?v=10` — **93 頁引用**,版本號一致
+- `site.js?v=5` — **109 頁引用**(2026-08-21 實查;隨新增文章數同步成長)
+- `theme.css?v=10` — **106 頁引用**(2026-08-21 實查)
 - `sitemap.xml`、`robots.txt`、`favicon.svg`
 - `google0081f56f050ce756.html` — Google Search Console 驗證檔(不引用 site.js/theme.css,特例)
 
-**未引用共用檔的頁面(實查,影響範圍評估必讀):**
+**未引用共用檔的頁面(2026-08-18 實查,影響範圍評估必讀):**
 
 | 未引用 | 頁面 |
 |---|---|
 | 未引用 `site.js` | `google0081f56f050ce756.html`、`guide.html` |
-| 未引用 `theme.css` | `assessment-v3.html`、`neck-release-v3.html`、`google0081f56f050ce756.html` |
+| 未引用 `theme.css` | `assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html`、`google0081f56f050ce756.html` |
 
-> ⚠️ **`assessment-v3.html` 與 `neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。** 修改 `theme.css` **不會**影響這兩個落地頁,評估影響範圍時不可寫成「全站」。
+> ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
-**Sitemap 收錄範圍(2026-08-08 已逐條核對,結案):**
-- 共 **90 條 `<loc>`** = 96 個 HTML − 6 個隱藏/工具頁;首頁以 `/` 形式收錄
-- 46 篇 blog + 27 篇 pose **全數在列**
-- 正確排除:`assessment-v2.html`、`assessment-v3.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`
+**Sitemap 收錄範圍(2026-08-21 重新逐條核對,結案):**
+- 共 **103 條 `<loc>`** = 111 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
+- 59 篇 blog + 27 篇 pose **全數在列**(exact-match 逐檔核對,新增的 3 篇已一併加入)
+- 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
 - **結論:收錄範圍完全正確,此項不再列為待確認**
 
 `robots.txt` 內容:`User-agent: *` / `Allow: /` / `Sitemap: https://sinyanyoga.com.tw/sitemap.xml`
@@ -83,6 +83,7 @@
 ## 4. Draft / Untracked(尚未進 git 歷史)
 
 - `.claude/` — Claude Code 工具設定目錄(內含 `launch.json`),非網站內容
+- `yoga-beginner-v1.html` — 2026-08-19 新增的零基礎入門廣告 LP,詳見第 6 節 Landing Page Registry 與 `DECISIONS.md` 第 17 條。**尚未 commit / push / 部署**
 - `assets/ChatGPT Image 2026年8月5日 下午*.png` × 10 — 新圖片素材,**盤點時未被任何 HTML 檔案引用**,狀態為草稿,尚未套用到任何頁面
 - `gcm-diagnose.log` — Git Credential Manager 診斷 log,位於根目錄。**未列入 `.gitignore`,因此會持續出現在 `git status`**。
   > **狀態:僅記錄現況。** 使用者已明確指示本次**不刪除、不加入 `.gitignore`、不做任何處理**。
@@ -129,6 +130,7 @@
 | `neck-release.html` | 肩頸調整正式頁(整併取代舊實驗版) | 1500 | 無版號(正式頁) | 無版號字樣 | **公開正式頁** | ✅在 | 指向自己 | 可索引(無 robots meta) | 1500 / 1-on-1 neck & shoulder release | **未驗證** |
 | `neck-release-v1.html` | 舊實驗版 | 1500 | v1 | 無 data-line-message | 廣告隱藏頁(舊) | 不在 | 指向 neck-release.html | noindex,nofollow | 無 | **未驗證** |
 | `neck-release-v3.html` | 舊實驗版(敘事型) | 1200 | v3 | 「V1」(刻意的商業版本標記,與檔名版本不同) | 廣告隱藏頁(舊) | 不在 | **指向自己(非 neck-release.html)** | noindex,nofollow | 1200 / 1-on-1 neck & shoulder release | **未驗證** |
+| `yoga-beginner-v1.html` | 零基礎入門廣告 LP(2026-08-19 新增,見 `DECISIONS.md` 第 17 條) | 399(不綁後續方案,刻意不與其他資源做贈品式包裝) | v1 | 無版號字樣 | 廣告隱藏頁 | 不在 | 指向自己 | noindex,follow(使用者本次指定) | 399 / beginner yoga trial class | **未驗證**(本機用 DOM 層級驗證過 LINE 深連結與追蹤事件,未做手機真機測試) |
 
 **`neck-release.html` 的 Offer 組成(程式碼層級):**
 其 `data-lead-name` 為 `AI posture assessment + 1-on-1 neck release`,`data-line-message` 為「我想了解 AI 體態檢測＋一對一肩頸調整 NT$1,500」 — 即**程式碼層級為「檢測＋調整」的組合方案(bundle)**,而非單一肩頸服務。
@@ -226,9 +228,9 @@
 
 | 檔案 | 實際影響範圍 |
 |---|---|
-| `site.js` | **94 頁**的 LINE 按鈕邏輯、GA4 載入、Meta Pixel 載入、行動選單。未引用者:`google0081f56f050ce756.html`、`guide.html` |
-| `theme.css` | **93 頁**視覺樣式。**不影響** `assessment-v3.html`、`neck-release-v3.html`(自帶內嵌樣式)、`google0081f56f050ce756.html` |
-| `sitemap.xml` / `robots.txt` | 全站 SEO 索引範圍 |
+| `site.js` | **109 頁**(2026-08-21 實查)的 LINE 按鈕邏輯、GA4 載入、Meta Pixel 載入、行動選單。未引用者:`google0081f56f050ce756.html`、`guide.html` |
+| `theme.css` | **106 頁**(2026-08-21 實查)視覺樣式。**不影響** `assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html`(自帶內嵌樣式)、`google0081f56f050ce756.html` |
+| `sitemap.xml` / `robots.txt` | 全站 SEO 索引範圍(現況 100 條 `<loc>`,見第 2 節) |
 
 ---
 
@@ -338,6 +340,30 @@
 這是目前所有廣告與轉換判斷的根本限制。
 
 ### 10.7 在地搜尋 / Google 商家檔案
+
+#### ⚠️ Google 評價 = Dynamic Business Fact(會隨時間變動,不得當成永久固定事實)
+
+| 項目 | 目前值 |
+|---|---|
+| Google 評分 | **4.9★** |
+| Google 評價數 | **88 則** |
+| 最後人工查核日期 | **2026-08-17**(使用者提供 Google 商家搜尋結果截圖佐證) |
+| 性質 | **Dynamic Business Fact** |
+| Source of Truth | **Google 商家目前公開頁面 / 商家後台**(不是 repo、不是本文件) |
+
+**變動證據:** 2026-08-09 查核為 87 則 → 2026-08-17 為 88 則。8 天內即變動,證明此數字必然持續變化。
+
+**規則(強制):**
+
+1. 未來若網站頁面、schema、Landing Page 之間出現**不同的評價數**,**不得自行判斷哪一個舊數字正確**,也不得取「多數決」。
+2. 一律**重新查核 Google 商家的最新公開數字**,再以該數字**同步更新全站所有頁面與 schema**,並更新本表的查核日期。
+3. 更新時需涵蓋**兩種寫法**,否則會漏改:
+   - 純文字:`88 則真實好評`、`88 則評論`
+   - 被標籤切開:`<b>88</b>則…`、`<b>88</b><span>則…</span>`
+4. schema `reviewCount` 與頁面可見文字**必須一致**(不一致會讓 Google 收到與畫面不符的結構化資料)。
+
+**2026-08-17 同步紀錄:** 全站 11 個檔案已統一為 88(schema 4 處:`index.html`、`about.html`、`contact.html`、`reviews.html`;可見文字:`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`)。修正前站上同時存在 **75 與 79 兩種數字**(`assessment.html` 內部即自相矛盾:hero 寫 79、trust band 寫 75)。
+> ⚠️ 僅完成本機檔案修改,**尚未 commit / push / 部署**。
 
 - **Google 商家檔案(Google Business Profile)狀態:已認領**(使用者 2026-08-09 口頭確認,並提供商家後台截圖佐證:「鑫彥瑜珈運動館」,4.9 星、87 則 Google 評論)。實際優化程度(照片、貼文頻率、分類是否正確)**未查核**。
 - **✅ 2026-08-09 已修正:** 透過公開 Google 地圖搜尋比對地址(新庄仔路726號3樓)確認商家 CID 為 `3869696325150721929`。已將 `contact.html` 的地圖 iframe 由通用地址查詢改為此 CID 的直接嵌入,並在 `contact.html`(2 處)與 `index.html`(1 處)的 `sameAs` 陣列加入 `https://maps.google.com/?cid=3869696325150721929`(與原有 Facebook 連結並存,未取代)。詳見 `DECISIONS.md` 第 15 條。
