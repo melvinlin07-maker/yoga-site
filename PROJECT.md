@@ -19,26 +19,26 @@
 
 ## 2. Production(已正式上線 / 可公開索引)
 
-以下頁面為公開、可被索引的正式頁面(2026-08-21 實查,**111 個 HTML 檔案平鋪於根目錄,無子目錄**):
+以下頁面為公開、可被索引的正式頁面(2026-08-21 實查,**112 個 HTML 檔案平鋪於根目錄,無子目錄**):
 
 - `index.html`(首頁)
 - `assessment.html`(AI 體態檢測,正式引流頁)
 - `neck-release.html`(一對一肩頸調整正式頁,已整併取代舊實驗版,已接 n8n webhook)
 - `about.html`、`about-poses.html`、`about-wall-rope.html`
 - `classes.html`、`contact.html`、`know-yoga.html`、`practice-guide.html`
-- `blog.html` + **59 篇** `blog-*.html` 文章
+- `blog.html` + **60 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
 - `privacy.html`、`terms.html`、`disclaimer.html`
 
-> **數量修正紀錄(2026-08-21):** 依 `SEO_CONTENT_SOP.md` 流程新增 3 篇 blog(`blog-first-time-ai-assessment.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-choosing-first-class-format.html`,已 commit `1f1ef40` 並 push),56 篇 → **59 篇 blog**,總數 107 → **111 個 HTML**(此外前次 107 的統計本身有 1 個微小落差未追溯成因,以本次逐檔 exact-match 重新核對過的 111 為準)。sitemap 內 blog(59)與 pose(27)數量與實檔完全一致。
+> **數量修正紀錄(2026-08-21,分兩批):** 依 `SEO_CONTENT_SOP.md` 流程,同一天內共新增 4 篇 blog。第一批 3 篇(`blog-first-time-ai-assessment.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-choosing-first-class-format.html`,commit `1f1ef40`)56→59 篇;第二批 1 篇(`blog-ai-assessment-not-just-numbers.html`,commit `b1f506e`)59→**60 篇 blog**,總數 111→**112 個 HTML**。sitemap 內 blog(60)與 pose(27)數量與實檔完全一致。
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
 **站上公開價格:** 僅出現 NT$199 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
 
 **共用檔案(Production,全站生效):**
-- `site.js?v=5` — **109 頁引用**(2026-08-21 實查;隨新增文章數同步成長)
-- `theme.css?v=10` — **106 頁引用**(2026-08-21 實查)
+- `site.js?v=5` — **110 頁引用**(2026-08-21 實查;隨新增文章數同步成長)
+- `theme.css?v=10` — **107 頁引用**(2026-08-21 實查)
 - `sitemap.xml`、`robots.txt`、`favicon.svg`
 - `google0081f56f050ce756.html` — Google Search Console 驗證檔(不引用 site.js/theme.css,特例)
 
@@ -52,8 +52,8 @@
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
 **Sitemap 收錄範圍(2026-08-21 重新逐條核對,結案):**
-- 共 **103 條 `<loc>`** = 111 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
-- 59 篇 blog + 27 篇 pose **全數在列**(exact-match 逐檔核對,新增的 3 篇已一併加入)
+- 共 **104 條 `<loc>`** = 112 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
+- 60 篇 blog + 27 篇 pose **全數在列**(exact-match 逐檔核對,新增的 4 篇已一併加入)
 - 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
 - **結論:收錄範圍完全正確,此項不再列為待確認**
 
@@ -228,8 +228,8 @@
 
 | 檔案 | 實際影響範圍 |
 |---|---|
-| `site.js` | **109 頁**(2026-08-21 實查)的 LINE 按鈕邏輯、GA4 載入、Meta Pixel 載入、行動選單。未引用者:`google0081f56f050ce756.html`、`guide.html` |
-| `theme.css` | **106 頁**(2026-08-21 實查)視覺樣式。**不影響** `assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html`(自帶內嵌樣式)、`google0081f56f050ce756.html` |
+| `site.js` | **110 頁**(2026-08-21 實查)的 LINE 按鈕邏輯、GA4 載入、Meta Pixel 載入、行動選單。未引用者:`google0081f56f050ce756.html`、`guide.html` |
+| `theme.css` | **107 頁**(2026-08-21 實查)視覺樣式。**不影響** `assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html`(自帶內嵌樣式)、`google0081f56f050ce756.html` |
 | `sitemap.xml` / `robots.txt` | 全站 SEO 索引範圍(現況 100 條 `<loc>`,見第 2 節) |
 
 ---
