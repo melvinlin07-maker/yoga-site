@@ -57,14 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
       // 頁面可用 <body data-line-event="Contact"> 把 LINE 點擊降級成「詢問」事件，
       // 讓真正的轉換（如站內表單）保留 Lead 給廣告優化用。未設定時維持原行為（Lead），不影響其他既有頁面。
       var lineEventName = body.getAttribute("data-line-event") || "Lead";
+      // 按鈕層級用途分類（同一訊號也驅動下方 Meta 的 LineClick / ReservationIntent）。
+      var linePurpose = a.getAttribute("data-line-purpose") || "";
 
-      gtag("event", "line_reservation_click", {
+      // GA4：contact 用途的 LINE 點擊送 line_contact_click（不帶預約 value），
+      // reservation 與未分類（unclassified）維持原本的 line_reservation_click，不影響其他既有頁面。
+      var gaEventName = linePurpose === "contact" ? "line_contact_click" : "line_reservation_click";
+      var gaParams = {
         link_url: LINE_URL,
         link_text: a.textContent.trim(),
-        page_path: window.location.pathname,
-        value: leadValue,
-        currency: "TWD"
-      });
+        page_path: window.location.pathname
+      };
+      if (linePurpose !== "contact") {
+        gaParams.value = leadValue;
+        gaParams.currency = "TWD";
+      }
+      gtag("event", gaEventName, gaParams);
       fbq("track", lineEventName, {
         content_name: leadName,
         content_category: leadCategory,
@@ -75,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // ── Phase 1 shadow events (migration, does not replace legacy Lead/Contact above) ──
       // Button-level classification takes priority; unclassified buttons still get LineClick
       // (with no offer/value guessing) but never ReservationIntent.
-      var linePurpose = a.getAttribute("data-line-purpose") || "";
+      // (linePurpose already read above, reused here for the Meta side.)
       var ctaLocation = a.getAttribute("data-cta-location") || "unspecified";
       var offer = a.getAttribute("data-offer") || "";
 
