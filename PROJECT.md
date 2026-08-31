@@ -19,14 +19,14 @@
 
 ## 2. Production(已正式上線 / 可公開索引)
 
-以下頁面為公開、可被索引的正式頁面(2026-08-29 實查,**115 個 HTML 檔案平鋪於根目錄,無子目錄**):
+以下頁面為公開、可被索引的正式頁面(2026-08-31 實查,**116 個 HTML 檔案平鋪於根目錄,無子目錄**):
 
 - `index.html`(首頁)
 - `assessment.html`(AI 體態檢測,正式引流頁)
 - `neck-release.html`(一對一肩頸調整正式頁,已整併取代舊實驗版,已接 n8n webhook)
 - `about.html`、`about-poses.html`、`about-wall-rope.html`
 - `classes.html`、`contact.html`、`know-yoga.html`、`practice-guide.html`
-- `blog.html` + **63 篇** `blog-*.html` 文章
+- `blog.html` + **64 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
 - `privacy.html`、`terms.html`、`disclaimer.html`
@@ -34,7 +34,8 @@
 > **數量修正紀錄(2026-08-21,分兩批):** 依 `SEO_CONTENT_SOP.md` 流程,同一天內共新增 4 篇 blog。第一批 3 篇(`blog-first-time-ai-assessment.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-choosing-first-class-format.html`,commit `1f1ef40`)56→59 篇;第二批 1 篇(`blog-ai-assessment-not-just-numbers.html`,commit `b1f506e`)59→60 篇 blog,總數 111→112 個 HTML。
 > **數量修正紀錄(2026-08-26):** 發現 `blog-honest-limits-wall-rope.html` 已寫好但未上架。經使用者確認後補上架,60→61 篇 blog,總數 112→113 個 HTML。
 > **數量修正紀錄(2026-08-27):** 依新流程(今天寫、隔天發布)新增 `blog-is-it-frozen-shoulder.html`(五十肩誠實分流文),61→62 篇 blog,總數 113→114 個 HTML。
-> **數量修正紀錄(2026-08-29):** 上架 `blog-arm-flab-rounded-shoulders.html`(蝴蝶袖與姿勢的關係),原訂 8/28 發布但當天無進度,8/29 補發布前已將文中佔位日期(published_time/modified_time/畫面日期)同步修正為實際發布日,加入 `blog.html` 圓肩駝背分類 + `sitemap.xml`,62→**63 篇 blog**,總數 114→**115 個 HTML**。
+> **數量修正紀錄(2026-08-29):** 上架 `blog-arm-flab-rounded-shoulders.html`(蝴蝶袖與姿勢的關係),62→63 篇 blog,總數 114→115 個 HTML。
+> **數量修正紀錄(2026-08-31):** 上架 `blog-pelvic-floor-leaks.html`(骨盆底肌／漏尿,參考國外 Yoga Journal anatomy 分類選題),發布前已將文中佔位日期同步修正為實際發布日,加入 `blog.html` 骨盆・下半身分類 + `sitemap.xml`,63→**64 篇 blog**,總數 115→**116 個 HTML**。
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
 **站上公開價格:** 僅出現 NT$199 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
@@ -54,9 +55,9 @@
 
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
-**Sitemap 收錄範圍(2026-08-29 更新):**
-- 共 **107 條 `<loc>`** = 115 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
-- 63 篇 blog + 27 篇 pose **全數在列**(2026-08-29 上架 `blog-arm-flab-rounded-shoulders.html` 後已同步)
+**Sitemap 收錄範圍(2026-08-31 更新):**
+- 共 **108 條 `<loc>`** = 116 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
+- 64 篇 blog + 27 篇 pose **全數在列**(2026-08-31 上架 `blog-pelvic-floor-leaks.html` 後已同步)
 - 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
 - **結論:收錄範圍完全正確,此項不再列為待確認**
 
