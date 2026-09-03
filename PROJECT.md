@@ -78,7 +78,7 @@
 - 清除 `blog-who-needs-ai-posture-assessment.html` 內殘留的內部草稿筆記(「CTA 建議：」「錨文字：」「Q1～Q4」裸文字段落),內容已保留在正式 FAQ 區塊中,未遺失資訊。
 
 **已知仍待處理(低優先,未動):**
-- `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` 這三張壁繩教學圖跨 9–14 個頁面共用(含非 blog 頁面)。已評估視覺重複感低、對 SEO 影響小,列為低優先,尚未處理。
+- `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` 這三張壁繩教學圖原本跨 9–14 個頁面共用(含非 blog 頁面)。**2026-09-03 部分處理:** 使用者主導的 A/B/C/D 分組換圖計畫(共24張),已完成 A組(7篇,取代 wall-rope-suspension.jpg)+ B組(7篇,取代 wall-rope-teacher.jpg),共14篇 blog 文章換上專屬 AI 生成圖(commit `1fe3684`)。`wall-rope-teacher.jpg`/`wall-rope-suspension.jpg` 現僅保留在各自真正歸屬頁(`blog-first-class-what-to-bring.html`、`blog-what-is-wall-rope.html`)+ 非 blog 頁面(`index.html`、`assessment.html`、`assessment-v2/v3.html`、`about-wall-rope.html`、`contact.html`、`neck-release-v1.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`,這些不在本次清理範圍)。**C組(6篇)、D組(3篇)尚未處理**,`wall-rope-inversion.jpg` 完全未動。
 
 **其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
 
