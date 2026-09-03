@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>高雄一對一肩頸調整｜AI 體態檢測 + 一對一調整・首次 NT$699｜鑫彥瑜珈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
+<script>
+/* 與正式站共用同一組 GA4 / Meta Pixel（sinyanyoga.com.tw/site.js 讀出的真實ID），
+   這樣兩個變體的流量都會進同一個廣告帳號的成效數據裡。 */
+var GA_MEASUREMENT_ID = "G-6X3PD7NMMG";
+var META_PIXEL_ID = "1594348069032790";
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+
+(function loadGoogleAnalytics(){
+  var script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+  document.head.appendChild(script);
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID);
+})();
+
+(function loadMetaPixel(){
+  if (window.fbq) return;
+  var fbq = window.fbq = function(){
+    fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+  };
+  if (!window._fbq) window._fbq = fbq;
+  fbq.push = fbq; fbq.loaded = true; fbq.version = "2.0"; fbq.queue = [];
+  var script = document.createElement("script");
+  script.async = true;
+  script.src = "https://connect.facebook.net/en_US/fbevents.js";
+  document.head.appendChild(script);
+  fbq("init", META_PIXEL_ID);
+  fbq("track", "PageView");
+})();
+</script>
+<style>
+  :root{
+    --night:#161019;
+    --dusk:#2b1c26;
+    --plum:#43222f;
+    --dawn:#6d4a52;
+    --cream:#f6efe4;
+    --paper:#fbf7ef;
+    --gold:#c6a15b;
+    --gold-lt:#e3cf9a;
+    --ink:#241a1e;
+    --hero-photo:url(assets/hero-neck.png);
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%}
+  body{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; background:var(--night); color:#fff; line-height:1.9; overflow-x:hidden; max-width:100vw}
+  ::selection{background:var(--gold); color:#1a1208}
+  .serif{font-family:"Noto Serif TC",serif}
+  h1,h2,h3,.serif,.keyline,.turn h2,.cta,.dock a{text-wrap:balance}
+  p{text-wrap:pretty}
+  .nb{white-space:nowrap}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+
+  /* nav */
+  .nav{background:var(--plum); position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(255,255,255,.14)}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:74px}
+  .brand-lockup{color:#fff; text-decoration:none; font-family:"Noto Serif TC",serif; font-weight:700; font-size:18px; line-height:1.3}
+  .brand-lockup small{display:block; font-family:"Noto Sans TC",sans-serif; font-weight:400; font-size:11px; color:var(--gold-lt); letter-spacing:.08em}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; background:linear-gradient(135deg,#e0b24b,#c6892e); color:#20140a; font-weight:700; padding:11px 22px; border-radius:8px; text-decoration:none; font-size:14px; box-shadow:0 8px 22px rgba(160,110,30,.3)}
+
+  .sc{position:relative; padding:104px 24px}
+  .sc-inner{max-width:680px; margin:0 auto}
+  .sc.night{background:var(--night)}
+  .sc.night2{background:linear-gradient(180deg,var(--night),var(--dusk))}
+  .sc.dusk{background:linear-gradient(180deg,var(--dusk),var(--plum))}
+  .sc.plum{background:var(--plum)}
+  .sc.dawn{background:linear-gradient(180deg,var(--plum),var(--dawn))}
+  .sc.morning{background:linear-gradient(180deg,var(--dawn),var(--cream)); color:var(--ink)}
+  .sc.day{background:var(--paper); color:var(--ink)}
+
+  /* Hero */
+  .open{min-height:auto; padding:76px 24px 84px; overflow:hidden}
+  .open::before{content:""; position:absolute; inset:0; z-index:0;
+    background:
+      linear-gradient(180deg, rgba(22,16,25,.86) 0%, rgba(22,16,25,.93) 55%, var(--night) 100%),
+      var(--hero-photo) right center / cover no-repeat;}
+  .open-grid{position:relative; z-index:1; max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 400px; gap:52px; align-items:center}
+  .open .brand{font-size:12.5px; letter-spacing:.32em; color:#9b8f96; margin-bottom:26px}
+  .open h1{font-size:clamp(29px,5.3vw,47px); font-weight:900; line-height:1.5; letter-spacing:.02em}
+  .open h1 em{font-style:normal; color:var(--gold-lt)}
+  .open .sub{margin-top:24px; color:#c4b7bd; font-size:16px; font-weight:300}
+  .open .sub b{color:#fff; font-weight:500}
+
+  .hero-formula{display:flex; flex-direction:column; align-items:flex-start; gap:9px; margin-top:26px}
+  .hf-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+  .hero-formula .hf{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:7px 15px; color:#fff; font-size:13px; font-weight:700}
+  .hero-formula .hf b{color:var(--gold-lt); font-family:"Noto Serif TC",serif; font-size:15px; margin-right:3px}
+  .hero-formula .hf-op{color:var(--gold-lt); font-family:"Noto Serif TC",serif; font-weight:900; font-size:17px}
+  .hero-formula .hf--ai{background:rgba(227,207,154,.16); border-color:rgba(227,207,154,.62); color:var(--gold-lt)}
+  .hero-formula .hf--ai b{color:#fff}
+  .hero-formula .hf--sum{background:var(--gold); border-color:var(--gold); color:#231800}
+
+  .hero-cta{margin-top:32px}
+  .hero-cta .cta{font-size:16px; padding:18px 36px}
+  .hero-note{margin-top:16px; color:#b3a6ad; font-size:13px; font-weight:300}
+  .hero-trust{margin-top:10px; color:#cdbfc5; font-size:13px; font-weight:600}
+  .hero-trust b{color:var(--gold-lt)}
+
+  .hero-shot{position:relative; border-radius:16px; overflow:hidden; border:1px solid rgba(227,207,154,.4); background:#fff; box-shadow:0 34px 80px rgba(0,0,0,.6)}
+  .hero-shot img{width:100%; height:auto; display:block}
+  .hero-shot .tagline{position:absolute; top:0; left:0; right:0; background:linear-gradient(180deg,rgba(22,16,25,.9),transparent); color:var(--gold-lt); font-size:11.5px; letter-spacing:.2em; padding:11px 14px; font-weight:700}
+  .hero-shot .cap{background:var(--plum); color:#f0e2e6; font-size:12.5px; padding:11px 15px; line-height:1.65; text-align:center}
+  .hero-shot .cap b{color:var(--gold-lt)}
+
+  /* 症狀濃縮條 */
+  .pain{text-align:center}
+  .pain .sc-inner{max-width:1040px}
+  .pain .small{font-size:14px; color:#c7b8bd; letter-spacing:.1em; margin-bottom:16px}
+  .pain h2{font-family:"Noto Serif TC",serif; font-size:clamp(24px,4.8vw,36px); font-weight:900; line-height:1.65; max-width:640px; margin-left:auto; margin-right:auto}
+  .pain h2 em{font-style:normal; color:var(--gold-lt)}
+  .symptom-photos{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin:48px 0 0}
+  .symptom-photos .tile{position:relative; border-radius:12px; overflow:hidden; aspect-ratio:3/4; background:linear-gradient(160deg,#5a4326,#3a2c18); border:1px solid rgba(255,255,255,.14)}
+  .symptom-photos .tile img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+  .symptom-photos .tile .cap{position:absolute; left:0; right:0; bottom:0; padding:10px 10px 12px; background:linear-gradient(to top,rgba(10,5,8,.85),transparent 85%); color:#f2e9d4; font-size:12px; line-height:1.45; text-align:center; font-weight:300}
+  .pain .close{margin-top:44px; font-family:"Noto Serif TC",serif; font-size:clamp(19px,3.6vw,25px); font-weight:700; line-height:1.85; color:#fff}
+  .pain .close em{font-style:normal; color:var(--gold-lt)}
+
+  /* 打破迷思 */
+  .turn{text-align:center}
+  .turn .small{font-size:14px; color:#c7b8bd; letter-spacing:.1em; margin-bottom:16px}
+  .turn h2{font-size:clamp(24px,5vw,38px); font-weight:900; line-height:1.65}
+  .turn h2 em{font-style:normal; color:var(--gold-lt)}
+  .cause-list{margin:56px auto 0; max-width:540px; display:flex; flex-direction:column; gap:30px; text-align:left}
+  .cause-row .c{font-family:"Noto Serif TC",serif; font-weight:900; font-size:clamp(19px,3.4vw,23px); color:#fff}
+  .cause-row .e{margin-top:8px; font-size:15px; color:#e6dbde; font-weight:300}
+  .cause-row .e b{color:var(--gold-lt); font-weight:500}
+  .keyline{margin:52px auto 0; max-width:540px; text-align:center; font-family:"Noto Serif TC",serif; font-size:clamp(19px,3.6vw,25px); font-weight:700; line-height:1.9; color:#fff}
+  .keyline em{font-style:normal; border-bottom:2px solid var(--gold); padding-bottom:2px}
+
+  /* STEP 標頭 */
+  .step-head{text-align:center; margin-bottom:42px; max-width:640px; margin-left:auto; margin-right:auto}
+  .step-tag{display:inline-block; font-size:12px; letter-spacing:.2em; font-weight:700; border-radius:999px; padding:6px 16px; margin-bottom:20px}
+  .step-head h2{font-family:"Noto Serif TC",serif; font-size:clamp(24px,5vw,38px); font-weight:900; line-height:1.6}
+  .step-head .lead{margin-top:22px; font-size:16px; font-weight:300; text-align:left}
+
+  /* STEP 1：AI 體態檢測 */
+  .assess{max-width:960px; margin:0 auto}
+  .assess .step-tag{color:var(--gold-lt); background:rgba(227,207,154,.14); border:1px solid rgba(227,207,154,.5)}
+  .assess .step-head h2{color:#fff}
+  .assess .step-head .lead{color:#e6d9dd}
+  .assess .step-head .lead b{color:#fff; font-weight:500}
+  .assess-figs{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .assess-figs figure{background:#fff; border:1px solid rgba(36,26,30,.12); border-radius:14px; overflow:hidden; box-shadow:0 18px 44px rgba(0,0,0,.15); position:relative}
+  .assess-figs img{width:100%; display:block; aspect-ratio:3/4; object-fit:cover}
+  .assess-figs figcaption{padding:12px 16px; font-size:13px; color:#8a7a80; text-align:center}
+  .assess-note{text-align:center; font-size:12.5px; color:#c0b0b6; margin-top:14px}
+  .assess-checks{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:38px}
+  .assess-checks div{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:18px 20px}
+  .assess-checks b{display:block; font-family:"Noto Serif TC",serif; font-size:15.5px; color:var(--gold-lt); margin-bottom:6px}
+  .assess-checks span{font-size:13.5px; color:#ded2d7; font-weight:300}
+  .assess-checks .trustnote{grid-column:1/-1; background:rgba(227,207,154,.1); border-color:rgba(227,207,154,.4)}
+  .assess-bridge{margin-top:44px; text-align:center; font-family:"Noto Serif TC",serif; font-size:clamp(18px,3.4vw,23px); font-weight:700; color:#fff; line-height:1.85}
+  .assess-bridge em{font-style:normal; border-bottom:2px solid var(--gold); padding-bottom:2px}
+
+  /* STEP 2：一對一調整 */
+  .fix .step-tag{color:var(--gold-lt); background:rgba(227,207,154,.14); border:1px solid rgba(227,207,154,.5)}
+  .fix .step-head h2{color:#fff}
+  .fix .step-head .lead{color:#e6d9dd}
+  .fix .step-head .lead b{color:#fff; font-weight:500}
+  .root{max-width:960px; margin:0 auto}
+  .root .path{margin:0 0 34px; display:flex; align-items:center; justify-content:center; gap:6px; font-size:14px; color:#d9c8cd; text-align:center; flex-wrap:wrap}
+  .root .path span{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); padding:10px 16px; border-radius:999px; white-space:nowrap}
+  .root .path i{color:var(--gold); font-style:normal}
+  .root p{font-size:16.5px; color:#eadfe2; font-weight:300; margin-bottom:18px}
+  .root p b{color:#fff; font-weight:500}
+  .root > p:not(.pull-quote){max-width:680px; margin-left:auto; margin-right:auto}
+  .face{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px}
+  .face .side{padding:42px 24px; text-align:center; border-radius:18px; border:1px solid rgba(255,255,255,.18)}
+  .face .side.a{background:rgba(0,0,0,.35)}
+  .face .side.b{background:rgba(227,207,154,.12)}
+  .face .side .ic{font-size:36px; display:block; margin-bottom:14px}
+  .face .side h4{font-family:"Noto Serif TC",serif; font-size:17px; margin-bottom:14px; color:#fff}
+  .face .side.b h4{color:var(--gold-lt)}
+  .face .side ul{list-style:none; font-size:14.5px; color:#d9ccd0; font-weight:300; display:flex; flex-direction:column; gap:8px}
+  .face .side.b ul{color:#f2e9d4}
+  .pull-quote{max-width:640px; margin:44px auto 0; text-align:center; font-family:"Noto Serif TC",serif; font-weight:500; font-size:clamp(15px,2.6vw,17px); line-height:1.85; color:#d9c8cd}
+
+  /* 為什麼一對一 + who */
+  .solo{max-width:960px; margin:0 auto}
+  .solo .step-tag{color:#8a6d2f; background:rgba(198,161,91,.18); border:1px solid rgba(198,161,91,.55)}
+  .solo .step-head h2{color:var(--plum)}
+  .solo .step-head .lead{color:#5c4a51}
+  .solo .step-head .lead b{color:var(--plum); font-weight:700}
+  .flow-line{text-align:center; font-size:14.5px; line-height:2.3; color:#6b575e; margin:0 auto 44px; padding-bottom:36px; border-bottom:1px dashed rgba(36,26,30,.18); max-width:680px}
+  .flow-line b{color:var(--plum)}
+  .flow-line i{color:var(--gold); font-style:normal; margin:0 2px}
+  .vs{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .vs-col{background:#fff; border:1px solid rgba(36,26,30,.12); border-radius:16px; padding:26px 22px}
+  .vs-col--b{background:linear-gradient(180deg,#fffdf7,#fbf3e2); border-color:rgba(198,161,91,.5); box-shadow:0 18px 46px rgba(198,161,91,.26)}
+  .vs-tag{display:inline-block; font-family:"Noto Serif TC",serif; font-size:15.5px; font-weight:900; color:#8a7a80; border-bottom:2px solid rgba(36,26,30,.18); padding-bottom:6px; margin-bottom:16px}
+  .vs-col--b .vs-tag{color:var(--plum); border-color:var(--gold)}
+  .vs-col ul{list-style:none; display:flex; flex-direction:column; gap:11px; font-size:14.5px; color:#6b575e; font-weight:300; line-height:1.75}
+  .vs-col li::before{content:"·"; color:var(--gold); font-weight:900; margin-right:8px}
+  .vs-col--b li{color:#4a3a40}
+  .vs-col li b{color:var(--plum); font-weight:700}
+  .who-lead{text-align:center; margin:46px auto 18px; font-size:15px; color:#6b575e; font-weight:300; max-width:680px}
+  .who-split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px}
+  .who-col b{display:block; text-align:center; font-size:13.5px; color:var(--plum); font-weight:700; margin-bottom:10px}
+  .who{display:flex; flex-direction:column; gap:8px}
+  .who div{background:rgba(255,255,255,.78); border:1px solid rgba(36,26,30,.1); border-radius:10px; padding:12px 14px; font-size:13.5px; color:#5c4a51; text-align:center; line-height:1.6}
+  .who-col.caution div{background:rgba(199,80,50,.08); border-color:rgba(199,80,50,.25); color:#7a3a2a}
+
+  /* 收據方案卡 */
+  .receipt{background:#fff; color:var(--ink); border-radius:14px; max-width:520px; margin:0 auto; padding:38px 36px; box-shadow:0 30px 80px rgba(0,0,0,.3)}
+  .receipt .rh{text-align:center; border-bottom:1px dashed rgba(36,26,30,.25); padding-bottom:22px; margin-bottom:8px}
+  .receipt .rh .shop{font-size:12px; letter-spacing:.3em; color:#8a7a80; margin-bottom:8px}
+  .receipt .rh h3{font-family:"Noto Serif TC",serif; font-size:21px; font-weight:900; color:var(--plum)}
+  .receipt .rh .meta{font-size:13px; color:#8a7a80; margin-top:6px}
+  .rrow{display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:15px 0; border-bottom:1px dashed rgba(36,26,30,.16); font-size:15px}
+  .rrow:last-of-type{border-bottom:0}
+  .rrow .nm b{display:block; font-weight:700; color:var(--plum)}
+  .rrow .nm span{font-size:13px; color:#8a7a80; font-weight:300}
+  .rrow .pr{white-space:nowrap; font-family:"Noto Serif TC",serif; font-weight:700; color:var(--plum); font-size:16px}
+  .receipt .sum{border-top:1px dashed rgba(36,26,30,.2); margin-top:8px; padding-top:15px; font-size:13.5px; color:#6b575e}
+  .receipt .sum .srow{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:5px 0}
+  .receipt .sum .srow b{font-family:"Noto Serif TC",serif; font-weight:700; color:#5c4a51; white-space:nowrap}
+  .receipt .sum .srow.tot{border-top:1px solid rgba(36,26,30,.16); margin-top:8px; padding-top:11px; color:var(--plum); font-weight:700}
+  .receipt .sum .srow.tot b{color:var(--plum); font-size:17px}
+  .receipt .saved{margin-top:14px; text-align:center; font-size:14.5px; font-weight:700; color:#8a6d2f; background:rgba(198,161,91,.18); border-radius:999px; padding:9px 14px}
+  .receipt .total{border-top:2px solid var(--plum); margin-top:14px; padding-top:20px; display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px 12px}
+  .receipt .total .lbl{font-size:14px; color:#8a7a80}
+  .receipt .total .amt{font-family:"Noto Serif TC",serif; font-size:38px; font-weight:900; color:var(--plum)}
+  .receipt .total .amt small{font-size:14px; color:#8a7a80; font-weight:400; margin-left:6px}
+  .receipt .foot{text-align:center; font-size:12.5px; color:#8a7a80; margin-top:18px; line-height:1.8}
+
+  /* 信任 */
+  .voices{max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:14px}
+  .voices .intro{font-size:14px; color:#8a7a80; text-align:center; margin-bottom:8px}
+  .v{background:#fff; border:1px solid rgba(36,26,30,.1); border-radius:12px; padding:18px 22px; font-size:14.5px; color:#4a3a40; font-weight:300}
+  .v b{color:var(--gold); font-weight:700; font-size:12.5px; display:block; margin-top:6px}
+  .gband{max-width:640px; margin:40px auto 0; display:flex; justify-content:center; gap:38px; flex-wrap:wrap; text-align:center}
+  .gband span{color:#8a7a80; font-size:13.5px}
+  .gband b{display:block; font-family:"Noto Serif TC",serif; font-weight:900; font-size:26px; color:var(--plum); line-height:1.2}
+  .studio-intro{max-width:600px; margin:0 auto 52px; text-align:center}
+  .studio-intro h3{font-family:"Noto Serif TC",serif; font-size:22px; font-weight:900; color:var(--plum); margin-bottom:16px; line-height:1.6}
+  .studio-intro p{font-size:15.5px; color:#5c4a51; font-weight:300; line-height:1.9}
+  .studio-intro p b{color:var(--ink); font-weight:500}
+
+  /* 收尾 */
+  .final{text-align:center}
+  .final h2{font-family:"Noto Serif TC",serif; font-size:clamp(25px,5.2vw,38px); font-weight:900; color:var(--plum); line-height:1.7; margin-bottom:22px}
+  .final .sub{color:#6b575e; font-size:16px; font-weight:300; max-width:480px; margin:0 auto 44px}
+  .cta{position:relative; overflow:hidden; display:inline-block; background:linear-gradient(135deg,#f6e6b8,var(--gold-lt) 45%,var(--gold)); color:#231800; font-weight:800; font-size:17px; letter-spacing:.02em; padding:20px 44px; border-radius:999px; text-decoration:none; box-shadow:0 14px 40px rgba(198,161,91,.5)}
+  .cta:hover{transform:translateY(-3px) scale(1.03)}
+
+  .reserve-wrap{max-width:520px; margin:0 auto}
+  .rf-card{background:#fff; border-radius:16px; padding:36px 30px; box-shadow:0 30px 80px rgba(0,0,0,.26); text-align:left}
+  .rf-badge{display:inline-block; background:var(--plum); color:var(--gold-lt); font-size:12px; font-weight:700; letter-spacing:.12em; padding:6px 14px; border-radius:999px; margin-bottom:20px}
+  .rf-price{display:flex; align-items:baseline; gap:10px; margin-bottom:26px; padding-bottom:22px; border-bottom:1px dashed rgba(36,26,30,.2)}
+  .rf-price .amt{font-family:"Noto Serif TC",serif; font-size:34px; font-weight:900; color:var(--plum)}
+  .rf-price .meta{font-size:12.5px; color:#8a7a80; margin-left:auto; text-align:right; line-height:1.6}
+  .rf-field{margin-bottom:18px}
+  .rf-field label{display:block; font-size:14px; font-weight:700; color:var(--plum); margin-bottom:8px}
+  .rf-field label .req{color:#b5522f; margin-left:3px}
+  .rf-field input,.rf-field select,.rf-field textarea{width:100%; font-family:inherit; font-size:16px; color:var(--ink); background:#faf7f1; border:1.5px solid rgba(36,26,30,.16); border-radius:10px; padding:13px 14px}
+  .rf-field input:focus,.rf-field select:focus,.rf-field textarea:focus{outline:none; border-color:var(--gold); background:#fff}
+  .rf-field textarea{min-height:82px; resize:vertical}
+  .rf-err{color:#b5522f; font-size:13px; margin:2px 0 14px; display:none}
+  .rf-err.show{display:block}
+  .rf-submit{position:relative; overflow:hidden; width:100%; border:0; cursor:pointer; background:linear-gradient(135deg,#f6e6b8,var(--gold-lt) 45%,var(--gold)); color:#231800; font-weight:800; font-size:17px; padding:18px; border-radius:999px; font-family:inherit}
+  .rf-note{text-align:center; font-size:12.5px; color:#8a7a80; margin-top:16px; line-height:1.8}
+  .rf-side{text-align:center; margin-top:26px; font-size:14.5px; color:#6b575e}
+  .rf-side a{color:#4a7a52; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(74,122,82,.45); padding-bottom:1px}
+  .rf-thanks{display:none; background:#fff; border-radius:16px; padding:50px 32px; text-align:center; box-shadow:0 30px 80px rgba(0,0,0,.26)}
+  .rf-thanks.show{display:block}
+  .rf-thanks .ic{font-size:46px; margin-bottom:16px}
+  .rf-thanks h3{font-family:"Noto Serif TC",serif; font-size:23px; font-weight:900; color:var(--plum); margin-bottom:14px}
+  .rf-thanks p{font-size:15px; color:#6b575e; font-weight:300}
+
+  .faq{max-width:640px; margin:0 auto}
+  .faq h2{font-family:"Noto Serif TC",serif; text-align:center; font-size:24px; font-weight:900; color:var(--plum); margin-bottom:34px}
+  .faq details{border-bottom:1px solid rgba(36,26,30,.14); padding:18px 0}
+  .faq summary{display:block; cursor:pointer; font-weight:700; font-size:15.5px; color:var(--plum); font-family:"Noto Serif TC",serif; list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+"; float:right; color:var(--gold); font-weight:900}
+  .faq details[open] summary::after{content:"–"}
+  .faq .a{font-size:14.5px; color:#6b575e; margin-top:10px; font-weight:300}
+
+  .legal{max-width:640px; margin:70px auto 0; font-size:12.5px; color:#9c8b91; line-height:1.9; text-align:center; border-top:1px solid rgba(36,26,30,.12); padding-top:28px}
+  footer{background:var(--paper); color:#9c8b91; text-align:center; font-size:12.5px; padding:30px 24px 46px; line-height:2}
+  footer a{color:#7a666d}
+
+  .dock{position:fixed; left:0; right:0; bottom:0; z-index:50; display:flex; justify-content:center; padding:14px; background:linear-gradient(180deg,transparent,rgba(22,16,25,.4)); opacity:0; pointer-events:none; transition:opacity .4s ease}
+  .dock.show{opacity:1; pointer-events:auto}
+  .dock a{background:linear-gradient(135deg,#f6e6b8,var(--gold-lt) 45%,var(--gold)); color:#231800; font-weight:800; font-size:15px; padding:14px 30px; border-radius:999px; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,.4)}
+
+  @media (max-width:900px){
+    .open-grid{grid-template-columns:1fr; gap:38px}
+    .hero-shot{max-width:420px; margin:0 auto}
+    .open{text-align:center}
+    .hero-formula{align-items:center; width:100%}
+    .hf-row{justify-content:center}
+  }
+  @media (max-width:600px){
+    .sc{padding:62px 22px}
+    .open{padding:64px 22px 72px}
+    .symptom-photos{grid-template-columns:1fr 1fr}
+    .face{grid-template-columns:1fr}
+    .assess-figs{grid-template-columns:1fr}
+    .assess-checks{grid-template-columns:1fr}
+    .vs{grid-template-columns:1fr}
+    .who-split{grid-template-columns:1fr}
+    .open h1 br,.turn h2 br,.pain h2 br,.pain .close br,.final h2 br,.keyline br,.step-head h2 br{display:none}
+    .cta{padding-left:26px; padding-right:26px}
+    .rf-card{padding:30px 22px}
+    .receipt{padding:32px 24px}
+    .rf-price{flex-wrap:wrap; gap:4px 10px}
+    .rf-price .meta{margin-left:0; width:100%; text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<!-- 內部備註：完全套用 sinyanyoga.com.tw/neck-release.html 的實際 CSS 色彩系統與版面骨架（night→dusk→plum→dawn→morning→day 的日夜漸層敘事），內容置換為 A/B 測試線鎖定的 NT$699 結構與文案，價格邏輯與正式站 NT$1,500 版不同，是刻意區隔的兩條線。 -->
+
+<nav class="nav"><div class="wrap">
+  <a class="brand-lockup" href="#">鑫彥瑜珈<small>壁繩瑜伽・體態調整</small></a>
+  <a href="#reserve" class="btn">預約體驗 →</a>
+</div></nav>
+
+<!-- ═══ HERO ═══ -->
+<!-- 背景照片沿用參考廣告圖裁切版（已去除所有廣告文字），正式上線建議換成正式拍攝的橫幅照片 -->
+<section class="sc night open">
+  <div class="open-grid">
+    <div>
+      <div class="brand"><span class="nb">鑫彥瑜珈</span>・<span class="nb">高雄左營</span>・<span class="nb">近巨蛋捷運</span></div>
+      <h1 class="serif">肩頸一直緊？<br>問題可能不是<em>拉不夠</em>。</h1>
+      <p class="sub">先看懂你的身體，<b>再決定怎麼練。</b></p>
+      <div class="hero-formula" aria-label="課程流程">
+        <div class="hf-row">
+          <span class="hf hf--ai">① <b>AI</b> 體態檢測 20 分鐘・當場看見問題</span>
+        </div>
+        <div class="hf-row">
+          <span class="hf">② <b>一對一</b>瑜伽調整 40 分鐘</span>
+        </div>
+        <div class="hf-row">
+          <span class="hf-op">＝</span>
+          <span class="hf hf--sum">看得見，也調得回來</span>
+        </div>
+      </div>
+      <div class="hero-cta"><a class="cta" href="#offer">預約 60 分鐘體態調整體驗 →</a></div>
+      <p class="hero-note">體驗後再依你的狀況決定是否需要繼續，<span class="nb">不需要當場購買課程</span>。</p>
+      <p class="hero-trust"><span class="nb">⭐ Google <b>4.9★</b></span> · <span class="nb">79 則真實好評</span> · <span class="nb">高雄左營在地教學 <b>10 年+</b></span></p>
+    </div>
+    <figure class="hero-shot">
+      <figcaption class="tagline">AI 姿勢分析・實際畫面範例</figcaption>
+      <img src="assets/assessment-sample.jpg" alt="AI體態檢測畫面範例：標出頭前傾、圓肩傾向、肩線偏移">
+      <figcaption class="cap">這就是你會拿到的畫面——<br><b>你的肩頸，第一次被看見。</b></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══ Section2：症狀自我辨識 ═══ -->
+<section class="sc night2 pain">
+  <div class="sc-inner">
+    <p class="small">你是不是也有這些狀況</p>
+    <h2 class="serif">這些日常片刻，<span class="nb">是不是也</span><br><em>常發生在你身上</em>？</h2>
+    <div class="symptom-photos">
+      <div class="tile"><img src="assets/ai-assessment-symptom-massage.jpg" alt="按摩情境"><div class="cap">按摩完沒多久，肩頸又緊回來</div></div>
+      <div class="tile"><img src="assets/ai-assessment-symptom-stretch.jpg" alt="自己拉筋伸展"><div class="cap">明明常拉筋，肩膀還是卡卡的</div></div>
+      <div class="tile"><img src="assets/ai-assessment-symptom-desk.jpg" alt="久坐辦公桌，聳肩頭前傾"><div class="cap">坐一下就開始聳肩、脖子往前</div></div>
+      <div class="tile"><img src="assets/ai-assessment-symptom-reach.jpg" alt="舉手動作，肩膀代償上抬"><div class="cap">手舉高時，肩膀會不自覺往上跑</div></div>
+    </div>
+    <p class="close">但你也知道，<br>它<em>還是緊的</em>。</p>
+  </div>
+</section>
+
+<!-- ═══ Section3：打破迷思 ═══ -->
+<section class="sc dusk turn">
+  <div class="sc-inner">
+    <p class="small">打破迷思</p>
+    <h2 class="serif">肩頸緊，<br>不一定只是<em>「太緊」</em>。</h2>
+    <div class="cause-list">
+      <div class="cause-row"><div class="c">胸廓不太會動</div><div class="e">手舉起來時，<b>肩頸只好幫忙出力</b>。</div></div>
+      <div class="cause-row"><div class="c">肩胛控制不足</div><div class="e">該出力的地方沒出力，<b>上方肌群一直代償</b>。</div></div>
+      <div class="cause-row"><div class="c">頭前傾、圓肩成習慣</div><div class="e">身體長期<b>用同一種方式維持姿勢</b>。</div></div>
+    </div>
+    <p class="keyline">所以只是不斷按摩、拉筋，<br>可能只會<em>暫時舒服</em>。</p>
+  </div>
+</section>
+
+<!-- ═══ STEP 1：AI 體態檢測 ═══ -->
+<!-- 右側兩張figure：肉眼所見用色塊占位（目前沒有無標註的乾淨版素材），AI標註後沿用參考圖裁切版 -->
+<section class="sc plum">
+  <div class="sc-inner assess">
+    <div class="step-head">
+      <span class="step-tag">STEP 1・AI 體態檢測</span>
+      <h2>先看見，<br>才知道要調哪裡。</h2>
+      <p class="lead">一到教室，老師會先用 <b>AI 姿勢分析</b>協助拍攝，呈現你的肩線、頭部前傾、脊椎與骨盆角度，接著<b>當場為你解讀</b>。不是機器丟一個分數就結束——是老師把畫面翻譯成你聽得懂的話。</p>
+    </div>
+
+    <div class="assess-figs">
+      <figure>
+        <img src="assets/assessment-sample.jpg" alt="AI體態檢測正面姿勢分析範例：標出肩線、身體軸線與骨盆角度">
+        <figcaption>正面姿勢分析範例</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/assessment-side-sample.jpg" alt="AI體態檢測側面姿勢分析範例：標出頭部前傾與身體軸線">
+        <figcaption>側面姿勢分析範例</figcaption>
+      </figure>
+    </div>
+    <p class="assess-note">實際檢測報告範例・運動功能性姿勢評估，非醫學診斷。</p>
+
+    <div class="assess-checks">
+      <div><b>頭部前傾與位置</b><span>理解肩頸緊繃可能相關的姿勢線索。</span></div>
+      <div><b>肩線與左右高低</b><span>看見肩膀是否前捲、左右肩線是否不平均。</span></div>
+      <div><b>骨盆與身體軸線</b><span>骨盆是否前後傾、左右身體是否出現明顯偏移。</span></div>
+      <div class="trustnote"><b>AI 信任說明</b><span>AI 負責量測與視覺化，老師再結合真人動作觀察做判讀。它不是醫療診斷，而是幫助你更容易看懂目前的體態與動作狀態。</span></div>
+    </div>
+
+    <p class="assess-bridge">但光看見，肩頸不會自己鬆開。<br>所以同一堂課，我們<em>接著就把它調回來</em>。</p>
+  </div>
+</section>
+
+<!-- ═══ STEP 2：一對一調整 ═══ -->
+<section class="sc dawn fix">
+  <div class="sc-inner root">
+    <div class="step-head">
+      <span class="step-tag">STEP 2・這堂課的主活動</span>
+      <h2 class="serif">看見之後，<br>用 40 分鐘把它調回來。</h2>
+      <p class="lead">檢測看到的代償，不是靠揉就會消失。<b>老師會照著你的檢測結果，一對一改掉讓肩頸緊的用力習慣。</b></p>
+    </div>
+
+    <div class="path">
+      <span>頭前傾</span><i>→</i>
+      <span>肩往上聳</span><i>→</i>
+      <span>該出力的沒出力</span><i>→</i>
+      <span>肩頸整天代償</span>
+    </div>
+    <p>這一條連鎖，每一環只錯一點點——所以你自己感覺不到，只知道「就是緊」。這 40 分鐘一對一，會這樣做：<b>看動作</b>（觀察肩膀、肩胛、胸廓與手臂活動）、<b>找代償</b>（哪些地方沒出力、哪些地方一直幫忙）、<b>現場調整</b>（用瑜珈動作與引導感覺正確出力）。</p>
+
+    <div class="face">
+      <div class="side a">
+        <span class="ic">🌀</span>
+        <h4>只做放鬆</h4>
+        <ul>
+          <li>不知道自己哪裡歪</li>
+          <li>當下很舒服、很鬆</li>
+          <li>兩三天又緊回來</li>
+        </ul>
+      </div>
+      <div class="side b">
+        <span class="ic">✨</span>
+        <h4>這 60 分鐘帶走什麼</h4>
+        <ul>
+          <li>我的主要體態問題在哪裡</li>
+          <li>我平常到底哪裡在代償</li>
+          <li>我接下來應該先練什麼</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pull-quote">明確不承諾：一次改善圓肩、根治肩頸，或矯正成功。</p>
+  </div>
+</section>
+
+<!-- ═══ 為什麼是一對一 + 流程 + 適合誰 ═══ -->
+<section class="sc morning">
+  <div class="sc-inner solo">
+    <div class="step-head">
+      <span class="step-tag">為什麼是一對一</span>
+      <h2 class="serif">同一套動作，<br>救不了你獨有的<span class="nb">那條鏈。</span></h2>
+      <p class="lead">檢測拍出來的是<b>你的</b>代償——哪邊肩膀高、頭前傾幾公分、骨盆偏哪一邊。<b>這件事，團體課處理不了。</b></p>
+    </div>
+
+    <p class="flow-line"><b>線上預約付NT$199</b><i>→</i><b>AI體態檢測20分</b><i>→</i><b>老師解讀結果</b><i>→</i><b>一對一調整40分</b><i>→</i><b>老師給下一步建議</b><br>體驗後再依你的狀況決定是否需要繼續，不需要當場購買課程。</p>
+
+    <div class="vs">
+      <div class="vs-col">
+        <span class="vs-tag">團體課</span>
+        <ul>
+          <li>老師同時看十幾個人</li>
+          <li>你跟著前面的人做</li>
+          <li>你用錯力，<span class="nb">沒人看得見</span></li>
+          <li><b>練一年，<span class="nb">等於把錯誤練熟一年</span></b></li>
+        </ul>
+      </div>
+      <div class="vs-col vs-col--b">
+        <span class="vs-tag">一對一（這堂課）</span>
+        <ul>
+          <li>老師整堂<span class="nb">只看你一個</span></li>
+          <li>照你的檢測結果排動作</li>
+          <li>用錯力，<span class="nb">當下就被抓出來</span></li>
+          <li><b>每一下，<span class="nb">都在修你那條鏈</span></b></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="who-lead">誰適合、誰建議先就醫——</p>
+    <div class="who-split">
+      <div class="who-col">
+        <b>適合你，如果</b>
+        <div class="who">
+          <div>肩頸常緊卻不知道原因</div>
+          <div>有圓肩、駝背、頭前傾困擾</div>
+          <div>想開始運動但怕自己做錯</div>
+        </div>
+      </div>
+      <div class="who-col caution">
+        <b>建議先尋求醫療評估，如果</b>
+        <div class="who">
+          <div>急性外傷／明顯手麻放射痛</div>
+          <div>強烈疼痛或已被診斷需治療</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 方案卡 ═══ -->
+<section class="sc day" id="offer">
+  <div class="sc-inner">
+    <div class="receipt">
+      <div class="rh">
+        <div class="shop"><span class="nb">鑫彥瑜珈・高雄左營</span></div>
+        <h3>AI 體態檢測 ＋ 一對一肩頸調整</h3>
+        <div class="meta">約 60 分鐘・老師全程一對一</div>
+      </div>
+      <div class="rrow">
+        <div class="nm"><b>AI 體態檢測 20 分鐘</b><span>拍出肩線、頭前傾、脊椎骨盆角度</span></div>
+        <div class="pr">$699</div>
+      </div>
+      <div class="rrow">
+        <div class="nm"><b>一對一瑜伽調整 40 分鐘</b><span>依正常價 $1,500／60 分鐘換算</span></div>
+        <div class="pr">$1,000</div>
+      </div>
+      <div class="sum">
+        <div class="srow tot"><span>單項服務價值合計</span><b>$1,699</b></div>
+      </div>
+      <div class="total">
+        <span class="lbl">首次完整體驗</span>
+        <span class="amt">$699<small>／約 60 分</small></span>
+      </div>
+      <div class="saved">現省 NT$1,000</div>
+      <div class="foot">預約方式：先付 NT$199 預約保留金，到店再補 NT$500<br><span class="nb">首次到店・線上預約</span>・<span class="nb">每人限一次</span>・<span class="nb">結束後不強迫報名</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 信任 ═══ -->
+<!-- voices 為真實 Google 評論原文，gband 為真實統計數字，皆維持原樣；建議之後補真實師生互動照取代 studio-intro 純文字 -->
+<section class="sc day" style="padding-top:0">
+  <div class="sc-inner">
+    <div class="studio-intro">
+      <h3>AI 只是幫你看見，<br>真正調整你的是老師</h3>
+      <p>鑫彥瑜珈在高雄左營教學超過十年。這堂課全程老師看著你的肩頸——<b>先用 AI 體態檢測看見你的肩線與頭前傾，再用瑜伽調整改掉讓它緊的用力習慣</b>。不是把你交給機器、或按一按就結束。</p>
+    </div>
+    <div class="voices">
+      <p class="intro">做過檢測與調整的人，在公開評論裡<span class="nb">這樣說——</span></p>
+      <div class="v">「今天體驗 AI 檢測與調整，身體狀況沒有想像中的好，經過老師的調整，覺得肩頸放鬆了，腰部感覺比較鬆了，很棒的一次體驗。」<b>黃之柔・Google 評論</b></div>
+      <div class="v">「用姿勢檢測來評估身體結構，讓我們進入課程後能以更標準的動作來學習，避免運動傷害產生，是很好的瑜珈運動館。」<b>徐芳芳・Google 評論</b></div>
+      <div class="v">「接觸瑜伽之後，感覺身體變得比較輕鬆，老師教學很專業，一直強調呼吸正位，練完感覺身體好像變健康了。」<b>顏珮緹・Facebook 推薦</b></div>
+    </div>
+    <div class="gband">
+      <span><b>4.9★</b>Google 平均評分</span>
+      <span><b>79</b>則真實好評</span>
+      <span><b>10 年+</b>左營在地教學</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 收尾：FAQ + 預約表單 ═══ -->
+<section class="sc day final" id="reserve" style="padding-top:20px">
+  <div class="sc-inner">
+    <h2 class="serif">先看懂，<br>再把它調回來。</h2>
+    <p class="sub">與其一直猜自己該怎麼練，不如先花 60 分鐘，看懂自己的身體。</p>
+
+    <div class="reserve-wrap">
+      <form class="rf-card" id="reserveForm" novalidate>
+        <span class="rf-badge">FIRST · 首次體驗預約</span>
+        <div class="rf-price">
+          <span class="amt">NT$699</span>
+          <span class="meta">AI 體態檢測 × 一對一瑜珈調整<br>約 60 分鐘・老師一對一</span>
+        </div>
+        <div class="rf-field">
+          <label for="rf-name">你的稱呼<span class="req">*</span></label>
+          <input id="rf-name" name="name" type="text" autocomplete="name" placeholder="怎麼稱呼你">
+        </div>
+        <div class="rf-field">
+          <label for="rf-phone">手機號碼<span class="req">*</span></label>
+          <input id="rf-phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="09xx-xxx-xxx">
+        </div>
+        <div class="rf-field">
+          <label for="rf-time">方便聯絡的時段<span class="req">*</span></label>
+          <select id="rf-time" name="time">
+            <option value="" selected disabled>請選擇</option>
+            <option>上午（09–12）</option>
+            <option>下午（12–17）</option>
+            <option>晚上（17–20）</option>
+            <option>都可以</option>
+          </select>
+        </div>
+        <div class="rf-field">
+          <label for="rf-note">想解決的肩頸困擾（選填）</label>
+          <textarea id="rf-note" name="note" placeholder="例如：低頭工作整天，後頸又緊又痠…"></textarea>
+        </div>
+        <div class="rf-err" id="rf-err">請填寫稱呼、正確的手機號碼，並選擇聯絡時段。</div>
+        <button class="rf-submit" type="submit" id="rf-submit">送出預約 · 首次 NT$699</button>
+        <p class="rf-note">送出後我們會盡快與你聯絡確認時段。<br>首次體驗 NT$699・每人限一次・不強迫續約。</p>
+      </form>
+      <div class="rf-thanks" id="reserveThanks">
+        <div class="ic">🌿</div>
+        <h3>收到了，謝謝你！</h3>
+        <p>我們會在你方便的時段跟你聯絡，<br>確認你的首次檢測與調整。</p>
+      </div>
+    </div>
+
+    <div class="faq" style="margin-top:90px">
+      <h2 class="serif">還有些疑問？</h2>
+      <details open>
+        <summary>沒有瑜珈經驗可以嗎？</summary>
+        <div class="a">可以，體驗設計給第一次接觸的人，老師會依你的狀況調整動作難度。</div>
+      </details>
+      <details>
+        <summary>身體很硬可以嗎？</summary>
+        <div class="a">可以，體驗不是拉筋比賽，重點是找出用力方式，不是比誰柔軟度好。</div>
+      </details>
+      <details>
+        <summary>這是物理治療嗎？</summary>
+        <div class="a">不是。AI 體態檢測與一對一調整是體態評估與運動引導，不是醫療診斷或治療。</div>
+      </details>
+      <details>
+        <summary>一定要購買後續課程嗎？</summary>
+        <div class="a">不需要，體驗後再依你的狀況決定是否要繼續，沒有當場推銷。</div>
+      </details>
+      <details>
+        <summary>NT$199 是全部費用嗎？</summary>
+        <div class="a">NT$199 是預約保留金，到店當天再補 NT$500，合計為首次完整體驗 NT$699。</div>
+      </details>
+    </div>
+
+    <p class="legal">AI 體態檢測為運動功能性姿勢評估，非醫學診斷，數值反映姿勢習慣，不代表任何疾病診斷。本服務為運動放鬆與姿勢調整，非醫療行為，不做疾病治療或診斷，亦不保證任何效果。如有慢性疼痛、發炎或舊傷，請先諮詢合格醫療專業人員。</p>
+  </div>
+</section>
+
+<footer>
+  <span class="nb">鑫彥瑜珈</span>・<span class="nb">高雄市左營區新庄仔路 726 號 3 樓</span>・<span class="nb">每日 09:00–20:30</span>・<span class="nb">07-556-7387</span>
+</footer>
+
+<div class="dock" id="dock">
+  <a href="#reserve">預約 60 分鐘體態調整體驗 →</a>
+</div>
+
+<script>
+var dock = document.getElementById('dock');
+var finalSec = document.querySelector('.final');
+window.addEventListener('scroll', function(){
+  var y = window.scrollY;
+  var fTop = finalSec.getBoundingClientRect().top;
+  dock.classList.toggle('show', y > window.innerHeight*1.1 && fTop > window.innerHeight*.5);
+},{passive:true});
+
+var WEBHOOK_URL = "https://melvinlin07-n8n.zeabur.app/webhook/neck-release-lead";
+var form = document.getElementById('reserveForm');
+var errEl = document.getElementById('rf-err');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = form.name.value.trim();
+  var phone = form.phone.value.trim();
+  var time = form.time.value;
+  var note = form.note.value.trim();
+  var digits = phone.replace(/\D/g,'');
+  var phoneOk = /^09\d{8}$/.test(digits);
+  if(!name || !phoneOk || !time){ errEl.classList.add('show'); return; }
+  errEl.classList.remove('show');
+
+  var btn = document.getElementById('rf-submit');
+  btn.disabled = true;
+  btn.textContent = '送出中…';
+
+  var payload = {
+    name: name, phone: digits, time: time, note: note,
+    page: location.pathname, source: 'ai-assessment-v7',
+    ts: new Date().toISOString()
+  };
+
+  function done(){
+    try{ gtag('event','generate_lead',{value:199, currency:'TWD', page_path:location.pathname}); }catch(err){}
+    try{ fbq('track','Lead',{content_name:'AI體態檢測表單預約', content_category:'AI posture assessment + 1-on-1', value:199, currency:'TWD'}); }catch(err){}
+    form.style.display = 'none';
+    document.getElementById('reserveThanks').classList.add('show');
+    document.getElementById('reserveThanks').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  if(WEBHOOK_URL){
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(){ done(); }).catch(function(){ done(); });
+  }else{
+    setTimeout(done, 500);
+  }
+});
+</script>
+</body>
+</html>
