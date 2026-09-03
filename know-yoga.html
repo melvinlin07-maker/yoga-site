@@ -51,7 +51,7 @@
     <li><a href="about.html">關於鑫彥</a></li>
     <li><a href="neck-release.html">一對一調整</a></li>
   </ul>
-  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$199 檢測</a>
+  <a href="#" class="btn js-line nav-cta-btn" data-line-purpose="contact" data-cta-location="nav" data-offer="肩頸壓力自測" data-slot-message="我要肩頸壓力自測">免費肩頸壓力檢測</a>
   <button class="nav-toggle" aria-label="選單">☰</button>
 </div></nav>
 
@@ -149,5 +149,15 @@
 
 <a class="line-float js-line" href="#" aria-label="預約首次 NT$199 AI 體態檢測"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$199 AI 檢⁠測</b></a>
 <script src="site.js?v=5"></script>
+<script>
+// 「免費肩頸壓力檢測」按鈕：點擊時先把預填文字寫進 body data-line-message，
+// 讓 site.js 既有的 LINE 預填機制（未改動 site.js 本身）帶出「我要肩頸壓力自測」，
+// 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕維持原行為。
+document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
+  a.addEventListener('click', function () {
+    document.body.setAttribute('data-line-message', a.getAttribute('data-slot-message'));
+  });
+});
+</script>
 </body>
 </html>
