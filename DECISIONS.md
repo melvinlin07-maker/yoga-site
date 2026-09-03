@@ -581,6 +581,20 @@
 
 **狀態:** ✅ 已 commit(`03ea59e`)、已 push(2026-09-03)。至此,原始 A/B/C/D 計畫加上這兩篇補漏,全站 blog 文章的圖片重複問題全部處理完畢,沒有已知遺留項目。
 
+---
+
+## 33. 修復決策30遺漏:兩篇文章的圖檔從未真的進 git,正式站空白了好幾小時
+
+**背景:** 使用者在自己的瀏覽器截圖給我看,發現 `blog.html` 上「下巴緊繃」「閃到腰」兩篇文章的縮圖是空白的。查證後發現:決策30(9/3 補發 `blog-jaw-tmj-tension.html`、`blog-sprain-strain-comeback.html`)當時 commit `cec7a77` 只 staged 了 html/sitemap/PROJECT.md,**沒有把這兩篇文章實際用到的圖片檔案(`assets/seated-twist-calm-face.png`、`assets/teacher-guided-careful-stretch.png`)一起加進 git**——這兩個檔案本機一直都在,但從未被 commit、push 過。導致這兩篇文章發布後,正式網站上**不只 blog.html 縮圖空白,兩篇文章自己的頭圖也一直是空的**,已經這樣好幾個小時沒被發現。
+
+**修復:** 直接把這兩個圖檔加進 git,commit `73254b7`、已 push,實查 `sinyanyoga.com.tw` 正式站確認兩篇文章的圖片皆已正常顯示。
+
+**順帶做的全面檢查:** 抓到這個漏洞後,寫了一次全站掃描(比對所有 `.html` 引用的 `assets/*.png|jpg` 是否都有進 git),另外抓到9個圖檔目前也沒進 git,但確認**全部只被尚未發布的草稿文章引用(如 `blog-yoga-myths-busted.html` 等7篇+2篇),不影響正式站**,之後這些草稿正式上架時要記得一併把圖檔加進 commit,不能再犯同樣的錯。另外確認今天(決策31、32)新增的24+2張圖全部都有正確進 git,沒有同樣問題。
+
+**教訓:** 之後每次 commit 新文章或換圖片,**staging 檔案清單一定要包含文章實際引用的所有圖片檔案**,不能只看 html/sitemap 這類「看起來像主角」的檔案,否則圖片檔案容易被漏掉,而且這種漏洞在本機測試(`yoga-site-preview`)時因為檔案就在本機資料夾,不會被抓到,只有正式站才會顯現,必須靠實查正式網址才能發現。
+
+**狀態:** ✅ 已修復、已 commit、已 push、已實查正式站確認正常(2026-09-03)。
+
 **狀態:** ✅ 兩篇已上架、已 commit(`cec7a77`)、已 push(2026-09-03,使用者指示「今天一起補發」)。9/4、9/5、9/6 排程(post-illness-stiffness、restarting-after-a-break、hand-wrist-elbow-pain-comparison)不受影響,仍依原排程走,但依本次教訓,屆時查核不應只靠提醒是否觸發。
 
 ---
