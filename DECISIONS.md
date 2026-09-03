@@ -559,3 +559,24 @@
 **狀態:** ✅ 24篇文章的重複圖片問題全部解決,已 commit、已 push(2026-09-03,使用者指示「繼續把它做完」)。`wall-rope-teacher.jpg`/`wall-rope-inversion.jpg`/`wall-rope-suspension.jpg`/`art06.jpg` 現只留在各自真正歸屬頁 + 非blog頁面(非本次範圍)。`blog-neck-hump.html` 的圖片、`blog-forward-head-daily.html` 內部重複使用 `art06.jpg` 兩次的問題,皆為已知但未處理事項,留待使用者後續決定。
 
 **狀態:** ✅ 兩篇已上架、已 commit(`cec7a77`)、已 push(2026-09-03,使用者指示「今天一起補發」)。9/4、9/5、9/6 排程(post-illness-stiffness、restarting-after-a-break、hand-wrist-elbow-pain-comparison)不受影響,仍依原排程走,但依本次教訓,屆時查核不應只靠提醒是否觸發。
+
+---
+
+## 32. site.js 按鈕層級 Lead/Contact 事件分離,並修正 v=5 快取卡版問題
+
+**背景:** 使用者發現同一顆「加LINE」動作,過去在不同活動(199元AI檢測活動 vs. 一般詢問)下意圖強度不同,但全部都算進 Meta Pixel 的 `Lead`,稀釋了廣告優化訊號。原本 `site.js` 的 `data-line-event` 只能在 `<body>` 整頁層級覆寫(見第4、8條),無法在同一頁裡分別處理「這顆按鈕」跟「那顆按鈕」——例如 `classes.html` 同時有「預約199」跟「一對一/小團課LINE詢問」兩種意圖混在同一頁。
+
+**決策:** 把 `site.js` 第59行判斷邏輯從「只讀整頁 `<body data-line-event>`」改成「先讀被點擊按鈕自己的 `data-line-event`,沒有才退回讀整頁設定,都沒有才預設 Lead」——完全向下相容,沒加新標記的按鈕行為不變。
+
+**實際標記範圍(全站逐一比對按鈕文字與情境後確認,非整頁切換):**
+- 改標 `Contact`:首頁(`index.html`)導覽列+Hero區「免費肩頸壓力檢測」共2顆、`about.html`/`blog.html`/`know-yoga.html`導覽列各1顆、`classes.html`導覽列1顆+「透過LINE詢問/LINE詢問」(一對一指導、小團課)共4顆,合計10顆
+- **刻意排除、維持 `Lead`:** `about-poses.html` 的「加LINE,預約現場檢測」——文字看似詢問,但上下文明確是在推199活動,判斷屬於真實預約意圖,不能歸類 Contact
+- 全站其餘所有「預約首次NT$199...」按鈕(含前述5頁裡的同款按鈕)完全不動
+
+**驗證方式:** 先用本機 `python -m http.server` 架站,對每顆受影響按鈕實際 `dispatchEvent` 點擊、攔截 `fbq()` 呼叫確認送出的事件名稱,而非只憑程式碼邏輯判斷正確。9顆按鈕全數驗證通過後才 commit。
+
+**意外發現並一併修正:部署後線上行為未生效,根因是 `site.js?v=5` 瀏覽器快取。** 內容改了但查詢字串版號沒跳,舊訪客(含測試瀏覽器本身)的瀏覽器不會重新下載。判斷「只有這5個頁面的按鈕行為依賴新版程式碼,其餘約120頁新舊版行為完全一致」,故**只把這5個頁面的 `<script src="site.js?v=5">` 跳版成 `v=6`,其餘頁面维持 `v=5` 不動**——避免把版號批次替換跟其他人在同一批檔案裡尚未提交的無關修改(換圖等)混進同一個 commit。
+
+**Git 執行範圍:** 兩次 commit(`b2858d7` 事件分離邏輯本身、`b01712e` 版號修正),皆已 push,並用 `curl` 繞過瀏覽器快取直接驗證線上 `index.html` 與 `site.js?v=6` 內容一致後才視為完成。
+
+**狀態:** ✅ 已上線並驗證。`ReservationIntent` 事件經查證後判斷目前意義不大(22個標記頁面中19個零觸發、且與 Lead 高度重疊),使用者決定暫不處理,列為未來可選項目,非本次範圍。

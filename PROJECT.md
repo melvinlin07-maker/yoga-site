@@ -196,7 +196,16 @@
 - **Value / Currency 覆寫機制:** 透過 `<body data-lead-value>` `data-lead-name` `data-lead-category` 逐頁覆寫,未設定時 fallback 199 / "AI posture assessment"
 - **實作範圍:** 僅 Browser 端(client-side)GA4 gtag.js 與 Meta Pixel(fbq)
 - **GTM:** **已實查確認全站不存在 GTM 容器代碼**(此項不再列為待確認)
-- **Meta CAPI(server-side):** HTML 端確認無。**但 n8n 端是否有伺服端轉發,無法從 repo 判定,需外部查核**
+- **Meta CAPI(server-side):** HTML 端確認無直接串接。**但已透過 Meta Ads 後台 dataset stats(event_source 拆解)實查確認:`assessment.html` 表單送出時串接的 n8n webhook(`neck-release-lead`),會在伺服器端額外多發一筆 `LineClick`,與同一次表單提交的 `Lead` 事件時間戳、次數完全同步。研判是沿用自其他專案的 CAPI 樣板忘記改事件名或刪除,屬於誤發、非刻意設計,尚未修正(不在 2026-09-03 的 site.js 事件分離範圍內)。**
+
+### 8.1.1 site.js 按鈕層級 Lead/Contact 分離(2026-09-03 更新,見 `DECISIONS.md` 第32條)
+
+`data-line-event` 現在**先讀被點擊按鈕自己的屬性,沒有才退回讀整頁 `<body>` 設定,都沒有才預設 `Lead`**(原本只能整頁覆寫,見上方 8.1)。目前實際標成 `data-line-event="Contact"` 的按鈕:
+- `index.html`(導覽列+Hero,共2顆)、`about.html`/`blog.html`/`know-yoga.html`(導覽列各1顆)、`classes.html`(導覽列1顆+「LINE詢問」4顆),合計10顆,全部是「免費肩頸壓力檢測」或「一對一/小團課時段詢問」性質
+- 全站其餘「預約首次NT$199...」按鈕(含上述5頁裡的同款按鈕,以及 `about-poses.html` 文字看似詢問但情境明確是199活動的那顆)**維持 `Lead` 不動**
+- `site.js?v=6`:因內容變更但版號未跳導致部分舊快取沿用舊邏輯,已將**這5個頁面**的 `<script src>` 版號跳到 v=6(其餘約120頁行為不受此次修改影響,維持 v=5 未動,避免混入其他未提交修改一起 commit)
+
+**已知未處理:** `ReservationIntent`(22個標記頁面中19個零觸發,且與Lead高度重疊,見 `DECISIONS.md` 第32條)、`LineClick`/`V4LineClick` 兩個舊版影子事件重複、上述 n8n CAPI 誤發 `LineClick` 問題——皆為已發現但**尚未處理**的候選項目,非本次範圍。
 
 ### 8.2 n8n 表單收單(正門)
 
