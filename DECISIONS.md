@@ -558,6 +558,29 @@
 
 **狀態:** ✅ 24篇文章的重複圖片問題全部解決,已 commit、已 push(2026-09-03,使用者指示「繼續把它做完」)。`wall-rope-teacher.jpg`/`wall-rope-inversion.jpg`/`wall-rope-suspension.jpg`/`art06.jpg` 現只留在各自真正歸屬頁 + 非blog頁面(非本次範圍)。`blog-neck-hump.html` 的圖片、`blog-forward-head-daily.html` 內部重複使用 `art06.jpg` 兩次的問題,皆為已知但未處理事項,留待使用者後續決定。
 
+---
+
+## 32. 補完決策31遺漏的2項:blog-neck-hump.html 換圖 + blog-forward-head-daily.html 內部重複修正
+
+**背景:** 使用者指示「繼續把它用好」,把決策31結尾記錄的兩個未處理事項補完。
+
+**1. `blog-neck-hump.html` 換圖(原計畫24篇之外遺漏的一篇):**
+原本這篇沒被排進A/B/C/D任何一組(因為原本要接的「收下巴」圖兩次生成都失敗,決策31時決定先跳過)。這次重新嘗試:
+- 第1次(側面角度,文字描述下巴後收):生成出來是普通端正坐姿冥想圖,看不出收下巴動作
+- 第2次(同上,再試一次確認):結果一樣,沒有動作痕跡
+- **先問過使用者**怎麼處理(換角度重試 / 直接用中性坐姿圖 / 先擱置),使用者選擇換角度重試
+- 第3次(改成正面偏三分之一角度,明確要求「一手食指輕觸下巴」引導動作):**成功**,畫面清楚看得出手指觸碰下巴、引導頸部後收的動作,判定符合需求
+- 已接上 `assets/chin-tuck-neck-exercise.png`
+
+**2. `blog-forward-head-daily.html` 內部重複修正:**
+這篇本身頭圖與文章中段都用 `art06.jpg`,是同一篇內部的重複(跟A-D組處理的跨文章共用不同類型的問題)。生成一張「壁繩輔助打開胸口、頸部延伸拉長」的圖取代文章中段那個位置,頭圖保留不動(維持 `art06.jpg` 作為該頁真正歸屬用途)。生成過程一次到位,画面吻合度高(雙手扶壁繩、胸口打開、頸部上揚延伸)。已接上 `assets/wall-rope-neck-lengthen.png`。
+
+**執行方式:** 延續決策31建立的做法,由我直接操作使用者登入的 Chrome 連 ChatGPT 生成、下載、比對內容、接上文章,使用者全程未手動介入。
+
+**驗證:** 用本機 `yoga-site-preview` 開兩篇文章,JS 檢查兩張新圖 `naturalWidth>0` 且路徑正確;另外確認 `blog-forward-head-daily.html` 現在的 `art06.jpg` 只出現一次(原本兩次)。
+
+**狀態:** ✅ 已 commit(`03ea59e`)、已 push(2026-09-03)。至此,原始 A/B/C/D 計畫加上這兩篇補漏,全站 blog 文章的圖片重複問題全部處理完畢,沒有已知遺留項目。
+
 **狀態:** ✅ 兩篇已上架、已 commit(`cec7a77`)、已 push(2026-09-03,使用者指示「今天一起補發」)。9/4、9/5、9/6 排程(post-illness-stiffness、restarting-after-a-break、hand-wrist-elbow-pain-comparison)不受影響,仍依原排程走,但依本次教訓,屆時查核不應只靠提醒是否觸發。
 
 ---

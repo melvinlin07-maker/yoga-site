@@ -79,7 +79,7 @@
 
 **已解決(2026-09-03):**
 - `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` / `art06.jpg` 原本跨多個 blog 頁面共用,由使用者主導的 A/B/C/D 分組換圖計畫(共24張 AI 生成圖,每張生成後皆比對內容是否符合 prompt 才接上,發現1張不符合的已重新生成)已全部完成:A組7篇(取代 wall-rope-suspension.jpg,commit `1fe3684`)、B組7篇(取代 wall-rope-teacher.jpg,同上)、C組6篇(取代 art06.jpg,commit `b57da4d`)、D組3篇(取代 wall-rope-inversion.jpg,commit `3b8727f`),共24篇 blog 文章換上專屬圖片。這四張圖現僅保留在各自真正歸屬頁(`blog-what-is-wall-rope.html`、`blog-first-class-what-to-bring.html`、`blog-forward-head-daily.html`、`blog-breathing-shoulder-release.html`)+ 非 blog 頁面(`index.html`、`assessment.html`、`assessment-v2/v3.html`、`about-wall-rope.html`、`contact.html`、`neck-release-v1.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`、`know-yoga.html`、`classes.html`,這些不在本次清理範圍,非blog頁面未來若要處理需另外評估)。
-- **已知仍存在、本次未處理的另一問題:** `blog-forward-head-daily.html` 內部本身重複使用 `art06.jpg` 兩次(頭圖+文章中段),屬於單篇內部重複,跟本次跨文章共用的問題不同,尚未處理。
+- **2026-09-03 補完:** `blog-neck-hump.html`(原計畫24篇之外遺漏的一篇,原本仍用 `wall-rope-suspension.jpg`)已換上專屬「收下巴」頸部練習圖(嘗試三次才成功——前兩次生成的畫面雖是坐姿但沒有真的做出收下巴動作,第三次改用正面偏三分角度+手觸下巴的描述才成功)。`blog-forward-head-daily.html` 內部重複使用 `art06.jpg` 兩次(頭圖+文章中段)的問題也已解決,中段改用專屬的壁繩頸部延伸圖,`art06.jpg` 現只在該頁頭圖出現一次(commit `03ea59e`)。至此,原始A/B/C/D計畫外加這兩篇補漏,全站 blog 文章的圖片重複問題已完全處理完畢。
 
 **其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
 
