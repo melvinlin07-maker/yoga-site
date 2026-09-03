@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var leadCategory = body.getAttribute("data-lead-category") || "AI posture assessment";
       // 頁面可用 <body data-line-event="Contact"> 把 LINE 點擊降級成「詢問」事件，
       // 讓真正的轉換（如站內表單）保留 Lead 給廣告優化用。未設定時維持原行為（Lead），不影響其他既有頁面。
-      var lineEventName = body.getAttribute("data-line-event") || "Lead";
+      var lineEventName = a.getAttribute("data-line-event") || body.getAttribute("data-line-event") || "Lead";
       // 按鈕層級用途分類（同一訊號也驅動下方 Meta 的 LineClick / ReservationIntent）。
       var linePurpose = a.getAttribute("data-line-purpose") || "";
 
