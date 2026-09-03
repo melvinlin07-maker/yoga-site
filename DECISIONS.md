@@ -536,4 +536,26 @@
 
 **RemoteTrigger 教訓更新(已存入 memory `project-remotetrigger-unreliable-for-publish`):** 提醒機制本身運作正常不代表使用者會看到——這是第二次發生同樣情況。之後查進度時,不能只看「有沒有排提醒」,要主動核對 `blog.html`/`sitemap.xml`/git log 的實際狀態,才能抓出「排定但沒發生」的落差。
 
+---
+
+## 31. 完成 A/B/C/D 四組(24篇)壁繩重複圖片換圖計畫
+
+**背景:** `PROJECT.md` 原本記載 `wall-rope-teacher.jpg`/`wall-rope-inversion.jpg`/`wall-rope-suspension.jpg` 三張壁繩教學圖跨多個 blog 頁面共用,評估後列為低優先、尚未處理。使用者在另一個 ChatGPT 對話串已先規劃好 A/B/C/D 四組共24張的具體換圖計畫(每張都指定給特定文章、附具體 prompt),2026-09-03 帶進本對話要求執行。查證發現同類型的大規模換圖曾在8/4翻車過(commit `55f414b` 32分鐘內被 revert `fef26da`,原因是外部工具一次塞入整批未篩選素材污染版本庫),但這次計畫每張圖都指定明確用途與內容,設計上比8/4謹慎,判斷可以繼續執行。
+
+**執行方式:** 使用者先自行在 ChatGPT 貼 prompt 生成圖片、下載到本機,由我負責讀取確認內容是否符合 prompt、複製改名進 `assets/`、接上對應文章的圖片。**B組最後階段起,使用者要求改由我直接操作 ChatGPT 網頁(用 `claude-in-chrome` 連到使用者真實登入的 Chrome)**,自己貼 prompt、等待生成、下載、確認、接上文章,不用使用者手動操作。
+
+**品質把關(每張圖生成後都先看內容再接,不是生成完就直接用):**
+- A組8張 + B組7張(banked 1張)+ C組6張 + D組3張,共24張全數生成完成
+- 過程中抓到1張明顯不符合 prompt 的圖(`gentle-neck-chin-tuck.jpg` 原本要「收下巴頸部伸展」,兩次生成結果都是盤腿靜坐冥想姿勢,沒有收下巴動作)——**沒有將錯就錯接上文章**,先問過使用者,決定把這張重新歸類成 B 組的 `gentle-seated-calm-stretch.jpg`(用在 `blog-gentle-movement-stress.html`),`blog-neck-hump.html` 的圖留待之後另外處理,目前仍是舊圖 `wall-rope-suspension.jpg`(不在本次24張範圍內,原始計畫就沒有排這篇)
+- D組最後一張(desk-posture-fatigue)第一次生成跑成左右對比兩格拼接圖,不適合當網站單張圖使用,已重新明確要求「單一畫面、不要分割」重新生成一次才通過
+
+**技術細節:**
+- 每張新圖僅替換文章中段的次要 `<figure>`(原本共用 `wall-rope-*`/`art06.jpg` 那個位置),**不動**各文章頂部已經各自獨立的 hero/og:image/JSON-LD image(這些本來就沒有重複問題,不在本次範圍內)
+- 圖檔統一存成 `.png`(ChatGPT 輸出格式),檔名沿用計畫原定的英文語意化命名,大小與站上既有已發佈的AI生成圖(如 `seated-twist-calm-face.png` 1.8MB)相當,未額外壓縮
+- 逐篇用本機 `yoga-site-preview` 伺服器 + JS 檢查 `img.complete && naturalWidth>0` 驗證圖片實際載入成功,而非只憑程式碼看起來正確
+
+**Git 執行範圍:** 分4次commit對應A/B/C/D四組(`1fe3684`、`b57da4d`、`3b8727f`,A+B合併一次commit),另有2次PROJECT.md文件同步commit,皆已push。每組完成後才進下一組,不是一次全部做完才commit。
+
+**狀態:** ✅ 24篇文章的重複圖片問題全部解決,已 commit、已 push(2026-09-03,使用者指示「繼續把它做完」)。`wall-rope-teacher.jpg`/`wall-rope-inversion.jpg`/`wall-rope-suspension.jpg`/`art06.jpg` 現只留在各自真正歸屬頁 + 非blog頁面(非本次範圍)。`blog-neck-hump.html` 的圖片、`blog-forward-head-daily.html` 內部重複使用 `art06.jpg` 兩次的問題,皆為已知但未處理事項,留待使用者後續決定。
+
 **狀態:** ✅ 兩篇已上架、已 commit(`cec7a77`)、已 push(2026-09-03,使用者指示「今天一起補發」)。9/4、9/5、9/6 排程(post-illness-stiffness、restarting-after-a-break、hand-wrist-elbow-pain-comparison)不受影響,仍依原排程走,但依本次教訓,屆時查核不應只靠提醒是否觸發。

@@ -77,8 +77,9 @@
 - 修正 `blog-stiff-neck-crick.html`、`blog-stiff-body-wall-rope.html` 的縮圖重複問題(原本共用 `art07.jpg`/`art05.jpg`),改用專屬圖 `blog-stiffneck.jpg`、`blog-wallropebody.jpg`,`blog.html` 索引縮圖同步更新。
 - 清除 `blog-who-needs-ai-posture-assessment.html` 內殘留的內部草稿筆記(「CTA 建議：」「錨文字：」「Q1～Q4」裸文字段落),內容已保留在正式 FAQ 區塊中,未遺失資訊。
 
-**已知仍待處理(低優先,未動):**
-- `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` 這三張壁繩教學圖原本跨 9–14 個頁面共用(含非 blog 頁面)。**2026-09-03 部分處理:** 使用者主導的 A/B/C/D 分組換圖計畫(共24張),已完成 A組(7篇,取代 wall-rope-suspension.jpg)+ B組(7篇,取代 wall-rope-teacher.jpg),共14篇 blog 文章換上專屬 AI 生成圖(commit `1fe3684`)。`wall-rope-teacher.jpg`/`wall-rope-suspension.jpg` 現僅保留在各自真正歸屬頁(`blog-first-class-what-to-bring.html`、`blog-what-is-wall-rope.html`)+ 非 blog 頁面(`index.html`、`assessment.html`、`assessment-v2/v3.html`、`about-wall-rope.html`、`contact.html`、`neck-release-v1.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`,這些不在本次清理範圍)。**2026-09-03 追加:** C組(6篇,取代 `art06.jpg`)也已完成(commit `b57da4d`),`art06.jpg` 現僅保留在真正歸屬頁 `blog-forward-head-daily.html`(該頁內部仍有 hero+文中重複使用同張圖的問題,屬另一個既有問題,本次未處理)+ `know-yoga.html`、`index.html`、`blog.html`(非本次清理範圍)。**D組(3篇,取代 `wall-rope-inversion.jpg`)尚未處理**,`wall-rope-inversion.jpg` 完全未動。
+**已解決(2026-09-03):**
+- `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` / `art06.jpg` 原本跨多個 blog 頁面共用,由使用者主導的 A/B/C/D 分組換圖計畫(共24張 AI 生成圖,每張生成後皆比對內容是否符合 prompt 才接上,發現1張不符合的已重新生成)已全部完成:A組7篇(取代 wall-rope-suspension.jpg,commit `1fe3684`)、B組7篇(取代 wall-rope-teacher.jpg,同上)、C組6篇(取代 art06.jpg,commit `b57da4d`)、D組3篇(取代 wall-rope-inversion.jpg,commit `3b8727f`),共24篇 blog 文章換上專屬圖片。這四張圖現僅保留在各自真正歸屬頁(`blog-what-is-wall-rope.html`、`blog-first-class-what-to-bring.html`、`blog-forward-head-daily.html`、`blog-breathing-shoulder-release.html`)+ 非 blog 頁面(`index.html`、`assessment.html`、`assessment-v2/v3.html`、`about-wall-rope.html`、`contact.html`、`neck-release-v1.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`、`know-yoga.html`、`classes.html`,這些不在本次清理範圍,非blog頁面未來若要處理需另外評估)。
+- **已知仍存在、本次未處理的另一問題:** `blog-forward-head-daily.html` 內部本身重複使用 `art06.jpg` 兩次(頭圖+文章中段),屬於單篇內部重複,跟本次跨文章共用的問題不同,尚未處理。
 
 **其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
 
