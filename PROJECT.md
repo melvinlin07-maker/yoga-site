@@ -26,7 +26,7 @@
 - `neck-release.html`(一對一肩頸調整正式頁,已整併取代舊實驗版,已接 n8n webhook)
 - `about.html`、`about-poses.html`、`about-wall-rope.html`
 - `classes.html`、`contact.html`、`know-yoga.html`、`practice-guide.html`
-- `blog.html` + **64 篇** `blog-*.html` 文章
+- `blog.html` + **66 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
 - `privacy.html`、`terms.html`、`disclaimer.html`
@@ -36,6 +36,8 @@
 > **數量修正紀錄(2026-08-27):** 依新流程(今天寫、隔天發布)新增 `blog-is-it-frozen-shoulder.html`(五十肩誠實分流文),61→62 篇 blog,總數 113→114 個 HTML。
 > **數量修正紀錄(2026-08-29):** 上架 `blog-arm-flab-rounded-shoulders.html`(蝴蝶袖與姿勢的關係),62→63 篇 blog,總數 114→115 個 HTML。
 > **數量修正紀錄(2026-08-31):** 上架 `blog-pelvic-floor-leaks.html`(骨盆底肌／漏尿,參考國外 Yoga Journal anatomy 分類選題),發布前已將文中佔位日期同步修正為實際發布日,加入 `blog.html` 骨盆・下半身分類 + `sitemap.xml`,63→**64 篇 blog**,總數 115→**116 個 HTML**。
+> **數量修正紀錄(2026-09-03):** 依決策29排程補發 `blog-jaw-tmj-tension.html`(TMJ,原排9/2漏發)+ `blog-sprain-strain-comeback.html`(閃到腰/扭傷,原排9/3),兩篇皆加入 `blog.html` + `sitemap.xml`,64→**66 篇 blog**。
+> ⚠️ **總 HTML 檔案數(116)本次未重新稽核,已知過時:** 實查根目錄現有 129 個 `.html`,期間至少新增了未記錄於本文件的 `shoulder-checkup-v1.html`(commit `e7239c2`,無對應決策紀錄)以及 10 篇仍未上架的 blog 草稿(見「未發佈的/index.html」)。**總數與 sitemap 收錄範圍(第58-62行)需要完整重新稽核,本次僅更新 blog 篇數與 sitemap 條數,不擅自回填總數,待你確認後再補稽核。**
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
 **站上公開價格:** 僅出現 NT$199 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
@@ -55,9 +57,9 @@
 
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
-**Sitemap 收錄範圍(2026-08-31 更新):**
-- 共 **108 條 `<loc>`** = 116 個 HTML − 8 個隱藏/工具頁;首頁以 `/` 形式收錄
-- 64 篇 blog + 27 篇 pose **全數在列**(2026-08-31 上架 `blog-pelvic-floor-leaks.html` 後已同步)
+**Sitemap 收錄範圍(2026-09-03 更新,僅同步本次新增,未完整重新稽核):**
+- 共 **110 條 `<loc>`**(實查 `grep -c "<loc>" sitemap.xml`);與「116 個 HTML − 8」的舊公式關係待重新稽核(見上方⚠️)
+- 66 篇 blog + 27 篇 pose **全數在列**(2026-09-03 補發 `blog-jaw-tmj-tension.html`、`blog-sprain-strain-comeback.html` 後已同步)
 - 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
 - **結論:收錄範圍完全正確,此項不再列為待確認**
 
