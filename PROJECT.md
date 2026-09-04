@@ -29,6 +29,7 @@
 - `blog.html` + **67 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
+- `posture-self-test.html`(體態訊號掃描,互動式免費工具,2026-09-04 上線,見 `DECISIONS.md` §34)
 - `privacy.html`、`terms.html`、`disclaimer.html`
 
 > **數量修正紀錄(2026-08-21,分兩批):** 依 `SEO_CONTENT_SOP.md` 流程,同一天內共新增 4 篇 blog。第一批 3 篇(`blog-first-time-ai-assessment.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-choosing-first-class-format.html`,commit `1f1ef40`)56→59 篇;第二批 1 篇(`blog-ai-assessment-not-just-numbers.html`,commit `b1f506e`)59→60 篇 blog,總數 111→112 個 HTML。
@@ -38,6 +39,7 @@
 > **數量修正紀錄(2026-08-31):** 上架 `blog-pelvic-floor-leaks.html`(骨盆底肌／漏尿,參考國外 Yoga Journal anatomy 分類選題),發布前已將文中佔位日期同步修正為實際發布日,加入 `blog.html` 骨盆・下半身分類 + `sitemap.xml`,63→**64 篇 blog**,總數 115→**116 個 HTML**。
 > **數量修正紀錄(2026-09-03):** 依決策29排程補發 `blog-jaw-tmj-tension.html`(TMJ,原排9/2漏發)+ `blog-sprain-strain-comeback.html`(閃到腰/扭傷,原排9/3),兩篇皆加入 `blog.html` + `sitemap.xml`,64→**66 篇 blog**。
 > **數量修正紀錄(2026-09-04):** 依決策29排程發布 `blog-post-illness-stiffness.html`(感冒臥床後僵硬,睡眠・放鬆分類),加入 `blog.html` + `sitemap.xml`,66→**67 篇 blog**。
+> **新增紀錄(2026-09-04):** 新增互動式免費工具 `posture-self-test.html`(非 blog,不計入 blog 篇數),入口設於 `blog.html` 篩選列下方與 `resources.html`,已加入 `sitemap.xml`(111→**112 條 `<loc>`**)。隨頁新增 12 張圖片素材 `assets/quiz-day-01~10.jpg`、`quiz-open.jpg`、`quiz-still.jpg`(取自先前未被引用的 `assets/0814/` 素材,轉為 1600px JPEG)。詳見 `DECISIONS.md` §34。
 > ⚠️ **總 HTML 檔案數(116)本次未重新稽核,已知過時:** 實查根目錄現有 129 個 `.html`,期間至少新增了未記錄於本文件的 `shoulder-checkup-v1.html`(commit `e7239c2`,無對應決策紀錄)以及 10 篇仍未上架的 blog 草稿(見「未發佈的/index.html」)。**總數與 sitemap 收錄範圍(第58-62行)需要完整重新稽核,本次僅更新 blog 篇數與 sitemap 條數,不擅自回填總數,待你確認後再補稽核。**
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。

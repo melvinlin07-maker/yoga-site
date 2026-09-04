@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>體態訊號掃描｜看懂你的不舒服是怎麼連在一起的｜鑫彥瑜珈</title>
+<meta name="description" content="走過一天中的 10 個時刻，看懂你的不舒服彼此是怎麼連在一起的，並分清楚哪些情況適合先動一動、哪些情況該先看醫生。免費、不用登入，非醫療診斷。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
+<link rel="stylesheet" href="theme.css?v=10">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="鑫彥瑜珈">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="體態訊號掃描｜看懂你的不舒服是怎麼連在一起的">
+<meta property="og:description" content="走過一天中的 10 個時刻，看懂它們彼此怎麼連在一起。免費，非醫療診斷。">
+<meta property="og:url" content="https://sinyanyoga.com.tw/posture-self-test.html">
+<meta property="og:image" content="https://sinyanyoga.com.tw/assets/quiz-open.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sinyanyoga.com.tw/posture-self-test.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/posture-self-test.html#webpage","url":"https://sinyanyoga.com.tw/posture-self-test.html","name":"體態訊號掃描","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":["體態調整","壁繩瑜伽","高雄左營瑜伽"],"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/posture-self-test.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"體態知識庫","item":"https://sinyanyoga.com.tw/blog.html"},{"@type":"ListItem","position":3,"name":"體態訊號掃描","item":"https://sinyanyoga.com.tw/posture-self-test.html"}]}]}</script>
+<style>
+  /* 45–60 歲為主要讀者：內文最小 17px、說明不用等寬字、對比拉高 */
+  .scan{
+    --gr:#0f0d13; --sf:#191521; --sf2:#221c2b; --hair:rgba(255,255,255,.13);
+    --tx:#f6f1f4; --dim:#c3b6bd; --dim2:#9b8f97;
+    --gold:#e0b869; --gold-hi:#f0d49b;
+    --low:#8fc4ab; --mid:#e5b45c; --high:#dc9683;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--gr); color:var(--tx);
+    font-size:17px; line-height:2;
+  }
+  .scan *{box-sizing:border-box}
+  .scan-wrap{max-width:900px; margin:0 auto; padding:0 26px}
+  @media(max-width:600px){.scan-wrap{padding:0 20px}}
+  .lbl{font-size:13px; letter-spacing:.16em; color:var(--gold); font-weight:500}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+
+  /* ---------- 開場 ---------- */
+  .sc-open{position:relative; padding:88px 0 80px; overflow:hidden}
+  .sc-open::before{content:""; position:absolute; inset:0; background:url('assets/quiz-open.jpg') center/cover no-repeat; opacity:.2; filter:grayscale(.3)}
+  .sc-open::after{content:""; position:absolute; inset:0; background:radial-gradient(120% 90% at 72% 30%, rgba(15,13,19,.4), var(--gr) 74%)}
+  .sc-open .scan-wrap{position:relative; z-index:2}
+  .sc-open h1{font-family:"Noto Serif TC",serif; font-weight:900; font-size:clamp(31px,5vw,50px); line-height:1.5; margin:20px 0 0; max-width:17em}
+  .sc-open .lead{color:var(--dim); font-size:18px; line-height:2.1; max-width:33em; margin-top:24px}
+  .sc-open .lead b{color:var(--tx); font-weight:500}
+  .specs{display:flex; flex-wrap:wrap; margin-top:42px; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair)}
+  .spec{flex:1; min-width:130px; padding:22px 0; border-right:1px solid var(--hair)}
+  .spec:last-child{border-right:0}
+  .spec .v{font-family:var(--mono); font-size:28px; font-variant-numeric:tabular-nums}
+  .spec .k{margin-top:6px; font-size:14px; color:var(--dim2); letter-spacing:.06em}
+  .go{margin-top:40px; background:var(--gold); border:0; cursor:pointer; font-family:inherit; font-size:18px; font-weight:700;
+      color:#1a1208; letter-spacing:.06em; padding:20px 40px; border-radius:3px; transition:background .2s}
+  .go:hover{background:var(--gold-hi)}
+
+  /* ---------- 掃描中 ---------- */
+  .sc-run{padding:30px 0 90px; min-height:74vh}
+  .runbar{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--hair); flex-wrap:wrap}
+  .segs{display:flex; gap:4px; flex:1; max-width:360px; min-width:180px}
+  .segs i{flex:1; height:4px; background:rgba(255,255,255,.14); transition:background .35s}
+  .segs i.some{background:var(--dim2)}
+  .segs i.hit{background:var(--gold)}
+  .segs i.now{background:var(--gold-hi)}
+  .runcount{font-size:15px; color:var(--dim)}
+  .runcount b{font-family:var(--mono); color:var(--gold); font-size:19px}
+
+  .frame{display:grid; grid-template-columns:1fr 280px; gap:48px; margin-top:44px; align-items:start}
+  @media(max-width:900px){.frame{grid-template-columns:1fr; gap:28px; margin-top:30px}}
+  .tstamp{display:flex; align-items:baseline; gap:16px; margin-bottom:22px; flex-wrap:wrap}
+  .tstamp .t{font-family:var(--mono); font-size:clamp(38px,6.5vw,56px); font-variant-numeric:tabular-nums; letter-spacing:-.03em; line-height:1}
+  .tstamp .sc{font-size:15px; letter-spacing:.14em; color:var(--gold)}
+  .qwhy{color:var(--dim); font-size:16px; line-height:1.95; margin-bottom:18px; max-width:32em}
+  .qbox{display:none}
+  .qbox.on{display:block; animation:fadeUp .45s cubic-bezier(.2,.7,.3,1) both}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(14px)}to{opacity:1; transform:none}}
+  .qbox h2{font-family:"Noto Serif TC",serif; font-weight:700; font-size:clamp(23px,2.8vw,31px); line-height:1.7; min-height:100px}
+  @media(max-width:600px){.qbox h2{min-height:126px; font-size:22px}}
+
+  .opts{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap}
+  .opt{flex:1 1 160px; min-height:60px; background:var(--sf); border:1px solid var(--hair); color:var(--tx); font-family:inherit;
+       font-size:17px; font-weight:500; padding:17px 22px; border-radius:3px; cursor:pointer; transition:all .18s}
+  .opt:hover{border-color:var(--gold); background:var(--sf2)}
+  .opt .oz{display:block; font-size:13.5px; color:var(--dim2); margin-top:3px; font-weight:400}
+  .undo{margin-top:24px; background:none; border:0; padding:8px 0; font-family:inherit; font-size:15px; color:var(--dim2); cursor:pointer}
+  .undo:hover{color:var(--gold)}
+  .undo[hidden]{display:none}
+
+  .thumb{border:1px solid var(--hair); background:var(--sf); position:relative; aspect-ratio:4/5; overflow:hidden}
+  @media(max-width:900px){.thumb{aspect-ratio:16/9}}
+  .thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; filter:grayscale(.4); transition:opacity .7s}
+  .thumb img.on{opacity:.8}
+  .thumb .cap{position:absolute; left:0; right:0; bottom:0; padding:14px 16px; font-size:14px; color:var(--dim);
+              background:linear-gradient(180deg,transparent,rgba(15,13,19,.92)); z-index:2}
+
+  /* ---------- 報告 ---------- */
+  .sc-report{padding:20px 0 100px}
+  .rep-head{padding:28px 0 34px}
+  .rep-head h2{font-family:"Noto Serif TC",serif; font-size:clamp(25px,3.6vw,37px); line-height:1.55; margin-top:14px}
+  .rep-head .sub{color:var(--dim); font-size:17px; margin-top:16px; line-height:2; max-width:36em}
+
+  .sect{padding:44px 0; border-top:1px solid var(--hair)}
+  .sect>.lbl{display:block; margin-bottom:24px}
+
+  /* 訊號鏈（主角） */
+  .chain{border:1px solid rgba(224,184,105,.3); background:linear-gradient(180deg,rgba(224,184,105,.07),transparent); padding:34px 32px; margin-bottom:18px}
+  @media(max-width:600px){.chain{padding:26px 20px}}
+  .chain .hops{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:20px}
+  .chain .hop{font-size:14.5px; color:var(--gold); border:1px solid rgba(224,184,105,.4); padding:7px 13px; border-radius:2px}
+  .chain .arw{color:var(--dim2)}
+  .chain h3{font-family:"Noto Serif TC",serif; font-size:clamp(21px,2.6vw,26px); line-height:1.6; margin-bottom:14px}
+  .chain p{color:var(--dim); font-size:17px; line-height:2.05}
+  .nochain{color:var(--dim); font-size:17px; line-height:2.05}
+
+  /* 現在就能做 */
+  .picker{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px}
+  .pchip{background:var(--sf); border:1px solid var(--hair); color:var(--dim); font-family:inherit; font-size:15px;
+         padding:11px 18px; border-radius:999px; cursor:pointer; transition:all .18s}
+  .pchip:hover{border-color:var(--gold)}
+  .pchip.on{background:rgba(224,184,105,.16); border-color:var(--gold); color:var(--gold-hi)}
+  .act{border:1px solid var(--hair); background:var(--sf); padding:32px 30px}
+  @media(max-width:600px){.act{padding:26px 20px}}
+  .act h3{font-family:"Noto Serif TC",serif; font-size:22px; margin-bottom:6px}
+  .act .t{font-size:14.5px; color:var(--gold); margin-bottom:20px}
+  .act ol{margin:0; padding-left:0; list-style:none; counter-reset:s}
+  .act ol li{counter-increment:s; position:relative; padding-left:42px; margin-bottom:16px; color:var(--dim); font-size:17px; line-height:1.95}
+  .act ol li::before{content:counter(s); position:absolute; left:0; top:1px; font-family:var(--mono); font-size:14px; color:var(--gold);
+                     border:1px solid rgba(224,184,105,.4); width:27px; height:27px; display:flex; align-items:center; justify-content:center}
+  .act .stop{margin-top:20px; padding-top:18px; border-top:1px solid var(--hair); font-size:15.5px; color:var(--dim2); line-height:1.95}
+  .act .src{font-size:15px; margin-top:14px; color:var(--dim2)}
+  .act .src a{color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(224,184,105,.4)}
+
+  /* 分流 */
+  .triage{border:1px solid var(--hair); background:var(--sf); padding:30px 28px}
+  @media(max-width:600px){.triage{padding:24px 20px}}
+  .triage h3{font-family:"Noto Serif TC",serif; font-size:20px; margin-bottom:14px}
+  .triage p{color:var(--dim); font-size:17px; line-height:2.05}
+  .redflag{border:1px solid rgba(220,150,131,.42); background:rgba(220,150,131,.07); padding:28px 28px; margin-bottom:18px}
+  @media(max-width:600px){.redflag{padding:24px 20px}}
+  .redflag h3{color:var(--high); font-family:"Noto Serif TC",serif; font-size:20px; margin-bottom:8px}
+  .redflag .rsub{color:var(--dim); font-size:16px; margin-bottom:16px; line-height:1.95}
+  .redflag ul{margin:0; padding-left:0; list-style:none}
+  .redflag li{position:relative; padding-left:26px; margin-bottom:12px; color:var(--tx); font-size:16.5px; line-height:1.9}
+  .redflag li::before{content:""; position:absolute; left:4px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--high)}
+  .redflag .rend{margin-top:18px; padding-top:16px; border-top:1px solid rgba(220,150,131,.28); font-size:16px; color:var(--dim); line-height:1.95}
+  .redflag .rend a{color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(224,184,105,.4)}
+
+  /* 詳細數據（降級） */
+  .data-head{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:26px}
+  .idx{display:flex; align-items:center; gap:20px}
+  .ring{position:relative; width:112px; height:112px; flex-shrink:0}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .v{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--mono);
+           font-size:30px; font-variant-numeric:tabular-nums}
+  .idx-tx .big{font-size:19px; line-height:1.6}
+  .idx-tx .small{color:var(--dim2); font-size:15px; margin-top:4px}
+  .band{display:inline-flex; align-items:center; gap:9px; border:1px solid var(--hair); padding:9px 16px; font-size:15px}
+  .band i{width:9px; height:9px; border-radius:50%}
+
+  .chart{display:grid; grid-template-columns:repeat(10,1fr); gap:6px; align-items:end; height:120px}
+  .chart .col{height:100%; display:flex; align-items:flex-end}
+  .chart .bar{width:100%; background:rgba(255,255,255,.1); height:10%; transition:height .7s cubic-bezier(.3,.8,.3,1)}
+  .chart .col.half .bar{background:rgba(224,184,105,.45); height:52%}
+  .chart .col.full .bar{background:linear-gradient(180deg,var(--gold-hi),var(--gold)); height:100%}
+  .chart-x{display:grid; grid-template-columns:repeat(10,1fr); gap:6px; margin-top:12px}
+  .chart-x span{font-family:var(--mono); font-size:12px; color:var(--dim2); text-align:center}
+
+  .contrib{border-top:1px solid var(--hair); margin-top:34px}
+  .crow{border-bottom:1px solid var(--hair)}
+  .chead{display:grid; grid-template-columns:130px 1fr 60px 26px; gap:16px; align-items:center; padding:19px 2px; cursor:pointer;
+         background:none; border:0; width:100%; text-align:left; font-family:inherit; color:var(--tx); font-size:16px}
+  @media(max-width:600px){.chead{grid-template-columns:96px 1fr 44px 20px; gap:10px; font-size:14px}}
+  .crow.lead .cname{color:var(--gold-hi); font-weight:700}
+  .ctrack{height:6px; background:rgba(255,255,255,.1); border-radius:99px; overflow:hidden}
+  .ctrack i{display:block; height:100%; width:0; background:var(--dim2); border-radius:99px; transition:width .85s cubic-bezier(.3,.8,.3,1)}
+  .crow.lead .ctrack i{background:linear-gradient(90deg,var(--gold-hi),var(--gold))}
+  .cval{font-family:var(--mono); font-size:15px; color:var(--dim); text-align:right}
+  .crow.lead .cval{color:var(--gold-hi)}
+  .cx{color:var(--dim2); font-size:19px; text-align:center; transition:transform .25s}
+  .crow.open .cx{transform:rotate(45deg)}
+  .cbody{display:none; padding:2px 2px 26px}
+  .crow.open .cbody{display:block; animation:fadeUp .3s ease both}
+  .cbody p{color:var(--dim); font-size:16.5px; line-height:2.05; max-width:44em}
+  .cmoments{margin-top:18px; padding-top:14px; border-top:1px solid var(--hair)}
+  .cmoment{display:flex; gap:14px; font-size:15.5px; color:var(--dim); padding:6px 0; line-height:1.85}
+  .cmoment b{font-family:var(--mono); color:var(--gold); font-weight:400; flex-shrink:0}
+  .creads{margin-top:18px}
+  .creads a{display:flex; justify-content:space-between; gap:14px; padding:15px 0; border-top:1px solid var(--hair);
+            color:var(--tx); font-size:16px; text-decoration:none; transition:color .18s}
+  .creads a::after{content:"→"; color:var(--gold)}
+  .creads a:hover{color:var(--gold-hi)}
+
+  /* 對照 / 保存 */
+  .compare{display:flex; align-items:center; gap:22px; flex-wrap:wrap; border:1px solid var(--hair); background:var(--sf); padding:20px 24px; margin-top:24px}
+  .cmp-pair{display:flex; align-items:baseline; gap:12px; font-family:var(--mono); font-variant-numeric:tabular-nums}
+  .cmp-old{font-size:24px; color:var(--dim2)} .cmp-ar{color:var(--dim2)} .cmp-new{font-size:30px}
+  .cmp-d{font-family:var(--mono); font-size:15px; padding:5px 12px; border:1px solid var(--hair)}
+  .cmp-tx{color:var(--dim); font-size:16px; line-height:1.9; flex:1; min-width:220px}
+
+  .disc{font-size:15px; line-height:2; color:var(--dim2); padding:28px 0; border-top:1px solid var(--hair)}
+  .ends{padding:44px 0 0; text-align:center}
+  .ends .btn{min-width:min(430px,100%); font-size:17px; padding:19px 30px}
+  .softs{margin-top:22px; display:flex; gap:26px; justify-content:center; flex-wrap:wrap}
+  .softs a, .softs button{background:none; border:0; font-family:inherit; font-size:16px; color:var(--dim); cursor:pointer; text-decoration:underline; text-underline-offset:5px}
+  .softs a:hover, .softs button:hover{color:var(--gold)}
+  .saved-note{margin-top:16px; font-size:15px; color:var(--low)}
+
+  .tcard{display:grid; grid-template-columns:76px 1fr; gap:22px; align-items:center; border:1px solid var(--hair); background:var(--sf); padding:26px 28px; margin-top:40px}
+  .tcard img{width:76px; height:76px; border-radius:50%; object-fit:cover; object-position:center top}
+  .tcard .tn{font-family:"Noto Serif TC",serif; font-weight:700; font-size:17px; margin-bottom:6px}
+  .tcard p{color:var(--dim); font-size:15.5px; line-height:1.95}
+  .tcard .st{color:var(--gold); font-size:14.5px; margin-top:9px}
+  @media(max-width:560px){.tcard{grid-template-columns:1fr; text-align:center; justify-items:center; gap:14px}}
+
+  [hidden]{display:none!important}
+</style>
+</head>
+<body data-line-event="Contact" data-line-message="我做了體態訊號掃描，想多了解">
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="assessment.html">AI 體態檢測</a></li>
+    <li><a href="classes.html">課程方式</a></li>
+    <li><a href="know-yoga.html">認識瑜伽</a></li>
+    <li><a href="blog.html">部落格</a></li>
+    <li><a href="about.html">關於鑫彥</a></li>
+    <li><a href="neck-release.html">一對一調整</a></li>
+  </ul>
+  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$199 檢測</a>
+  <button class="nav-toggle" aria-label="選單">☰</button>
+</div></nav>
+
+<div class="scan">
+
+<!-- ===== 開場 ===== -->
+<section class="sc-open" id="sc-open"><div class="scan-wrap">
+  <div class="lbl">體態訊號掃描</div>
+  <h1>你的不舒服，有沒有可能是連在一起的？</h1>
+  <p class="lead">肩頸緊、腰痠、睡不好，常常被當成三件事分開處理。有時候它們確實各自獨立，有時候則是同一條鏈上的不同位置。這份掃描會走過你一天中的 10 個時刻，<b>看看哪幾個時刻可能彼此有關</b>，並幫你分清楚：哪些情況適合先自己動一動，哪些情況該先看醫生。</p>
+  <div class="specs">
+    <div class="spec"><div class="v num">10</div><div class="k">個生活時刻</div></div>
+    <div class="spec"><div class="v num">2<span style="font-size:15px">分鐘</span></div><div class="k">大約需要</div></div>
+    <div class="spec"><div class="v num">0</div><div class="k">需填個資</div></div>
+  </div>
+  <button type="button" class="go" id="go">開始掃描</button>
+</div></section>
+
+<!-- ===== 掃描中 ===== -->
+<section class="sc-run" id="sc-run" hidden><div class="scan-wrap">
+  <div class="runbar">
+    <div class="segs" id="segs"></div>
+    <div class="runcount">已回答 <b id="asked">0</b> / 10</div>
+  </div>
+
+  <div class="frame">
+    <div>
+      <div class="tstamp"><span class="t num" id="t-now">07:00</span><span class="sc" id="t-scene">剛醒來</span></div>
+      <p class="qwhy" id="t-why"></p>
+
+      <div class="qbox on" data-hh="07:00" data-scene="剛醒來" data-cat="sleep" data-img="assets/quiz-day-01.jpg"
+           data-why="睡了一整夜之後的第一步，常常反映出身體平常的緊繃程度。">
+        <h2>剛起床的時候，身體要先動一動，才走得順。</h2></div>
+      <div class="qbox" data-hh="08:10" data-scene="出門前" data-cat="shoulder" data-img="assets/quiz-day-02.jpg"
+           data-why="鏡子裡的樣子，往往比自己的感覺更誠實一點。">
+        <h2>經過鏡子那一眼，覺得自己比想像中還要圓肩、駝一點。</h2></div>
+      <div class="qbox" data-hh="10:30" data-scene="上班中" data-cat="neck" data-img="assets/quiz-day-03.jpg"
+           data-why="頭每往前一點，頸部要扛的重量就多一些，而這個姿勢一整天不斷重複。">
+        <h2>看螢幕看久了，頭會不知不覺往前伸出去。</h2></div>
+      <div class="qbox" data-hh="12:40" data-scene="午後" data-cat="sedentary" data-img="assets/quiz-day-04.jpg"
+           data-why="久坐的影響不是某一塊肌肉，而是整體活動範圍慢慢變小。">
+        <h2>一整天大部分的時間都坐著，很少中途起來走動。</h2></div>
+      <div class="qbox" data-hh="15:00" data-scene="下午" data-cat="neck" data-img="assets/quiz-day-05.jpg"
+           data-why="「鬆開又緊回去」通常代表來源還在，不是放鬆做得不夠。">
+        <h2>肩頸開始緊。按一按當下有鬆，但沒多久又緊回去。</h2></div>
+      <div class="qbox" data-hh="16:20" data-scene="起身" data-cat="sedentary" data-img="assets/quiz-day-06.jpg"
+           data-why="需要暖機，代表身體從靜止切換到活動的能力正在變慢。">
+        <h2>久坐後站起來，要先「暖機」幾步，才走得順。</h2></div>
+      <div class="qbox" data-hh="17:30" data-scene="買菜回家" data-cat="shoulder" data-img="assets/quiz-day-07.jpg"
+           data-why="長期單邊負重，兩側的肌肉會發展出不一樣的張力。">
+        <h2>提東西、揹包包，習慣固定用同一邊。</h2></div>
+      <div class="qbox" data-hh="18:40" data-scene="做家事" data-cat="pelvis" data-img="assets/quiz-day-08.jpg"
+           data-why="彎腰時是用髖還是用腰，決定了腰要承擔多少。">
+        <h2>彎腰做家事一陣子，腰會開始卡卡的。</h2></div>
+      <div class="qbox" data-hh="20:00" data-scene="散步" data-cat="pelvis" data-img="assets/quiz-day-09.jpg"
+           data-why="走路會用到整條下肢的協調；撐不久，常跟骨盆與臀部的分工有關。">
+        <h2>走路或站久一點，下背或髖部會發痠。</h2></div>
+      <div class="qbox" data-hh="23:00" data-scene="睡前" data-cat="sleep" data-img="assets/quiz-day-10.jpg"
+           data-why="白天累積的緊繃，有時候到躺下來還沒退掉。">
+        <h2>壓力大、情緒繃著的日子，肩頸也跟著緊，晚上不好睡。</h2></div>
+
+      <div class="opts">
+        <button type="button" class="opt" data-v="2">經常這樣<span class="oz">幾乎每週都有</span></button>
+        <button type="button" class="opt" data-v="1">偶爾會<span class="oz">想到才發現</span></button>
+        <button type="button" class="opt" data-v="0">幾乎不會<span class="oz">沒什麼印象</span></button>
+      </div>
+      <button type="button" class="undo" id="undo" hidden>← 回上一個時刻</button>
+    </div>
+
+    <div class="thumb">
+      <img id="im-a" alt=""><img id="im-b" alt="">
+      <div class="cap" id="thumb-cap">07:00 · 剛醒來</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== 報告 ===== -->
+<section class="sc-report" id="sc-report" hidden><div class="scan-wrap">
+
+  <div class="rep-head">
+    <div class="lbl">掃描結果</div>
+    <h2 id="rp-h"></h2>
+    <p class="sub" id="rp-sub"></p>
+  </div>
+
+  <!-- 主角：訊號鏈 -->
+  <div class="sect" id="chain-sect">
+    <span class="lbl">你的訊號是怎麼連在一起的</span>
+    <div id="chains"></div>
+  </div>
+
+  <!-- 現在就能做 -->
+  <div class="sect">
+    <span class="lbl">現在就能做的一件事</span>
+    <div class="picker" id="picker"></div>
+    <div class="act" id="act"></div>
+  </div>
+
+  <!-- 分流 -->
+  <div class="sect">
+    <span class="lbl">接下來該找誰</span>
+    <div class="redflag">
+      <h3>先確認一件事：有沒有下面這些狀況？</h3>
+      <p class="rsub">如果你有以下任一種狀況，建議先尋求醫療專業評估，<b>不要先來上課</b>，也不要先急著自己找伸展動作處理：</p>
+      <ul>
+        <li>手臂幾乎完全無法自主抬起，或活動角度在短時間內明顯變小</li>
+        <li>症狀是在跌倒、撞擊或明確受傷之後才開始出現</li>
+        <li>合併麻木、無力，或有刺痛感往下延伸</li>
+        <li>持續性劇烈疼痛，尤其是痛到影響入睡或把你痛醒</li>
+        <li>症狀在幾天內快速惡化，而不是慢慢緩慢變化</li>
+      </ul>
+      <div class="rend">這份清單整理自本站文章<a href="blog-is-it-frozen-shoulder.html">〈肩膀卡卡、某個角度就是抬不高，是五十肩嗎？〉</a>。這份掃描、AI 體態檢測，或任何體態調整方式，都不能取代醫療評估這個步驟。</div>
+    </div>
+    <div class="triage" id="triage"></div>
+  </div>
+
+  <!-- 詳細數據（降級） -->
+  <div class="sect">
+    <span class="lbl">詳細數據</span>
+    <div class="data-head">
+      <div class="idx">
+        <div class="ring">
+          <svg width="100%" height="100%" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="48" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="7"></circle>
+            <circle id="arc" cx="56" cy="56" r="48" fill="none" stroke="#e0b869" stroke-width="7" stroke-linecap="round"
+                    stroke-dasharray="302" stroke-dashoffset="302" style="transition:stroke-dashoffset 1s cubic-bezier(.3,.8,.3,1), stroke .4s"></circle>
+          </svg>
+          <div class="v" id="score">0</div>
+        </div>
+        <div class="idx-tx">
+          <div class="big" id="idx-big"></div>
+          <div class="small" id="idx-small"></div>
+        </div>
+      </div>
+      <div class="band" id="band"><i></i><span id="band-tx"></span></div>
+    </div>
+
+    <div class="chart" id="chart"></div>
+    <div class="chart-x" id="chart-x"></div>
+
+    <div class="contrib" id="contrib"></div>
+
+    <div class="compare" id="compare" hidden>
+      <div class="cmp-pair"><span class="cmp-old" id="cmp-old">0</span><span class="cmp-ar">→</span><span class="cmp-new" id="cmp-new">0</span></div>
+      <span class="cmp-d" id="cmp-d"></span>
+      <span class="cmp-tx" id="cmp-tx"></span>
+    </div>
+  </div>
+
+  <p class="disc">本掃描為生活情境的自我觀察整理，不是醫療診斷，也不能取代專業評估。指數只反映你在這 10 個日常時刻中的自述頻率，不代表嚴重程度。若有疼痛、舊傷或不確定的狀況，請先諮詢合格醫療專業人員。</p>
+
+  <div class="ends">
+    <a href="#" class="btn js-line">把這份結果拿給老師看 →</a>
+    <div class="softs">
+      <a href="blog.html">先自己讀文章就好</a>
+      <a href="resources.html">領一份免費自測表</a>
+      <button type="button" id="redo">重新掃描一次</button>
+    </div>
+    <div class="saved-note" id="saved-note" hidden>已存在這台裝置，下次打開這一頁就看得到，不用重測。</div>
+  </div>
+
+  <div class="tcard">
+    <img src="assets/teacher-amei.jpg" alt="鑫彥瑜珈壁繩課阿美老師">
+    <div>
+      <div class="tn">阿美老師・鑫彥壁繩課</div>
+      <p>高雄市體育會丙級教練證、美國瑜珈聯盟 200 小時國際師資培訓，長年深入艾揚格瑜珈研習累計超過 180 小時。這份結果只是整理方向，真正要看的是你的身體在哪裡撐著。</p>
+      <div class="st">★★★★★ Google 4.9 · 88 則評價</div>
+    </div>
+  </div>
+
+</div></section>
+</div>
+
+<section class="content-bridge"><div class="wrap content-bridge-grid">
+  <div><span class="secondary-label">想理解身體困擾</span><h2>從體態文章繼續讀</h2><p>肩頸、圓肩、骨盆、久坐與睡眠，各有一組文章入口。</p><a class="text-link" href="blog.html">進入體態知識庫 →</a></div>
+  <div><span class="secondary-label">想看具體角度數字</span><h2>了解 AI 體態檢測</h2><p>約 20 分鐘，現場拍攝、姿勢角度分析，老師當面解讀。</p><a class="text-link" href="assessment.html">了解 AI 體態檢測 →</a></div>
+</div></section>
+
+<footer class="site">
+  <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$199 AI 體態檢測</a><br>
+  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="blog.html" class="footer-secondary">體態文章</a> · <a href="resources.html" class="footer-secondary">免費資源</a><br>
+  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
+</footer>
+
+<a class="line-float js-line" href="#" aria-label="想多了解，加 LINE 問老師"><span>LINE 詢問</span><b>掃描完想多了解？</b></a>
+<script src="site.js?v=5"></script>
+<script>
+(function(){
+  var LABEL = {shoulder:"圓肩駝背",neck:"肩頸緊繃",pelvis:"骨盆・下半身",sedentary:"久坐生活",sleep:"睡眠・放鬆"};
+  var ORDER = ["shoulder","neck","pelvis","sedentary","sleep"];
+
+  var DETAIL = {
+    shoulder:{desc:"低頭看螢幕、單邊提東西、鏡子前那一眼，指向同一件事：胸口前側長期被縮短，背後該用力的肌肉慢慢失去存在感。身體不是壞了，它只是選了一條比較省力的路，代價是某些地方一直在多扛。",
+      reads:[["blog-rounded-shoulder-self-test.html","圓肩自我檢測：3 個動作看你駝多少"],["blog-why-i-look-hunched-in-photos.html","為什麼照片、視訊裡的自己特別駝？"],["blog-rounded-shoulder-where-to-start.html","圓肩駝背，先鬆哪裡、先練哪裡？"]]},
+    neck:{desc:"「按完當下有鬆、隔天又緊回去」，常見的原因是來源還在持續運作。頭往前的那幾公分、螢幕的高度、坐著時肩膀的位置，這些每天不斷重複的小事，份量往往比單次的放鬆更重。",
+      reads:[["blog-forward-head-daily.html","電腦族的脖子前傾，一天可以還原一點點嗎？"],["blog-massage-tight-again.html","為什麼你按摩完，隔天又緊回去了？"],["blog-office-neck-release.html","在辦公室就能做的 3 個肩頸放鬆，不用換衣服"]]},
+    pelvis:{desc:"彎腰、久站、走一段路就開始痠，這些日常動作很能反映身體怎麼分工。腰會累，有時候不是腰不夠力，而是骨盆的位置、臀部與核心的分工出現偏差，於是某幾塊肌肉一直在替別人加班。",
+      reads:[["blog-standing-low-back.html","站久了腰就痠？久站族的體態自救"],["blog-walking-gait-posture.html","走路也看得出體態？從步態讀懂身體"],["blog-dead-butt-glutes.html","久坐讓屁股「失憶」，怎麼把它叫醒"]]},
+    sedentary:{desc:"久坐真正的影響，不是哪一塊肌肉變緊，而是身體慢慢忘記怎麼完整地動——起身要暖機、動作範圍變小、越少動又越不想動。要打破它，起點通常不是更用力運動，而是讓「中斷」發生得更頻繁一點。",
+      reads:[["blog-sitting-8-hours.html","一天坐 8 小時，身體到底發生了什麼事"],["blog-40-min-break.html","每坐 40 分鐘，站起來做這一件事"],["blog-phone-posture.html","手機怎麼拿，脖子才不會受苦"]]},
+    sleep:{desc:"白天累積的緊繃如果沒有被放掉，晚上就很難真的鬆下來；睡不好，隔天身體又更難放鬆，於是繞成一個圈。這一項的起點，往往不是多做幾個伸展，而是睡前那幾分鐘的呼吸。",
+      reads:[["blog-sleep-position-pillow.html","睡姿和枕頭，可能正在影響你的肩頸"],["blog-bedtime-back-release.html","睡前 5 分鐘，讓拱起來的背慢慢躺平"],["blog-tired-cant-sleep-chest.html","越累越睡不好？先把胸口打開"]]}
+  };
+
+  /* 動作全部取自站上已發表文章 */
+  var ACT = {
+    shoulder:{title:"肩膀畫圈，把肩胛帶回來", time:"約 60 秒", src:["blog-rounded-shoulder-self-test.html","圓肩自我檢測：3 個動作看你駝多少"],
+      steps:["坐著站著都可以，先把肩膀輕輕往耳朵方向聳一下。","慢慢往後、往下畫一個圈放下來，讓兩片肩胛骨輕輕往中間、往下收。","收住時配一次深呼吸：吸氣時想像胸口被打開一點點，吐氣時肩膀再放鬆一些。","一次做 8～10 下，一天分幾次都行。"],
+      stop:"這個動作不會做一次就把圓肩「拉直」，它比較像每天提醒身體「原來肩膀可以待在後面一點」。"},
+    neck:{title:"頸側伸展，先把當下的緊降下來", time:"停 5 個深呼吸", src:["blog-office-neck-release.html","在辦公室就能做的 3 個肩頸放鬆"],
+      steps:["坐正，一手輕輕扶著對側頭頂。","把頭慢慢帶向肩膀那一邊，感覺脖子到肩膀被拉開。","另一邊肩膀放鬆往下沉，停 5 個深呼吸，慢慢吐氣時再多放鬆一點。","換邊做一次。"],
+      stop:"重點不是拉到極限，是「常常提醒」。如果出現刺痛、麻、暈，或要硬扯才有感，就先停下來，不要硬做。"},
+    pelvis:{title:"橋式起臀，把睡著的臀部叫醒", time:"10 下 × 2～3 組", src:["blog-dead-butt-glutes.html","久坐讓屁股「失憶」，怎麼把它叫醒"],
+      steps:["平躺（坐在椅子邊也可以），雙腳踩穩、與髖同寬。","深吸一口氣，吐氣時用「夾臀」的力量把骨盆往上帶，不要用腰去頂。","到最高點停 2～3 秒，感覺屁股是不是在出力。","慢慢放下，一次 10 下，配著呼吸做 2～3 組。"],
+      stop:"如果只有腰痠，就把高度降低一點。臀肌睡了很久，不會做一次就醒，需要每天一點點地提醒它。"},
+    sedentary:{title:"30 秒起身組合 ＋ 設一個鬧鐘", time:"約 30 秒", src:["blog-40-min-break.html","每坐 40 分鐘，站起來做這一件事"],
+      steps:["現在就站起來：雙手背後互扣、把胸口打開。","肩胛往中間、下方收。","單腳輕輕後踢，配三次深深的吸吐。","做完坐下，把手機鬧鐘設成每 40 分鐘響一次，響了就重複這 30 秒。"],
+      stop:"它不會讓你「一次就不痠」，真正的效果來自規律。但正因為只要 30 秒，你才真的做得到。"},
+    sleep:{title:"睡前躺著開胸，讓背慢慢沉下去", time:"5～8 個深呼吸", src:["blog-bedtime-back-release.html","睡前 5 分鐘，讓拱起來的背慢慢躺平"],
+      steps:["仰躺，膝蓋彎起來踩床。","雙手往兩側張開、掌心朝上。","吸一口氣，吐氣時輕輕讓肩膀後側往床面沉。","停留 5 到 8 個深呼吸，感覺胸口一點一點被打開就好。"],
+      stop:"全程不用出力、不用拉到緊。痛就停，換個高度都可以。規律地做，身體會慢慢記得放鬆是什麼感覺。"}
+  };
+
+  /* 索引 0=07:00 1=08:10 2=10:30 3=12:40 4=15:00 5=16:20 6=17:30 7=18:40 8=20:00 9=23:00 */
+  /* 語氣一律保守：這是「常見的組合」，不是對她的判斷。門檻另外要求至少一題「經常」。 */
+  var CHAINS = [
+    {need:[2,4,9], min:3, hops:["10:30 頭前伸","15:00 按了又緊","23:00 睡不好"], h:"白天在撐，晚上收不了工",
+     p:"這三個時刻常常是連在一起的。白天頭往前的那幾公分，會讓後頸持續工作；到了晚上，常常沒那麼容易鬆下來。如果是這種情況，重點通常不只在「晚上該怎麼放鬆」，也在「白天怎麼讓它不用一直撐」——這也常是「按摩當下有效、隔天又緊回去」的原因之一。"},
+    {need:[9,0], min:2, hops:["23:00 睡前緊","07:00 起床僵"], h:"夜裡沒鬆開，隔天從緊繃開始",
+     p:"睡前緊、起床也僵，是一個常見的組合。可能的情況是夜裡沒有真正鬆下來，隔天就從已經緊的狀態出發，白天再累積一層。若是如此，切入點常常在睡前那幾分鐘，而不是白天再多做幾個伸展。當然，睡不好的原因很多，這只是其中一種可能。"},
+    {need:[3,5,7,8], min:3, hops:["整天坐著","起身要暖機","彎腰腰卡","走站發痠"], h:"坐太久，站起來由腰代班",
+     p:"久坐常讓臀部慢慢變得叫不太動，髖關節前側也跟著縮短。起身、彎腰、走一段路時，如果該出力的地方沒上工，腰就容易代班——所以感覺痠的是腰，但要看的地方不一定只有腰。"},
+    {need:[1,6,2,4], min:3, hops:["鏡子裡在駝","單邊提東西","頸部跟著累"], h:"圓肩常把頸部一起帶著走",
+     p:"長期單邊負重加上肩膀往前捲，往往會改變肩胛骨停在哪裡；肩胛的位置一變，頸部就容易多做一份工。這也是為什麼有些人只鬆脖子常常不夠——要一起看的是肩膀怎麼被擺放。"},
+    {need:[7,8], min:2, hops:["18:40 彎腰腰卡","20:00 走站發痠"], h:"撐不久，常跟分工有關",
+     p:"彎腰會卡、走站會痠同時出現時，常見的方向是骨盆位置與臀部、核心之間的分工，不一定是腰本身不夠力。先看怎麼用，再談要練多強。"}
+  ];
+
+  /* 沒有成鏈時的第二層：兩個項目之間的關係。10 組配對，涵蓋率遠高於 5 條鏈 */
+  function pairKey(a,b){ return [a,b].sort().join('+'); }
+  var PAIRS = {
+    "neck+shoulder":{h:"肩膀的位置，常牽動頸部的負擔",
+      p:"肩膀往前捲的時候，肩胛骨停的位置會跟著改變，頸部往往就得多做一份工。這也是為什麼有些人只處理脖子常常不夠——要一起看的是肩膀怎麼被擺放。"},
+    "pelvis+shoulder":{h:"上半身與下半身，其實是同一根脊椎",
+      p:"上背的圓與骨盆的位置常常互相牽動：骨盆一前傾，上背容易跟著代償；上背一駝，下背也要重新分配壓力。分開看常會覺得「哪裡都怪怪的」，合起來看才知道從哪裡開始。"},
+    "sedentary+shoulder":{h:"久坐，是圓肩最常見的養成環境",
+      p:"坐著的時候胸口容易收著、上背容易鬆掉，一天累積下來，身體會把這個姿勢記成預設值。這一組通常不是靠伸展贏回來的，而是靠減少「連續維持同一個姿勢」的時間。"},
+    "shoulder+sleep":{h:"胸口收著的時候，比較難真的放鬆下來",
+      p:"整天前側縮著，躺下來時胸口是收的、上背是拱的，身體就不太容易放下去。這一組的切點常常在睡前，先讓胸口打開一點，比多做幾個伸展更有感。"},
+    "neck+pelvis":{h:"上面和下面，常常在互相代償",
+      p:"頸部與骨盆分別在脊椎的兩端。一端的排列改變，另一端往往要跟著調整來維持平衡。兩邊同時有感，通常代表要看的是整體怎麼分工，而不是單獨處理某一段。"},
+    "neck+sedentary":{h:"螢幕的高度與坐著的時間，會一起找上肩頸",
+      p:"久坐本身讓活動範圍變小，加上看螢幕時頭往前，肩頸就成為整天最持續工作的地方。這一組的重點通常不是拉筋拉得夠不夠，而是中斷得夠不夠頻繁。"},
+    "neck+sleep":{h:"白天的張力，有時候會帶到晚上",
+      p:"肩頸整天處在工作狀態，到了晚上不見得說停就停。睡不好又讓隔天更難放鬆，容易形成循環。當然睡眠受很多因素影響，這只是其中一種可能。"},
+    "pelvis+sedentary":{h:"坐久了，該出力的地方容易忘記上工",
+      p:"久坐常讓臀部慢慢變得叫不太動，髖關節前側也跟著縮短。起身、彎腰、走路時，如果臀部沒有及時參與，腰就容易代班——所以痠的是腰，但要看的地方不一定只有腰。"},
+    "pelvis+sleep":{h:"腰髖的緊，有時候會影響躺下來的舒適",
+      p:"下背與髖部維持在緊的狀態時，躺平、翻身都可能不太舒服，睡眠品質跟著受影響；而休息不足，隔天肌肉的耐受度又會下降。這一組適合從睡前的放鬆先切進去。"},
+    "sedentary+sleep":{h:"白天動得少，晚上不一定就好睡",
+      p:"身體一整天沒有真正活動開，晚上要從「靜止」切換到「放鬆」反而不容易。這一組通常不需要更激烈的運動，而是需要白天多幾次短短的中斷。"}
+  };
+  var SOLO = {
+    shoulder:{h:"目前主要集中在肩膀與上背", p:"你的訊號集中在同一個區域。單一區域反覆出現，通常跟某個每天重複的姿勢有關——螢幕的高度、習慣用哪一邊提東西、坐著時肩膀停在哪裡。先找出那個重複的動作，比多做幾個伸展更關鍵。"},
+    neck:{h:"目前主要集中在肩頸", p:"你的訊號集中在肩頸。集中在單一區域時，通常代表來源比較明確；如果放鬆完很快又回來，那要找的往往不是更強的放鬆方式，而是那個一直把它拉回去的日常姿勢。"},
+    pelvis:{h:"目前主要集中在骨盆與下半身", p:"你的訊號集中在下半身。彎腰、久站、走路這些動作最能反映身體怎麼分工，先觀察自己是用髖還是用腰在動，常常就能找到線索。"},
+    sedentary:{h:"目前主要集中在久坐這件事上", p:"你的訊號集中在坐著的時間。這時候身體通常還沒有出現明顯的局部問題，而是整體活動量偏低。這其實是比較好處理的階段——增加中斷的次數就會有差。"},
+    sleep:{h:"目前主要集中在睡眠與放鬆", p:"你的訊號集中在夜裡與放鬆。這一項單獨出現時，原因可能來自壓力、作息或環境，不一定跟姿勢有關。可以先從睡前的呼吸與放鬆開始觀察。"}
+  };
+
+  /* 成鏈時的處方：對應那條鏈，用兩個已發表的動作組成一天的節奏 */
+  var CHAIN_ACT = {
+    "白天在撐，晚上收不了工":{why:"這條鏈要從兩端同時切：白天讓它不用一直撐，晚上幫它收工。", a:"neck", b:"sleep", at:"白天工作時", bt:"睡前"},
+    "夜裡沒鬆開，隔天從緊繃開始":{why:"這條鏈的切點在夜裡與清晨：先讓夜裡鬆得掉，再讓早上啟動得順。", a:"sleep", b:"shoulder", at:"睡前", bt:"早上起床後"},
+    "坐太久，站起來由腰代班":{why:"這條鏈要處理兩件事：減少連續久坐，並讓臀部重新上工。", a:"sedentary", b:"pelvis", at:"上班中每 40 分鐘", bt:"晚上在家"},
+    "圓肩常把頸部一起帶著走":{why:"這條鏈的順序很重要：先把肩膀帶回來，頸部的負擔才會跟著降。", a:"shoulder", b:"neck", at:"先做", bt:"接著做"},
+    "撐不久，常跟分工有關":{why:"這條鏈要讓該出力的地方重新參與，而不是加強已經在加班的地方。", a:"pelvis", b:"sedentary", at:"晚上在家", bt:"白天每隔一段時間"}
+  };
+
+  var STORE = 'sinyan_scan_v2';
+  function readLast(){ try{ return JSON.parse(localStorage.getItem(STORE)); }catch(e){ return null; } }
+  function writeLast(o){ try{ localStorage.setItem(STORE, JSON.stringify(o)); return true; }catch(e){ return false; } }
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.qbox'));
+  var total = boxes.length;
+  var lv = new Array(total).fill(null);   // 2=經常 1=偶爾 0=幾乎不會
+  var idx = 0;
+
+  var open = document.getElementById('sc-open');
+  var run = document.getElementById('sc-run');
+  var rep = document.getElementById('sc-report');
+  var tNow = document.getElementById('t-now'), tScene = document.getElementById('t-scene'), tWhy = document.getElementById('t-why');
+  var askedEl = document.getElementById('asked'), undo = document.getElementById('undo'), cap = document.getElementById('thumb-cap');
+  var imA = document.getElementById('im-a'), imB = document.getElementById('im-b'), front = imA;
+
+  var segsEl = document.getElementById('segs');
+  boxes.forEach(function(){ segsEl.appendChild(document.createElement('i')); });
+  var segs = Array.prototype.slice.call(segsEl.children);
+
+  function paint(i){
+    var b = boxes[i];
+    boxes.forEach(function(x,k){ x.classList.toggle('on', k === i); });
+    tNow.textContent = b.getAttribute('data-hh');
+    tScene.textContent = b.getAttribute('data-scene');
+    tWhy.textContent = b.getAttribute('data-why');
+    cap.textContent = b.getAttribute('data-hh') + ' · ' + b.getAttribute('data-scene');
+    undo.hidden = i === 0;
+    askedEl.textContent = lv.filter(function(v){ return v !== null; }).length;
+
+    segs.forEach(function(el,k){
+      el.className = '';
+      if(k === i) el.classList.add('now');
+      else if(lv[k] === 2) el.classList.add('hit');
+      else if(lv[k] === 1) el.classList.add('some');
+    });
+
+    var back = (front === imA) ? imB : imA;
+    var src = b.getAttribute('data-img');
+    var apply = function(){
+      if(back.getAttribute('src') !== src) return;
+      back.classList.add('on');
+      if(front !== back) front.classList.remove('on');
+      front = back;
+    };
+    back.onload = apply;
+    back.setAttribute('src', src);
+    if(back.complete && back.naturalWidth) apply();
+    if(i + 1 < total){ var pre = new Image(); pre.src = boxes[i+1].getAttribute('data-img'); }
+  }
+
+  document.getElementById('go').addEventListener('click', function(){
+    open.hidden = true; run.hidden = false; paint(0);
+    run.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  document.querySelectorAll('.opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      lv[idx] = Number(btn.getAttribute('data-v'));
+      if(idx < total - 1){ idx++; paint(idx); } else { report(); }
+    });
+  });
+  undo.addEventListener('click', function(){ if(idx > 0){ idx--; paint(idx); } });
+
+  function renderAct(cat){
+    var A = ACT[cat];
+    document.getElementById('act').innerHTML =
+      '<h3>' + A.title + '</h3><div class="t">' + A.time + '</div>' +
+      '<ol>' + A.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+      '<div class="stop">' + A.stop + '</div>' +
+      '<div class="src">動作出自本站文章：<a href="' + A.src[0] + '">' + A.src[1] + '</a></div>';
+    Array.prototype.slice.call(document.querySelectorAll('.pchip')).forEach(function(c){
+      c.classList.toggle('on', c.getAttribute('data-cat') === cat);
+    });
+  }
+
+  function report(){
+    var tally = {}; ORDER.forEach(function(c){ tally[c] = 0; });
+    var moments = [];
+    boxes.forEach(function(b,i){
+      var v = lv[i] || 0;
+      tally[b.getAttribute('data-cat')] += v;
+      if(v > 0) moments.push({hh:b.getAttribute('data-hh'), tx:b.querySelector('h2').textContent, cat:b.getAttribute('data-cat'), v:v});
+    });
+
+    var sum = ORDER.reduce(function(s,c){ return s + tally[c]; }, 0);   // 0–20
+    var score = Math.round(sum / 20 * 100);                             // 0–100（每級 5 分）
+    var often = lv.filter(function(v){ return v === 2; }).length;
+    var some = lv.filter(function(v){ return v === 1; }).length;
+    var n = often + some;
+
+    var max = Math.max.apply(null, ORDER.map(function(c){ return tally[c]; }));
+    var tops = ORDER.filter(function(c){ return tally[c] === max && max > 0; });
+
+    /* ── 訊號鏈：先算，因為它是主角 ── */
+    /* 至少要有一題「經常」才成鏈：只靠幾題「偶爾」就下結論，證據撐不起語氣 */
+    var matched = CHAINS.map(function(ch){
+      return {ch:ch, got:ch.need.filter(function(i){ return (lv[i] || 0) > 0; }).length,
+                     strong:ch.need.filter(function(i){ return lv[i] === 2; }).length};
+    }).filter(function(m){ return m.got >= m.ch.min && m.strong >= 1; })
+      .sort(function(a,b){ return (b.strong - a.strong) || (b.got - a.got); })
+      .slice(0,2);
+
+    document.getElementById('rp-h').textContent =
+      n === 0 ? "10 個時刻裡，身體都沒有特別出聲"
+      : matched.length ? "看起來像：" + matched[0].ch.h
+      : tops.length === 1 ? "你的訊號集中在「" + LABEL[tops[0]] + "」"
+      : "你的訊號分散在幾個地方";
+
+    document.getElementById('rp-sub').textContent =
+      n === 0 ? "這是好事。下面仍附上一個可以放進日常的小練習，以及什麼情況該找誰的判斷方式。"
+      : matched.length ? "10 個時刻中你有 " + n + " 個有感（其中 " + often + " 個經常發生）。下面先講它們怎麼連在一起，再給你現在就能做的一件事。"
+      : "10 個時刻中你有 " + n + " 個有感（其中 " + often + " 個經常發生）。這次沒有出現明顯的連鎖模式，下面直接給你可以先做的事。";
+
+    var chainBox = document.getElementById('chains');
+    chainBox.innerHTML = '';
+    if(matched.length){
+      matched.forEach(function(m){
+        var d = document.createElement('div');
+        d.className = 'chain';
+        /* 只有一題「經常」時，明講證據還不夠強，不要用同樣篤定的語氣 */
+        var hedge = m.strong >= 2 ? ''
+          : '<p style="color:var(--dim2);font-size:15.5px;line-height:1.9;margin-bottom:14px">你在這幾個時刻裡，只有一項是「經常」。以下是這個組合常見的走向，提供你參考，但以你目前的頻率還不用太擔心。</p>';
+        d.innerHTML = '<div class="hops">' + m.ch.hops.map(function(h){ return '<span class="hop">' + h + '</span>'; }).join('<span class="arw">→</span>') +
+                      '</div><h3>' + m.ch.h + '</h3>' + hedge + '<p>' + m.ch.p + '</p>';
+        chainBox.appendChild(d);
+      });
+    } else if(n === 0){
+      chainBox.innerHTML = '<p class="nochain">你這次沒有記錄到任何有感的時刻，所以也沒有可以串起來的鏈。</p>';
+    } else {
+      /* 第二層：用她實際勾到的兩個最強項目，講它們之間的關係 */
+      var live = ORDER.filter(function(c){ return tally[c] > 0; })
+                      .sort(function(a,b){ return tally[b] - tally[a]; });
+      var card = null;
+      if(live.length >= 2){
+        var pk = pairKey(live[0], live[1]);
+        var P = PAIRS[pk];
+        if(P) card = {hops:[LABEL[live[0]], LABEL[live[1]]], h:P.h, p:P.p};
+      }
+      if(!card){
+        var S = SOLO[live[0]];
+        card = {hops:[LABEL[live[0]]], h:S.h, p:S.p, solo:true};
+      }
+      var d = document.createElement('div');
+      d.className = 'chain';
+      var lead = card.solo
+        ? '你的訊號集中在同一個項目，沒有跨到其他地方，所以這次沒有可以串起來的鏈。下面講的是這一項單獨出現時比較常見的情況。'
+        : '你這次的組合沒有落在我們整理過的幾條常見鏈上，所以下面講的是這兩個項目之間比較常見的關係，供你參考。';
+      d.innerHTML = '<div class="hops">' + card.hops.map(function(h){ return '<span class="hop">' + h + '</span>'; }).join('<span class="arw">＋</span>') +
+        '</div><h3>' + card.h + '</h3>' +
+        '<p style="color:var(--dim2);font-size:15.5px;line-height:1.9;margin-bottom:14px">' + lead + '</p>' +
+        '<p>' + card.p + '</p>';
+      chainBox.appendChild(d);
+    }
+
+    /* ── 現在就能做：可自己挑項目 ── */
+    var picker = document.getElementById('picker');
+    picker.innerHTML = '';
+    var picks = ORDER.filter(function(c){ return tally[c] > 0; });
+    if(!picks.length) picks = ['sedentary'];
+
+    /* 有成鏈時，處方要對應那條鏈：一天兩個時段，各一個已發表的動作 */
+    var CA = matched.length ? CHAIN_ACT[matched[0].ch.h] : null;
+    if(CA){
+      var mk = function(cat, when){
+        var A = ACT[cat];
+        return '<div style="border:1px solid var(--hair);padding:24px 22px;margin-bottom:14px">' +
+          '<div style="font-size:14.5px;color:var(--gold);margin-bottom:8px">' + when + '</div>' +
+          '<h3 style="font-family:\'Noto Serif TC\',serif;font-size:20px;margin-bottom:14px">' + A.title + '</h3>' +
+          '<ol style="margin:0;padding-left:0;list-style:none;counter-reset:s">' +
+          A.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+          '<div class="stop">' + A.stop + '</div>' +
+          '<div class="src">動作出自本站文章：<a href="' + A.src[0] + '">' + A.src[1] + '</a></div></div>';
+      };
+      document.getElementById('act').innerHTML =
+        '<p style="color:var(--dim);font-size:17px;line-height:2;margin-bottom:22px">' + CA.why + '</p>' +
+        mk(CA.a, CA.at) + mk(CA.b, CA.bt);
+      picker.innerHTML = '<span style="color:var(--dim2);font-size:15px">這一組是針對上面那條鏈安排的。想改看單一項目的動作，可以點下面：</span>';
+      picker.insertAdjacentHTML('beforeend',
+        picks.map(function(c){ return '<button type="button" class="pchip" data-cat="' + c + '">' + LABEL[c] + '</button>'; }).join(''));
+      picker.querySelectorAll('.pchip').forEach(function(chip){
+        chip.addEventListener('click', function(){ renderAct(chip.getAttribute('data-cat')); });
+      });
+    } else {
+      if(picks.length > 1){
+        picker.innerHTML = '<span style="color:var(--dim2);font-size:15px;align-self:center;margin-right:6px">想先處理哪一個？</span>' +
+          picks.map(function(c){ return '<button type="button" class="pchip" data-cat="' + c + '">' + LABEL[c] + '</button>'; }).join('');
+        picker.querySelectorAll('.pchip').forEach(function(chip){
+          chip.addEventListener('click', function(){ renderAct(chip.getAttribute('data-cat')); });
+        });
+      }
+      renderAct(tops[0] || picks[0]);
+    }
+
+    /* ── 分流建議（依作答頻率推導） ── */
+    document.getElementById('triage').innerHTML =
+      often >= 3
+        ? '<h3>你的情況：反覆發生，值得找人看一次</h3><p>你有 ' + often + ' 個時刻是「經常這樣」。反覆出現、又說不太出原因的緊或痠，通常不是靠再多幾個伸展就能收掉——這種狀況比較適合讓人實際看一次你怎麼用身體。可以是物理治療師、運動教練，也可以是我們。<b>重點是找一個會先看你怎麼動、而不是直接給你一套動作的人</b>，在哪裡看反而是其次。</p>'
+        : n > 0
+          ? '<h3>你的情況：偶爾出現，可以先自己觀察</h3><p>你的訊號多半是「偶爾會」。如果原因很明確（前一天加班太久、搬了重物、睡姿不好），過一兩天就慢慢恢復，通常可以先從上面的小練習、規律活動開始，不用急著做檢測或上課。<a href="blog-who-needs-ai-posture-assessment.html" style="color:var(--gold)">哪些人不必急著做 AI 體態檢測</a>這篇有更完整的判斷表。</p>'
+          : '<h3>你的情況：目前沒有明顯訊號</h3><p>十個時刻你都沒有記錄到有感的狀況。可以把這次當成基準，之後身體有變化時再測一次，就能看出差別。現階段從規律活動開始就很好，不需要急著做任何檢測。</p>';
+
+    /* ── 詳細數據 ── */
+    var band = score === 0 ? {t:"沒有訊號", c:"var(--low)"}
+             : score <= 30 ? {t:"訊號量 低", c:"var(--low)"}
+             : score <= 60 ? {t:"訊號量 中等", c:"var(--mid)"}
+             : {t:"訊號量 偏高", c:"var(--high)"};
+    document.getElementById('band-tx').textContent = band.t;
+    document.querySelector('#band i').style.background = band.c;
+    var css = getComputedStyle(document.querySelector('.scan'));
+    document.getElementById('arc').setAttribute('stroke', css.getPropertyValue(band.c.slice(4,-1)).trim());
+
+    document.getElementById('idx-big').textContent = '10 個時刻中，' + n + ' 個有感';
+    document.getElementById('idx-small').textContent = '訊號指數 ' + score + '／100：經常 2 分、偶爾 1 分，滿分 20 分換算而來。這是頻率，不是嚴重程度。';
+
+    var arcLen = 302;
+    document.getElementById('arc').style.strokeDashoffset = arcLen - (arcLen * score / 100);
+    var sEl = document.getElementById('score'), cur = 0;
+    sEl.textContent = '0';
+    if(score > 0){
+      var stepBy = Math.max(1, Math.round(score / 20));
+      var timer = setInterval(function(){
+        cur += stepBy;
+        if(cur >= score){ cur = score; clearInterval(timer); }
+        sEl.textContent = cur;
+      }, 45);
+      setTimeout(function(){ clearInterval(timer); sEl.textContent = score; }, 1400);
+    }
+
+    var chart = document.getElementById('chart'), cx = document.getElementById('chart-x');
+    chart.innerHTML = ''; cx.innerHTML = '';
+    boxes.forEach(function(b,i){
+      var v = lv[i] || 0;
+      var col = document.createElement('div');
+      col.className = 'col' + (v === 2 ? ' full' : v === 1 ? ' half' : '');
+      col.innerHTML = '<div class="bar"></div>';
+      col.title = b.getAttribute('data-hh') + ' ' + b.getAttribute('data-scene');
+      chart.appendChild(col);
+      var x = document.createElement('span');
+      x.textContent = b.getAttribute('data-hh').split(':')[0];
+      cx.appendChild(x);
+    });
+
+    var wrap = document.getElementById('contrib');
+    wrap.innerHTML = '';
+    ORDER.slice().sort(function(a,b){ return tally[b] - tally[a]; }).forEach(function(c){
+      var pct = tally[c] / 4 * 100;
+      var row = document.createElement('div');
+      row.className = 'crow' + (tops.indexOf(c) > -1 ? ' lead' : '');
+      var mine = moments.filter(function(m){ return m.cat === c; });
+      row.innerHTML =
+        '<button type="button" class="chead"><span class="cname">' + LABEL[c] + '</span>' +
+        '<span class="ctrack"><i data-w="' + pct + '"></i></span>' +
+        '<span class="cval">' + tally[c] + '/4</span><span class="cx">+</span></button>' +
+        '<div class="cbody"><p>' + DETAIL[c].desc + '</p>' +
+        (mine.length ? '<div class="cmoments">' + mine.map(function(m){
+            return '<div class="cmoment"><b>' + m.hh + '</b><span>' + m.tx + (m.v === 1 ? '（偶爾）' : '') + '</span></div>'; }).join('') + '</div>' : '') +
+        '<div class="creads">' + DETAIL[c].reads.map(function(a){
+            return '<a href="' + a[0] + '">' + a[1] + '</a>'; }).join('') + '</div></div>';
+      row.querySelector('.chead').addEventListener('click', function(){ row.classList.toggle('open'); });
+      wrap.appendChild(row);
+    });
+
+    /* ── 重測對照 ── */
+    var prev = readLast();
+    var cmp = document.getElementById('compare');
+    if(prev && typeof prev.score === 'number'){
+      var diff = score - prev.score;
+      document.getElementById('cmp-old').textContent = prev.score;
+      document.getElementById('cmp-new').textContent = score;
+      var dEl = document.getElementById('cmp-d');
+      dEl.textContent = diff > 0 ? '+' + diff : String(diff);
+      dEl.style.color = diff > 0 ? 'var(--high)' : diff < 0 ? 'var(--low)' : 'var(--dim)';
+      var gone = [], added = [];
+      if(prev.lv && prev.lv.length === total){
+        boxes.forEach(function(b,i){
+          var was = prev.lv[i] > 0, now = (lv[i] || 0) > 0;
+          if(was && !now) gone.push(b.getAttribute('data-hh'));
+          if(!was && now) added.push(b.getAttribute('data-hh'));
+        });
+      }
+      var days = prev.ts ? Math.round((Date.now() - prev.ts) / 86400000) : null;
+      var tx = (days === null ? '上次' : days <= 0 ? '今天稍早' : '約 ' + days + ' 天前') + '你測過一次。';
+      if(gone.length) tx += ' ' + gone.join('、') + ' 這次沒有再出現。';
+      if(added.length) tx += ' ' + added.join('、') + ' 是這次新增的。';
+      if(!gone.length && !added.length) tx += ' 這次有感的時刻跟上次一樣。';
+      document.getElementById('cmp-tx').textContent = tx;
+      cmp.hidden = false;
+    } else { cmp.hidden = true; }
+    document.getElementById('saved-note').hidden =
+      !writeLast({score:score, top:tops[0] || null, lv:lv.map(function(v){ return v || 0; }), ts:Date.now()});
+
+    /* ── LINE 預填帶著結果一起送出 ── */
+    var lineMsg =
+      n === 0 ? '我做了體態訊號掃描，10 個時刻都沒有明顯訊號，想了解平常可以做什麼保養'
+      : matched.length ? '我做了體態訊號掃描，10 個時刻中有 ' + n + ' 個有感，結果說我是「' + matched[0].ch.h + '」，想多了解'
+      : '我做了體態訊號掃描，10 個時刻中有 ' + n + ' 個有感，訊號集中在「' + LABEL[tops[0]] + '」，想多了解';
+    /* 保險：預填訊息不讓它無限長，避免極端情況下深連結出問題 */
+    if(lineMsg.length > 80) lineMsg = lineMsg.slice(0, 78) + '…';
+    document.body.setAttribute('data-line-message', lineMsg);
+
+    run.hidden = true; rep.hidden = false;
+    wrap.querySelectorAll('.ctrack i').forEach(function(el){ void el.offsetWidth; el.style.width = el.getAttribute('data-w') + '%'; });
+    if(tops.length) { var l = wrap.querySelector('.crow.lead'); if(l) l.classList.add('open'); }
+    rep.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('redo').addEventListener('click', function(){
+    lv = new Array(total).fill(null); idx = 0;
+    rep.hidden = true; run.hidden = false;
+    document.getElementById('arc').style.strokeDashoffset = 302;
+    paint(0);
+    run.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+})();
+</script>
+</body>
+</html>
