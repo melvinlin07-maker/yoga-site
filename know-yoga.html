@@ -51,7 +51,7 @@
     <li><a href="about.html">關於鑫彥</a></li>
     <li><a href="neck-release.html">一對一調整</a></li>
   </ul>
-  <a href="#" class="btn js-line nav-cta-btn" data-line-purpose="contact" data-line-event="Contact" data-cta-location="nav" data-offer="肩頸壓力自測" data-slot-message="我要肩頸壓力自測">免費肩頸壓力檢測</a>
+  <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
   <button class="nav-toggle" aria-label="選單">☰</button>
 </div></nav>
 
@@ -156,6 +156,25 @@
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {
     document.body.setAttribute('data-line-message', a.getAttribute('data-slot-message'));
+  });
+});
+
+// 「免費體態訊號掃描」按鈕：導向站內掃描頁，同時保留原本的追蹤訊號。
+// Meta Pixel 照舊送 Contact（與改版前一致）；GA4 改送 posture_scan_click，
+// 避免污染原本代表「真的開了 LINE」的 line_reservation_click。
+// 不使用 preventDefault 以外的攔截，按住 Ctrl/Cmd 開新分頁仍為原生行為。
+document.querySelectorAll('a.js-scan').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var params = {
+      link_text: a.textContent.trim(),
+      cta_location: a.getAttribute('data-cta-location') || '',
+      page_path: window.location.pathname
+    };
+    try { if (window.gtag) gtag('event', 'posture_scan_click', Object.assign({ transport_type: 'beacon' }, params)); } catch (err) {}
+    try { if (window.fbq) fbq('track', 'Contact', { content_name: 'posture self test scan', content_category: 'posture self test' }); } catch (err) {}
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;  // 開新分頁：不攔
+    e.preventDefault();
+    window.setTimeout(function () { window.location.href = a.href; }, 250);
   });
 });
 </script>
