@@ -26,7 +26,7 @@
 - `neck-release.html`(一對一肩頸調整正式頁,已整併取代舊實驗版,已接 n8n webhook)
 - `about.html`、`about-poses.html`、`about-wall-rope.html`
 - `classes.html`、`contact.html`、`know-yoga.html`、`practice-guide.html`
-- `blog.html` + **67 篇** `blog-*.html` 文章
+- `blog.html` + **68 篇** `blog-*.html` 文章
 - **27 篇** `pose-*.html` 動作頁
 - `reviews.html`、`resources.html`、`rental.html`
 - `posture-self-test.html`(體態訊號掃描,互動式免費工具,2026-09-04 上線,見 `DECISIONS.md` §34)
@@ -39,6 +39,7 @@
 > **數量修正紀錄(2026-08-31):** 上架 `blog-pelvic-floor-leaks.html`(骨盆底肌／漏尿,參考國外 Yoga Journal anatomy 分類選題),發布前已將文中佔位日期同步修正為實際發布日,加入 `blog.html` 骨盆・下半身分類 + `sitemap.xml`,63→**64 篇 blog**,總數 115→**116 個 HTML**。
 > **數量修正紀錄(2026-09-03):** 依決策29排程補發 `blog-jaw-tmj-tension.html`(TMJ,原排9/2漏發)+ `blog-sprain-strain-comeback.html`(閃到腰/扭傷,原排9/3),兩篇皆加入 `blog.html` + `sitemap.xml`,64→**66 篇 blog**。
 > **數量修正紀錄(2026-09-04):** 依決策29排程發布 `blog-post-illness-stiffness.html`(感冒臥床後僵硬,睡眠・放鬆分類),加入 `blog.html` + `sitemap.xml`,66→**67 篇 blog**。
+> **數量修正紀錄(2026-09-05):** 依決策29排程發布 `blog-restarting-after-a-break.html`(中斷重啟心理門檻,壁繩入門分類),加入 `blog.html` + `sitemap.xml`,67→**68 篇 blog**。
 > **新增紀錄(2026-09-04):** 新增互動式免費工具 `posture-self-test.html`(非 blog,不計入 blog 篇數),入口設於 `blog.html` 篩選列下方與 `resources.html`,已加入 `sitemap.xml`(111→**112 條 `<loc>`**)。隨頁新增 12 張圖片素材 `assets/quiz-day-01~10.jpg`、`quiz-open.jpg`、`quiz-still.jpg`(取自先前未被引用的 `assets/0814/` 素材,轉為 1600px JPEG)。詳見 `DECISIONS.md` §34。
 > ⚠️ **總 HTML 檔案數(116)本次未重新稽核,已知過時:** 實查根目錄現有 129 個 `.html`,期間至少新增了未記錄於本文件的 `shoulder-checkup-v1.html`(commit `e7239c2`,無對應決策紀錄)以及 10 篇仍未上架的 blog 草稿(見「未發佈的/index.html」)。**總數與 sitemap 收錄範圍(第58-62行)需要完整重新稽核,本次僅更新 blog 篇數與 sitemap 條數,不擅自回填總數,待你確認後再補稽核。**
 
@@ -61,8 +62,8 @@
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
 **Sitemap 收錄範圍(2026-09-03 更新,僅同步本次新增,未完整重新稽核):**
-- 共 **111 條 `<loc>`**(實查 `grep -c "<loc>" sitemap.xml`);與「116 個 HTML − 8」的舊公式關係待重新稽核(見上方⚠️)
-- 67 篇 blog + 27 篇 pose **全數在列**(2026-09-04 發布 `blog-post-illness-stiffness.html` 後已同步)
+- 共 **113 條 `<loc>`**(實查 `grep -c "<loc>" sitemap.xml`);與「116 個 HTML − 8」的舊公式關係待重新稽核(見上方⚠️)
+- 68 篇 blog + 27 篇 pose + `posture-self-test.html` **全數在列**(2026-09-05 發布 `blog-restarting-after-a-break.html` 後已同步)
 - 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
 - **結論:收錄範圍完全正確,此項不再列為待確認**
 
