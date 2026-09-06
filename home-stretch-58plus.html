@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow">
+<title>居家伸展說明書｜58+ AI體態檢測加贈內容｜鑫彥瑜珈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap">
+<style>
+  :root{
+    --paper:#fbf7ef; --card:#ffffff; --ink:#241a1e; --plum:#43222f;
+    --dawn:#6b4a52; --gold:#af8a4c; --gold-line:#d8c39a; --cream:#f3ecdd;
+    --ok:#3d6b4f; --bad:#a8433a; --tip:#2f6a78; --tip-bg:#eaf3f2;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--paper); font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif; color:var(--ink)}
+  .page{display:flex; justify-content:center; padding:32px 16px 56px}
+  .stack{width:100%; max-width:920px; display:flex; flex-direction:column; gap:28px}
+
+  .head{padding:8px 12px 26px; text-align:center; border-bottom:2px solid var(--gold-line)}
+  .head .brand{font-size:12.5px; letter-spacing:.32em; color:var(--dawn); font-weight:500}
+  .head h1{font-family:"Noto Serif TC",serif; font-weight:900; font-size:clamp(24px,4.2vw,32px); color:var(--plum); margin:12px 0 10px}
+  .head .sub{font-size:14.5px; color:var(--dawn); font-weight:400; line-height:1.85; max-width:560px; margin:0 auto}
+  .head .sub b{color:var(--ink); font-weight:700}
+
+  .card{background:var(--card); border:1px solid var(--gold-line); border-radius:14px; overflow:hidden; box-shadow:0 16px 44px rgba(67,34,47,.10)}
+
+  .ttl{padding:22px 28px 16px; border-bottom:2px solid var(--gold-line); text-align:center}
+  .ttl .eyebrow{font-size:11px; letter-spacing:.26em; color:var(--gold); font-weight:700}
+  .ttl h1{font-family:"Noto Serif TC",serif; font-weight:900; font-size:clamp(18px,3.2vw,23px); color:var(--plum); margin:8px 0 0; line-height:1.5}
+
+  .top{display:grid; grid-template-columns:1.15fr 1fr; gap:0}
+  .photo-box{position:relative; background:#000}
+  .photo-box img{width:100%; height:100%; object-fit:cover; display:block; min-height:300px}
+  .photo-box.plain{min-height:0}
+
+  .pin{position:absolute; display:flex; align-items:center; gap:6px; font-size:12px; font-weight:700; color:var(--plum)}
+  .pin .dot{width:9px; height:9px; border-radius:50%; background:var(--gold); border:2px solid #fff; box-shadow:0 0 0 1px var(--gold); flex:none}
+  .pin .label{background:rgba(255,255,255,.94); border:1px solid var(--gold-line); border-radius:999px; padding:4px 11px; white-space:nowrap; box-shadow:0 4px 10px rgba(0,0,0,.15)}
+
+  .pin.p1{top:8%; left:38%} .pin.p1 .label{transform:translate(14px,-6px)}
+  .pin.p2{top:60%; left:42%} .pin.p2 .label{transform:translate(14px,-6px)}
+  .pin.p3{top:74%; left:20%} .pin.p3 .label{transform:translate(14px,4px)}
+
+  .pin.p1c{top:10%; left:36%} .pin.p1c .label{transform:translate(10px,-4px)}
+  .pin.p2c{top:32%; left:22%} .pin.p2c .label{transform:translate(-4px,-4px)}
+  .pin.p3c{top:52%; left:68%} .pin.p3c .label{transform:translate(10px,4px)}
+
+  .pin.p1a{top:38%; left:30%} .pin.p1a .label{transform:translate(-4px,-4px)}
+  .pin.p2a{top:16%; left:52%} .pin.p2a .label{transform:translate(10px,-4px)}
+
+  .side{padding:20px 24px; display:flex; flex-direction:column; gap:16px; background:var(--cream)}
+  .why{font-size:13px; line-height:1.85; color:var(--ink); font-weight:400}
+  .why b{display:block; font-family:"Noto Serif TC",serif; font-size:14px; color:var(--plum); margin-bottom:6px; font-weight:700}
+  .scene-line{margin:0; font-size:13.5px; color:var(--dawn); font-weight:500}
+
+  .steps{display:flex; flex-direction:column; gap:9px}
+  .steps .label-h{font-family:"Noto Serif TC",serif; font-size:14px; color:var(--plum); font-weight:700; margin-bottom:2px}
+  .step{display:flex; gap:10px; align-items:flex-start; font-size:12.8px; line-height:1.75}
+  .step .n{flex:none; width:19px; height:19px; border-radius:50%; background:var(--plum); color:var(--paper); font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px}
+
+  .bottom{display:grid; grid-template-columns:1.3fr 1fr; gap:0; border-top:2px solid var(--gold-line)}
+  .mistakes{padding:20px 26px}
+  .mistakes h2{font-family:"Noto Serif TC",serif; font-size:14.5px; color:var(--plum); margin:0 0 12px; font-weight:700}
+  .mrow{display:flex; gap:11px; align-items:flex-start; margin-bottom:11px}
+  .mrow:last-child{margin-bottom:0}
+  .mrow .x{flex:none; width:19px; height:19px; border-radius:50%; background:var(--bad); color:#fff; font-size:11.5px; font-weight:900; display:flex; align-items:center; justify-content:center; margin-top:1px}
+  .mrow .txt{font-size:12.8px; line-height:1.7}
+  .mrow .txt .wrong{color:var(--ink); font-weight:500}
+  .mrow .txt .fix{color:var(--ok); font-weight:700}
+  .mrow .txt .fix::before{content:"→ "}
+
+  .aside{padding:20px 24px; background:var(--tip-bg); display:flex; flex-direction:column; gap:12px; justify-content:center}
+  .warn{font-size:12px; line-height:1.85}
+  .warn h3{margin:0 0 8px; font-size:12.5px; color:var(--bad); font-weight:700; display:flex; align-items:center; gap:6px}
+  .warn ul{margin:0; padding-left:16px; color:var(--ink)}
+  .tip{background:var(--card); border:1px solid var(--gold-line); border-radius:10px; padding:13px 15px; font-size:12px; line-height:1.8; color:var(--ink)}
+  .tip b{color:var(--tip); display:block; margin-bottom:4px; font-size:12px}
+  .tip.standalone{margin-top:2px}
+
+  .simple-top{grid-template-columns:1fr 1.3fr}
+  .simple .photo-box{min-height:0}
+  .simple .photo-box img{min-height:0; aspect-ratio:4/3}
+  .simple .side{background:var(--card)}
+
+  .notes{padding:24px 30px; background:var(--cream); border-radius:14px; border:1px solid var(--gold-line)}
+  .notes h3{font-family:"Noto Serif TC",serif; font-size:15px; font-weight:700; color:var(--plum); margin:0 0 10px}
+  .notes ul{margin:0; padding-left:19px; font-size:13.5px; line-height:1.9; color:var(--ink); font-weight:300}
+  .notes ul li b{color:var(--plum); font-weight:600}
+
+  .legal{padding:0 16px; font-size:11.5px; color:var(--dawn); line-height:1.85; text-align:center; font-weight:300}
+  .foot{padding-top:16px; text-align:center; font-size:12.5px; color:var(--dawn); border-top:1px solid var(--gold-line); font-weight:400}
+  .foot b{color:var(--plum); font-weight:700}
+
+  @media (max-width:700px){
+    .top, .bottom, .simple-top{grid-template-columns:1fr}
+    .photo-box img{min-height:240px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="stack">
+    <div class="head">
+      <div class="brand">鑫彥瑜珈・高雄左營</div>
+      <h1>六個日常時刻，六份動作說明書</h1>
+      <p class="sub">給 <b>58 歲以上</b>朋友的 AI 體態檢測加贈內容——從起床、追劇到做家事，你的身體每天都在代償，這份單子陪你在家先接住。</p>
+    </div>
+
+    
+  <div class="card">
+    <div class="ttl">
+      <div class="eyebrow">動作說明書・01</div>
+      <h1>頸部側伸展，卸掉脖子後側的重量</h1>
+    </div>
+    <div class="top">
+      <div class="photo-box">
+        <img src="assets/gentle-neck-restart.png" alt="頸部側伸展，卸掉脖子後側的重量" loading="lazy">
+        <div class="pin p1"><span class="dot"></span><span class="label">手輕扶，不用力壓</span></div>
+<div class="pin p2"><span class="dot"></span><span class="label">伸展感在頸側，不是頭頂</span></div>
+<div class="pin p3"><span class="dot"></span><span class="label">肩膀下沉，不聳起</span></div>
+      </div>
+      <div class="side">
+        <div class="why"><b>為什麼做這個動作？</b>滑手機、追劇久坐時，頭會不自覺往前伸，脖子後側肌肉整段時間都在用力撐著頭的重量。這個動作讓你重新感覺「頸側被拉開」，而不是繼續用蠻力撐著。</div>
+        <div class="steps">
+          <div class="label-h">動作重點</div>
+          <div class="step"><span class="n">1</span><span>坐直，右耳慢慢往右肩靠近。</span></div>
+<div class="step"><span class="n">2</span><span>左肩主動往下沉，維持自然放鬆。</span></div>
+<div class="step"><span class="n">3</span><span>感覺左側頸部微微伸展，停留 5–8 個呼吸。</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="mistakes">
+        <h2>常見錯誤</h2>
+        <div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">用手用力把頭往下壓，追求角度</span><br><span class="fix">力道放輕，感覺到伸展就停</span></span></div>
+<div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">另一側肩膀跟著往上聳</span><br><span class="fix">聳起的肩膀主動往下放鬆</span></span></div>
+      </div>
+      <div class="aside">
+        <div class="warn">
+          <h3>⚠ 注意</h3>
+          <ul><li>頸部有舊傷或明顯疼痛，先跳過此動作</li>
+<li>頭暈或刺痛感，立即停止</li></ul>
+        </div>
+        <div class="tip"><b>💡 小提醒</b>做完換邊時，感覺一下兩側是不是不一樣緊——這正是體態檢測想幫你看清楚的地方。</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ttl">
+      <div class="eyebrow">動作說明書・02</div>
+      <h1>赤腳站立，找回腳底的感覺</h1>
+    </div>
+    <div class="top">
+      <div class="photo-box">
+        <img src="assets/bare-feet-grounded.png" alt="赤腳站立，找回腳底的感覺" loading="lazy">
+        <div class="pin p1"><span class="dot"></span><span class="label">十趾放鬆，平均貼地</span></div>
+<div class="pin p2"><span class="dot"></span><span class="label">膝蓋放鬆，不鎖死打直</span></div>
+      </div>
+      <div class="side">
+        <div class="why"><b>為什麼做這個動作？</b>走路時偶爾覺得重心不太穩，往往不是腿沒力，而是腳底感覺變遲鈍，身體重心已經偏移，只是自己感覺不出來。</div>
+        <div class="steps">
+          <div class="label-h">動作重點</div>
+          <div class="step"><span class="n">1</span><span>赤腳站立，感覺十隻腳趾平均貼地。</span></div>
+<div class="step"><span class="n">2</span><span>重心慢慢前後、左右微移，感受腳底壓力變化。</span></div>
+<div class="step"><span class="n">3</span><span>熟悉後可扶著椅背，練習單腳站立。</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="mistakes">
+        <h2>常見錯誤</h2>
+        <div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">腳趾用力抓地，像在抓毛巾</span><br><span class="fix">腳趾放鬆攤平，靠腳掌感受重心即可</span></span></div>
+<div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">膝蓋鎖死打直站著</span><br><span class="fix">膝蓋保持微彎，放鬆不用力</span></span></div>
+      </div>
+      <div class="aside">
+        <div class="warn">
+          <h3>⚠ 注意</h3>
+          <ul><li>站不穩時務必扶著椅背或牆面</li>
+<li>頭暈時立即坐下休息</li></ul>
+        </div>
+        <div class="tip"><b>💡 小提醒</b>這個練習沒有「做對做錯」的動作幅度，重點是每天花 1 分鐘，重新感覺自己的腳。</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ttl">
+      <div class="eyebrow">動作說明書・03</div>
+      <h1>坐姿開胸，把出力還給胸口</h1>
+    </div>
+    <div class="top">
+      <div class="photo-box">
+        <img src="assets/chest-opening-evening-stretch.png" alt="坐姿開胸，把出力還給胸口" loading="lazy">
+        <div class="pin p1c"><span class="dot"></span><span class="label">胸口打開、往上提</span></div>
+<div class="pin p2c"><span class="dot"></span><span class="label">肩胛主動往中間靠</span></div>
+<div class="pin p3c"><span class="dot"></span><span class="label">手臂打開，不是聳肩代替</span></div>
+      </div>
+      <div class="side">
+        <div class="why"><b>為什麼做這個動作？</b>想動一動、伸個懶腰時，很多人胸口、肩胛其實沒有真正參與動作，腰部只好代替出力頂上去，久了下背反而更緊。</div>
+        <div class="steps">
+          <div class="label-h">動作重點</div>
+          <div class="step"><span class="n">1</span><span>坐穩或站穩，雙手慢慢往兩側打開。</span></div>
+<div class="step"><span class="n">2</span><span>胸口慢慢往前、往上打開，肩胛往中間靠。</span></div>
+<div class="step"><span class="n">3</span><span>感覺胸口伸展，腰部保持穩定、不過度後仰。</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="mistakes">
+        <h2>常見錯誤</h2>
+        <div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">手一打開就聳肩</span><br><span class="fix">肩膀先放鬆下沉，再打開手臂</span></span></div>
+<div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">腰往後仰去換取胸口打開的感覺</span><br><span class="fix">腰部維持中立，打開的是胸口不是腰</span></span></div>
+      </div>
+      <div class="aside">
+        <div class="warn">
+          <h3>⚠ 注意</h3>
+          <ul><li>若有明顯下背疼痛，動作幅度放小</li></ul>
+        </div>
+        <div class="tip"><b>💡 小提醒</b>這個動作也很適合當作起身、伸懶腰前的暖身，一天做個兩三次都可以。</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ttl">
+      <div class="eyebrow">動作說明書・04</div>
+      <h1>手臂交叉伸展，鬆開肩膀外側</h1>
+    </div>
+    <div class="top">
+      <div class="photo-box">
+        <img src="assets/desk-wrist-stretch.png" alt="手臂交叉伸展，鬆開肩膀外側" loading="lazy">
+        <div class="pin p1a"><span class="dot"></span><span class="label">手臂伸直，輕貼身前</span></div>
+<div class="pin p2a"><span class="dot"></span><span class="label">肩膀下沉，不聳起</span></div>
+      </div>
+      <div class="side">
+        <div class="why"><b>為什麼做這個動作？</b>買菜提重物、或長時間手臂在身體前側用力（打字、抱東西）之後，手臂外側跟肩膀後側容易一直緊繃著，自己不容易察覺。</div>
+        <div class="steps">
+          <div class="label-h">動作重點</div>
+          <div class="step"><span class="n">1</span><span>一手伸直橫過身前，另一手輕扶手肘。</span></div>
+<div class="step"><span class="n">2</span><span>手肘朝身體方向輕壓，肩膀保持下沉。</span></div>
+<div class="step"><span class="n">3</span><span>感覺手臂外側、肩膀後側有伸展感即可。</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="mistakes">
+        <h2>常見錯誤</h2>
+        <div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">用力硬拉手臂追求角度</span><br><span class="fix">力道放輕，感覺到伸展就停</span></span></div>
+<div class="mrow"><span class="x">✕</span><span class="txt"><span class="wrong">身體跟著轉向，變成扭腰</span><br><span class="fix">上半身保持正面朝前，只有手臂在動</span></span></div>
+      </div>
+      <div class="aside">
+        <div class="warn">
+          <h3>⚠ 注意</h3>
+          <ul><li>肩關節有明顯疼痛或舊傷，動作放輕</li></ul>
+        </div>
+        <div class="tip"><b>💡 小提醒</b>提完重物、或打字打了一整段時間之後做這個，特別有感。</div>
+      </div>
+    </div>
+  </div>
+  <div class="card simple">
+    <div class="ttl">
+      <div class="eyebrow">居家練習・05</div>
+      <h1>床上暖身，先醒身體再起床</h1>
+    </div>
+    <div class="top simple-top">
+      <div class="photo-box plain"><img src="assets/resting-in-bed.png" alt="床上暖身，先醒身體再起床" loading="lazy"></div>
+      <div class="side">
+        <p class="scene-line">翻身、剛睜開眼那幾分鐘，身體最卡。</p>
+        <div class="why"><b>其實正在發生的是</b>很多人一醒就直接坐起、下床，脊椎瞬間扛住全身重量，其實肌肉都還沒醒。</div>
+        <div class="steps">
+          <div class="label-h">在家可以這樣做</div>
+          <div class="step"><span class="n">1</span><span>仰躺，雙膝彎曲，雙腳踩床。</span></div>
+<div class="step"><span class="n">2</span><span>雙膝左右輕輕擺動，帶動下背慢慢鬆開。</span></div>
+<div class="step"><span class="n">3</span><span>吸氣時雙手過頭伸展，感覺全身拉長一次，再側身慢慢起床。</span></div>
+        </div>
+        <div class="tip standalone"><b>💡 小提醒</b>這三個步驟花不到一分鐘，睡醒先做完再下床，膝蓋、下背都會輕鬆一點。</div>
+      </div>
+    </div>
+  </div>
+  <div class="card simple">
+    <div class="ttl">
+      <div class="eyebrow">居家練習・06</div>
+      <h1>髖關節鉸鏈，換一種方式彎腰</h1>
+    </div>
+    <div class="top simple-top">
+      <div class="photo-box plain"><img src="assets/kitchen-daily-movement.png" alt="髖關節鉸鏈，換一種方式彎腰" loading="lazy"></div>
+      <div class="side">
+        <p class="scene-line">洗碗、彎腰拿低處的鍋子或東西。</p>
+        <div class="why"><b>其實正在發生的是</b>直接彎腰、腰先出力去搆，髖關節反而沒有一起參與這個動作，久了下背容易痠。</div>
+        <div class="steps">
+          <div class="label-h">在家可以這樣做</div>
+          <div class="step"><span class="n">1</span><span>站姿，雙腳與髖同寬，膝蓋微彎。</span></div>
+<div class="step"><span class="n">2</span><span>臀部往後推，上半身順勢前傾，脊椎維持一直線。</span></div>
+<div class="step"><span class="n">3</span><span>感覺大腿後側微微伸展，再慢慢站直。</span></div>
+        </div>
+        <div class="tip standalone"><b>💡 小提醒</b>下次彎腰拿東西前，先練習這個「屁股往後推」的感覺，會發現腰不用那麼用力。</div>
+      </div>
+    </div>
+  </div>
+
+    <div class="notes">
+      <h3>怎麼安排</h3>
+      <ul>
+        <li>不用六個一次做完，<b>挑當天最有感覺的 1–2 個</b>就好。</li>
+        <li>感覺「緊繃」就停留，<b>不要追求角度或用力拉到痛</b>。</li>
+        <li>做的時候留意自己<b>是哪裡先出力、哪裡先動</b>——這正是體態檢測想幫你看清楚的地方。</li>
+      </ul>
+    </div>
+
+    <p class="legal">本建議單為一般性運動伸展參考，非醫療診斷或治療。若有心血管疾病、近期手術、急性疼痛或不確定自身狀況，請先諮詢醫療專業人員再進行。過程中如有明顯疼痛、頭暈或不適，請立即停止。</p>
+
+    <div class="foot"><b>鑫彥瑜珈</b>・高雄市左營區新庄仔路726號3樓・07-556-7387</div>
+  </div>
+</div>
+</body>
+</html>
