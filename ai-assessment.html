@@ -698,7 +698,15 @@ form.addEventListener('submit', function(e){
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(payload)
-    }).then(function(){ done(); }).catch(function(){ done(); });
+    }).then(function(res){
+      if(!res.ok) throw new Error('bad status');
+      done();
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = '送出預約 · 首次 NT$699';
+      errEl.textContent = '目前送出時發生問題，麻煩直接來電 07-556-7387 或改用 LINE 預約，謝謝你的耐心。';
+      errEl.classList.add('show');
+    });
   }else{
     setTimeout(done, 500);
   }
