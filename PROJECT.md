@@ -86,7 +86,13 @@
 - `wall-rope-teacher.jpg` / `wall-rope-inversion.jpg` / `wall-rope-suspension.jpg` / `art06.jpg` 原本跨多個 blog 頁面共用,由使用者主導的 A/B/C/D 分組換圖計畫(共24張 AI 生成圖,每張生成後皆比對內容是否符合 prompt 才接上,發現1張不符合的已重新生成)已全部完成:A組7篇(取代 wall-rope-suspension.jpg,commit `1fe3684`)、B組7篇(取代 wall-rope-teacher.jpg,同上)、C組6篇(取代 art06.jpg,commit `b57da4d`)、D組3篇(取代 wall-rope-inversion.jpg,commit `3b8727f`),共24篇 blog 文章換上專屬圖片。這四張圖現僅保留在各自真正歸屬頁(`blog-what-is-wall-rope.html`、`blog-first-class-what-to-bring.html`、`blog-forward-head-daily.html`、`blog-breathing-shoulder-release.html`)+ 非 blog 頁面(`index.html`、`assessment.html`、`assessment-v2/v3.html`、`about-wall-rope.html`、`contact.html`、`neck-release-v1.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`、`know-yoga.html`、`classes.html`,這些不在本次清理範圍,非blog頁面未來若要處理需另外評估)。
 - **2026-09-03 補完:** `blog-neck-hump.html`(原計畫24篇之外遺漏的一篇,原本仍用 `wall-rope-suspension.jpg`)已換上專屬「收下巴」頸部練習圖(嘗試三次才成功——前兩次生成的畫面雖是坐姿但沒有真的做出收下巴動作,第三次改用正面偏三分角度+手觸下巴的描述才成功)。`blog-forward-head-daily.html` 內部重複使用 `art06.jpg` 兩次(頭圖+文章中段)的問題也已解決,中段改用專屬的壁繩頸部延伸圖,`art06.jpg` 現只在該頁頭圖出現一次(commit `03ea59e`)。至此,原始A/B/C/D計畫外加這兩篇補漏,全站 blog 文章的圖片重複問題已完全處理完畢。
 
-**其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots。
+**2026-09-11 新增的本機異動(未部署):**
+- `index.html`、`about.html` 首頁/關於頁的學員評價區塊(`.testimonial-grid`),CSS 改為連續左移跑馬燈效果(`theme.css` 新增 `.testimonial-track` + `@keyframes testimonial-scroll`,hover 暫停,`prefers-reduced-motion` 使用者停用動畫)。
+- 上述兩頁的跑馬燈內容,依使用者提供的截圖(桌面資料夾「鑫彥PO改回瑜珈相關」)新增 5 則先前網站上未使用過的真實評價(謝春姿、許惠娥、黃秀卿、林詩芋、景健亞),`index.html` 併入既有 3 則共 8 則循環;`about.html` 維持原本 3 則,僅套用跑馬燈效果。
+- `reviews.html`(全部見證頁)同步新增上述 5 則評價卡片,與首頁內容保持一致。
+- 上述資料夾內另有 6 張肩頸肌肉解剖疊圖行銷素材,使用者確認本次不使用,留待未來另行處理。
+
+**其餘網站程式碼:** 沒有其他 modified 或 staged 的 HTML/CSS/JS/sitemap/robots(不含使用者原本已存在、與本次任務無關的 working tree 異動,見上方過期說明)。
 
 **working tree 並非完全空白** — 存在 untracked 檔案,詳見第 4 節。描述時應使用「網站程式碼無異動」而非籠統的「working tree 乾淨」(此描述現已不成立,見上方 2026-08-15 異動)。
 
@@ -367,12 +373,12 @@
 | 項目 | 目前值 |
 |---|---|
 | Google 評分 | **4.9★** |
-| Google 評價數 | **88 則** |
-| 最後人工查核日期 | **2026-08-17**(使用者提供 Google 商家搜尋結果截圖佐證) |
+| Google 評價數 | **89 則** |
+| 最後人工查核日期 | **2026-09-11**(使用者提供 Google 搜尋評論面板截圖佐證) |
 | 性質 | **Dynamic Business Fact** |
 | Source of Truth | **Google 商家目前公開頁面 / 商家後台**(不是 repo、不是本文件) |
 
-**變動證據:** 2026-08-09 查核為 87 則 → 2026-08-17 為 88 則。8 天內即變動,證明此數字必然持續變化。
+**變動證據:** 2026-08-09 查核為 87 則 → 2026-08-17 為 88 則 → 2026-09-11 為 89 則。持續小幅變動,證明此數字必然持續變化。
 
 **規則(強制):**
 
@@ -384,7 +390,9 @@
 4. schema `reviewCount` 與頁面可見文字**必須一致**(不一致會讓 Google 收到與畫面不符的結構化資料)。
 
 **2026-08-17 同步紀錄:** 全站 11 個檔案已統一為 88(schema 4 處:`index.html`、`about.html`、`contact.html`、`reviews.html`;可見文字:`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`)。修正前站上同時存在 **75 與 79 兩種數字**(`assessment.html` 內部即自相矛盾:hero 寫 79、trust band 寫 75)。
-> ⚠️ 僅完成本機檔案修改,**尚未 commit / push / 部署**。
+> ⚠️ 該次僅完成本機檔案修改,當時未 commit / push / 部署。
+
+**2026-09-11 同步紀錄:** 發現上次 88 的修改其實從未部署(production 當時仍是 79),且 `about.html`、`classes.html`、`ai-assessment.html` 三個檔案當初漏改,仍停在 79。這次全面重新掃描全站(schema + 可見文字兩種寫法),已統一為 89,共 14 個檔案:schema 4 處(`index.html`、`about.html`、`contact.html`、`reviews.html`);可見文字 13 處(`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`、`yoga-beginner-v1.html`、`shoulder-checkup-v1.html`、`posture-self-test.html`、`ai-assessment.html`)。
 
 - **Google 商家檔案(Google Business Profile)狀態:已認領**(使用者 2026-08-09 口頭確認,並提供商家後台截圖佐證:「鑫彥瑜珈運動館」,4.9 星、87 則 Google 評論)。實際優化程度(照片、貼文頻率、分類是否正確)**未查核**。
 - **✅ 2026-08-09 已修正:** 透過公開 Google 地圖搜尋比對地址(新庄仔路726號3樓)確認商家 CID 為 `3869696325150721929`。已將 `contact.html` 的地圖 iframe 由通用地址查詢改為此 CID 的直接嵌入,並在 `contact.html`(2 處)與 `index.html`(1 處)的 `sameAs` 陣列加入 `https://maps.google.com/?cid=3869696325150721929`(與原有 Facebook 連結並存,未取代)。詳見 `DECISIONS.md` 第 15 條。

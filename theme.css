@@ -274,11 +274,15 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
 .steps--light li b{color:var(--green-dk)}
 
 .reviews-home{background:var(--cream)}
-.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.testimonial-grid blockquote{background:#fff;border:1px solid var(--line-lt);border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;min-height:270px}
+.testimonial-grid{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent)}
+.testimonial-track{display:flex;gap:20px;width:max-content;animation:testimonial-scroll 40s linear infinite}
+.testimonial-grid:hover .testimonial-track{animation-play-state:paused}
+.testimonial-grid blockquote{background:#fff;border:1px solid var(--line-lt);border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;min-height:270px;width:340px;flex:0 0 340px}
 .testimonial-grid .stars{color:#b27b16;letter-spacing:.12em;font-size:14px}
 .testimonial-grid p{font-family:"Noto Serif TC",serif;color:var(--green-dk);font-size:17px;line-height:1.8;margin:16px 0 20px}
 .testimonial-grid cite{margin-top:auto;color:var(--muted);font-size:13px;font-style:normal}
+@keyframes testimonial-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.testimonial-track{animation:none}}
 .text-link{display:inline-block;color:var(--pink);font-weight:700;text-underline-offset:4px}
 
 .feature-list{list-style:none;margin-top:24px}
@@ -394,8 +398,7 @@ footer.site .legal-links a+a{border-left:1px solid rgba(255,255,255,.28)}
   .assessment-samples{grid-template-columns:1fr;max-width:520px}
   .assessment-photo-grid{grid-template-columns:1fr;max-width:520px;margin:28px auto 0}
   .assessment-photo--wide img,.assessment-photo--main img,.assessment-photo--portrait img{aspect-ratio:1.35/1}
-  .testimonial-grid{grid-template-columns:1fr}
-  .testimonial-grid blockquote{min-height:0}
+  .testimonial-grid blockquote{min-height:0;width:280px;flex:0 0 280px}
   .featured-posts{grid-template-columns:1fr 1fr}
   .content-paths{grid-template-columns:1fr;margin-bottom:54px}
   .resource-note{align-items:flex-start;flex-direction:column;gap:14px}
