@@ -45,7 +45,7 @@
 > ⚠️ **總 HTML 檔案數(116)本次未重新稽核,已知過時:** 實查根目錄現有 129 個 `.html`,期間至少新增了未記錄於本文件的 `shoulder-checkup-v1.html`(commit `e7239c2`,無對應決策紀錄)以及 10 篇仍未上架的 blog 草稿(見「未發佈的/index.html」)。**總數與 sitemap 收錄範圍(第58-62行)需要完整重新稽核,本次僅更新 blog 篇數與 sitemap 條數,不擅自回填總數,待你確認後再補稽核。**
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
-**站上公開價格:** 僅出現 NT$199 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
+**站上公開價格:** 僅出現 NT$299 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
 
 **共用檔案(Production,全站生效):**
 - `site.js?v=5` — **110 頁引用**(2026-08-21 實查;隨新增文章數同步成長)
@@ -142,9 +142,9 @@
 
 | 檔名 | 商業用途 | 程式碼內價格 | 檔名版本 | 商業版本標記 | 公開/隱藏 | Sitemap | Canonical | Robots | data-lead-* | LINE CTA 真機測試 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `assessment.html` | AI 體態檢測正式頁 | 原價 699 / 首次 199 | 無版號(正式頁) | 「V1」 | **公開正式頁** | ✅在 | 指向自己 | 可索引(無 robots meta) | 未設定(用預設 199) | **未驗證** |
-| `assessment-v2.html` | 測試版 | 199 | v2 | 無 data-line-message | 廣告隱藏頁 | 不在 | 指向 assessment.html | noindex,nofollow | 無(用預設 199) | **未驗證** |
-| `assessment-v3.html` | 測試版(敘事型) | 199 | v3 | 「V3」 | 廣告隱藏頁 | 不在 | 指向 assessment.html | noindex,nofollow | 199 / AI posture assessment | **未驗證** |
+| `assessment.html` | AI 體態檢測正式頁 | 原價 699 / 首次 299 | 無版號(正式頁) | 「V1」 | **公開正式頁** | ✅在 | 指向自己 | 可索引(無 robots meta) | 未設定(用預設 299) | **未驗證** |
+| `assessment-v2.html` | 測試版 | 299 | v2 | 無 data-line-message | 廣告隱藏頁 | 不在 | 指向 assessment.html | noindex,nofollow | 無(用預設 299) | **未驗證** |
+| `assessment-v3.html` | 測試版(敘事型) | 299 | v3 | 「V3」 | 廣告隱藏頁 | 不在 | 指向 assessment.html | noindex,nofollow | 299 / AI posture assessment | **未驗證** |
 | `neck-release.html` | 肩頸調整正式頁(整併取代舊實驗版) | 1500 | 無版號(正式頁) | 無版號字樣 | **公開正式頁** | ✅在 | 指向自己 | 可索引(無 robots meta) | 1500 / 1-on-1 neck & shoulder release | **未驗證** |
 | `neck-release-v1.html` | 舊實驗版 | 1500 | v1 | 無 data-line-message | 廣告隱藏頁(舊) | 不在 | 指向 neck-release.html | noindex,nofollow | 無 | **未驗證** |
 | `neck-release-v3.html` | 舊實驗版(敘事型) | 1200 | v3 | 「V1」(刻意的商業版本標記,與檔名版本不同) | 廣告隱藏頁(舊) | 不在 | **指向自己(非 neck-release.html)** | noindex,nofollow | 1200 / 1-on-1 neck & shoulder release | **未驗證** |
@@ -163,7 +163,7 @@
 - **oaMessage 預填機制:** 已實作。頁面於 `<body>` 設定 `data-line-message` 時,點擊 LINE 按鈕會改開 `https://line.me/R/oaMessage/@561wigip/?<預填文字>`;未設定則走一般 `LINE_URL`
 - **site.js 實際邏輯:**
   - 所有 `a.js-line` 按鈕統一攔截點擊
-  - 讀取 `data-lead-value`(預設 199)、`data-lead-name`(預設「LINE AI posture assessment reservation」)、`data-lead-category`(預設「AI posture assessment」)
+  - 讀取 `data-lead-value`(預設 299)、`data-lead-name`(預設「LINE AI posture assessment reservation」)、`data-lead-category`(預設「AI posture assessment」)
   - 讀取 `data-line-event`(預設「Lead」,可覆寫為「Contact」等)決定 Meta Pixel 事件類型
   - 先送 GA4 `line_reservation_click` + Meta Pixel 事件,**400ms 後**才開啟 LINE 連結
 - **有 `data-line-message` 的頁面(4 頁):** `assessment.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v3.html`
@@ -174,8 +174,8 @@
 **現行預填訊息全文(實查):**
 | 頁面 | data-line-message |
 |---|---|
-| `assessment.html` | 我想了解 AI 體態檢測 NT$199(V1) |
-| `assessment-v3.html` | 我想了解 AI 體態檢測 NT$199(V3) |
+| `assessment.html` | 我想了解 AI 體態檢測 NT$299(V1) |
+| `assessment-v3.html` | 我想了解 AI 體態檢測 NT$299(V3) |
 | `neck-release.html` | 我想了解 AI 體態檢測＋一對一肩頸調整 NT$1,500 |
 | `neck-release-v3.html` | 我想了解一對一肩頸調整 NT$1,200(V1) |
 
@@ -204,7 +204,7 @@
 > **補記說明(2026-08-08):** 上表後兩列為前一版本**遺漏**的事件。這是「表單正門」的轉換路徑,是廣告優化最重要的訊號之一。
 > **內部代號「neck v4」** 首次出現於此事件的 `content_name`,代表 `neck-release.html` 在內部為第 4 次迭代 — 與「檔名無版號」「商業無版號」皆不衝突,但對照數據時需知道此標記存在。
 
-- **Value / Currency 覆寫機制:** 透過 `<body data-lead-value>` `data-lead-name` `data-lead-category` 逐頁覆寫,未設定時 fallback 199 / "AI posture assessment"
+- **Value / Currency 覆寫機制:** 透過 `<body data-lead-value>` `data-lead-name` `data-lead-category` 逐頁覆寫,未設定時 fallback 299 / "AI posture assessment"
 - **實作範圍:** 僅 Browser 端(client-side)GA4 gtag.js 與 Meta Pixel(fbq)
 - **GTM:** **已實查確認全站不存在 GTM 容器代碼**(此項不再列為待確認)
 - **Meta CAPI(server-side):** HTML 端確認無直接串接。**但已透過 Meta Ads 後台 dataset stats(event_source 拆解)實查確認:`assessment.html` 表單送出時串接的 n8n webhook(`neck-release-lead`),會在伺服器端額外多發一筆 `LineClick`,與同一次表單提交的 `Lead` 事件時間戳、次數完全同步。研判是沿用自其他專案的 CAPI 樣板忘記改事件名或刪除,屬於誤發、非刻意設計,尚未修正(不在 2026-09-03 的 site.js 事件分離範圍內)。**
@@ -213,7 +213,7 @@
 
 `data-line-event` 現在**先讀被點擊按鈕自己的屬性,沒有才退回讀整頁 `<body>` 設定,都沒有才預設 `Lead`**(原本只能整頁覆寫,見上方 8.1)。目前實際標成 `data-line-event="Contact"` 的按鈕:
 - `index.html`(導覽列+Hero,共2顆)、`about.html`/`blog.html`/`know-yoga.html`(導覽列各1顆)、`classes.html`(導覽列1顆+「LINE詢問」4顆),合計10顆,全部是「免費肩頸壓力檢測」或「一對一/小團課時段詢問」性質
-- 全站其餘「預約首次NT$199...」按鈕(含上述5頁裡的同款按鈕,以及 `about-poses.html` 文字看似詢問但情境明確是199活動的那顆)**維持 `Lead` 不動**
+- 全站其餘「預約首次NT$299...」按鈕(含上述5頁裡的同款按鈕,以及 `about-poses.html` 文字看似詢問但情境明確是299活動的那顆)**維持 `Lead` 不動**
 - `site.js?v=6`:因內容變更但版號未跳導致部分舊快取沿用舊邏輯,已將**這5個頁面**的 `<script src>` 版號跳到 v=6(其餘約120頁行為不受此次修改影響,維持 v=5 未動,避免混入其他未提交修改一起 commit)
 
 **已知未處理:** `ReservationIntent`(22個標記頁面中19個零觸發,且與Lead高度重疊,見 `DECISIONS.md` 第32條)、`LineClick`/`V4LineClick` 兩個舊版影子事件重複、上述 n8n CAPI 誤發 `LineClick` 問題——皆為已發現但**尚未處理**的候選項目,非本次範圍。
@@ -271,7 +271,7 @@
 體驗 / 檢測 / 一對一入口 → 到店建立信任 → 轉成持續上課會員
 ```
 
-**網站上的 NT$199、NT$699、NT$1,500 不等於整個瑜伽館的營收模型。**
+**網站上的 NT$299、NT$699、NT$1,500 不等於整個瑜伽館的營收模型。**
 前端低價體驗、AI 體態檢測、個別體驗方案,本質上是**新客入口**,不是最終營收終點。
 
 **會員主方案(依使用者陳述):**
