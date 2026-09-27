@@ -184,7 +184,7 @@
 
   // V4 LINE destination. Same OA and oaMessage mechanism as site.js, with a V4-only prefill string.
   var V4_LINE_OA_ID = "@561wigip";
-  var V4_LINE_MESSAGE = "我想了解 AI 體態檢測 NT$199（V4）";
+  var V4_LINE_MESSAGE = "我想了解 AI 體態檢測 NT$299（V4）";
   var v4LineUrl = "https://line.me/R/oaMessage/" + encodeURIComponent(V4_LINE_OA_ID) + "/?" + encodeURIComponent(V4_LINE_MESSAGE);
 
   // Once-per-page-lifecycle flags. In-memory only; a refresh is a new lifecycle.
@@ -572,7 +572,7 @@
       "<li>一起整理出現在最值得先注意的方向</li>" +
       "</ul>" +
       '<p class="v4-offer__price">' +
-      '<span class="v4-offer__price-main"><span class="v4-offer__price-label">首次</span><span class="v4-offer__price-value v4-nowrap">NT$199</span><del class="v4-offer__price-was v4-nowrap">NT$699</del></span>' +
+      '<span class="v4-offer__price-main"><span class="v4-offer__price-label">首次</span><span class="v4-offer__price-value v4-nowrap">NT$299</span><del class="v4-offer__price-was v4-nowrap">NT$699</del></span>' +
       '<span class="v4-offer__price-scope">完整 20 分鐘體驗</span>' +
       "</p>" +
       '<a class="v4-primary-action" href="' + v4LineUrl + '" target="_blank" rel="noopener" data-v4-line-cta="offer">我想看清楚自己的結果 <span aria-hidden="true">→</span></a>' +
@@ -596,7 +596,7 @@
       '<section class="v4-final-cta" data-v4-final-cta aria-labelledby="v4-final-cta-title">' +
       '<h2 id="v4-final-cta-title">如果你想把自己的狀況，<br>看得更清楚。</h2>' +
       '<p class="v4-final-cta__service"><span class="v4-nowrap">20 分鐘 AI 體態檢測</span>＋<span class="v4-nowrap">老師一對一解讀</span></p>' +
-      '<p class="v4-final-cta__price"><span>首次</span><span class="v4-final-cta__price-value v4-nowrap">NT$199</span></p>' +
+      '<p class="v4-final-cta__price"><span>首次</span><span class="v4-final-cta__price-value v4-nowrap">NT$299</span></p>' +
       '<a class="v4-primary-action" href="' + v4LineUrl + '" target="_blank" rel="noopener" data-v4-line-cta="final">我想看清楚自己的結果 <span aria-hidden="true">→</span></a>' +
       '<p class="v4-final-cta__meta">高雄左營・近巨蛋捷運</p>' +
       "</section>" +
@@ -789,7 +789,7 @@
       window.fbq("track", "Lead", {
         content_name: "LINE AI posture assessment reservation",
         content_category: "AI posture assessment",
-        value: 199,
+        value: 299,
         currency: "TWD"
       });
     } catch (error) {

@@ -474,7 +474,7 @@ function gtag(){ window.dataLayer.push(arguments); }
       <p class="lead">檢測拍出來的是<b>你的</b>代償——哪邊肩膀高、頭前傾幾公分、骨盆偏哪一邊。<b>這件事，團體課處理不了。</b></p>
     </div>
 
-    <p class="flow-line"><b>線上預約付NT$199</b><i>→</i><b>AI體態檢測20分</b><i>→</i><b>老師解讀結果</b><i>→</i><b>一對一調整40分</b><i>→</i><b>老師給下一步建議</b><br>體驗後再依你的狀況決定是否需要繼續，不需要當場購買課程。</p>
+    <p class="flow-line"><b>線上預約付NT$299</b><i>→</i><b>AI體態檢測20分</b><i>→</i><b>老師解讀結果</b><i>→</i><b>一對一調整40分</b><i>→</i><b>老師給下一步建議</b><br>體驗後再依你的狀況決定是否需要繼續，不需要當場購買課程。</p>
 
     <div class="vs">
       <div class="vs-col">
@@ -543,7 +543,7 @@ function gtag(){ window.dataLayer.push(arguments); }
         <span class="amt">$699<small>／約 60 分</small></span>
       </div>
       <div class="saved">現省 NT$1,000</div>
-      <div class="foot">預約方式：先付 NT$199 預約保留金，到店再補 NT$500<br><span class="nb">首次到店・線上預約</span>・<span class="nb">每人限一次</span>・<span class="nb">結束後不強迫報名</span></div>
+      <div class="foot">預約方式：先付 NT$299 預約保留金，到店再補 NT$500<br><span class="nb">首次到店・線上預約</span>・<span class="nb">每人限一次</span>・<span class="nb">結束後不強迫報名</span></div>
     </div>
   </div>
 </section>
@@ -635,8 +635,8 @@ function gtag(){ window.dataLayer.push(arguments); }
         <div class="a">不需要，體驗後再依你的狀況決定是否要繼續，沒有當場推銷。</div>
       </details>
       <details>
-        <summary>NT$199 是全部費用嗎？</summary>
-        <div class="a">NT$199 是預約保留金，到店當天再補 NT$500，合計為首次完整體驗 NT$699。</div>
+        <summary>NT$299 是全部費用嗎？</summary>
+        <div class="a">NT$299 是預約保留金，到店當天再補 NT$500，合計為首次完整體驗 NT$699。</div>
       </details>
     </div>
 
@@ -686,8 +686,8 @@ form.addEventListener('submit', function(e){
   };
 
   function done(){
-    try{ gtag('event','generate_lead',{value:199, currency:'TWD', page_path:location.pathname}); }catch(err){}
-    try{ fbq('track','Lead',{content_name:'AI體態檢測表單預約', content_category:'AI posture assessment + 1-on-1', value:199, currency:'TWD'}); }catch(err){}
+    try{ gtag('event','generate_lead',{value:299, currency:'TWD', page_path:location.pathname}); }catch(err){}
+    try{ fbq('track','Lead',{content_name:'AI體態檢測表單預約', content_category:'AI posture assessment + 1-on-1', value:299, currency:'TWD'}); }catch(err){}
     form.style.display = 'none';
     document.getElementById('reserveThanks').classList.add('show');
     document.getElementById('reserveThanks').scrollIntoView({behavior:'smooth', block:'center'});

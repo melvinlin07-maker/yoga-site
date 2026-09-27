@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
 
       // 每頁可用 <body data-lead-value / data-lead-name / data-lead-category> 覆寫；
-      // 未設定時沿用預設（AI 體態檢測、199），確保其他既有頁面行為不變。
+      // 未設定時沿用預設（AI 體態檢測、299），確保其他既有頁面行為不變。
       var body = document.body;
-      var leadValue = Number(body.getAttribute("data-lead-value")) || 199;
+      var leadValue = Number(body.getAttribute("data-lead-value")) || 299;
       var leadName = body.getAttribute("data-lead-name") || "LINE AI posture assessment reservation";
       var leadCategory = body.getAttribute("data-lead-category") || "AI posture assessment";
       // 頁面可用 <body data-line-event="Contact"> 把 LINE 點擊降級成「詢問」事件，
