@@ -62,10 +62,10 @@
 
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
-**Sitemap 收錄範圍(2026-09-28 本機重新稽核；本輪修改尚未提交或部署):**
+**Sitemap 收錄範圍(2026-09-28 本機重新稽核；本輪於 commit `fa92496` 發布):**
 - 共 **123 條唯一 `<loc>`**，全部有對應本機 HTML；首頁網址 `/` 對應 `index.html`。78 篇 `blog-*.html`、27 篇 `pose-*.html` 均在列。
 - 未列入的內容頁共 10 個：`ai-assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`guide.html`、`home-stretch-58plus.html`、`neck-release-v1.html`、`neck-release-v3.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`；另有 Google 驗證檔 `google0081f56f050ce756.html`。
-- 本輪僅修正 15 篇文章的 `<lastmod>`，沒有新增或移除 sitemap 網址；`ai-assessment.html` 本機新增 `noindex, follow`，保留公開網址與預約功能。這些變更尚未部署。
+- 本輪僅修正 15 篇文章的 `<lastmod>`，沒有新增或移除 sitemap 網址；`ai-assessment.html` 新增 `noindex, follow`，保留公開網址與預約功能。正式站已於 2026-09-28 驗證上述變更生效。
 - 本機 XML 與檔案對應檢查通過；公開網站的實際索引狀態仍須以 Search Console 網址檢查為準。
 
 `robots.txt` 內容:`User-agent: *` / `Allow: /` / `Sitemap: https://sinyanyoga.com.tw/sitemap.xml`
