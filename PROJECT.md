@@ -42,7 +42,7 @@
 > **數量修正紀錄(2026-09-05):** 依決策29排程發布 `blog-restarting-after-a-break.html`(中斷重啟心理門檻,壁繩入門分類),加入 `blog.html` + `sitemap.xml`,67→**68 篇 blog**。
 > **新增紀錄(2026-09-05):** 依 `SEO_CONTENT_SOP.md` 流程選定新手瑜伽10題候選,使用者選定2題並撰寫發布:`blog-home-practice-vs-studio.html`(在家跟影片練 vs 到教室上課)、`blog-morning-or-evening-practice.html`(早上練還是晚上練,涉及排課時段商業事實,已先問過使用者確認早晚皆有開課、文中不寫具體時間),68→**70 篇 blog**。詳見 `DECISIONS.md` §35。
 > **新增紀錄(2026-09-04):** 新增互動式免費工具 `posture-self-test.html`(非 blog,不計入 blog 篇數),入口設於 `blog.html` 篩選列下方與 `resources.html`,已加入 `sitemap.xml`(111→**112 條 `<loc>`**)。隨頁新增 12 張圖片素材 `assets/quiz-day-01~10.jpg`、`quiz-open.jpg`、`quiz-still.jpg`(取自先前未被引用的 `assets/0814/` 素材,轉為 1600px JPEG)。詳見 `DECISIONS.md` §34。
-> ⚠️ **總 HTML 檔案數(116)本次未重新稽核,已知過時:** 實查根目錄現有 129 個 `.html`,期間至少新增了未記錄於本文件的 `shoulder-checkup-v1.html`(commit `e7239c2`,無對應決策紀錄)以及 10 篇仍未上架的 blog 草稿(見「未發佈的/index.html」)。**總數與 sitemap 收錄範圍(第58-62行)需要完整重新稽核,本次僅更新 blog 篇數與 sitemap 條數,不擅自回填總數,待你確認後再補稽核。**
+> **2026-09-28 本機重新盤點:** 根目錄有 **134 個 `.html`**，其中 `blog-*.html` 78 篇、`pose-*.html` 27 篇；`sitemap.xml` 有 **123 個唯一網址**，首頁以 `/` 對應 `index.html`。此數字是本機檔案盤點，不代表 Google 已收錄或所有頁面目前都已部署。
 
 **站上服務品項(依 `classes.html`):** AI 體態檢測、壁繩瑜伽、一對一指導、小團課。
 **站上公開價格:** 僅出現 NT$299 與 NT$699。**壁繩瑜伽、小團課、一對一指導在網站上沒有標價**(實際方案價格屬商業狀態,見第 10 節)。
@@ -62,11 +62,11 @@
 
 > ⚠️ **`assessment-v3.html`、`assessment-v4.html`、`neck-release-v3.html` 自帶內嵌樣式,不吃 `theme.css`。**(`assessment-v4.html` 為 2026-08-18 前新增,前次盤點時尚不存在此例外)。修改 `theme.css` **不會**影響這三個落地頁,評估影響範圍時不可寫成「全站」。
 
-**Sitemap 收錄範圍(2026-09-03 更新,僅同步本次新增,未完整重新稽核):**
-- 共 **115 條 `<loc>`**(實查 `grep -c "<loc>" sitemap.xml`);與「116 個 HTML − 8」的舊公式關係待重新稽核(見上方⚠️)
-- 70 篇 blog + 27 篇 pose + `posture-self-test.html` **全數在列**(2026-09-05 新增2篇新手瑜伽文章後已同步)
-- 正確排除(8 個):`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`neck-release-v1.html`、`neck-release-v3.html`、`guide.html`、`google0081f56f050ce756.html`、**`yoga-beginner-v1.html`**(廣告用 LP,尚未部署/尚未決定是否索引,見 `DECISIONS.md` §17)
-- **結論:收錄範圍完全正確,此項不再列為待確認**
+**Sitemap 收錄範圍(2026-09-28 本機重新稽核；本輪修改尚未提交或部署):**
+- 共 **123 條唯一 `<loc>`**，全部有對應本機 HTML；首頁網址 `/` 對應 `index.html`。78 篇 `blog-*.html`、27 篇 `pose-*.html` 均在列。
+- 未列入的內容頁共 10 個：`ai-assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`assessment-v4.html`、`guide.html`、`home-stretch-58plus.html`、`neck-release-v1.html`、`neck-release-v3.html`、`shoulder-checkup-v1.html`、`yoga-beginner-v1.html`；另有 Google 驗證檔 `google0081f56f050ce756.html`。
+- 本輪僅修正 15 篇文章的 `<lastmod>`，沒有新增或移除 sitemap 網址；`ai-assessment.html` 本機新增 `noindex, follow`，保留公開網址與預約功能。這些變更尚未部署。
+- 本機 XML 與檔案對應檢查通過；公開網站的實際索引狀態仍須以 Search Console 網址檢查為準。
 
 `robots.txt` 內容:`User-agent: *` / `Allow: /` / `Sitemap: https://sinyanyoga.com.tw/sitemap.xml`
 
