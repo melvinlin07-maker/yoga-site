@@ -1,5 +1,7 @@
 # PROJECT.md — 鑫彥瑜珈網站 事實與系統地圖
 
+> **2026-10-15 局部更新：** GA4 `547750681` 的 `line_reservation_click` 已標為重要事件；Search Console 網域 `sinyanyoga.com.tw` 已連結至正式網站串流 `15350282202`。六頁網站優化通過瀏覽器檢查，使用者已續示授權持續完成正式發布。範圍：`assessment.html`、`index.html`、`classes.html`、`about-wall-rope.html`、`blog-what-is-wall-rope.html`、`pose-what-is-chest-opening.html`。價格保留；本機完成與發布核對紀錄為 `SEO_IMPLEMENTATION_2026-10-15.md`（工作紀錄，不列入公開部署）。舊版文件中的 GA4 待驗證記錄應以本次已核對的後台狀態為準；重要事件只表示點擊意圖，實際預約／到店／會員資料仍須原台帳回填。
+
 > **更新基準:** git HEAD `3943a1b`(2026-08-08 盤點),與 `origin/main` 完全同步(0 ahead / 0 behind)。
 > 本檔案只記錄「已確認事實」。無法確認的項目一律標示 **待確認 / 需外部查核**,不寫成事實。
 >
