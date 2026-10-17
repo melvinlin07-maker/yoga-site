@@ -1,5 +1,10 @@
 # PROJECT.md — 鑫彥瑜珈網站 事實與系統地圖
 
+## 2026-10-17：三篇舊文優化與課後選課新文（已授權發布）
+
+使用者採用內容盤點順序。更新按摩後反覆緊、壁繩進展時間、瑜伽與重訓比較三篇；新建 `blog-after-first-yoga-class.html`，聚焦第一堂後的教學溝通、幅度調整、課型適合度與生活安排。摘要、FAQ、JSON-LD、metadata 與更新日同步；重用既有圖片，保留價格與方案。`blog.html` 加入新文入口；`sitemap.xml` 僅更新三篇舊文及部落格列表 lastmod 並加入新文，不變更其他索引範圍。沒有修改共用 CSS／JS、robots。內容契約與處理紀錄為本機 `SEO_BLOG_CONTENT_CONTRACT_2026-10-17.md`。使用者已明確要求「發布」，授權本輪四篇文章、部落格入口與 sitemap 的正式發布；發布後核對結果記於本機內容契約。未列入本輪的既存 CLAUDE.md 修改與其他草稿不提交。
+
+
 > **2026-10-15 局部更新：** GA4 `547750681` 的 `line_reservation_click` 已標為重要事件；Search Console 網域 `sinyanyoga.com.tw` 已連結至正式網站串流 `15350282202`。六頁網站優化通過瀏覽器檢查，使用者已續示授權持續完成正式發布。範圍：`assessment.html`、`index.html`、`classes.html`、`about-wall-rope.html`、`blog-what-is-wall-rope.html`、`pose-what-is-chest-opening.html`。價格保留；本機完成與發布核對紀錄為 `SEO_IMPLEMENTATION_2026-10-15.md`（工作紀錄，不列入公開部署）。舊版文件中的 GA4 待驗證記錄應以本次已核對的後台狀態為準；重要事件只表示點擊意圖，實際預約／到店／會員資料仍須原台帳回填。
 
 > **更新基準:** git HEAD `3943a1b`(2026-08-08 盤點),與 `origin/main` 完全同步(0 ahead / 0 behind)。
