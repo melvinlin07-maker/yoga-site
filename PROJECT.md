@@ -1,5 +1,18 @@
 # PROJECT.md — 鑫彥瑜珈網站 事實與系統地圖
 
+> **2026-10-18 發布授權：** 使用者明確要求發布第三、第四輪六篇主要文章、blog列表與相關舊標題內鏈。本次同步六篇及blog的sitemap修改日期，不改索引範圍。發布版本與正式站核對記於本機 `SEO_BLOG_FOURTH_ROUND_2026-10-18.md`。既存CLAUDE.md與私有草稿不列入提交。
+
+
+## 2026-10-18 第四輪：練習歷程與圓肩觀察（本機完成）
+
+使用者要求接續下一批。更新 `blog-first-three-months-journey.html` 為安排與回顧指南，移除普遍見效期限、痠痛即非受傷與必經突破等說法；更新 `blog-rounded-shoulder-self-test.html` 為三個非診斷居家觀察，移除程度分級與計分；更新 `blog-rounded-shoulders.html` 說明上交叉用語、模式與研究限制，不憑外觀判緊弱。三篇保留URL與原發布日，10/18更新摘要/FAQ/schema/標題。blog列表與其他既有文章僅同步連往三篇的舊標題文字；自測篇改用既有非測量指令示意圖，正文舊圖表不再引用。第三輪未發布修改保留。本輪未commit/push/deploy，不改價格/方案、共用JS/CSS、robots或sitemap。紀錄為 `SEO_BLOG_FOURTH_ROUND_2026-10-18.md`。
+
+
+## 2026-10-18 第三輪：優先修正肩頸與富貴包內容（本機完成）
+
+使用者要求繼續檢查並先處理最重要文章。完成 `blog-neck-hump.html`、`blog-recurring-neck-tightness-not-just-neck.html`、`blog-posture-bracing-compensation.html`：移除姿勢造成多數凸起、符合兩項先檢測、照片可判定耗力等無據推論，補需求分流與資料來源。富貴包篇保留URL但更新標題與既有示意圖；`blog.html` 同步卡片和兩篇摘要；`blog-phone-posture.html` 僅修正指向該篇的一個舊標題。價格/方案、共用JS/CSS、robots均不改，sitemap待發布同步。本輪未commit/push/deploy，工作紀錄 `SEO_BLOG_THIRD_ROUND_2026-10-17.md` 含10/18完成核對。原有 CLAUDE.md 修改保留。
+
+
 ## 2026-10-17 第二輪：報告解讀、女性階段與知識庫入口（已授權發布）
 
 使用者採用三項建議並要求開始。調整 `blog-reading-your-assessment-report.html`：區分角度/肌力/病因、回測條件與可問老師的問題，不承諾報告副本格式或回測方案；調整 `blog-postpartum-menopause-posture.html`：保留URL/H1，產後與更年期各自分段，加入段落導覽與NHS來源，移除統一因果及壁繩必然適合的說法。`blog.html` 保留原分類與免費掃描，新增反覆緊/越挺越累/選課三個靜態文章入口，以及課後決策連結。摘要、FAQ、JSON-LD同步，價格不變。未改共用JS/CSS、robots；使用者明確要求發布，本輪同步更新兩篇文章的 sitemap 修改日期，授權提交與正式發布，線上核對結果記於本機工作紀錄。核對紀錄為本機 `SEO_BLOG_SECOND_ROUND_2026-10-17.md`。
