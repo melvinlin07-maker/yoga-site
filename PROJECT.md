@@ -1,5 +1,18 @@
 # PROJECT.md — 鑫彥瑜珈網站 事實與系統地圖
 
+## 2026-10-18 第六輪：睡眠、呼吸與停滯期文章（本機完成）
+
+接續第五輪完成之服務導引，更新 `blog-tired-cant-sleep-chest.html`、`blog-breathing-shoulder-release.html`、`blog-progress-plateau.html`。睡眠篇與呼吸篇移除「開胸就能解決失眠」、「呼吸練對肩膀自己會鬆」等簡化因果及1~2週見效等承諾，補上自律神經與生活多因素、睡前過渡與安全界線；停滯期篇移除「再撐一下就一定會突破」暗示，澄清高原期為運動適應常態，並修正針對已練一兩個月學員暗示首次優惠回測的矛盾，提供動作品質、生活習慣、肌力平衡與動作微調4個檢核方向。三篇保留原URL與原發布日，10/18更新標題/摘要/FAQ/schema/dateModified。blog列表與7處連往三篇的舊標題僅同步文字，不改動其他正文。未動共用JS/CSS、robots或sitemap；未commit/push/deploy。工作紀錄 `SEO_BLOG_SIXTH_ROUND_2026-10-18.md`。
+
+
+> **2026-10-18 發布授權：** 使用者明確要求發布第五、第六輪六篇主要文章（服務導引三篇、睡眠/呼吸/停滯期三篇）、blog列表與相關舊標題內鏈。本次同步六篇及blog的sitemap修改日期，不改索引範圍。發布版本與正式站核對記於本機 `SEO_BLOG_SIXTH_ROUND_2026-10-18.md`。既存CLAUDE.md與私有草稿不列入提交。
+
+
+## 2026-10-18 第五輪：三篇核心服務導引（本機完成）
+
+使用者要求持續挑重要文章處理。本輪更新 `blog-class-massage-or-ai-assessment.html`、`blog-no-pain-ai-posture-assessment.html`、`blog-who-needs-ai-posture-assessment.html`，分工為服務需求比較、五種日常感受整理、預約期待與界線。移除符合兩項先檢測、一般不適可由角度釐清原因等推論。no-pain篇改不誇大標題、保留URL；三篇更新摘要/FAQ/schema/10月18日修改日，保留原發布日與價格，重用既有圖片。blog列表及指向no-pain的相關舊標題僅改連結文字，不重寫其他文章或廣告內容。未動共用JS/CSS、robots或sitemap；未commit/push/deploy。工作紀錄 `SEO_BLOG_FIFTH_ROUND_2026-10-18.md`。
+
+
 > **2026-10-18 發布授權：** 使用者明確要求發布第三、第四輪六篇主要文章、blog列表與相關舊標題內鏈。本次同步六篇及blog的sitemap修改日期，不改索引範圍。發布版本與正式站核對記於本機 `SEO_BLOG_FOURTH_ROUND_2026-10-18.md`。既存CLAUDE.md與私有草稿不列入提交。
 
 
