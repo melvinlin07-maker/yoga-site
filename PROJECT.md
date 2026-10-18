@@ -1,5 +1,13 @@
 # PROJECT.md — 鑫彥瑜珈網站 事實與系統地圖
 
+## 2026-10-18 第七輪：骨盆前傾、左右不平衡與久坐代償篇（本機完成）
+
+接續第六輪完成之生活放鬆與練習適應篇，更新 `blog-anterior-pelvic-tilt.html`、`blog-uneven-shoulders-hips.html`、`blog-sitting-8-hours.html`。骨盆前傾篇移除「骨盆前傾就等於小腹凸」之簡化等號與狂縮小腹解方，補上腹壁張力、呼吸模式與靠牆骨盆中立感；左右不平衡篇全面剔除「喬正」違規用語，嚴格區分機能性張力失衡與結構性長短腳，避免左右不對稱焦慮；久坐代償篇移除骨牌式絕對因果與 AI 檢測能判斷「哪一節先歪」之不實宣稱，梳理久坐動態鏈適應與每40分鐘站姿弓箭步打斷慣性。三篇保留原URL與原發布日，10/18更新標題/摘要/FAQ/schema/dateModified。blog列表與20處連往三篇的舊標題僅同步文字，不改動其他正文。未動共用JS/CSS、robots或sitemap；未commit/push/deploy。工作紀錄 `SEO_BLOG_SEVENTH_ROUND_2026-10-18.md`。
+
+
+> **2026-10-18 發布授權：** 使用者審閱本機成果後明確要求「發佈」第七輪三篇主要文章（骨盆前傾、左右不平衡、久坐代償）、blog列表卡片與全站連往該三篇之20處舊標題內鏈。本次同步三篇之 sitemap.xml 修改日期（2026-10-18），不改索引範圍。發布版本與正式站核對記於本機 `SEO_BLOG_SEVENTH_ROUND_2026-10-18.md`。既存CLAUDE.md與私有草稿不列入提交。
+
+
 ## 2026-10-18 第六輪：睡眠、呼吸與停滯期文章（本機完成）
 
 接續第五輪完成之服務導引，更新 `blog-tired-cant-sleep-chest.html`、`blog-breathing-shoulder-release.html`、`blog-progress-plateau.html`。睡眠篇與呼吸篇移除「開胸就能解決失眠」、「呼吸練對肩膀自己會鬆」等簡化因果及1~2週見效等承諾，補上自律神經與生活多因素、睡前過渡與安全界線；停滯期篇移除「再撐一下就一定會突破」暗示，澄清高原期為運動適應常態，並修正針對已練一兩個月學員暗示首次優惠回測的矛盾，提供動作品質、生活習慣、肌力平衡與動作微調4個檢核方向。三篇保留原URL與原發布日，10/18更新標題/摘要/FAQ/schema/dateModified。blog列表與7處連往三篇的舊標題僅同步文字，不改動其他正文。未動共用JS/CSS、robots或sitemap；未commit/push/deploy。工作紀錄 `SEO_BLOG_SIXTH_ROUND_2026-10-18.md`。
