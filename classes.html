@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=10">
+<link rel="stylesheet" href="theme.css?v=20261019-nav">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="鑫彥瑜珈">
@@ -47,12 +47,14 @@
     <li><a href="classes.html" class="active">課程方式</a></li>
     <li><a href="know-yoga.html">認識瑜伽</a></li>
     <li><a href="blog.html">部落格</a></li>
+    <li><a href="videos.html">影音動作庫</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
     <li><a href="neck-release.html">一對一調整</a></li>
   </ul>
   <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
-  <button class="nav-toggle" aria-label="選單">☰</button>
+  <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
+<div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到上頁</a></div>
 
 <header class="hero hero--short">
 <img src="assets/wall-rope-inversion.jpg" alt="鑫彥瑜珈高雄左營壁繩瑜伽課堂">
@@ -132,10 +134,10 @@
 </footer>
 
 <a class="line-float js-line" href="#" aria-label="預約首次 NT$299 AI 體態檢測" data-line-purpose="reservation" data-cta-location="float" data-offer="ai_assessment" data-offer-value="299"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b></a>
-<script src="site.js?v=6"></script>
+<script src="site.js?v=20261019-nav"></script>
 <script>
 // 「免費肩頸壓力檢測」按鈕：點擊時先把預填文字寫進 body data-line-message，
-// 讓 site.js 既有的 LINE 預填機制（未改動 site.js 本身）帶出「我要肩頸壓力自測」，
+// 讓 site.js?v=20261019-nav 既有的 LINE 預填機制（未改動 site.js?v=20261019-nav 本身）帶出「我要肩頸壓力自測」，
 // 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕維持原行為。
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {

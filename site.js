@@ -128,9 +128,41 @@ document.addEventListener("DOMContentLoaded", function () {
   var t = document.querySelector(".nav-toggle");
   var m = document.getElementById("menu");
   if (t && m) {
-    t.addEventListener("click", function () { m.classList.toggle("open"); });
-    m.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { m.classList.remove("open"); });
+    function closeMenu() {
+      m.classList.remove("open");
+      t.setAttribute("aria-expanded", "false");
+    }
+    t.addEventListener("click", function () {
+      var open = m.classList.toggle("open");
+      t.setAttribute("aria-expanded", String(open));
     });
+    m.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && m.classList.contains("open")) {
+        closeMenu();
+        t.focus();
+      }
+    });
+    document.addEventListener("click", function (event) {
+      if (!event.target.closest(".nav")) closeMenu();
+    });
+    window.matchMedia("(max-width: 1080px)").addEventListener("change", closeMenu);
   }
+
+  // A real fallback link remains usable for direct visits and without JavaScript.
+  document.querySelectorAll("[data-back-link]").forEach(function (link) {
+    var referrer;
+    try { referrer = new URL(document.referrer); } catch (error) { return; }
+    if (referrer.origin !== window.location.origin || referrer.pathname === window.location.pathname) return;
+    link.href = referrer.href;
+    link.addEventListener("click", function (event) {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (window.history.length > 1) {
+        event.preventDefault();
+        window.history.back();
+      }
+    });
+  });
 });

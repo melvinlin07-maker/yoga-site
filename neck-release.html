@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=10">
+<link rel="stylesheet" href="theme.css?v=20261019-nav">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="鑫彥瑜珈">
@@ -450,12 +450,14 @@
     <li><a href="classes.html">課程方式</a></li>
     <li><a href="know-yoga.html">認識瑜伽</a></li>
     <li><a href="blog.html">部落格</a></li>
+    <li><a href="videos.html">影音動作庫</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
     <li><a href="neck-release.html" class="active">一對一調整</a></li>
   </ul>
   <a href="#reserve" class="btn nav-cta-btn">預約首次 NT$1500</a>
-  <button class="nav-toggle" aria-label="選單">☰</button>
+  <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
+<div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到上頁</a></div>
 
 <!-- ═══ HERO：診斷主導 ═══ -->
 <section class="sc night open">
@@ -837,7 +839,7 @@
 </div>
 
 <noscript><style>.fade{opacity:1!important;transform:none!important}</style></noscript>
-<script src="site.js?v=5"></script>
+<script src="site.js?v=20261019-nav"></script>
 <script>
 // 進場淡入
 if('IntersectionObserver' in window){
@@ -872,7 +874,7 @@ window.addEventListener('scroll', function(){
   dock.classList.toggle('show', y > window.innerHeight*1.1 && fTop > window.innerHeight*.5);
 },{passive:true});
 
-// 側門 LINE：交給 site.js 的 .js-line 統一處理（送出 Contact 事件，見 body[data-line-event]）
+// 側門 LINE：交給 site.js?v=20261019-nav 的 .js-line 統一處理（送出 Contact 事件，見 body[data-line-event]）
 
 // ═══ 預約表單（正門）═══
 var WEBHOOK_URL = "https://melvinlin07-n8n.zeabur.app/webhook/neck-release-lead";

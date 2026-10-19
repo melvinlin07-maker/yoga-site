@@ -9,10 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=10">
+<link rel="stylesheet" href="theme.css?v=20261019-nav">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
-/* 落地頁信任元件（頁內樣式，不動 theme.css） */
+/* 落地頁信任元件（頁內樣式，不動 theme.css?v=20261019-nav） */
 .hero-trust{margin-top:14px;color:#f2e8ea;font-size:14px;font-weight:600;line-height:1.7}
 .hero-trust b{color:var(--gold-lt)}
 .hero-trust .g{color:#f2e8ea}
@@ -158,12 +158,14 @@
     <li><a href="classes.html">課程方式</a></li>
     <li><a href="know-yoga.html">認識瑜伽</a></li>
     <li><a href="blog.html">部落格</a></li>
+    <li><a href="videos.html">影音動作庫</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
     <li><a href="neck-release.html">一對一調整</a></li>
   </ul>
   <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
-  <button class="nav-toggle" aria-label="選單">☰</button>
+  <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
+<div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到上頁</a></div>
 
 <header class="hero hero--short assessment-hero">
 <img src="assets/assessment-consult-main.jpg" alt="阿美老師在高雄左營教室，當面為學員解讀 AI 體態檢測畫面" width="1706" height="960" fetchpriority="high">
@@ -409,10 +411,10 @@
   <span>LINE 預約</span>
   <b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b>
 </a>
-<script src="site.js?v=5"></script>
+<script src="site.js?v=20261019-nav"></script>
 <script>
 // 「免費肩頸壓力檢測」按鈕：點擊時先把預填文字寫進 body data-line-message，
-// 讓 site.js 既有的 LINE 預填機制（未改動 site.js 本身）帶出「我要肩頸壓力自測」，
+// 讓 site.js?v=20261019-nav 既有的 LINE 預填機制（未改動 site.js?v=20261019-nav 本身）帶出「我要肩頸壓力自測」，
 // 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕維持原行為。
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {
