@@ -568,12 +568,12 @@
 | 項目 | 目前值 |
 |---|---|
 | Google 評分 | **4.9★** |
-| Google 評價數 | **89 則** |
-| 最後人工查核日期 | **2026-09-11**(使用者提供 Google 搜尋評論面板截圖佐證) |
+| Google 評價數 | **91 則** |
+| 最後人工查核日期 | **2026-10-19**(使用者提供 Google 搜尋「鑫彥瑜珈運動館」商家管理面板截圖佐證) |
 | 性質 | **Dynamic Business Fact** |
 | Source of Truth | **Google 商家目前公開頁面 / 商家後台**(不是 repo、不是本文件) |
 
-**變動證據:** 2026-08-09 查核為 87 則 → 2026-08-17 為 88 則 → 2026-09-11 為 89 則。持續小幅變動,證明此數字必然持續變化。
+**變動證據:** 2026-08-09 查核為 87 則 → 2026-08-17 為 88 則 → 2026-09-11 為 89 則 → 2026-10-19 為 91 則。持續小幅成長，證明此數字必然持續變化。
 
 **規則(強制):**
 
@@ -589,9 +589,10 @@
 
 **2026-09-11 同步紀錄:** 發現上次 88 的修改其實從未部署(production 當時仍是 79),且 `about.html`、`classes.html`、`ai-assessment.html` 三個檔案當初漏改,仍停在 79。這次全面重新掃描全站(schema + 可見文字兩種寫法),已統一為 89,共 14 個檔案:schema 4 處(`index.html`、`about.html`、`contact.html`、`reviews.html`);可見文字 13 處(`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`、`yoga-beginner-v1.html`、`shoulder-checkup-v1.html`、`posture-self-test.html`、`ai-assessment.html`)。
 
-- **Google 商家檔案(Google Business Profile)狀態:已認領**(使用者 2026-08-09 口頭確認,並提供商家後台截圖佐證:「鑫彥瑜珈運動館」,4.9 星、87 則 Google 評論)。實際優化程度(照片、貼文頻率、分類是否正確)**未查核**。
-- **✅ 2026-08-09 已修正:** 透過公開 Google 地圖搜尋比對地址(新庄仔路726號3樓)確認商家 CID 為 `3869696325150721929`。已將 `contact.html` 的地圖 iframe 由通用地址查詢改為此 CID 的直接嵌入,並在 `contact.html`(2 處)與 `index.html`(1 處)的 `sameAs` 陣列加入 `https://maps.google.com/?cid=3869696325150721929`(與原有 Facebook 連結並存,未取代)。詳見 `DECISIONS.md` 第 15 條。
-  > ⚠️ **僅完成本機檔案修改,尚未 commit / push / 部署。** 依 `CLAUDE.md` 部署紀律,需使用者另行明確指示才會執行。
+**2026-10-19 同步紀錄（選項 B Local SEO 強化）：** 依據 2026-10-19 14:07 使用者提供之 Google 官方商家管理面板截圖，正式確認 Google 評分為 4.9★、評價數成長至 91 則。全面重新掃描全站（schema + 可見文字），已統一為 91，共 14 個檔案：schema 4 處（`index.html`、`about.html`、`contact.html`、`reviews.html`）；可見文字 13 處（`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`、`yoga-beginner-v1.html`、`shoulder-checkup-v1.html`、`ai-assessment.html`）。並同步強化 `index.html`、`contact.html`、`about.html`、`reviews.html` 之 `HealthClub` 結構化資料，新增 `geo`（GeoCoordinates: 22.6713, 120.3060）與 `hasMap`（`https://maps.google.com/?cid=3869696325150721929`），並於 `contact.html` 地圖下方新增「在 Google 地圖開啟導航」一鍵直達按鈕。
+
+- **Google 商家檔案(Google Business Profile)狀態:已認領**(使用者 2026-08-09 口頭確認，2026-10-19 再次提供商家管理面板截圖佐證:「鑫彥瑜珈運動館」，4.9 星、91 則 Google 評論)。
+- **✅ 2026-08-09 已修正 / 2026-10-19 強化:** 透過公開 Google 地圖搜尋確認商家 CID 為 `3869696325150721929`。已將 `contact.html` 的地圖 iframe 由此 CID 嵌入，並在全站主要頁面 schema 加入 `hasMap`、`geo` 與 `sameAs` 官方商家連結。詳見 `DECISIONS.md` 第 15 條與第二十五輪更新紀錄。
 
 ---
 

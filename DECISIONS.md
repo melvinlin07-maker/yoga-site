@@ -1,5 +1,19 @@
 # DECISIONS.md — 鑫彥瑜珈網站 決策紀錄
 
+## 2026-10-19 第二十五輪：在地搜尋 Local SEO 強化與 Google 商家檔案（GBP）91 則好評同步（本機完成）
+
+依據使用者 2026-10-19 14:07 提供之 Google 官方商家管理後台面板即時截圖，正式確認 Google 評分為 4.9★、評價數正式成長至 91 則：
+1. **全站評價數 100% 同步統一為 91 則：** 依據 Dynamic Business Fact 規範，全面清查並更新全站 14 個檔案（schema 4 處：`index.html`、`about.html`、`contact.html`、`reviews.html`；可見文字 13 處：`index.html`、`about.html`、`classes.html`、`reviews.html`、`assessment.html`、`assessment-v2.html`、`assessment-v3.html`、`neck-release.html`、`neck-release-v1.html`、`neck-release-v3.html`、`yoga-beginner-v1.html`、`shoulder-checkup-v1.html`、`ai-assessment.html`），徹底排除 89 舊數字殘留，使 Google 爬蟲獲取之 JSON-LD 與畫面文字 100% 吻合。
+2. **Local SEO 結構化資料全面補強：** 針對 `index.html`、`contact.html`、`about.html`、`reviews.html` 的 `HealthClub` 組織 Schema，全面補齊以下核心在地訊號：
+   - `geo`: 新增 `GeoCoordinates`（緯度 22.6713，經度 120.3060）精準對齊左營新庄仔路 726 號。
+   - `hasMap`: 綁定官方商家專屬 CID 連結 `https://maps.google.com/?cid=3869696325150721929`。
+   - `sameAs`: 綁定官方 Facebook 與 Google Maps 商家網址。
+   - `aggregateRating`: 統一配置評分 4.9★、評價數 91 則。
+3. **行動端在地導航體驗優化：** 在 `contact.html` 嵌入地圖下方新增一鍵「📍 在 Google 地圖開啟導航」深層連結按鈕與 4.9★（91 則好評）徽章，方便手機訪客在抵達門市前一鍵啟動 Google Maps App 導航。
+未動共用 JS/CSS、robots；未同步 sitemap.xml（僅靜態微調）。
+
+> **2026-10-19 發布授權：** 使用者審閱本機成果後明確要求「發布」第二十五輪在地搜尋 Local SEO 強化與全站 91 則 Google 好評同步。既存 CLAUDE.md 與私有草稿不列入提交。
+
 ## 2026-10-18 第二十四輪：全站大滿貫收斂十一篇（本機完成，達成全站 79/79 篇 100% 現代化）
 
 接續第二十三輪體態細節與外觀代償篇，完成全站最後剩餘之十一篇深層生物力學與醫學紅旗現代化重構，正式達成全站 79 篇部落格 100% 現代化覆蓋：
