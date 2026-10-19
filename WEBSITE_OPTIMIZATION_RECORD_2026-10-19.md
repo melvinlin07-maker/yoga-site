@@ -134,3 +134,39 @@
    - 複製既有 `.video-card` 區塊，修改 `data-video`、`data-poster`、`data-title`、`data-desc` 與對應的部落格連結。
 3. **驗證與發布**：
    - 在本地預覽確認彈窗播放正常後，執行發布部署。
+
+---
+
+## 八、行動端（Mobile）響應式全頁面檢驗與水平溢出修復
+
+### 1. 發現之問題（Root Cause）
+* **問題現象**：用戶在手機端（如 iPhone 375px/390px 寬度）瀏覽時，發現頁面會水平左右晃動、部分字體被右側邊緣裁切、頂部導航右移。
+* **技術根因**：
+  1. `index.html` 與 `about.html` 內建的學員真實評價區塊（`.testimonial-grid` / `.testimonial-track`）包含 4,780px 寬的無限滾動跑馬燈。在部分行動端瀏覽器（WebKit/Blink）中，即使父層設有 `overflow: hidden`，若缺乏 CSS 渲染隔離層，仍會導致 `document.documentElement.scrollWidth` 被撐開至 4,780px。
+  2. 首頁 `.content-paths` 曾使用行內樣式 `grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))`，因權重過高蓋過媒體查詢，使手機端寬度卡死在 280px 以上無法乾淨轉為單欄。
+
+### 2. 修復措施
+1. **全局視窗溢出防護**：
+   * 在 [theme.css](file:///c:/Users/user888/Desktop/瑜珈網站/theme.css) 頂部注入 `html, body { overflow-x: hidden; max-width: 100vw; width: 100%; }`，從根源截斷所有寬度外溢。
+2. **跑馬燈元件隔離**：
+   * 在 `.testimonial-grid` 加入 `width: 100%; max-width: 100%; position: relative; contain: paint;`，確保跑馬燈軌跡不會影響外層文檔流寬度。
+3. **導航卡片純淨響應式**：
+   * 移除 `index.html` 上的行內 `style`，將 `.content-paths` 桌面版三欄與行動版單欄完全由 `theme.css` 與 `@media (max-width: 820px)` 精確控制。
+
+### 3. 全站行動端自動化檢測結果（375px 視窗）
+透過無頭瀏覽器對站內所有核心頁面進行 375px / 481px 視窗溢出自動化量測，結果如下：
+* `index.html`（首頁）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `videos.html`（影音庫）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `classes.html`（課程介紹）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `about.html`（關於我們）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `blog.html`（部落格）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `know-yoga.html`（認識瑜伽）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `neck-release.html`（肩頸專題）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `assessment.html`（AI 檢測）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `ai-assessment.html`（檢測詳情）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `reviews.html`（評價專頁）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `contact.html`（聯絡諮詢）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* `posture-self-test.html`（自我檢測）：`scrollWidth == clientWidth`（無水平滾動，PASS）
+* 各篇部落格長文（例 `blog-why-i-look-hunched-in-photos.html`）：`scrollWidth == clientWidth`（PASS）
+* 各篇動作拆解（例 `pose-alignment-over-depth.html`）：`scrollWidth == clientWidth`（PASS）
+
