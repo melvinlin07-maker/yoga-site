@@ -213,6 +213,145 @@
   @media(max-width:560px){.tcard{grid-template-columns:1fr; text-align:center; justify-items:center; gap:14px}}
 
   [hidden]{display:none!important}
+
+  /* 現場精密 AI 檢測升級引導卡 */
+  .sc-ai-bridge {
+    margin: 36px 0;
+    background: linear-gradient(145deg, rgba(34, 28, 43, 0.95), rgba(25, 21, 33, 0.95));
+    border: 1px solid rgba(224, 184, 105, 0.45);
+    border-radius: 12px;
+    padding: 32px 30px;
+    position: relative;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+  }
+  @media(max-width: 600px) {
+    .sc-ai-bridge { padding: 22px 18px; margin: 28px 0; }
+  }
+  .sc-ai-bridge-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--gold), var(--gold-hi));
+    color: #1a1208;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
+  }
+  .sc-ai-bridge-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  @media(max-width: 768px) {
+    .sc-ai-bridge-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  }
+  .sc-ai-bridge-text h3 {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(20px, 2.7vw, 25px);
+    color: #fff;
+    margin: 0 0 14px;
+    line-height: 1.5;
+  }
+  .sc-ai-bridge-text p {
+    color: var(--dim);
+    font-size: 16px;
+    line-height: 1.95;
+    margin: 0 0 16px;
+  }
+  .sc-ai-bridge-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sc-ai-bridge-points li {
+    font-size: 15px;
+    color: var(--tx);
+    line-height: 1.85;
+    margin-bottom: 6px;
+  }
+  .sc-ai-bridge-points li b {
+    color: var(--gold-hi);
+    font-weight: 500;
+  }
+  .sc-ai-bridge-card {
+    background: rgba(15, 13, 19, 0.88);
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 24px 22px;
+    text-align: center;
+  }
+  .sc-ai-price-tag {
+    font-size: 13px;
+    color: var(--dim2);
+    letter-spacing: 0.08em;
+  }
+  .sc-ai-price-num {
+    margin: 8px 0;
+    font-size: 16px;
+    color: var(--dim);
+  }
+  .sc-ai-price-num del {
+    color: var(--dim2);
+    margin-right: 8px;
+  }
+  .sc-ai-price-num b {
+    font-size: 32px;
+    font-family: var(--mono);
+    color: var(--gold-hi);
+  }
+  .sc-ai-price-note {
+    font-size: 13.5px;
+    color: var(--dim2);
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+  .sc-ai-book-btn {
+    width: 100%;
+    display: block;
+    background: var(--gold);
+    color: #1a1208;
+    font-weight: 700;
+    font-size: 16.5px;
+    padding: 15px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    box-sizing: border-box;
+  }
+  .sc-ai-book-btn:hover {
+    background: var(--gold-hi);
+    transform: translateY(-2px);
+  }
+  .sc-ai-msg-preview {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--hair);
+    text-align: left;
+  }
+  .sc-ai-msg-preview span {
+    display: block;
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .sc-ai-msg-preview code {
+    display: block;
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(224, 184, 105, 0.25);
+    border-radius: 4px;
+    padding: 9px 12px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #f1dfbc;
+    word-break: break-all;
+    font-family: inherit;
+  }
+
 </style>
 </head>
 <body data-line-event="Contact" data-line-message="我做了體態訊號掃描，想多了解">
@@ -347,6 +486,34 @@
     <div class="triage" id="triage"></div>
   </div>
 
+  <!-- 現場精密 AI 檢測升級引導卡 -->
+  <div class="sc-ai-bridge">
+    <div class="sc-ai-bridge-badge">現場精密驗證 · 首次到店限定 NT$299</div>
+    <div class="sc-ai-bridge-grid">
+      <div class="sc-ai-bridge-text">
+        <h3>線上自測指出了方向，現場 AI 檢測能看見「精準角度」</h3>
+        <p>自測表整理出你的日常代償感覺；到高雄左營教室，阿美老師會透過 AI 姿勢分析拍攝，20 分鐘精準測量你的<strong>頭部前傾、高低肩落差、脊椎與骨盆傾斜角度</strong>，並當面為你解讀。</p>
+        <ul class="sc-ai-bridge-points">
+          <li>✔ <b>現場 AI 骨骼地標拍攝分析</b>（運動功能性評估，非醫療診斷）</li>
+          <li>✔ <b>找出肉眼難以察覺的深層代償</b>，不再猜測哪裡緊</li>
+          <li>✔ <b>阿美老師當面解讀建議</b>，檢測後不強迫推銷課程</li>
+        </ul>
+      </div>
+      <div class="sc-ai-bridge-card">
+        <span class="sc-ai-price-tag">首次到店優惠方案</span>
+        <div class="sc-ai-price-num"><del>原價 NT$699</del> <b>NT$299</b></div>
+        <p class="sc-ai-price-note">包含現場 AI 拍攝 + 角度分析 + 老師當面解讀（約 20 分鐘）</p>
+        <a href="#" class="btn js-line sc-ai-book-btn" id="btn-line-bridge" data-line-purpose="reservation" data-line-event="Lead" data-offer="ai_assessment" data-offer-value="299" data-cta-location="selftest_bridge">
+          帶著自測結果，LINE 預約 NT$299 檢測 →
+        </a>
+        <div class="sc-ai-msg-preview">
+          <span>LINE 預填訊息預覽：</span>
+          <code id="preview-text">點擊上方按鈕將自動帶入自測結果至 LINE</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 詳細數據（降級） -->
   <div class="sect">
     <span class="lbl">詳細數據</span>
@@ -383,7 +550,7 @@
   <p class="disc">本掃描為生活情境的自我觀察整理，不是醫療診斷，也不能取代專業評估。指數只反映你在這 10 個日常時刻中的自述頻率，不代表嚴重程度。若有疼痛、舊傷或不確定的狀況，請先諮詢合格醫療專業人員。</p>
 
   <div class="ends">
-    <a href="#" class="btn js-line">把這份結果拿給老師看 →</a>
+    <a href="#" class="btn js-line" id="btn-ends-line" data-line-purpose="reservation" data-line-event="Lead" data-offer="ai_assessment" data-offer-value="299" data-cta-location="selftest_ends">帶著自測結果，預約首次 NT$299 現場檢測 →</a>
     <div class="softs">
       <a href="blog.html">先自己讀文章就好</a>
       <a href="resources.html">領一份免費自測表</a>
@@ -802,14 +969,26 @@
     document.getElementById('saved-note').hidden =
       !writeLast({score:score, top:tops[0] || null, lv:lv.map(function(v){ return v || 0; }), ts:Date.now()});
 
-    /* ── LINE 預填帶著結果一起送出 ── */
+    /* ── LINE 智能客製化預約文字 ── */
+    var summaryTag =
+      n === 0 ? '平時日常保養'
+      : matched.length ? matched[0].ch.h
+      : tops.length ? LABEL[tops[0]]
+      : '綜合體態代償';
+
     var lineMsg =
-      n === 0 ? '我做了體態訊號掃描，10 個時刻都沒有明顯訊號，想了解平常可以做什麼保養'
-      : matched.length ? '我做了體態訊號掃描，10 個時刻中有 ' + n + ' 個有感，結果說我是「' + matched[0].ch.h + '」，想多了解'
-      : '我做了體態訊號掃描，10 個時刻中有 ' + n + ' 個有感，訊號集中在「' + LABEL[tops[0]] + '」，想多了解';
+      n === 0
+        ? '你好，我剛完成體態自測，10 個時刻都沒有明顯訊號。想預約首次 NT$299 現場 AI 體態檢測做基礎了解'
+        : '你好，我剛完成體態自測，測出【' + summaryTag + '】（指數 ' + score + ' 分），想預約首次 NT$299 現場 AI 檢測，請阿美老師幫我看！';
+
     /* 保險：預填訊息不讓它無限長，避免極端情況下深連結出問題 */
-    if(lineMsg.length > 80) lineMsg = lineMsg.slice(0, 78) + '…';
+    if(lineMsg.length > 95) lineMsg = lineMsg.slice(0, 93) + '…';
     document.body.setAttribute('data-line-message', lineMsg);
+
+    var previewEl = document.getElementById('preview-text');
+    if (previewEl) {
+      previewEl.textContent = lineMsg;
+    }
 
     run.hidden = true; rep.hidden = false;
     wrap.querySelectorAll('.ctrack i').forEach(function(el){ void el.offsetWidth; el.style.width = el.getAttribute('data-w') + '%'; });
