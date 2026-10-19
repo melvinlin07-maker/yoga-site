@@ -170,3 +170,45 @@
 * 各篇部落格長文（例 `blog-why-i-look-hunched-in-photos.html`）：`scrollWidth == clientWidth`（PASS）
 * 各篇動作拆解（例 `pose-alignment-over-depth.html`）：`scrollWidth == clientWidth`（PASS）
 
+---
+
+## 九、核心里程碑五：方向二「Google 影音 SEO 與在地商家排名」全面落地
+
+> **提交版本**：Commit: `f6cabe2`  
+> **涉及核心頁面**：`videos.html`、`reviews.html`、`index.html`
+
+### 1. Google 影音搜尋結構化資料（Google VideoObject Schema）
+* **遵循規範**：嚴格依據 Google Search Central 官方影音結構化資料規範，採用 `ItemList` 搭配 9 筆完整 `VideoObject` Schema。
+* **高精度技術參數**：
+  * 使用 `ffprobe` 針對 9 支 MP4 進行逐影格時長探測，填寫合規 ISO 8601 時長格式（`PT9S`, `PT10S`, `PT7S`, `PT8S`, `PT11S`, `PT13S` 等）。
+  * 配置絕對路徑之高畫質封面（`thumbnailUrl`）、原生影音串流（`contentUrl`）與深層嵌入網址（`embedUrl`，支援錨點跳轉）。
+  * 標註發布者 `publisher`（鑫彥瑜珈運動館 HealthClub 實體）與正體中文語系（`zh-TW`），助攻 Google 影音標籤頁與 Rich Snippets 豐富搜尋摘要收錄。
+
+### 2. 影音深層錨點與網址同步（Deep-Linking & In-Modal CTA）
+* **錨點跳轉**：為 9 支影音卡片配置 `id="video-1"` 至 `id="video-9"`。
+* **網址動態同步**：
+  * 訪客開啟任一彈窗時，瀏覽器網址即時同步為 `https://sinyanyoga.com.tw/videos.html#video-X`，便於學員複製分享或從 Google 搜尋結果直達。
+  * 關閉彈窗時自動清除 Hash，維持乾淨網址。
+  * 頁面載入與 `hashchange` 事件皆具備監聽器，直接存取 Hash 網址會自動流暢喚起彈窗。
+* **彈窗高轉化 CTA 元件**：
+  * 於彈窗解說文字下方新增專屬 `.v-modal-card-cta`：
+    > **想看清自己的動作代償？**  
+    > 現場 20 分鐘 AI 體態拍攝與角度分析，阿美老師親自解讀  
+    > `[預約首次 NT$299 AI 檢測 →]`
+  * 強化「觀看完影音示範 ➔ 發現自己也有代償 ➔ 立即預約現場檢測」的轉化閉環。
+
+### 3. Google 商家與在地排名（Local SEO & Review Chips）
+* **Google 商家知識圖譜（Knowledge Graph）強化**：
+  * 在 `index.html` 與 `reviews.html` 的 `HealthClub` Schema 中新增 `knowsAbout` 陣列（收錄「壁繩瑜伽」、「AI體態檢測」、「骨盆前傾調整」、「高雄左營瑜珈課」、「肩頸痠痛放鬆」、「熟齡防跌肌力」、「巨蛋捷運站瑜伽」等高搜尋意圖長尾詞）。
+  * 明確定義 `areaServed` 覆蓋高雄市、左營區、鼓山區、三民區，並標註精準 `geo` 經緯度座標（22.6713, 120.3060）。
+* **學員見證分類標籤列（Interactive Review Filters）**：
+  * 在 `reviews.html` 頂部增設 5 組晶片篩選按鈕：
+    1. **全部評價 (91)**
+    2. **AI 體態檢測有感 (6)**
+    3. **壁繩瑜伽放鬆 (6)**
+    4. **肩頸腰背改善 (7)**
+    5. **新手友善・老師親切 (6)**
+  * 卡片加入 `data-rcat` 標記，純前端極速無刷新切換，大幅降低潛在學員尋找「與自身症狀相符」見證的心理門檻。
+* **結構化評論注入**：
+  * 在 `reviews.html` Schema 內直接注入 11 則來自 Google 在地嚮導與學員的五星真實評論（包含李曉玲、黃之柔、徐芳芳、侯秀靜、謝春姿、黃秀卿等），強化 Google 演算法對商家真實口碑的信心加權。
+
