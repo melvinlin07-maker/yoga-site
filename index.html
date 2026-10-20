@@ -393,83 +393,6 @@
   }
 }
 
-/* ── 方向一：高轉化信任三件套（3步驟流程、體態轉化案例、師資資歷） ── */
-/* 3步驟到店動線 */
-.step-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 36px;
-}
-.step-card {
-  background: #ffffff;
-  border: 1px solid var(--line-lt);
-  border-radius: 16px;
-  padding: 28px 24px 26px;
-  box-shadow: 0 8px 24px rgba(67, 34, 47, 0.05);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.step-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(67, 34, 47, 0.09);
-}
-.step-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-}
-.step-badge {
-  background: var(--plum);
-  color: #ffffff;
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 999px;
-  letter-spacing: 0.5px;
-}
-.step-time {
-  font-size: 12.5px;
-  color: var(--pink);
-  font-weight: 700;
-}
-.step-icon {
-  font-size: 32px;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.step-card h3 {
-  font-size: 17px;
-  color: var(--green-dk);
-  margin: 0 0 10px;
-  font-weight: 700;
-}
-.step-card p {
-  font-size: 14.5px;
-  color: var(--ink);
-  line-height: 1.8;
-  margin: 0;
-}
-.step-assurances {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 20px;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px dashed var(--line-lt);
-}
-.step-assurances span {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--green-dk);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
 
 /* 阿美老師資歷徽章 */
 .teacher-credentials {
@@ -508,7 +431,6 @@
 }
 
 @media (max-width: 900px) {
-  .step-cards-grid,
   .trans-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -807,50 +729,6 @@
   <div class="center section-action"><a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="booking_cta" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 體態檢測</a></div>
 </div></section>
 
-<section class="section process-section"><div class="wrap">
-  <div class="sec-head center">
-    <div class="eyebrow" style="color:var(--pink)">預約到店流程</div>
-    <h2>3 步驟輕鬆到店，先看懂體態再決定</h2>
-    <p style="color:var(--muted);max-width:640px;margin:10px auto 0">不需要先具備瑜伽基礎，零推銷壓力，完整體驗約 20 分鐘。</p>
-  </div>
-  <div class="step-cards-grid">
-    <div class="step-card">
-      <div class="step-card-top">
-        <span class="step-badge">STEP 01</span>
-        <span class="step-time">線上 1 分鐘</span>
-      </div>
-      <div class="step-icon">📱</div>
-      <h3>LINE 線上快速預約</h3>
-      <p>點擊按鈕加入 LINE 官方帳號，挑選你方便的到店時段，小編即時為你確認安排。</p>
-    </div>
-    <div class="step-card">
-      <div class="step-card-top">
-        <span class="step-badge">STEP 02</span>
-        <span class="step-time">現場 20 分鐘</span>
-      </div>
-      <div class="step-icon">📸</div>
-      <h3>現場 AI 體態拍攝評估</h3>
-      <p>穿著日常便服即可，站在專業 AI 鏡頭前 4 個視角拍攝，幾秒鐘即時產出全身骨骼與關節角度分析數據。</p>
-    </div>
-    <div class="step-card">
-      <div class="step-card-top">
-        <span class="step-badge">STEP 03</span>
-        <span class="step-time">一對一解讀</span>
-      </div>
-      <div class="step-icon">👩‍🏫</div>
-      <h3>專業老師當面解讀指導</h3>
-      <p>老師親自帶你看懂日常姿勢代償鏈，找出痠緊源頭並給予小練習。<b>完全零推銷壓力，後續是否購課由你決定。</b></p>
-    </div>
-  </div>
-  <div class="step-assurances">
-    <span>🔒 絕無強迫推銷</span>
-    <span>⚡ 20 分鐘精準高效</span>
-    <span>📊 現場數據專屬報告</span>
-    <span>🧘 零瑜伽基礎可安心參加</span>
-  </div>
-  <p class="center" style="margin-top:28px">想先知道現場環境？<a class="inlink" href="assessment.html">查看完整檢測流程與現場照片 →</a></p>
-</div></section>
-
 <section class="section reviews-home"><div class="wrap">
   <div class="sec-head">
     <div class="eyebrow" style="color:var(--pink)">真實學員見證</div>
@@ -1024,84 +902,6 @@
   <a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="booking_cta" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 體態檢測</a>
   <span class="cta-location">高雄市左營區新庄仔路 726 號 3 樓</span>
 </section>
-
-<section class="featured-content"><div class="wrap">
-  <div class="content-paths">
-    <a href="know-yoga.html">
-      <span class="secondary-label">想先理解方法</span>
-      <h2>認識瑜伽、壁繩與新手練習</h2>
-      <p>從壁繩是什麼、動作怎麼理解，到第一次練習前要知道的事。</p>
-      <b>進入認識瑜伽 →</b>
-    </a>
-    <a href="blog.html">
-      <span class="secondary-label">想先理解困擾</span>
-      <h2>依圓肩、肩頸、骨盆與久坐找文章</h2>
-      <p>從最像你的日常狀況開始，一篇一篇把問題看懂。</p>
-      <b>進入體態知識庫 →</b>
-    </a>
-    <a href="videos.html" style="border:1px solid rgba(217,143,163,.45);background:#26191f">
-      <span class="secondary-label" style="color:var(--pink-lt)">想直接看示範</span>
-      <h2>精選 Reels 體態動作庫</h2>
-      <p>破十萬觀看精選短影音，10 秒拆解下樓梯膝內扣、骨盆代償與站姿防跌。</p>
-      <b style="color:#FFE600">進入影音動作庫 ▶</b>
-    </a>
-  </div>
-  <div class="sec-head">
-    <div class="eyebrow" style="color:var(--pink)">從最像你的狀況開始</div>
-    <h2>本週精選體態文章</h2>
-    <p>先讀你最有感的主題。這些文章幫你理解日常身體狀態，也能讓你在預約檢測前更知道自己<span class="keep-phrase">想問什麼。</span></p>
-  </div>
-  <div class="featured-posts">
-    <a class="featured-post" href="blog-rounded-shoulders.html">
-      <img src="assets/reclined.jpg" alt="學員在墊上進行肩頸與體態練習">
-      <span>圓肩駝背</span>
-      <h3>坐一整天肩膀就往前掉？先搞懂「上交叉症候群」</h3>
-      <small>閱讀約 4 分鐘 →</small>
-    </a>
-    <a class="featured-post" href="blog-massage-tight-again.html">
-      <img src="assets/art01.jpg" alt="肩頸放鬆練習">
-      <span>肩頸緊繃</span>
-      <h3>為什麼你按摩完，隔天又緊回去了？</h3>
-      <small>閱讀約 4 分鐘 →</small>
-    </a>
-    <a class="featured-post" href="blog-sitting-8-hours.html">
-      <img src="assets/reclined.jpg" alt="久坐後的體態調整練習">
-      <span>久坐生活</span>
-      <h3>一天坐 8 小時，身體到底發生了什麼事？從骨盆到肩頸的姿勢代償整理</h3>
-      <small>閱讀約 5 分鐘 →</small>
-    </a>
-    <a class="featured-post" href="blog-forward-head-daily.html">
-      <img src="assets/art06.jpg" alt="電腦族肩頸與頭部前傾練習">
-      <span>肩頸緊繃</span>
-      <h3>電腦族的脖子前傾，一天可以還原一點點嗎？</h3>
-      <small>閱讀約 4 分鐘 →</small>
-    </a>
-    <a class="featured-post" href="blog-stiff-body-wall-rope.html">
-      <img src="assets/wall-rope-inversion.jpg" alt="壁繩輔助瑜伽練習">
-      <span>壁繩入門</span>
-      <h3>身體很硬、沒基礎，為什麼反而更適合壁繩</h3>
-      <small>閱讀約 6 分鐘 →</small>
-    </a>
-    <a class="featured-post" href="blog-first-class-what-to-bring.html">
-      <img src="assets/wall-rope-suspension.jpg" alt="第一次參加壁繩瑜伽課程">
-      <span>新手須知</span>
-      <h3>第一次上壁繩瑜伽要穿什麼、帶什麼？上課前準備清單</h3>
-      <small>閱讀約 6 分鐘 →</small>
-    </a>
-  </div>
-  <div class="featured-actions">
-    <a href="blog.html" class="btn btn--quiet">看全部體態文章 →</a>
-  </div>
-  <div class="resource-note">
-    <img src="assets/res-neck-selftest.jpg" alt="肩頸壓力自測免費資源">
-    <div>
-      <span class="secondary-label">免費資源</span>
-      <h2>本期主推《肩頸壓力自測》</h2>
-      <p>先整理肩頸在哪些時候特別緊、哪些日常習慣可能讓它一直撐著。</p>
-    </div>
-    <a class="text-link" href="resources.html">查看本期免費資源 →</a>
-  </div>
-</div></section>
 
 <section class="location-trust" id="location-hub"><div class="wrap">
   <div class="loc-compact-card">
