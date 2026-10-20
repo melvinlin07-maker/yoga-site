@@ -111,11 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
         fbq("trackCustom", "ReservationIntent", reservationParams);
       }
 
-      // 若頁面 <body> 設定 data-line-message，同步複製到剪貼簿，
+      // 若按鈕或 <body> 設定 data-line-message，同步複製到剪貼簿，
       // 手機端以 LINE oaMessage 協議直接喚起 LINE App 並填入訊息；
       // 桌機端開啟 LINE 加好友/QR 頁面（避免桌面瀏覽器 line.me/R 302 轉跳行銷首頁），用戶可直接貼上預填文字。
       // 未設定時維持原行為（開啟 LINE_URL），不影響其他既有頁面。
-      var lineMessage = body.getAttribute("data-line-message");
+      var lineMessage = a.getAttribute("data-line-message") || body.getAttribute("data-line-message");
       if (lineMessage && navigator.clipboard && navigator.clipboard.writeText) {
         try { navigator.clipboard.writeText(lineMessage); } catch (e) {}
       }
