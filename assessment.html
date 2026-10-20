@@ -9,10 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=20261019-nav">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <style>
-/* 落地頁信任元件（頁內樣式，不動 theme.css?v=20261019-nav） */
+/* 落地頁信任元件（頁內樣式，不動 theme.css?v=20261020-part2 */
 .hero-trust{margin-top:14px;color:#f2e8ea;font-size:14px;font-weight:600;line-height:1.7}
 .hero-trust b{color:var(--gold-lt)}
 .hero-trust .g{color:#f2e8ea}
@@ -420,10 +425,10 @@
   <span>LINE 預約</span>
   <b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b>
 </a>
-<script src="site.js?v=20261019-nav"></script>
+<script src="site.js?v=20261020-part2"></script>
 <script>
 // 「免費肩頸壓力檢測」按鈕：點擊時先把預填文字寫進 body data-line-message，
-// 讓 site.js?v=20261019-nav 既有的 LINE 預填機制（未改動 site.js?v=20261019-nav 本身）帶出「我要肩頸壓力自測」，
+// 讓 site.js?v=20261020-part2 既有的 LINE 預填機制（未改動 site.js?v=20261020-part2 本身）帶出「我要肩頸壓力自測」，
 // 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕維持原行為。
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {

@@ -8,8 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=20261019-nav">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="鑫彥瑜珈">
 <meta property="og:locale" content="zh_TW">
@@ -407,7 +412,12 @@
   <div class="lbl">體態訊號掃描</div>
   <h1>你的不舒服，有沒有可能是連在一起的？</h1>
   <p class="lead">肩頸緊、腰痠、睡不好，常常被當成三件事分開處理。有時候它們確實各自獨立，有時候則是同一條鏈上的不同位置。這份掃描會走過你一天中的 10 個時刻，<b>看看哪幾個時刻可能彼此有關</b>，並幫你分清楚：哪些情況適合先自己動一動，哪些情況該先看醫生。</p>
-  <div class="specs">
+  
+    <div style="background:rgba(217,143,163,0.1);border:1px solid rgba(217,143,163,0.3);border-radius:12px;padding:12px 18px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <span style="font-size:13.5px;color:var(--ink)">💡 <b>想快速針對特定痛點？</b>試試「全身緊繃互動地圖」，直接點選肩膀或下背即時生成 60 秒舒緩處方！</span>
+      <a href="body-tension-map.html" class="btn" style="background:var(--pink);color:#fff;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:20px">切換至緊繃地圖 →</a>
+    </div>
+    <div class="specs">
     <div class="spec"><div class="v num">10</div><div class="k">個生活時刻</div></div>
     <div class="spec"><div class="v num">2<span style="font-size:15px">分鐘</span></div><div class="k">大約需要</div></div>
     <div class="spec"><div class="v num">0</div><div class="k">需填個資</div></div>
@@ -615,7 +625,7 @@
 </footer>
 
 <a class="line-float js-line" href="#" aria-label="想多了解，加 LINE 問老師"><span>LINE 詢問</span><b>掃描完想多了解？</b></a>
-<script src="site.js?v=20261019-nav"></script>
+<script src="site.js?v=20261020-part2"></script>
 <script>
 (function(){
   var LABEL = {shoulder:"圓肩駝背",neck:"肩頸緊繃",pelvis:"骨盆・下半身",sedentary:"久坐生活",sleep:"睡眠・放鬆"};

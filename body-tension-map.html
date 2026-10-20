@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全身緊繃檢測地圖｜點選不適部位，即時生成 60 秒居家瑜伽放鬆指引｜鑫彥瑜珈</title>
+<meta name="description" content="哪裡卡卡、哪裡緊繃？動手點選人體地圖（肩頸、下背、骨盆髖部、腿後側），系統立即為你量身生成 60 秒專屬居家溫和瑜伽伸展處方與代償解析。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<!-- Open Graph / Social Meta (1200x630) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="鑫彥瑜珈">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="全身緊繃檢測地圖｜點選不適部位，即時生成 60 秒居家瑜伽放鬆指引">
+<meta property="og:description" content="動手點選人體地圖，立即獲得專屬 60 秒居家伸展處方與代償解析！零基礎友善。">
+<meta property="og:url" content="https://sinyanyoga.com.tw/body-tension-map.html">
+<meta property="og:image" content="https://sinyanyoga.com.tw/assets/og/og-self-test.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="鑫彥瑜珈全身緊繃檢測地圖互動工具">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sinyanyoga.com.tw/assets/og/og-self-test.jpg">
+<link rel="canonical" href="https://sinyanyoga.com.tw/body-tension-map.html">
+
+<!-- Schema.org WebPage + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sinyanyoga.com.tw/body-tension-map.html#webpage",
+      "url": "https://sinyanyoga.com.tw/body-tension-map.html",
+      "name": "全身緊繃檢測地圖｜點選不適部位，即時生成 60 秒居家瑜伽放鬆指引",
+      "isPartOf": { "@id": "https://sinyanyoga.com.tw/#website" },
+      "inLanguage": "zh-Hant"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sinyanyoga.com.tw/body-tension-map.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://sinyanyoga.com.tw/" },
+        { "@type": "ListItem", "position": 2, "name": "體態知識庫", "item": "https://sinyanyoga.com.tw/blog.html" },
+        { "@type": "ListItem", "position": 3, "name": "全身緊繃檢測地圖", "item": "https://sinyanyoga.com.tw/body-tension-map.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* 緊繃地圖專屬樣式 */
+.map-container {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 24px;
+}
+.map-figure-box {
+  background: #ffffff;
+  border: 1px solid var(--line-lt);
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 30px rgba(67,34,47,0.06);
+  position: relative;
+  text-align: center;
+}
+.figure-svg-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.figure-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hotspot-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(217,143,163,0.85);
+  border: 2px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(217,143,163,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .22s cubic-bezier(.16,1,.3,1);
+  padding: 0;
+  z-index: 5;
+}
+.hotspot-btn::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--pink);
+  opacity: 0.6;
+  animation: pulse-ring 2s infinite cubic-bezier(.215,.61,.355,1);
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0; }
+  100% { transform: scale(1.25); opacity: 0; }
+}
+.hotspot-btn:hover, .hotspot-btn.is-active {
+  background: var(--gold);
+  transform: translate(-50%, -50%) scale(1.25);
+  box-shadow: 0 6px 18px rgba(224,178,75,0.7);
+  border-color: #26191f;
+}
+.hotspot-btn.is-active::after {
+  border-color: var(--gold);
+}
+.hotspot-label {
+  position: absolute;
+  left: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(38,25,31,0.88);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.hotspot-btn:hover .hotspot-label, .hotspot-btn.is-active .hotspot-label {
+  opacity: 1;
+}
+.hotspot-btn.label-left .hotspot-label {
+  left: auto;
+  right: 38px;
+}
+
+/* 右側控制面板 */
+.map-ctrl-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ctrl-card {
+  background: #ffffff;
+  border: 1px solid var(--line-lt);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 6px 24px rgba(67,34,47,0.05);
+}
+.part-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+.part-chip {
+  font-family: inherit;
+  line-height: 1.4;
+  padding: 8px 14px;
+  border-radius: 24px;
+  background: #fbf7f8;
+  border: 1px solid var(--line-lt);
+  font-size: 13.5px;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s ease;
+  user-select: none;
+}
+.part-chip:hover {
+  border-color: var(--pink);
+  background: #fff;
+}
+.part-chip.is-active {
+  background: var(--pink);
+  color: #ffffff;
+  border-color: var(--pink);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(217,143,163,0.35);
+}
+.habit-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fbf7f8;
+  border: 1px solid var(--line-lt);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13.5px;
+  transition: background .2s, border-color .2s;
+}
+.habit-item:hover {
+  background: #fff;
+  border-color: var(--pink);
+}
+.habit-item input {
+  accent-color: var(--pink);
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* 生成結果展示區 */
+.result-card {
+  display: none;
+  background: #ffffff;
+  border: 2px solid var(--pink);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-top: 32px;
+  box-shadow: 0 16px 40px rgba(217,143,163,0.18);
+  animation: slide-up .35s cubic-bezier(.16,1,.3,1);
+}
+.result-card.is-visible {
+  display: block;
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.result-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--pink), #9d3856);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.result-exercise-box {
+  background: var(--cream-lt);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0;
+  border: 1px solid rgba(217,143,163,0.25);
+}
+.exercise-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.action-share-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line-lt);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .map-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+</style>
+</head>
+<body data-line-message="你好，我做了全身緊繃檢測地圖，想預約首次 NT$299 AI 體態檢測！">
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">首頁</a></li>
+    <li><a href="assessment.html">AI 體態檢測</a></li>
+    <li><a href="neck-release.html">一對一調整</a></li>
+    <li><a href="classes.html">課程方式</a></li>
+    <li><a href="reviews.html">學員見證</a></li>
+    <li><a href="blog.html">部落格</a></li>
+    <li><a href="about.html">關於鑫彥</a></li>
+  </ul>
+  <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
+  <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
+</div></nav>
+<div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到首頁</a></div>
+
+<section class="section section--cream"><div class="wrap">
+  <div class="sec-head" style="margin-bottom:28px">
+    <div class="eyebrow" style="color:var(--pink)">沉浸互動檢測 · 找出核心代償</div>
+    <h1 style="font-size:clamp(24px,3.2vw,36px)">全身緊繃檢測地圖</h1>
+    <p style="font-size:16px;line-height:1.7;max-width:680px;margin:0 auto">
+      哪裡卡卡、哪裡緊繃？點擊人體部位，勾選日常困擾，系統立即為你量身生成 <b>「60 秒居家溫和瑜伽放鬆處方」</b>！
+    </p>
+  </div>
+
+  <div class="map-container">
+    <!-- 左側：人體地圖與熱點點選 -->
+    <div class="map-figure-box">
+      <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:6px">
+        <span>📍 點選下方發光熱點（可多選）：</span>
+      </div>
+
+      <div class="figure-svg-wrap">
+        <!-- SVG 人體輪廓圖 -->
+        <svg class="figure-svg" viewBox="0 0 300 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 人體輪廓陰影與線條 (流暢簡約美學) -->
+          <ellipse cx="150" cy="55" rx="30" ry="38" fill="#F4EAE7" stroke="#D98FA3" stroke-width="2.5"/>
+          <!-- 頸部 -->
+          <path d="M140 92 L140 115 L160 115 L160 92 Z" fill="#F4EAE7"/>
+          <!-- 軀幹與肩膀 -->
+          <path d="M140 115 C115 118 78 135 68 185 C62 215 52 290 48 340 C46 355 58 360 65 348 C72 335 88 260 94 235 L96 295 C98 335 110 375 110 490 C110 505 130 505 132 490 L144 350 L156 350 L168 490 C170 505 190 505 190 490 C190 375 202 335 204 295 L206 235 C212 260 228 335 235 348 C242 360 254 355 252 340 C248 290 238 215 232 185 C222 135 185 118 160 115 Z" fill="#F4EAE7" stroke="#D98FA3" stroke-width="2.5"/>
+          <!-- 骨盆與脊椎中軸輔助虛線 -->
+          <line x1="150" y1="115" x2="150" y2="330" stroke="#E0B24B" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
+          <ellipse cx="150" cy="275" rx="42" ry="16" fill="none" stroke="#D98FA3" stroke-width="1.5" stroke-dasharray="3 3"/>
+        </svg>
+
+        <!-- 熱點 1: 肩頸僵硬 -->
+        <button type="button" class="hotspot-btn" style="top:19%;left:50%" data-part="neck" aria-label="肩頸僵硬熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">肩頸・富貴包</span>
+        </button>
+
+        <!-- 熱點 2: 胸椎駝背 / 上背 -->
+        <button type="button" class="hotspot-btn label-left" style="top:32%;left:50%" data-part="upperback" aria-label="胸椎駝背熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">胸椎・圓肩駝背</span>
+        </button>
+
+        <!-- 熱點 3: 下背腰痠 -->
+        <button type="button" class="hotspot-btn" style="top:44%;left:50%" data-part="lowerback" aria-label="下背腰痠熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">下背・腰肌代償</span>
+        </button>
+
+        <!-- 熱點 4: 骨盆髖部 -->
+        <button type="button" class="hotspot-btn label-left" style="top:53%;left:50%" data-part="hips" aria-label="骨盆髖部熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">骨盆・髖關節卡</span>
+        </button>
+
+        <!-- 熱點 5: 大腿後側 -->
+        <button type="button" class="hotspot-btn" style="top:68%;left:43%" data-part="hamstrings" aria-label="大腿後側熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">腿後側・前彎太緊</span>
+        </button>
+
+        <!-- 熱點 6: 足踝足弓 -->
+        <button type="button" class="hotspot-btn label-left" style="top:88%;left:57%" data-part="ankles" aria-label="足踝足弓熱點">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="6"/></svg>
+          <span class="hotspot-label">足踝・足弓塌陷</span>
+        </button>
+      </div>
+
+      <div style="font-size:12.5px;color:var(--muted);margin-top:16px">
+        💡 提示：點擊身體圓點，或右側膠囊標籤均可同步選取
+      </div>
+    </div>
+
+    <!-- 右側：選項與生成按鈕 -->
+    <div class="map-ctrl-box">
+      <!-- 部位快速選擇膠囊 -->
+      <div class="ctrl-card">
+        <h3 style="font-size:16px;margin:0 0 4px;color:var(--ink)">1. 你感到最緊繃的部位（可多選）：</h3>
+        <p style="font-size:12.5px;color:var(--muted);margin:0">點擊點亮你的不適部位：</p>
+        <div class="part-chips" id="partChips">
+          <button type="button" class="part-chip" data-part="neck">💆‍♀️ 肩頸・富貴包</button>
+          <button type="button" class="part-chip" data-part="upperback">🫁 胸椎・圓肩駝背</button>
+          <button type="button" class="part-chip" data-part="lowerback">⚡ 下背腰痠・骨盆前傾</button>
+          <button type="button" class="part-chip" data-part="hips">🦵 骨盆・髖關節緊繃</button>
+          <button type="button" class="part-chip" data-part="hamstrings">🦶 腿後側膕繩肌緊</button>
+          <button type="button" class="part-chip" data-part="ankles">👟 足踝活動度・足弓卡</button>
+        </div>
+      </div>
+
+      <!-- 日常情境複選 -->
+      <div class="ctrl-card">
+        <h3 style="font-size:16px;margin:0 0 4px;color:var(--ink)">2. 勾選你目前的日常型態：</h3>
+        <p style="font-size:12.5px;color:var(--muted);margin:0">幫助系統交叉比對代償根源：</p>
+        <div class="habit-checklist" id="habitList">
+          <label class="habit-item">
+            <input type="checkbox" value="desk" checked>
+            <span>💻 每日久坐辦公超過 6～8 小時</span>
+          </label>
+          <label class="habit-item">
+            <input type="checkbox" value="phone">
+            <span>📱 習慣低頭滑手機、頭部習慣往前探</span>
+          </label>
+          <label class="habit-item">
+            <input type="checkbox" value="sleep">
+            <span>🛌 睡醒常覺得腰背沉重、容易落枕</span>
+          </label>
+          <label class="habit-item">
+            <input type="checkbox" value="stand">
+            <span>🚶 站不久或走一段路就腰痠膝蓋累</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 立即生成按鈕 -->
+      <button type="button" class="btn" id="generateBtn" style="background:var(--pink);color:#fff;font-size:16px;font-weight:700;padding:14px 28px;border-radius:30px;width:100%;box-shadow:0 8px 24px rgba(217,143,163,0.35);transition:all .25s">
+        ⚡ 立即生成我的專屬 60 秒伸展處方 →
+      </button>
+    </div>
+  </div>
+
+  <!-- 生成結果卡片 (動態捲入) -->
+  <div class="result-card" id="resultCard">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <span class="result-badge" id="resBadge">專屬評估報告已產出</span>
+      <span style="font-size:12.5px;color:var(--muted)">⏱️ 居家 60 秒即刻舒緩</span>
+    </div>
+
+    <h2 id="resTitle" style="font-size:22px;margin:8px 0;color:var(--ink)"></h2>
+    <p id="resAnalysis" style="font-size:14.5px;line-height:1.75;color:#4a373d;margin:0 0 16px"></p>
+
+    <!-- 伸展處方推薦 -->
+    <div class="result-exercise-box">
+      <div class="exercise-meta">
+        <span>🧘‍♀️ 推薦伸展：<b id="resExerciseName" style="color:var(--green-dk)"></b></span>
+        <span>⏱️ 建議時間：60 秒</span>
+        <span>🎯 核心目標：解鎖深層代償肌群</span>
+      </div>
+      <p id="resExerciseDesc" style="font-size:14px;line-height:1.7;color:var(--ink);margin:0 0 12px"></p>
+      <div style="background:#fff;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;line-height:1.55;color:#614930">
+        <b>💡 呼吸與安全避坑：</b><span id="resExerciseTip"></span>
+      </div>
+    </div>
+
+    <!-- 延伸學習與導流 -->
+    <div style="background:linear-gradient(135deg, rgba(67,34,47,.95), rgba(109,58,76,.95));color:#fff;border-radius:14px;padding:24px 20px;margin-top:20px;text-align:center">
+      <h3 style="font-size:18px;margin:0 0 8px;color:var(--gold-lt)">光靠伸展拉鬆，過兩天又緊回來？</h3>
+      <p style="font-size:13.5px;color:rgba(255,255,255,.85);margin:0 auto 16px;max-width:560px;line-height:1.65">
+        肌肉會緊，往往是因為「骨盆傾角」或「關節失中」造成其他部位代償。先透過 AI 體態檢測，讓專業教練在 20 分鐘內為你抓出真正的元兇！
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+        <a href="assessment.html" class="btn" style="background:var(--gold);color:#26191f;font-weight:700;padding:11px 22px">預約首次 NT$299 AI 檢測 →</a>
+        <a href="beginner-yoga-guide.html" class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:11px 22px">看新手居家 3 步驟圖解 →</a>
+      </div>
+    </div>
+
+    <!-- 一鍵分享工具條 -->
+    <div class="action-share-bar">
+      <span style="font-size:13px;color:var(--muted)">這份處方對你有幫助嗎？</span>
+      <button type="button" class="btn btn--quiet js-share-btn" data-share data-share-title="全身緊繃檢測地圖｜我的 60 秒專屬瑜伽處方" data-share-text="我剛在鑫彥瑜珈做了全身緊繃檢測，推薦你也試試看！" style="background:#fdf7f8;border:1px solid var(--line-lt);color:var(--pink);font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;display:inline-flex;align-items:center;gap:6px">
+        📤 分享給朋友一起檢測 ↗
+      </button>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site">
+  <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$299 AI 體態檢測</a><br>
+  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>
+  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
+</footer>
+
+<a class="line-float js-line" href="#" aria-label="預約首次 NT$299 AI 體態檢測" data-line-purpose="reservation" data-cta-location="float" data-offer="ai_assessment" data-offer-value="299"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b></a>
+<script src="site.js?v=20261020-part2"></script>
+
+<script>
+// 緊繃地圖交互邏輯
+(function() {
+  const prescriptions = {
+    neck: {
+      name: "肩頸・富貴包代償型",
+      analysis: "頭部每往前傾 1 吋，頸椎承受的壓力就增加約 4.5 公斤！你的斜角肌與胸鎖乳突肌長年過勞短縮，背部的斜方肌與菱形肌被動拉長失能，光靠死命捶打按摩無法根本解決，必須同時啟動深層頸屈肌並打開前胸。",
+      exerciseName: "靠牆下巴微收開胸調息（Chin-Tuck Wall Open）",
+      exerciseDesc: "背靠牆站立，後腦杓輕觸牆面，視線平視前方。用食指輕點下巴向後平推收回（做出雙下巴的感覺），同時雙手屈肘呈「投降姿勢（W 字）」輕貼牆面，深吸氣展開胸廓，吐氣時下壓肩膀放鬆斜方肌。重複 8 次慢呼吸。",
+      exerciseTip: "千萬不要「低頭」收下巴，而是「水平向後平移」。動作中若喉嚨有微緊吞嚥感屬正常，不要聳肩。"
+    },
+    upperback: {
+      name: "胸椎卡死・圓肩駝背型",
+      analysis: "胸小肌與前鋸肌過緊，將肩胛骨往前、往下拖垮，造成上交叉症候群。這不僅讓背部看起來變厚、視覺年齡增加，還會限制肺部擴張，導致整天疲倦、呼吸淺快。",
+      exerciseName: "溫和貓牛式脊椎分節流動（Cat-Cow Segmental Stretch）",
+      exerciseDesc: "四足跪姿，手腕在肩膀正下方。吐氣時從尾椎開始一節一節往上圓背，低頭看肚臍延展整條背部；吸氣時胸口向前推出穿過雙臂之間，鎖骨橫向打開。專注於「胸椎」的流暢活動，來回 8 組。",
+      exerciseTip: "做牛式時肚臍要微收，保護腰椎不被代償擠壓，重點在於「胸口向前上方推開」。"
+    },
+    lowerback: {
+      name: "下背腰痠・骨盆前傾型",
+      analysis: "腰痠的元兇往往不在腰，而在骨盆！久坐讓腰大肌與股直肌長期短縮，臀大肌離心失憶（死臀症候群）。站立時身體為了平衡，只能靠腰椎豎脊肌咬牙硬撐，形成腰椎過度前凸與小腹突出的假性肥胖。",
+      exerciseName: "仰臥抱膝單側薦椎微動（Supine Knee-to-Chest Lumbar Release）",
+      exerciseDesc: "仰臥平躺，雙手抱住單側膝蓋輕貼胸口，另一腿伸直腳跟微推遠端。吐氣時感受後腰平貼地板，腹部放鬆；吸氣時維持脊椎中立。單側停留 30 秒後換邊，最後雙膝同時抱胸左右溫柔晃動 15 秒。",
+      exerciseTip: "抱腿時肩膀完全下沉貼地，不要聳肩或仰頭用力，讓地心引力接住你的下背重量。"
+    },
+    hips: {
+      name: "骨盆不正・髖關節緊繃型",
+      analysis: "髖關節是人體最重要的承重關節，周邊圍繞著內收肌群、闊筋膜張肌與梨狀肌。久坐讓骨盆底肌與髖關節囊僵化，走路時外側代償假胯寬、蹲下時膝蓋內扣吃力。",
+      exerciseName: "溫和低位仰臥開髖蝴蝶式（Reclined Bound Angle Pose）",
+      exerciseDesc: "仰臥平躺，雙腳腳底合十，雙膝自然向兩側打開下沉（若懸空可在膝蓋下各墊一顆抱枕支撐）。雙手自然放於小腹兩側，閉上眼睛進行 10 次深長腹式呼吸，感受腹股溝與大腿內側深層放鬆。",
+      exerciseTip: "如果大腿內側有拉扯刺痛感，務必在膝蓋下方墊毛巾或瑜伽磚，追求「溫潤放鬆」而非極限拉扯。"
+    },
+    hamstrings: {
+      name: "大腿後側膕繩肌攣縮型",
+      analysis: "前彎碰不到腳趾、站直雙腿膝超伸？腿後側緊繃往往連帶骨盆後傾或骨盆旋轉，使得行走步態緩衝能力喪失，地面反作用力直衝膝蓋與腰椎。",
+      exerciseName: "毛巾輔助仰臥單腿抬高伸展（Supine Hamstring Stretch with Strap）",
+      exerciseDesc: "仰臥平躺，將一條長毛巾或伸展帶套在右腳腳底足弓。雙手握住毛巾兩端，緩慢將右腿抬高向天花板，腳跟向上推蹬、腳尖回勾，感受腿後側溫和延展，膝蓋可微曲不鎖死。停留 30 秒後換邊。",
+      exerciseTip: "骨盆與薦骨一定要穩穩壓在地上，千萬不要為了把腿拉近胸口而把屁股抬離地面。"
+    },
+    ankles: {
+      name: "足踝活動度受限・足弓塌陷型",
+      analysis: "地基不穩，大樓必晃！阿基里斯腱與比目魚肌攣縮會限制踝關節背屈角度，迫使膝蓋內夾（X型腿）或小腿外側肌肉代償腫脹，常常走沒幾步路腳底就痠痛無力。",
+      exerciseName: "階梯小腿後側離心沉降（Calf Eccentric Stretch）",
+      exerciseDesc: "手扶牆面或椅背，前腳掌踩在階梯邊緣，腳跟懸空。吐氣時緩慢讓腳跟自然下沉低於階梯平面，感受阿基里斯腱與小腿深層肚溫和拉伸，停留 20 秒後微提，重複 3 次。",
+      exerciseTip: "速度務必緩慢均勻，不要用彈震（Bounce）的方式拉扯肌腱，避免跟腱拉傷。"
+    }
+  };
+
+  const selectedParts = new Set(['neck']);
+
+  const hotspotBtns = document.querySelectorAll('.hotspot-btn');
+  const partChips = document.querySelectorAll('.part-chip');
+  const generateBtn = document.getElementById('generateBtn');
+  const resultCard = document.getElementById('resultCard');
+
+  function syncSelection() {
+    hotspotBtns.forEach(btn => {
+      const p = btn.getAttribute('data-part');
+      btn.classList.toggle('is-active', selectedParts.has(p));
+    });
+    partChips.forEach(chip => {
+      const p = chip.getAttribute('data-part');
+      chip.classList.toggle('is-active', selectedParts.has(p));
+    });
+  }
+
+  function togglePart(part) {
+    if (selectedParts.has(part)) {
+      if (selectedParts.size > 1) selectedParts.delete(part);
+    } else {
+      selectedParts.add(part);
+    }
+    syncSelection();
+  }
+
+  hotspotBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      togglePart(this.getAttribute('data-part'));
+    });
+  });
+
+  partChips.forEach(chip => {
+    chip.addEventListener('click', function() {
+      togglePart(this.getAttribute('data-part'));
+    });
+  });
+
+  syncSelection();
+
+  // 點擊生成專屬處方
+  generateBtn.addEventListener('click', function() {
+    // 優先挑選第一個選中的部位
+    const primaryPart = Array.from(selectedParts)[0] || 'neck';
+    const data = prescriptions[primaryPart] || prescriptions.neck;
+
+    document.getElementById('resTitle').textContent = `針對你的部位檢測：${data.name}`;
+    document.getElementById('resAnalysis').textContent = data.analysis;
+    document.getElementById('resExerciseName').textContent = data.exerciseName;
+    document.getElementById('resExerciseDesc').textContent = data.exerciseDesc;
+    document.getElementById('resExerciseTip').textContent = data.exerciseTip;
+
+    resultCard.classList.add('is-visible');
+    resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // 初始化分享按鈕
+    if (window.initShareButtons) {
+      window.initShareButtons();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -8,8 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=20261020-part1">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
 <!-- Open Graph / Social Meta -->
 <meta property="og:type" content="article">
@@ -275,7 +280,23 @@
   </article>
 
   <!-- 導流預約卡片 -->
-  <div style="background:linear-gradient(135deg, rgba(67,34,47,.95), rgba(109,58,76,.95));color:#fff;border-radius:18px;padding:32px 24px;text-align:center;box-shadow:0 14px 36px rgba(67,34,47,.22);margin-top:36px">
+  
+    <!-- 社群一鍵分享 & 全身緊繃地圖推薦 -->
+    <div style="text-align:center;margin:32px 0 24px">
+      <button type="button" class="share-btn-pill" data-share data-share-title="新手居家瑜珈 3 步驟入門教學｜鑫彥瑜珈" data-share-text="推薦這篇超實用的新手瑜珈入門指南！呼吸調息、貓牛式到大休息，圖解很清楚。" data-share-url="https://sinyanyoga.com.tw/beginner-yoga-guide.html">
+        📤 分享這份新手教學給朋友一起練
+      </button>
+    </div>
+
+    <div style="background:#fbf7f8;border:1px solid rgba(217,143,163,0.35);border-radius:16px;padding:22px 24px;margin:28px auto 36px;max-width:760px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div style="max-width:540px">
+        <h4 style="margin:0 0 6px;color:var(--ink);font-size:16px">🎯 不知道自己最該加強哪裡？</h4>
+        <p style="margin:0;font-size:13.5px;color:var(--muted);line-height:1.6">透過「全身緊繃檢測地圖」點選你的肩頸、下背或骨盆，系統即時為你分析代償原因並生成 60 秒對應伸展！</p>
+      </div>
+      <a href="body-tension-map.html" class="btn" style="background:var(--pink);color:#fff;font-weight:700;padding:10px 20px;border-radius:999px;white-space:nowrap">動手點選檢測 →</a>
+    </div>
+
+    <div style="background:linear-gradient(135deg, rgba(67,34,47,.95), rgba(109,58,76,.95));color:#fff;border-radius:18px;padding:32px 24px;text-align:center;box-shadow:0 14px 36px rgba(67,34,47,.22);margin-top:36px">
     <span style="display:inline-block;padding:3px 12px;background:rgba(224,178,75,.2);color:var(--gold-lt);border-radius:20px;font-size:12.5px;font-weight:700;letter-spacing:1px;margin-bottom:10px">下一步 · 找出你的個人盲點</span>
     <h2 style="font-size:clamp(20px,2.8vw,26px);color:#fff;margin:0 0 10px">練完覺得哪裡卡卡、不確定自己有沒有做對？</h2>
     <p style="color:rgba(255,255,255,.85);font-size:14.5px;max-width:580px;margin:0 auto 20px;line-height:1.65">
@@ -296,6 +317,6 @@
 </footer>
 
 <a class="line-float js-line" href="#" aria-label="預約首次 NT$299 AI 體態檢測" data-line-purpose="reservation" data-cta-location="float" data-offer="ai_assessment" data-offer-value="299"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b></a>
-<script src="site.js?v=20261020-part1"></script>
+<script src="site.js?v=20261020-part2"></script>
 </body>
 </html>

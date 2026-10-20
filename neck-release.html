@@ -11,8 +11,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap"></noscript>
-<link rel="stylesheet" href="theme.css?v=20261019-nav">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="鑫彥瑜珈">
 <meta property="og:locale" content="zh_TW">
@@ -847,7 +852,7 @@
 </div>
 
 <noscript><style>.fade{opacity:1!important;transform:none!important}</style></noscript>
-<script src="site.js?v=20261019-nav"></script>
+<script src="site.js?v=20261020-part2"></script>
 <script>
 // 進場淡入
 if('IntersectionObserver' in window){
@@ -882,7 +887,7 @@ window.addEventListener('scroll', function(){
   dock.classList.toggle('show', y > window.innerHeight*1.1 && fTop > window.innerHeight*.5);
 },{passive:true});
 
-// 側門 LINE：交給 site.js?v=20261019-nav 的 .js-line 統一處理（送出 Contact 事件，見 body[data-line-event]）
+// 側門 LINE：交給 site.js?v=20261020-part2 的 .js-line 統一處理（送出 Contact 事件，見 body[data-line-event]）
 
 // ═══ 預約表單（正門）═══
 var WEBHOOK_URL = "https://melvinlin07-n8n.zeabur.app/webhook/neck-release-lead";

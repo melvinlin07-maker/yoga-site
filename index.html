@@ -9,8 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=20261019-nav">
+<link rel="stylesheet" href="theme.css?v=20261020-part2">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#26191f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="鑫彥瑜珈">
 <meta property="og:locale" content="zh_TW">
@@ -618,6 +623,11 @@
     <div class="concern"><b>站直反而很累</b><p>一想把姿勢撐好，腰、背或肩頸就先出力。</p></div>
     <div class="concern"><b>知道體態不對，卻不知從哪開始</b><p>網路動作看了很多，仍不確定哪個適合自己。</p></div>
   </div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="body-tension-map.html" class="btn" style="background:var(--pink);color:#fff;font-weight:700;padding:12px 28px;box-shadow:0 6px 18px rgba(217,143,163,0.35);border-radius:30px;display:inline-flex;align-items:center;gap:8px">
+        <span>🗺️</span> 立即開啟「全身緊繃檢測地圖」· 點選部位生成 60 秒伸展 →
+      </a>
+    </div>
 </div></section>
 
 <section class="section home-videos-section" id="featured-reels"><div class="wrap">
@@ -952,10 +962,10 @@
   <span>LINE 預約</span>
   <b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b>
 </a>
-<script src="site.js?v=20261019-nav"></script>
+<script src="site.js?v=20261020-part2"></script>
 <script>
 // 「免費肩頸壓力檢測」按鈕（導覽列 + Hero 區）：點擊時先把預填文字寫進 body data-line-message，
-// 讓 site.js?v=20261019-nav 既有的 LINE 預填機制（未改動 site.js?v=20261019-nav 本身）帶出「我要肩頸壓力自測」，
+// 讓 site.js?v=20261020-part2 既有的 LINE 預填機制（未改動 site.js?v=20261020-part2 本身）帶出「我要肩頸壓力自測」，
 // 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕（如浮動 LINE 按鈕）維持原行為。
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {

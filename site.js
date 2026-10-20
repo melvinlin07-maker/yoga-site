@@ -39,7 +39,89 @@ function gtag() { window.dataLayer.push(arguments); }
   fbq("track", "PageView");
 })();
 
+
+// Web Share API + 剪貼簿 fallback & Toast 提示
+function showToast(message, duration) {
+  duration = duration || 2600;
+  var toast = document.getElementById("siteToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "siteToast";
+    toast.className = "share-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = message;
+  toast.classList.add("is-show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(function () {
+    toast.classList.remove("is-show");
+  }, duration);
+}
+window.showToast = showToast;
+
+function copyToClipboard(text, customSuccessMsg) {
+  var successMsg = customSuccessMsg || "✓ 已複製連結至剪貼簿，可直接傳給朋友！";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () {
+      showToast(successMsg);
+    }).catch(function () {
+      fallbackCopy(text, successMsg);
+    });
+  } else {
+    fallbackCopy(text, successMsg);
+  }
+}
+window.copyToClipboard = copyToClipboard;
+
+function fallbackCopy(text, successMsg) {
+  var input = document.createElement("input");
+  input.value = text;
+  input.style.position = "fixed";
+  input.style.left = "-9999px";
+  document.body.appendChild(input);
+  input.select();
+  try {
+    document.execCommand("copy");
+    showToast(successMsg);
+  } catch (err) {
+    showToast("請手動複製連結：" + text);
+  }
+  document.body.removeChild(input);
+}
+
+function initShareButtons() {
+  document.querySelectorAll("[data-share]").forEach(function (btn) {
+    if (btn.__shareBound) return;
+    btn.__shareBound = true;
+    btn.addEventListener("click", function (event) {
+      event.preventDefault();
+      var title = btn.getAttribute("data-share-title") || document.title;
+      var text = btn.getAttribute("data-share-text") || "";
+      var url = btn.getAttribute("data-share-url") || window.location.href;
+
+      var isMobileDevice = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+      if (isMobileDevice && navigator.share) {
+        navigator.share({
+          title: title,
+          text: text,
+          url: url
+        }).catch(function (err) {
+          if (err && err.name !== "AbortError") {
+            copyToClipboard(url);
+          }
+        });
+      } else {
+        copyToClipboard(url);
+      }
+    });
+  });
+}
+window.initShareButtons = initShareButtons;
+
 document.addEventListener("DOMContentLoaded", function () {
+  initShareButtons();
   // LINE reservation buttons
   document.querySelectorAll("a.js-line").forEach(function (a) {
     a.href = LINE_URL;
