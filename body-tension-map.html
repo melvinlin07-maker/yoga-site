@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>全身緊繃檢測地圖｜點選不適部位，即時生成 60 秒居家瑜伽放鬆指引｜鑫彥瑜珈</title>
-<meta name="description" content="哪裡卡卡、哪裡緊繃？動手點選人體地圖（肩頸、下背、骨盆髖部、腿後側），系統立即為你量身生成 60 秒專屬居家溫和瑜伽伸展處方與代償解析。">
+<meta name="description" content="哪裡卡卡、哪裡緊繃？動手點選人體地圖（肩頸、下背、骨盆髖部、腿後側），系統立即為你量身生成 60 秒專屬居家溫和瑜伽伸展指引與代償解析。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="鑫彥瑜珈">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="全身緊繃檢測地圖｜點選不適部位，即時生成 60 秒居家瑜伽放鬆指引">
-<meta property="og:description" content="動手點選人體地圖，立即獲得專屬 60 秒居家伸展處方與代償解析！零基礎友善。">
+<meta property="og:description" content="動手點選人體地圖，立即獲得專屬 60 秒居家伸展指引與代償解析！零基礎友善。">
 <meta property="og:url" content="https://sinyanyoga.com.tw/body-tension-map.html">
 <meta property="og:image" content="https://sinyanyoga.com.tw/assets/og/og-self-test.jpg">
 <meta property="og:image:width" content="1200">
@@ -313,7 +313,7 @@
     <div class="eyebrow" style="color:var(--pink)">沉浸互動檢測 · 找出核心代償</div>
     <h1 style="font-size:clamp(24px,3.2vw,36px)">全身緊繃檢測地圖</h1>
     <p style="font-size:16px;line-height:1.7;max-width:680px;margin:0 auto">
-      哪裡卡卡、哪裡緊繃？點擊人體部位，勾選日常困擾，系統立即為你量身生成 <b>「60 秒居家溫和瑜伽放鬆處方」</b>！
+      哪裡卡卡、哪裡緊繃？點擊人體部位，勾選日常困擾，系統立即為你量身生成 <b>「60 秒居家溫和瑜伽放鬆指引」</b>！
     </p>
   </div>
 
@@ -422,22 +422,26 @@
 
       <!-- 立即生成按鈕 -->
       <button type="button" class="btn" id="generateBtn" style="background:var(--pink);color:#fff;font-size:16px;font-weight:700;padding:14px 28px;border-radius:30px;width:100%;box-shadow:0 8px 24px rgba(217,143,163,0.35);transition:all .25s">
-        ⚡ 立即生成我的專屬 60 秒伸展處方 →
+        ⚡ 立即生成我的專屬 60 秒伸展指引 →
       </button>
     </div>
-  </div>
+    <!-- 法律與醫療合規安全聲明 -->
+    <div style="background:#f9f6f7;border-left:4px solid var(--pink);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:20px;font-size:12.5px;color:var(--muted);line-height:1.6">
+      <b>🌿 溫馨提醒：</b>本互動工具所提供之內容均為日常居家瑜伽放鬆與伸展動作指引，非醫療診斷、處置或治療。若您有嚴重急性疼痛、關節麻木或特殊骨骼病史，請優先諮詢合格醫師或專業物理治療師。
+    </div>
+  </div><!-- /#resultCard -->
 
   <!-- 生成結果卡片 (動態捲入) -->
   <div class="result-card" id="resultCard">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-      <span class="result-badge" id="resBadge">專屬評估報告已產出</span>
+      <span class="result-badge" id="resBadge">專屬放鬆指引已產出</span>
       <span style="font-size:12.5px;color:var(--muted)">⏱️ 居家 60 秒即刻舒緩</span>
     </div>
 
     <h2 id="resTitle" style="font-size:22px;margin:8px 0;color:var(--ink)"></h2>
     <p id="resAnalysis" style="font-size:14.5px;line-height:1.75;color:#4a373d;margin:0 0 16px"></p>
 
-    <!-- 伸展處方推薦 -->
+    <!-- 伸展指引推薦 -->
     <div class="result-exercise-box">
       <div class="exercise-meta">
         <span>🧘‍♀️ 推薦伸展：<b id="resExerciseName" style="color:var(--green-dk)"></b></span>
@@ -464,8 +468,8 @@
 
     <!-- 一鍵分享工具條 -->
     <div class="action-share-bar">
-      <span style="font-size:13px;color:var(--muted)">這份處方對你有幫助嗎？</span>
-      <button type="button" class="btn btn--quiet js-share-btn" data-share data-share-title="全身緊繃檢測地圖｜我的 60 秒專屬瑜伽處方" data-share-text="我剛在鑫彥瑜珈做了全身緊繃檢測，推薦你也試試看！" style="background:#fdf7f8;border:1px solid var(--line-lt);color:var(--pink);font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;display:inline-flex;align-items:center;gap:6px">
+      <span style="font-size:13px;color:var(--muted)">這份放鬆指引對你有幫助嗎？</span>
+      <button type="button" class="btn btn--quiet js-share-btn" data-share data-share-title="全身緊繃檢測地圖｜我的 60 秒居家伸展放鬆指引" data-share-text="我剛在鑫彥瑜珈做了全身緊繃檢測，推薦你也試試看！" style="background:#fdf7f8;border:1px solid var(--line-lt);color:var(--pink);font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;display:inline-flex;align-items:center;gap:6px">
         📤 分享給朋友一起檢測 ↗
       </button>
     </div>
@@ -572,7 +576,7 @@
 
   syncSelection();
 
-  // 點擊生成專屬處方
+  // 點擊生成專屬放鬆指引
   generateBtn.addEventListener('click', function() {
     // 優先挑選第一個選中的部位
     const primaryPart = Array.from(selectedParts)[0] || 'neck';

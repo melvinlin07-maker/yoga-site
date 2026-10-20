@@ -414,7 +414,7 @@
   <p class="lead">肩頸緊、腰痠、睡不好，常常被當成三件事分開處理。有時候它們確實各自獨立，有時候則是同一條鏈上的不同位置。這份掃描會走過你一天中的 10 個時刻，<b>看看哪幾個時刻可能彼此有關</b>，並幫你分清楚：哪些情況適合先自己動一動，哪些情況該先看醫生。</p>
   
     <div style="background:rgba(217,143,163,0.1);border:1px solid rgba(217,143,163,0.3);border-radius:12px;padding:12px 18px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-      <span style="font-size:13.5px;color:var(--ink)">💡 <b>想快速針對特定痛點？</b>試試「全身緊繃互動地圖」，直接點選肩膀或下背即時生成 60 秒舒緩處方！</span>
+      <span style="font-size:13.5px;color:var(--ink)">💡 <b>想快速針對特定痛點？</b>試試「全身緊繃互動地圖」，直接點選肩膀或下背即時生成 60 秒居家放鬆伸展指引！</span>
       <a href="body-tension-map.html" class="btn" style="background:var(--pink);color:#fff;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:20px">切換至緊繃地圖 →</a>
     </div>
     <div class="specs">
@@ -710,7 +710,7 @@
     sleep:{h:"目前主要集中在睡眠與放鬆", p:"你的訊號集中在夜裡與放鬆。這一項單獨出現時，原因可能來自壓力、作息或環境，不一定跟姿勢有關。可以先從睡前的呼吸與放鬆開始觀察。"}
   };
 
-  /* 成鏈時的處方：對應那條鏈，用兩個已發表的動作組成一天的節奏 */
+  /* 成鏈時的伸展建議：對應那條鏈，用兩個已發表的動作組成一天的節奏 */
   var CHAIN_ACT = {
     "白天在撐，晚上收不了工":{why:"這條鏈要從兩端同時切：白天讓它不用一直撐，晚上幫它收工。", a:"neck", b:"sleep", at:"白天工作時", bt:"睡前"},
     "夜裡沒鬆開，隔天從緊繃開始":{why:"這條鏈的切點在夜裡與清晨：先讓夜裡鬆得掉，再讓早上啟動得順。", a:"sleep", b:"shoulder", at:"睡前", bt:"早上起床後"},
@@ -879,7 +879,7 @@
     var picks = ORDER.filter(function(c){ return tally[c] > 0; });
     if(!picks.length) picks = ['sedentary'];
 
-    /* 有成鏈時，處方要對應那條鏈：一天兩個時段，各一個已發表的動作 */
+    /* 有成鏈時，動作建議要對應那條鏈：一天兩個時段，各一個已發表的動作 */
     var CA = matched.length ? CHAIN_ACT[matched[0].ch.h] : null;
     if(CA){
       var mk = function(cat, when){
