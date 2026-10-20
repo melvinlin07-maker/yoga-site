@@ -120,7 +120,267 @@ function initShareButtons() {
 }
 window.initShareButtons = initShareButtons;
 
+
+/* ============================================================
+   CRO PART 3: 閱讀進度條、暗黑護眼模式、離開挽留、即時搜尋
+   ============================================================ */
+
+// 8. 長文頂端金色閱讀進度條
+function initReadingProgressBar() {
+  var isArticle = document.querySelector("article") ||
+                  document.querySelector(".article-body") ||
+                  document.querySelector(".guide-content") ||
+                  window.location.pathname.indexOf("blog-") !== -1 ||
+                  window.location.pathname.indexOf("beginner-yoga-guide") !== -1;
+  if (!isArticle) return;
+
+  var bar = document.getElementById("readingProgressBar");
+  if (!bar) {
+    bar = document.createElement("div");
+    bar.id = "readingProgressBar";
+    bar.className = "reading-progress-bar";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+  }
+
+  var ticking = false;
+  function update() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (max > 0) {
+      var pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      bar.style.width = pct + "%";
+    }
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
+}
+
+// 9. 睡前護眼自動夜間暗黑模式
+function initTheme() {
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    document.querySelectorAll(".theme-toggle-btn").forEach(function (btn) {
+      if (theme === "dark") {
+        btn.textContent = "☀️";
+        btn.setAttribute("aria-label", "切換日間模式");
+        btn.setAttribute("title", "切換日間模式");
+      } else {
+        btn.textContent = "🌙";
+        btn.setAttribute("aria-label", "切換夜間護眼模式");
+        btn.setAttribute("title", "切換夜間護眼模式");
+      }
+    });
+  }
+
+  var saved = localStorage.getItem("sinyan_theme");
+  var currentTheme = "light";
+  if (saved) {
+    currentTheme = saved;
+  } else {
+    var h = new Date().getHours();
+    var isNight = h >= 21 || h < 6;
+    var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (isNight || prefersDark) currentTheme = "dark";
+  }
+  applyTheme(currentTheme);
+
+  document.querySelectorAll(".theme-toggle-btn").forEach(function (btn) {
+    if (btn.__themeBound) return;
+    btn.__themeBound = true;
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var now = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      var next = now === "dark" ? "light" : "dark";
+      localStorage.setItem("sinyan_theme", next);
+      applyTheme(next);
+      if (window.showToast) {
+        window.showToast(next === "dark" ? "🌙 已切換至溫潤護眼模式" : "☀️ 已切換至明亮日間模式", 2000);
+      }
+    });
+  });
+}
+
+// 7. 離開意圖溫柔挽留彈窗
+function initExitIntentModal() {
+  if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
+  if (window.location.pathname.indexOf("beginner-yoga-guide") !== -1) return;
+
+  function createModal() {
+    if (document.getElementById("exitIntentModal")) return document.getElementById("exitIntentModal");
+    var div = document.createElement("div");
+    div.id = "exitIntentModal";
+    div.className = "exit-modal";
+    div.setAttribute("aria-hidden", "true");
+    div.setAttribute("role", "dialog");
+    div.setAttribute("aria-modal", "true");
+    div.innerHTML = [
+      '<div class="exit-modal__backdrop"></div>',
+      '<div class="exit-modal__dialog">',
+      '  <button type="button" class="exit-modal__close" id="exitModalClose" aria-label="關閉視窗">✕</button>',
+      '  <div class="exit-modal__badge">🌸 離開前專屬好禮</div>',
+      '  <h3 class="exit-modal__title" id="exitModalTitle">在離開之前，免費帶走這份《新手居家瑜伽 3 步驟圖解手冊》？</h3>',
+      '  <p class="exit-modal__desc">零基礎友善、免輔具！呼吸調息 × 溫和貓牛式 × 深層大休息，每天 10 分鐘，在家就能跟著高清圖解找回身體輕盈感。</p>',
+      '  <div class="exit-modal__actions">',
+      '    <a href="beginner-yoga-guide.html" class="btn exit-modal__btn-primary">📖 免費線上閱讀 3 步驟圖解</a>',
+      '    <a href="body-tension-map.html" class="btn exit-modal__btn-secondary">🗺️ 動手點選全身緊繃地圖</a>',
+      '  </div>',
+      '  <button type="button" class="exit-modal__dismiss" id="exitModalDismiss">謝謝，我先逛逛（不再提示）</button>',
+      '</div>'
+    ].join("");
+    document.body.appendChild(div);
+
+    function closeModal() {
+      div.classList.remove("is-active");
+      div.setAttribute("aria-hidden", "true");
+      sessionStorage.setItem("sinyan_exit_modal_shown", "true");
+    }
+
+    div.querySelector("#exitModalClose").addEventListener("click", closeModal);
+    div.querySelector(".exit-modal__backdrop").addEventListener("click", closeModal);
+    div.querySelector("#exitModalDismiss").addEventListener("click", closeModal);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && div.classList.contains("is-active")) {
+        closeModal();
+      }
+    });
+
+    return div;
+  }
+
+  function showModal() {
+    if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
+    sessionStorage.setItem("sinyan_exit_modal_shown", "true");
+    var m = createModal();
+    m.classList.add("is-active");
+    m.setAttribute("aria-hidden", "false");
+  }
+
+  // 電腦端：滑鼠向上離開視窗頂部
+  document.addEventListener("mouseleave", function (e) {
+    if (e.clientY <= 20) {
+      showModal();
+    }
+  });
+
+  // 手機端：停留 >25 秒且快速向上滑動
+  var startTs = Date.now();
+  var lastScrollY = window.scrollY;
+  var lastScrollTs = Date.now();
+
+  window.addEventListener("scroll", function () {
+    var now = Date.now();
+    var currentY = window.scrollY;
+    var dt = now - lastScrollTs;
+    var dy = currentY - lastScrollY;
+
+    if (now - startTs > 22000 && dt < 200 && dy < -100 && currentY < 300) {
+      showModal();
+    }
+
+    lastScrollY = currentY;
+    lastScrollTs = now;
+  }, { passive: true });
+}
+
+// 10. 毫秒級即時關鍵字模糊搜尋與標籤過濾
+function initInstantSearch() {
+  var searchInput = document.getElementById("blogSearchInput");
+  var searchClear = document.getElementById("blogSearchClear");
+  var searchCount = document.getElementById("blogSearchCount");
+  var matchNum = document.getElementById("matchCount");
+  var tilesContainer = document.getElementById("posts");
+  var emptyMsg = document.getElementById("empty");
+  var filterBtns = document.querySelectorAll(".filter-btn");
+
+  if (!searchInput || !tilesContainer) return;
+
+  var tiles = Array.from(tilesContainer.querySelectorAll(".tile[data-cat], .tile--featured"));
+  var cached = tiles.map(function (el) {
+    var h = el.querySelector("h3, b, .tbody b") ? el.querySelector("h3, b, .tbody b").textContent : "";
+    var p = el.querySelector("p, .tbody span") ? el.querySelector("p, .tbody span").textContent : "";
+    var cat = el.getAttribute("data-cat") || "all";
+    return {
+      el: el,
+      cat: cat,
+      searchIndex: (h + " " + p + " " + cat).toLowerCase()
+    };
+  });
+
+  function filterPosts() {
+    var q = searchInput.value.trim().toLowerCase();
+    var activeBtn = document.querySelector(".filter-btn.is-active");
+    var activeCat = activeBtn ? activeBtn.getAttribute("data-filter") : "all";
+
+    if (searchClear) {
+      searchClear.style.display = q ? "flex" : "none";
+    }
+
+    var shown = 0;
+    cached.forEach(function (item) {
+      var matchesCat = (activeCat === "all" || item.cat === activeCat);
+      var matchesQuery = !q || item.searchIndex.indexOf(q) !== -1;
+
+      if (matchesCat && matchesQuery) {
+        item.el.classList.remove("is-hidden");
+        shown++;
+      } else {
+        item.el.classList.add("is-hidden");
+      }
+    });
+
+    if (searchCount && matchNum) {
+      if (q) {
+        matchNum.textContent = String(shown);
+        searchCount.style.display = "block";
+      } else {
+        searchCount.style.display = "none";
+      }
+    }
+
+    if (emptyMsg) {
+      emptyMsg.style.display = shown === 0 ? "block" : "none";
+      if (shown === 0 && q) {
+        emptyMsg.textContent = "找不到符合「" + q + "」的教學，試試點選上方熱門主題，或換個關鍵字搜尋。";
+      } else if (shown === 0) {
+        emptyMsg.textContent = "這個分類的文章正在陸續整理中，先看看其他主題吧。";
+      }
+    }
+  }
+
+  searchInput.addEventListener("input", filterPosts);
+  if (searchClear) {
+    searchClear.addEventListener("click", function () {
+      searchInput.value = "";
+      searchInput.focus();
+      filterPosts();
+    });
+  }
+
+  filterBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      filterBtns.forEach(function (x) { x.classList.remove("is-active"); });
+      b.classList.add("is-active");
+      filterPosts();
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  initReadingProgressBar();
+  initTheme();
+  initExitIntentModal();
+  initInstantSearch();
   initShareButtons();
   // LINE reservation buttons
   document.querySelectorAll("a.js-line").forEach(function (a) {

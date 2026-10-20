@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap">
-<link rel="stylesheet" href="theme.css?v=20261020-part2">
+<link rel="stylesheet" href="theme.css?v=20261020-part3">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#26191f">
@@ -241,7 +241,7 @@
 }
 </script>
 <style>
-  /* 影音庫專屬精緻卡片與篩選樣式（純局部 inline 樣式，不侵入 theme.css?v=20261020-part2 */
+  /* 影音庫專屬精緻卡片與篩選樣式（純局部 inline 樣式，不侵入 theme.css?v=20261020-part3 */
   .video-filter-bar {
     display: flex;
     gap: 10px;
@@ -627,6 +627,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sinyanyoga.com.tw/assets/og/og-videos.jpg">
 <meta name="twitter:image" content="https://sinyanyoga.com.tw/assets/og/og-videos.jpg">
+<script>
+(function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
+</script>
 </head>
 <body>
 
@@ -642,6 +645,7 @@
     <li><a href="about.html">關於鑫彥</a></li>
   </ul>
   <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
+  <button type="button" class="theme-toggle-btn" aria-label="切換夜間護眼模式" title="切換夜間護眼模式">🌙</button>
   <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
 <div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到上頁</a></div>
@@ -989,7 +993,7 @@
   </div>
 </div>
 
-<script src="site.js?v=20261020-part2"></script>
+<script src="site.js?v=20261020-part3"></script>
 <script>
 // 影音篩選切換
 (function(){
