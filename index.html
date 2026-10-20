@@ -393,6 +393,205 @@
   }
 }
 
+/* ── 方向一：高轉化信任三件套（3步驟流程、體態轉化案例、師資資歷） ── */
+/* 3步驟到店動線 */
+.step-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+.step-card {
+  background: #ffffff;
+  border: 1px solid var(--line-lt);
+  border-radius: 16px;
+  padding: 28px 24px 26px;
+  box-shadow: 0 8px 24px rgba(67, 34, 47, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(67, 34, 47, 0.09);
+}
+.step-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.step-badge {
+  background: var(--plum);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+.step-time {
+  font-size: 12.5px;
+  color: var(--pink);
+  font-weight: 700;
+}
+.step-icon {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.step-card h3 {
+  font-size: 17px;
+  color: var(--green-dk);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+.step-card p {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.8;
+  margin: 0;
+}
+.step-assurances {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 20px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line-lt);
+}
+.step-assurances span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--green-dk);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 真實體態轉化案例 */
+.transformation-section {
+  background: #ffffff;
+  border-top: 1px solid var(--line-lt);
+}
+.trans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+.trans-card {
+  background: #fffcf9;
+  border: 1px solid var(--line-lt);
+  border-top: 4px solid var(--gold);
+  border-radius: 14px;
+  padding: 24px 22px;
+  box-shadow: 0 6px 20px rgba(67, 34, 47, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+.trans-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-lt);
+}
+.trans-user-tag {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--green-dk);
+}
+.trans-issue-tag {
+  font-size: 12.5px;
+  color: var(--pink);
+  font-weight: 600;
+}
+.trans-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.trans-point {
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+.trans-point b {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.trans-point--before b { color: #8c5d67; }
+.trans-point--before p { color: #5a4b50; margin: 0; }
+.trans-point--ai b { color: var(--gold-hi, #a67c2e); }
+.trans-point--ai p { color: var(--ink); margin: 0; }
+.trans-point--after b { color: #2e7d32; }
+.trans-point--after p { color: var(--ink); margin: 0; font-weight: 500; }
+.trans-quote {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  background: rgba(224, 184, 105, 0.12);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  font-size: 13px;
+  color: #382b23;
+  line-height: 1.75;
+  font-style: normal;
+}
+
+/* 阿美老師資歷徽章 */
+.teacher-credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+.t-cred-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid var(--line-lt);
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 12px rgba(67, 34, 47, 0.04);
+}
+.t-cred-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.t-cred-badge b {
+  display: block;
+  font-size: 13.5px;
+  color: var(--green-dk);
+  margin-bottom: 2px;
+}
+.t-cred-badge small {
+  display: block;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .step-cards-grid,
+  .trans-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .teacher-credentials {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
 /* 高雄左營在地樞紐與交通指引 (Local Hub & Arrival Guide) */
 .location-trust {
   background: linear-gradient(180deg, #fff9f6 0%, #fbf6f2 100%);
@@ -821,17 +1020,48 @@
   <div class="center section-action"><a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="booking_cta" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 體態檢測</a></div>
 </div></section>
 
-<section class="section process-section"><div class="wrap wrap--narrow">
-  <div class="sec-head">
-    <div class="eyebrow" style="color:var(--pink)">怎麼進行</div>
-    <h2>三步驟，先看懂再決定</h2>
+<section class="section process-section"><div class="wrap">
+  <div class="sec-head center">
+    <div class="eyebrow" style="color:var(--pink)">預約到店流程</div>
+    <h2>3 步驟輕鬆到店，先看懂體態再決定</h2>
+    <p style="color:var(--muted);max-width:640px;margin:10px auto 0">不需要先具備瑜伽基礎，零推銷壓力，完整體驗約 20 分鐘。</p>
   </div>
-  <ol class="steps steps--light">
-    <li><b>透過 LINE 預約。</b>告訴我們你想預約首次 AI 體態檢測，安排方便的到店時段。</li>
-    <li><b>到高雄左營教室檢測。</b>老師使用 AI 姿勢分析拍攝、評估，現場看見肩線、頭部前傾、脊椎與骨盆角度。</li>
-    <li><b>老師當面解讀。</b>聽懂自己的體態與下一步；檢測後是否安排課程，由你決定，沒有推銷壓力。</li>
-  </ol>
-  <p class="center" style="margin-top:24px">想先知道現場會做什麼？<a class="inlink" href="assessment.html">查看完整檢測流程與現場照片</a>，或先看 <a class="inlink" href="blog-choosing-first-class-format.html">第一次上課，壁繩、小團課與一對一怎麼選</a>。</p>
+  <div class="step-cards-grid">
+    <div class="step-card">
+      <div class="step-card-top">
+        <span class="step-badge">STEP 01</span>
+        <span class="step-time">線上 1 分鐘</span>
+      </div>
+      <div class="step-icon">📱</div>
+      <h3>LINE 線上快速預約</h3>
+      <p>點擊按鈕加入 LINE 官方帳號，挑選你方便的到店時段，小編即時為你確認安排。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-card-top">
+        <span class="step-badge">STEP 02</span>
+        <span class="step-time">現場 20 分鐘</span>
+      </div>
+      <div class="step-icon">📸</div>
+      <h3>現場 AI 體態拍攝評估</h3>
+      <p>穿著日常便服即可，站在專業 AI 鏡頭前 4 個視角拍攝，幾秒鐘即時產出全身骨骼與關節角度分析數據。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-card-top">
+        <span class="step-badge">STEP 03</span>
+        <span class="step-time">一對一解讀</span>
+      </div>
+      <div class="step-icon">👩‍🏫</div>
+      <h3>阿美老師當面解讀指導</h3>
+      <p>老師親自帶你看懂日常姿勢代償鏈，找出痠緊源頭並給予小練習。<b>完全零推銷壓力，後續是否購課由你決定。</b></p>
+    </div>
+  </div>
+  <div class="step-assurances">
+    <span>🔒 絕無強迫推銷</span>
+    <span>⚡ 20 分鐘精準高效</span>
+    <span>📊 現場數據專屬報告</span>
+    <span>🧘 零瑜伽基礎可安心參加</span>
+  </div>
+  <p class="center" style="margin-top:28px">想先知道現場環境？<a class="inlink" href="assessment.html">查看完整檢測流程與現場照片 →</a></p>
 </div></section>
 
 <section class="section reviews-home"><div class="wrap">
@@ -927,19 +1157,128 @@
   <div class="center section-action"><a class="text-link" href="reviews.html">查看全部 91 則學員真實評價與見證分類 →</a></div>
 </div></section>
 
+<section class="section transformation-section"><div class="wrap">
+  <div class="sec-head center">
+    <div class="eyebrow" style="color:var(--pink)">真實體態轉化案例</div>
+    <h2>他們在鑫彥，找回身體原本該有的舒服</h2>
+    <p style="color:var(--muted);max-width:680px;margin:10px auto 0">每個人的代償模式都不同。透過 AI 檢測看清源頭，搭配壁繩借力調整，改變真實看得見。</p>
+  </div>
+
+  <div class="trans-grid">
+    <!-- 案例 1 -->
+    <div class="trans-card">
+      <div class="trans-card-header">
+        <span class="trans-user-tag">30+ 上班族 · 軟體工程師</span>
+        <span class="trans-issue-tag">長期久坐 · 嚴重圓肩駝背</span>
+      </div>
+      <div class="trans-body">
+        <div class="trans-point trans-point--before">
+          <b>來店前痛點：</b>
+          <p>每天盯電腦 8 小時以上，自覺「烏龜頸」明顯，肩頸硬得像石頭，睡前常常緊到後腦勺悶痛、翻來覆去難入睡。</p>
+        </div>
+        <div class="trans-point trans-point--ai">
+          <b>AI 檢測關鍵發現：</b>
+          <p>頭部前傾角 19°、上胸椎過度屈曲，胸大肌與肩胛提肌長期緊縮代償，導致背肌完全無法正常啟動發力。</p>
+        </div>
+        <div class="trans-point trans-point--after">
+          <b>調整與改變成果：</b>
+          <p>透過壁繩打開深層胸廓張力，配合坐姿中斷練習，當天解讀即找回肩膀下沉感。3 次練習後肩頸緊繃度降 60%，夜間睡眠深度大幅改善。</p>
+        </div>
+      </div>
+      <blockquote class="trans-quote">
+        「以前一直以為駝背要靠自己用力往後挺，原來是前胸太緊！阿美老師解讀超精準，現在整天上班不再緊繃難耐。」
+      </blockquote>
+    </div>
+
+    <!-- 案例 2 -->
+    <div class="trans-card">
+      <div class="trans-card-header">
+        <span class="trans-user-tag">40+ 自由接案 · 產後媽咪</span>
+        <span class="trans-issue-tag">骨盆前傾 · 假胯寬與腰痠</span>
+      </div>
+      <div class="trans-body">
+        <div class="trans-point trans-point--before">
+          <b>來店前痛點：</b>
+          <p>生完小孩後小腹總是凸出、臀部鬆弛無力，稍微站久一點下背部就痠痛難忍，常感覺「都是腰在代班出力」。</p>
+        </div>
+        <div class="trans-point trans-point--ai">
+          <b>AI 檢測關鍵發現：</b>
+          <p>骨盆前傾角 16°、髂腰肌張力過高，腹橫肌與臀大肌失聯，走路時全由腰部代償承重。</p>
+        </div>
+        <div class="trans-point trans-point--after">
+          <b>調整與改變成果：</b>
+          <p>利用壁繩懸吊骨盆中立位練習，重新喚醒臀腹深層肌力。1 個月後站立腰痠感減輕 80%，體態視覺拉長顯瘦。</p>
+        </div>
+      </div>
+      <blockquote class="trans-quote">
+        「看著 AI 檢測數據才恍然大悟為什麼一直腰痠！老師一對一帶我找到骨盆位置，現在站姿很輕鬆，連小腹都縮回去了！」
+      </blockquote>
+    </div>
+
+    <!-- 案例 3 -->
+    <div class="trans-card">
+      <div class="trans-card-header">
+        <span class="trans-user-tag">55+ 熟齡退休族</span>
+        <span class="trans-issue-tag">肩關節卡卡 · 下樓梯膝蓋微痛</span>
+      </div>
+      <div class="trans-body">
+        <div class="trans-point trans-point--before">
+          <b>來店前痛點：</b>
+          <p>雙手往上舉會卡住不舒服，下樓梯時膝蓋常有往內扣的無力感，擔心年紀增長關節加速退化。</p>
+        </div>
+        <div class="trans-point trans-point--ai">
+          <b>AI 檢測關鍵發現：</b>
+          <p>肩關節活動度受限、下肢承重軸線內偏（膝內扣代償），臀中肌力量不足。</p>
+        </div>
+        <div class="trans-point trans-point--after">
+          <b>調整與改變成果：</b>
+          <p>在壁繩卸重支撐下進行無痛伸展與下肢穩定練習。練習後雙手可順暢舉高過頭，下樓梯步伐穩健有力。</p>
+        </div>
+      </div>
+      <blockquote class="trans-quote">
+        「年紀大筋很硬原本怕練不來，但阿美老師非常有耐心！壁繩拉起來身體好輕好舒服，完全沒有負擔！」
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="center section-action" style="margin-top:32px">
+    <a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="trans_cases" data-offer="ai_assessment" data-offer-value="299">我也想看清自己的體態問題，預約 NT$299 檢測 →</a>
+  </div>
+</div></section>
+
 <section class="story" id="teacher"><div class="wrap"><div class="grid">
   <div>
-    <div class="eyebrow">阿美老師與鑫彥特色</div>
-    <div class="quote">不是急著把動作做深，<br><span>而是先找到對的位⁠置。</span></div>
-    <p>壁繩瑜伽是鑫彥的特色。用牆上的繩子作為支撐，讓筋比較硬、怕受傷或第一次接觸的人，也能在可掌握的範圍裡練習。</p>
-    <p>壁繩課的招牌是阿美老師。學員評價提到她會引導大家用對肌肉部位，教學氣氛專業、活潑而輕鬆。</p>
-    <ul class="feature-list">
-      <li><b>先檢測：</b>先看見體態，再討論適合的練習方向。</li>
-      <li><b>壁繩借力：</b>提供穩定支點，對僵硬、沒基礎的人較友善。</li>
-      <li><b>彈性安排：</b>現有一對一與小團課，可依需求詢問。</li>
-    </ul>
+    <div class="eyebrow" style="color:var(--pink)">資深師資 · 專業把關</div>
+    <h2 class="quote">不是急著把動作做深，<br><span>而是先找到身體對的位⁠置。</span></h2>
+    <p>壁繩瑜伽是鑫彥的靈魂核心。藉由牆上繩具作為穩固支撐，為身體卸下不必要的重力壓迫，即使筋骨僵硬、沒有瑜伽經驗或曾有舊傷，都能在安全無痛的支撐下找回活動度。</p>
+    <p>現場 AI 體態檢測由<b>總教練阿美老師親自陪同解讀</b>。老師具備超過十年的體態教學經驗，擅長引導學員看清生活姿勢中的隱形代償，給出最適合個人的日常微習慣。</p>
+    
+    <div class="teacher-credentials">
+      <div class="t-cred-badge">
+        <span class="t-cred-icon">🏅</span>
+        <div><b>10+ 年體態教學資歷</b><small>高雄在地深耕，輔導上百位學員擺脫反覆痠痛</small></div>
+      </div>
+      <div class="t-cred-badge">
+        <span class="t-cred-icon">🎓</span>
+        <div><b>美國瑜珈聯盟 RYT-200 國際認證</b><small>師承 Adnan Tahirovic、羅明璋等國際名師</small></div>
+      </div>
+      <div class="t-cred-badge">
+        <span class="t-cred-icon">🧘</span>
+        <div><b>艾揚格正位研習累積 180+ 小時</b><small>師承 Vivien Yap 老師，每年固定精進人體力學正位</small></div>
+      </div>
+      <div class="t-cred-badge">
+        <span class="t-cred-icon">📜</span>
+        <div><b>高雄市體育會教練認證 & RYT-95 兒童瑜珈</b><small>多元專業背景，教學活潑、溫暖且充滿同理心</small></div>
+      </div>
+    </div>
+    
+    <div style="margin-top:24px">
+      <a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="teacher_section" data-offer="ai_assessment" data-offer-value="299">預約阿美老師親自檢測 NT$299 →</a>
+    </div>
   </div>
-  <div class="story-img"><img src="assets/assessment-consult-main.jpg" alt="阿美老師在鑫彥瑜珈為學員現場解讀 AI 體態檢測結果"></div>
+  <div class="story-img">
+    <img src="assets/assessment-consult-main.jpg" alt="阿美老師在鑫彥瑜珈為學員現場解讀 AI 體態檢測結果">
+  </div>
 </div></div></section>
 
 <section class="section section--dark offer-section"><div class="wrap wrap--narrow center">
