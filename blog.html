@@ -102,29 +102,27 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/blog.html#webpage","url":"https://sinyanyoga.com.tw/blog.html","name":"挑你關心的主題，開始讀","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":{"@id":"https://sinyanyoga.com.tw/#organization"},"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/blog.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"體態知識庫","item":"https://sinyanyoga.com.tw/blog.html"}]}]}</script>
 <!-- /SEO-GEO:PAGE-GRAPH -->
 <style>
-/* 部落格短影音精選區塊 (3 Reels) */
+/* 部落格短影音精選區塊 (3 Reels - 首頁同款大版面) */
 .blog-videos-wrap {
-  margin: 14px 0 44px;
-  padding: 32px 24px;
-  background: #ffffff;
-  border: 1px solid var(--line-lt);
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(67,34,47,0.06);
+  margin: 0 auto 56px;
+  max-width: 1060px;
+  width: 100%;
 }
 .home-video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
   max-width: 1060px;
-  margin: 24px auto 0;
+  margin: 28px auto 0;
+  width: 100%;
 }
 .h-video-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   background: #1c1417;
   aspect-ratio: 9/15;
-  box-shadow: 0 8px 24px rgba(38,25,31,0.12);
+  box-shadow: 0 10px 28px rgba(38,25,31,0.12);
   cursor: pointer;
   transition: transform .28s cubic-bezier(.16,1,.3,1), box-shadow .28s ease, border-color .25s ease;
   border: 1px solid rgba(217,143,163,.28);
@@ -132,8 +130,8 @@
   flex-direction: column;
 }
 .h-video-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(38,25,31,0.22);
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(38,25,31,0.24);
   border-color: rgba(224,178,75,.85);
 }
 .h-video-card img {
@@ -169,9 +167,9 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: #FFE600;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 4px 8px;
+  padding: 4px 9px;
   border-radius: 20px;
   border: 1px solid rgba(255,230,0,.35);
   letter-spacing: 0.3px;
@@ -181,7 +179,7 @@
   color: #fff;
   font-size: 11px;
   font-weight: 700;
-  padding: 4px 8px;
+  padding: 4px 9px;
   border-radius: 20px;
   white-space: nowrap;
 }
@@ -190,22 +188,22 @@
   top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: rgba(224,178,75,0.92);
   color: #26191f;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,.45), 0 0 0 4px rgba(255,255,255,.2);
+  box-shadow: 0 6px 22px rgba(0,0,0,.45), 0 0 0 4px rgba(255,255,255,.2);
   z-index: 2;
   transition: transform .22s cubic-bezier(.16,1,.3,1), background .2s ease;
 }
 .h-video-card:hover .h-video-play-btn {
   transform: translate(-50%, -50%) scale(1.15);
   background: #FFE600;
-  box-shadow: 0 8px 26px rgba(255,230,0,.5), 0 0 0 6px rgba(255,255,255,.3);
+  box-shadow: 0 8px 28px rgba(255,230,0,.5), 0 0 0 6px rgba(255,255,255,.3);
 }
 .h-video-info {
   position: absolute;
@@ -217,15 +215,15 @@
   color: #fff;
 }
 .h-video-title {
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.38;
-  margin: 0 0 5px;
+  margin: 0 0 6px;
   color: #ffffff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 .h-video-desc {
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.45;
   color: rgba(255,255,255,.82);
   margin: 0 0 10px;
@@ -239,13 +237,13 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--gold-lt);
   background: rgba(255,255,255,.12);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 4px 9px;
+  padding: 4px 10px;
   border-radius: 6px;
   border: 1px solid rgba(224,178,75,.35);
   transition: background .2s, border-color .2s;
@@ -259,7 +257,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-top: 26px;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
@@ -446,14 +444,10 @@
 }
 
 @media (max-width: 820px) {
-  .blog-videos-wrap {
-    padding: 24px 16px;
-    margin-bottom: 32px;
-  }
   .home-video-grid {
     grid-template-columns: 1fr;
-    max-width: 320px;
-    gap: 18px;
+    max-width: 340px;
+    gap: 20px;
   }
   .v-modal-card {
     width: min(92vw, 360px);
@@ -497,104 +491,107 @@
 <div class="page-back wrap"><a class="page-back-link" href="index.html" data-back-link>← 回到上頁</a></div>
 
 <section class="section section--cream"><div class="wrap">
-  <div class="sec-head" style="margin-bottom:26px">
+  <div class="sec-head" style="margin-bottom:36px">
     <div class="eyebrow" style="color:var(--pink)">體態知識庫</div>
     <h1>挑你關心的主題，開始讀</h1>
     <p>從圓肩駝背、肩頸到日常久坐，一次一個小主題，慢慢把身體讀懂、練回來。</p>
-        <div class="blog-videos-wrap">
-      <div style="text-align:center;margin-bottom:18px">
-        <span style="display:inline-block;padding:3px 12px;background:rgba(217,143,163,.15);color:var(--pink);border-radius:20px;font-size:12.5px;font-weight:700;letter-spacing:1px;margin-bottom:6px">精選 Reels · 10 秒看懂動作對錯</span>
-        <h2 style="font-size:22px;margin:0 0 6px;color:var(--green-dk)">看文字太抽象？先看 10 秒短影音示範</h2>
-        <p style="color:var(--muted);font-size:14px;max-width:600px;margin:0 auto">點擊播放 10 秒動作解析，想看全部可直接點進影音庫：</p>
-      </div>
+  </div>
 
-      <div class="home-video-grid">
-        <!-- 影片卡片 1: 坐下直接掉下去 (Reel 7) -->
-        <div class="h-video-card"
-             data-video="assets/reels/reel-7.mp4"
-             data-poster="assets/reels/reel-cover-7.jpg"
-             data-cat="日常動態 · 臀肌離心力"
-             data-views="9.3 萬"
-             data-title="妳不是坐下，是最後幾公分直接掉下去？"
-             data-desc="接近椅面最後五公分身體突然失控掉下去？這不是骨頭問題，而是臀肌離心煞車能力失憶。教你在動作中找回接住自己的力量。"
-             data-blog="blog-standing-low-back.html"
-             role="button" tabindex="0" aria-label="影片：妳不是坐下，是最後幾公分直接掉下去？">
-          <img src="assets/reels/reel-cover-7.jpg" alt="妳不是坐下是最後幾公分直接掉下去" loading="lazy" width="540" height="960">
-          <div class="h-video-scrim"></div>
-          <div class="h-video-top-badges">
-            <span class="h-badge-views">👁️ 9.3 萬次觀看</span>
-            <span class="h-badge-cat">日常動態</span>
-          </div>
-          <div class="h-video-play-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="h-video-info">
-            <h3 class="h-video-title">坐下最後幾公分直接掉？</h3>
-            <p class="h-video-desc">坐下失控是臀肌離心失憶，教你找回接住自己的力量。</p>
-            <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
-          </div>
+  <!-- 精選 Reels 短影音區塊：直接放在 .wrap 內，與首頁同寬同規格 -->
+  <div class="blog-videos-wrap">
+    <div class="sec-head" style="margin-bottom:24px">
+      <div class="eyebrow" style="color:var(--pink)">熱門短影音 · 動作對錯解析</div>
+      <h2 style="font-size:clamp(22px,2.6vw,30px)">看文字太抽象？<span class="keep-phrase">先看 10 秒短影音示範</span></h2>
+      <p>點擊播放微型短影音，想看全部動作解析可直接點進影音庫：</p>
+    </div>
+
+    <div class="home-video-grid">
+      <!-- 影片卡片 1: 坐下直接掉下去 (Reel 7) -->
+      <div class="h-video-card"
+           data-video="assets/reels/reel-7.mp4"
+           data-poster="assets/reels/reel-cover-7.jpg"
+           data-cat="日常動態 · 臀肌離心力"
+           data-views="9.3 萬"
+           data-title="妳不是坐下，是最後幾公分直接掉下去？"
+           data-desc="接近椅面最後五公分身體突然失控掉下去？這不是骨頭問題，而是臀肌離心煞車能力失憶。教你在動作中找回接住自己的力量。"
+           data-blog="blog-standing-low-back.html"
+           role="button" tabindex="0" aria-label="影片：妳不是坐下，是最後幾公分直接掉下去？">
+        <img src="assets/reels/reel-cover-7.jpg" alt="妳不是坐下是最後幾公分直接掉下去" loading="lazy" width="540" height="960">
+        <div class="h-video-scrim"></div>
+        <div class="h-video-top-badges">
+          <span class="h-badge-views">👁️ 9.3 萬次觀看</span>
+          <span class="h-badge-cat">日常動態</span>
         </div>
-
-        <!-- 影片卡片 2: 練臀腿先燒大腿前側 (Reel 9) -->
-        <div class="h-video-card"
-             data-video="assets/reels/reel-9.mp4"
-             data-poster="assets/reels/reel-cover-9.jpg"
-             data-cat="椅子式對位 · 臀肌啟動"
-             data-views="8.7 萬"
-             data-title="以為在練臀腿，結果先燒的是大腿前側？"
-             data-desc="做椅子式深蹲大腿前側痠爆、屁股沒感覺？壓力全堆在膝蓋！教你重心放腳跟，臀部後推發力。"
-             data-blog="blog-wall-rope-anterior-pelvic-tilt.html"
-             role="button" tabindex="0" aria-label="影片：以為在練臀腿，結果先燒的是大腿前側？">
-          <img src="assets/reels/reel-cover-9.jpg" alt="以為在練臀腿結果先燒的是大腿前側" loading="lazy" width="540" height="960">
-          <div class="h-video-scrim"></div>
-          <div class="h-video-top-badges">
-            <span class="h-badge-views">👁️ 8.7 萬次觀看</span>
-            <span class="h-badge-cat">動作對位</span>
-          </div>
-          <div class="h-video-play-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="h-video-info">
-            <h3 class="h-video-title">練臀腿先燒大腿前側？</h3>
-            <p class="h-video-desc">深蹲壓力全堆在膝關節？教你重心往後坐，喚醒臀肌。</p>
-            <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
-          </div>
+        <div class="h-video-play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </div>
-
-        <!-- 影片卡片 3: 穿褲子抬腳東倒西歪 (Reel 3) -->
-        <div class="h-video-card"
-             data-video="assets/reels/reel-3.mp4"
-             data-poster="assets/reels/reel-cover-3.jpg"
-             data-cat="站姿平衡 · 防跌定錨"
-             data-views="7.6 萬"
-             data-title="穿褲子一抬腳，身體就東倒西歪？"
-             data-desc="單腳站立視線一移就晃？先固定前方一個錨定點，立刻喚醒 70% 本體感覺神經！"
-             data-blog="blog-balance-midlife.html"
-             role="button" tabindex="0" aria-label="影片：穿褲子一抬腳，身體就東倒西歪？">
-          <img src="assets/reels/reel-cover-3.jpg" alt="穿褲子一抬腳身體東倒西歪" loading="lazy" width="540" height="960">
-          <div class="h-video-scrim"></div>
-          <div class="h-video-top-badges">
-            <span class="h-badge-views">👁️ 7.6 萬次觀看</span>
-            <span class="h-badge-cat">熟齡防跌</span>
-          </div>
-          <div class="h-video-play-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <div class="h-video-info">
-            <h3 class="h-video-title">穿褲子一抬腳東倒西歪？</h3>
-            <p class="h-video-desc">視線一移身體就偏？固定視線錨點，喚醒本體平衡感。</p>
-            <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
-          </div>
+        <div class="h-video-info">
+          <h3 class="h-video-title">坐下最後幾公分直接掉？</h3>
+          <p class="h-video-desc">坐下失控是臀肌離心失憶，教你找回接住自己的力量。</p>
+          <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
         </div>
       </div>
 
-      <div class="home-video-actions">
-        <a href="videos.html" class="btn btn--quiet" style="background:#fff;border:1px solid var(--line-lt);color:var(--ink);font-weight:700;box-shadow:0 4px 14px rgba(67,34,47,.08);padding:11px 24px;border-radius:24px">
-          🎬 查看更多：前往「影音動作庫」看全部 9 部解析短片 →
-        </a>
+      <!-- 影片卡片 2: 練臀腿先燒大腿前側 (Reel 9) -->
+      <div class="h-video-card"
+           data-video="assets/reels/reel-9.mp4"
+           data-poster="assets/reels/reel-cover-9.jpg"
+           data-cat="椅子式對位 · 臀肌啟動"
+           data-views="8.7 萬"
+           data-title="以為在練臀腿，結果先燒的是大腿前側？"
+           data-desc="做椅子式深蹲大腿前側痠爆、屁股沒感覺？壓力全堆在膝蓋！教你重心放腳跟，臀部後推發力。"
+           data-blog="blog-wall-rope-anterior-pelvic-tilt.html"
+           role="button" tabindex="0" aria-label="影片：以為在練臀腿，結果先燒的是大腿前側？">
+        <img src="assets/reels/reel-cover-9.jpg" alt="以為在練臀腿結果先燒的是大腿前側" loading="lazy" width="540" height="960">
+        <div class="h-video-scrim"></div>
+        <div class="h-video-top-badges">
+          <span class="h-badge-views">👁️ 8.7 萬次觀看</span>
+          <span class="h-badge-cat">動作對位</span>
+        </div>
+        <div class="h-video-play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="h-video-info">
+          <h3 class="h-video-title">練臀腿先燒大腿前側？</h3>
+          <p class="h-video-desc">深蹲壓力全堆在膝關節？教你重心往後坐，喚醒臀肌。</p>
+          <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
+        </div>
+      </div>
+
+      <!-- 影片卡片 3: 穿褲子抬腳東倒西歪 (Reel 3) -->
+      <div class="h-video-card"
+           data-video="assets/reels/reel-3.mp4"
+           data-poster="assets/reels/reel-cover-3.jpg"
+           data-cat="站姿平衡 · 防跌定錨"
+           data-views="7.6 萬"
+           data-title="穿褲子一抬腳，身體就東倒西歪？"
+           data-desc="單腳站立視線一移就晃？先固定前方一個錨定點，立刻喚醒 70% 本體感覺神經！"
+           data-blog="blog-balance-midlife.html"
+           role="button" tabindex="0" aria-label="影片：穿褲子一抬腳，身體就東倒西歪？">
+        <img src="assets/reels/reel-cover-3.jpg" alt="穿褲子一抬腳身體東倒西歪" loading="lazy" width="540" height="960">
+        <div class="h-video-scrim"></div>
+        <div class="h-video-top-badges">
+          <span class="h-badge-views">👁️ 7.6 萬次觀看</span>
+          <span class="h-badge-cat">熟齡防跌</span>
+        </div>
+        <div class="h-video-play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="h-video-info">
+          <h3 class="h-video-title">穿褲子一抬腳東倒西歪？</h3>
+          <p class="h-video-desc">視線一移身體就偏？固定視線錨點，喚醒本體平衡感。</p>
+          <span class="h-video-action-pill">點擊看 10 秒示範 ▶</span>
+        </div>
       </div>
     </div>
+
+    <div class="home-video-actions">
+      <a href="videos.html" class="btn btn--quiet" style="background:#fff;border:1px solid var(--line-lt);color:var(--ink);font-weight:700;box-shadow:0 4px 14px rgba(67,34,47,.08);padding:12px 28px;border-radius:24px">
+        🎬 查看更多：前往「影音動作庫」看全部 9 部解析短片 →
+      </a>
+    </div>
   </div>
+
   <section aria-labelledby="topic-clusters" style="margin:0 0 36px">
     <div style="text-align:center;margin-bottom:24px">
       <span style="display:inline-block;padding:4px 14px;background:rgba(217,143,163,.15);color:var(--pink);border-radius:20px;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:8px">精選專題導流 · 6 大情境主題聚落</span>
