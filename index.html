@@ -568,6 +568,14 @@
   .loc-compact-map { height: 200px; min-height: 200px; }
   .loc-compact-map iframe { min-height: 200px; }
 }
+/* 首頁短句：手機避免孤字與營業時間拆行 */
+.home-hours{display:inline-block;white-space:nowrap}
+.home-reel-line + .home-reel-line::before{content:" · "}
+@media(max-width:600px){
+ .home-copy-line,.home-reel-line{display:block;text-wrap:balance}
+ .home-reel-line + .home-reel-line::before{content:none}
+ .home-videos-section .sec-head>.eyebrow{letter-spacing:.16em}
+}
 /* 僅限首頁：雙入口與新手方案 */
 .hero .home-trial-btn{background:transparent;color:#fff;border:1px solid var(--gold-lt);box-shadow:none}
 .hero .home-trial-btn:hover{background:rgba(255,255,255,.08)}
@@ -649,12 +657,12 @@
   <p style="margin:18px 0">不定期推出兩堂、三堂等新手體驗活動。你可以先了解近期安排，再決定要不要參加。</p>
   <p style="color:var(--muted);margin-bottom:24px">目前是否有活動、堂數、費用、適用資格與可約時段，請透過 LINE 確認。</p>
   <a href="https://lin.ee/5rWzdNd" class="btn js-line" data-line-purpose="contact" data-cta-location="home_beginner_offers" data-line-message="老師您好，我想了解近期新手體驗方案，請問目前有哪些活動、費用與可約時段？">LINE 詢問近期新手體驗方案</a>
-  <p style="font-size:13px;color:var(--muted);margin-top:14px">先詢問，再決定；實際方案與時段以 LINE 回覆確認為準。</p>
+  <p style="font-size:13px;color:var(--muted);margin-top:14px"><span class="home-copy-line">先詢問，再決定；實際方案與時段</span><span class="home-copy-line">以 LINE 回覆確認為準。</span></p>
 </div></section>
 
 <section class="section home-videos-section" id="featured-reels"><div class="wrap">
   <div class="sec-head">
-    <div class="eyebrow" style="color:var(--pink)">全網破十萬觀看 · 阿美老師 10 秒日常動作拆解</div>
+    <div class="eyebrow" style="color:var(--pink)"><span class="home-reel-line">全網破十萬觀看</span><span class="home-reel-line">阿美老師 10 秒日常動作拆解</span></div>
     <h2>妳以為只是緊？<span class="keep-phrase">其實是這裡在代償</span></h2>
     <p>點擊播放微型短影音，看看這 3 個最常見的日常代償，你中了哪幾個：</p>
   </div>
@@ -947,7 +955,7 @@
 
 <footer class="site">
   <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
-  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a href="https://lin.ee/5rWzdNd" class="js-line" data-line-purpose="contact" data-cta-location="footer" data-offer="beginner_trial" data-line-message="老師您好，我是第一次來，想詢問近期新手體驗方案，請問目前有哪些活動、費用與可約時段？">LINE 詢問</a><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　<span class="home-hours">每日 09:00–20:30</span>　|　07-556-7387　|　<a href="https://lin.ee/5rWzdNd" class="js-line" data-line-purpose="contact" data-cta-location="footer" data-offer="beginner_trial" data-line-message="老師您好，我是第一次來，想詢問近期新手體驗方案，請問目前有哪些活動、費用與可約時段？">LINE 詢問</a><br>
   <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>
   <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
 </footer>
