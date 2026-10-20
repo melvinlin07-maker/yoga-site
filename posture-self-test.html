@@ -333,6 +333,24 @@
     border-top: 1px dashed var(--hair);
     text-align: left;
   }
+  
+  .btn-copy-preview {
+    background: rgba(224, 184, 105, 0.15);
+    border: 1px solid rgba(224, 184, 105, 0.4);
+    color: var(--gold-hi);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-family: inherit;
+  }
+  .btn-copy-preview:hover {
+    background: var(--gold);
+    color: #1a1208;
+  }
+
   .sc-ai-msg-preview span {
     display: block;
     font-size: 12px;
@@ -507,8 +525,12 @@
           帶著自測結果，LINE 預約 NT$299 檢測 →
         </a>
         <div class="sc-ai-msg-preview">
-          <span>LINE 預填訊息預覽：</span>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span>LINE 預填訊息預覽：</span>
+            <button type="button" id="btn-copy-msg" class="btn-copy-preview" title="複製預約訊息">📋 一鍵複製訊息</button>
+          </div>
           <code id="preview-text">點擊上方按鈕將自動帶入自測結果至 LINE</code>
+          <div id="copy-toast" style="display:none; color:var(--low); font-size:12.5px; margin-top:6px; font-weight:500;">✅ 已成功複製！可直接在 LINE 聊天室貼上傳送</div>
         </div>
       </div>
     </div>
@@ -994,6 +1016,43 @@
     wrap.querySelectorAll('.ctrack i').forEach(function(el){ void el.offsetWidth; el.style.width = el.getAttribute('data-w') + '%'; });
     if(tops.length) { var l = wrap.querySelector('.crow.lead'); if(l) l.classList.add('open'); }
     rep.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  var copyBtn = document.getElementById('btn-copy-msg');
+  var copyToast = document.getElementById('copy-toast');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(){
+      var textToCopy = document.body.getAttribute('data-line-message') || (document.getElementById('preview-text') ? document.getElementById('preview-text').textContent : '');
+      if (!textToCopy) return;
+      function showToast() {
+        if (copyToast) {
+          copyToast.style.display = 'block';
+          setTimeout(function(){ copyToast.style.display = 'none'; }, 3500);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(showToast).catch(function(){
+          fallbackCopy(textToCopy);
+          showToast();
+        });
+      } else {
+        fallbackCopy(textToCopy);
+        showToast();
+      }
+    });
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
   }
 
   document.getElementById('redo').addEventListener('click', function(){
