@@ -1112,5 +1112,37 @@ document.querySelectorAll('a.js-scan').forEach(function (a) {
   });
 })();
 </script>
+
+<script>
+/* 首頁輕進場：內容預設可見，僅在進入畫面時播放一次；不依賴外部函式庫。 */
+(function () {
+  var preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (preference.matches || !window.IntersectionObserver || !Element.prototype.animate) return;
+  var running = new Set();
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      if (preference.matches) return;
+      var compact = window.matchMedia('(max-width: 600px)').matches;
+      var animation = entry.target.animate([
+        { opacity: 0.55, transform: 'translateY(' + (compact ? 8 : 12) + 'px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: compact ? 340 : 440, easing: 'cubic-bezier(.22,.61,.36,1)', iterations: 1 });
+      running.add(animation);
+      animation.onfinish = animation.oncancel = function () { running.delete(animation); };
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.concern-grid .concern, #teacher .grid > div').forEach(function (element) {
+    observer.observe(element);
+  });
+  preference.addEventListener('change', function (event) {
+    if (!event.matches) return;
+    observer.disconnect();
+    running.forEach(function (animation) { animation.cancel(); });
+    running.clear();
+  });
+})();
+</script>
 </body>
 </html>
