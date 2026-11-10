@@ -976,9 +976,21 @@
         現在請試著坐直，舌頭輕輕抵住上顎，用鼻子深吸氣 4 秒，接著嘴巴緩緩吐氣 6 秒，感覺兩側肩膀跟著吐氣慢慢沉下去。重複 3 次，讓大腦重新接收到「安全」的放鬆訊號。
       </div>
       <div class="mc-actions">
-        <a href="https://lin.ee/5rWzdNd" class="btn js-line mc-cta-btn" id="mcCtaBtn" data-line-purpose="contact" data-cta-location="home_micro_check" data-line-message="老師您好，我剛在首頁做了【10秒緊繃微檢測】（結果為：代償緊繃警報），想了解適合我的壁繩放鬆與新手體驗方案！">
+        <a href="https://line.me/R/oaMessage/%40561wigip/?%E8%80%81%E5%B8%AB%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E5%89%9B%E5%9C%A8%E9%A6%96%E9%A0%81%E5%81%9A%E4%BA%86%E3%80%9010%E7%A7%92%E7%B7%8A%E7%B9%83%E5%BE%AE%E6%AA%A2%E6%B8%AC%E3%80%91%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E9%81%A9%E5%90%88%E6%88%91%E7%9A%84%E9%AB%94%E9%A9%97%E6%96%B9%E6%A1%88%EF%BC%81" class="btn js-line mc-cta-btn" id="mcCtaBtn" data-line-purpose="contact" data-cta-location="home_micro_check" data-line-message="老師您好，我剛在首頁做了【10秒緊繃微檢測】（結果為：代償緊繃警報），想了解適合我的壁繩放鬆與新手體驗方案！">
           帶著檢測結果 LINE 諮詢專屬解方（保留體驗名額）
         </a>
+
+        <!-- LINE 預填訊息即時預覽框（標準規格） -->
+        <div class="sc-ai-msg-preview" style="width:100%;max-width:500px;margin:12px auto 6px;text-align:left;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <span style="font-size:12.5px;color:var(--muted);font-weight:700;">📲 LINE 預填訊息預覽（傳送前可自由修改）：</span>
+            <button type="button" id="btn-copy-mc-msg" class="btn-copy-preview" style="background:rgba(224,184,105,0.18);border:1px solid rgba(224,184,105,0.5);color:var(--gold);font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;cursor:pointer;">📋 一鍵複製訊息</button>
+          </div>
+          <code id="mc-preview-text" style="display:block;background:rgba(0,0,0,0.05);border:1px solid var(--line-lt);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.55;color:var(--text);word-break:break-all;font-family:inherit;">老師您好，我剛在首頁做了【10秒緊繃微檢測】（結果為：代償緊繃警報），想了解適合我的壁繩放鬆與新手體驗方案！</code>
+          <div id="mc-copy-toast" style="display:none;color:#2b8a3e;font-size:12.5px;margin-top:6px;font-weight:700;">✅ 已成功複製！開啟 LINE 聊天室直接貼上（Ctrl+V）即可傳送</div>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45;">💡 提示：手機點選按鈕將直接喚起 LINE App 並自動填入訊息；電腦版若點擊，已同步為您複製，至 LINE 對話框貼上即可送出。</p>
+        </div>
+
         <button type="button" class="mc-reset-btn" id="mcResetBtn">🔄 重新選擇檢測</button>
       </div>
     </div>
@@ -1541,9 +1553,64 @@ document.querySelectorAll('a.js-scan').forEach(function (a) {
     resDesc.innerHTML = '您的身體正處於<strong>「交感神經高壓待機」</strong>與<strong>「' + q1Text + ' / ' + q2Text + '」</strong>的自我保護狀態。這種緊繃並非筋骨硬，而是深層肌肉長期在代替無力的核心過勞發力。如果硬去拉筋折疊反而容易受傷，最需要的是透過壁繩與地心引力讓神經「合法關機」。';
 
     var customMsg = '老師您好，我剛在首頁做了【10秒緊繃微檢測】（症狀：' + q1Text + '、' + q2Text + '），想了解適合我的壁繩放鬆與新手體驗方案！';
+    
+    // 1. 同步更新按鈕與 body 全域 data-line-message
     ctaBtn.setAttribute('data-line-message', customMsg);
+    document.body.setAttribute('data-line-message', customMsg);
+
+    // 2. 即時更新預覽框文字
+    var previewEl = document.getElementById('mc-preview-text');
+    if (previewEl) {
+      previewEl.textContent = customMsg;
+    }
+
+    // 3. 更新按鈕直接帶入 LINE oaMessage 官方協議
+    var oaUrl = 'https://line.me/R/oaMessage/' + encodeURIComponent('@561wigip') + '/?' + encodeURIComponent(customMsg);
+    ctaBtn.href = oaUrl;
+
     resultBox.style.display = 'block';
     resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 一鍵複製訊息功能
+  var copyMcBtn = document.getElementById('btn-copy-mc-msg');
+  var copyMcToast = document.getElementById('mc-copy-toast');
+  if (copyMcBtn) {
+    copyMcBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var previewEl = document.getElementById('mc-preview-text');
+      var textToCopy = previewEl ? previewEl.textContent : '';
+      if (!textToCopy) return;
+
+      function onCopied() {
+        if (copyMcToast) {
+          copyMcToast.style.display = 'block';
+          setTimeout(function() { copyMcToast.style.display = 'none'; }, 3500);
+        }
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(onCopied).catch(function() {
+          fallbackCopy(textToCopy);
+          onCopied();
+        });
+      } else {
+        fallbackCopy(textToCopy);
+        onCopied();
+      }
+    });
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
   }
 
   q1Btns.forEach(function(btn) {
