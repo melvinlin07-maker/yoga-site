@@ -917,6 +917,7 @@ footer.site b .fb-tag{white-space:nowrap}
 [data-theme="dark"] .part-chip,
 [data-theme="dark"] .habit-item,
 [data-theme="dark"] .filter-btn,
+[data-theme="dark"] .page-back-link,
 [data-theme="dark"] .exit-modal__btn-secondary,
 [data-theme="dark"] .share-bar-inline {
   background-color: #2e1d27;
