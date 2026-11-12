@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>鑫彥瑜珈運動館｜高雄左營壁繩瑜珈與 AI 體態檢測</title>
+    <link>https://sinyanyoga.com.tw/</link>
+    <description>想找高雄左營的瑜珈教室？鑫彥瑜珈運動館提供壁繩瑜珈、AI 體態檢測、一對一與小團課。近巨蛋捷運站，陪你從了解身體開始，找到適合自己的練習方式。</description>
+    <language>zh-Hant</language>
+    <lastBuildDate>Fri, 13 Nov 2026 07:45:00 +0800</lastBuildDate>
+    <atom:link href="https://sinyanyoga.com.tw/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高雄左營 AI 體態檢測與壁繩瑜珈首頁</title>
+      <link>https://sinyanyoga.com.tw/</link>
+      <guid>https://sinyanyoga.com.tw/</guid>
+      <pubDate>Fri, 13 Nov 2026 07:45:00 +0800</pubDate>
+      <description>先別急著逼自己挺胸。用 AI 姿勢分析看見肩線、頭部前傾、脊椎與骨盆角度，再由老師當面解讀，找出你該先注意的地方。</description>
+    </item>
+    <item>
+      <title>首次 NT$299 AI 體態檢測預約與介紹</title>
+      <link>https://sinyanyoga.com.tw/assessment.html</link>
+      <guid>https://sinyanyoga.com.tw/assessment.html</guid>
+      <pubDate>Thu, 12 Nov 2026 18:00:00 +0800</pubDate>
+      <description>原價 NT$699、首次到店 NT$299，現場拍攝與角度分析並由老師當面解讀。</description>
+    </item>
+    <item>
+      <title>第一次上瑜珈課怎麼選？壁繩、小團課與一對一差異</title>
+      <link>https://sinyanyoga.com.tw/blog-choosing-first-class-format.html</link>
+      <guid>https://sinyanyoga.com.tw/blog-choosing-first-class-format.html</guid>
+      <pubDate>Fri, 13 Nov 2026 07:41:00 +0800</pubDate>
+      <description>幫零基礎與筋骨緊繃的新手比較不同上課形式，找到最能放鬆且安全的開始方式。</description>
+    </item>
+    <item>
+      <title>認識壁繩瑜珈：為什麼筋骨越硬越適合？</title>
+      <link>https://sinyanyoga.com.tw/about-wall-rope.html</link>
+      <guid>https://sinyanyoga.com.tw/about-wall-rope.html</guid>
+      <pubDate>Thu, 12 Nov 2026 18:40:00 +0800</pubDate>
+      <description>透過醫療級壁繩與輔具懸吊支撐，讓緊繃的脊椎與骨盆在減壓下自然延展。</description>
+    </item>
+  </channel>
+</rss>

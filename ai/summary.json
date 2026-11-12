@@ -1,0 +1,25 @@
+{
+  "name": "鑫彥瑜珈運動館",
+  "alternateName": "鑫彥瑜珈",
+  "description": "想找高雄左營的瑜珈教室？鑫彥瑜珈運動館提供壁繩瑜珈、AI 體態檢測、一對一與小團課。近巨蛋捷運站，陪你從了解身體開始，找到適合自己的練習方式。",
+  "url": "https://sinyanyoga.com.tw/",
+  "language": "zh-Hant",
+  "location": {
+    "address": "高雄市左營區新庄仔路726號3樓",
+    "city": "高雄市",
+    "district": "左營區",
+    "postalCode": "813",
+    "country": "TW",
+    "landmark": "近高雄捷運巨蛋站（步行約 5-7 分鐘）"
+  },
+  "contact": {
+    "telephone": "+886-7-556-7387",
+    "line": "https://lin.ee/5rWzdNd"
+  },
+  "openingHours": "每日 09:00–20:30",
+  "instructor": {
+    "name": "黃淑美（阿美老師）",
+    "url": "https://sinyanyoga.com.tw/about.html#amei"
+  },
+  "lastModified": "2026-11-13"
+}

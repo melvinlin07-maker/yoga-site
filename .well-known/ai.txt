@@ -1,0 +1,18 @@
+# ai.txt — AI Crawler & Discovery Policy for 鑫彥瑜珈運動館 (SinYan Yoga)
+# Spec: https://sinyanyoga.com.tw/.well-known/ai.txt
+
+User-Agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai/summary.json
+Allow: /ai/faq.json
+Allow: /ai/service.json
+
+Sitemap: https://sinyanyoga.com.tw/sitemap.xml
+LLMs: https://sinyanyoga.com.tw/llms.txt
+LLMs-Full: https://sinyanyoga.com.tw/llms-full.txt
+Summary: https://sinyanyoga.com.tw/ai/summary.json
+FAQ: https://sinyanyoga.com.tw/ai/faq.json
+Service: https://sinyanyoga.com.tw/ai/service.json
+RSS: https://sinyanyoga.com.tw/rss.xml

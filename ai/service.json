@@ -1,0 +1,30 @@
+{
+  "provider": "鑫彥瑜珈運動館",
+  "url": "https://sinyanyoga.com.tw/",
+  "areaServed": "高雄市左營區（近捷運巨蛋站）",
+  "lastModified": "2026-11-13",
+  "services": [
+    {
+      "name": "首次 NT$299 AI 體態檢測",
+      "serviceType": "AI 體態檢測與姿勢分析",
+      "price": "299",
+      "priceCurrency": "TWD",
+      "url": "https://sinyanyoga.com.tw/assessment.html",
+      "description": "現場拍攝與角度分析，看見肩線、頭部前傾、脊椎與骨盆角度，再由資深老師親自解讀。"
+    },
+    {
+      "name": "壁繩瑜伽小團課",
+      "serviceType": "壁繩瑜伽與體態調整團體課",
+      "url": "https://sinyanyoga.com.tw/classes.html",
+      "description": "透過醫療級壁繩與輔具懸吊支撐，讓緊繃的脊椎與骨盆在減壓狀態下安全延展，適合零基礎與筋骨僵硬者。"
+    },
+    {
+      "name": "一對一體態結構調整與 VIP 精緻微班（一對二／一對三）",
+      "serviceType": "一對一瑜珈調整與深層筋膜放鬆",
+      "price": "1500",
+      "priceCurrency": "TWD",
+      "url": "https://sinyanyoga.com.tw/neck-release.html",
+      "description": "一對一結構調整首次體驗（含 AI 體態檢測），針對肩頸緊繃、骨盆前傾與日常代償客製調整。"
+    }
+  ]
+}
