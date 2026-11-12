@@ -211,10 +211,11 @@ function initTheme() {
   });
 }
 
-// 7. 離開意圖溫柔挽留彈窗
+// 7. 離開意圖溫柔挽留彈窗（僅在知識閱讀頁／首頁的桌面端離開視窗時觸發，不干擾高意圖成交頁與手機回滑操作）
 function initExitIntentModal() {
   if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
-  if (window.location.pathname.indexOf("beginner-yoga-guide") !== -1) return;
+  var path = window.location.pathname || "";
+  if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test/i.test(path)) return;
 
   function createModal() {
     if (document.getElementById("exitIntentModal")) return document.getElementById("exitIntentModal");
@@ -228,12 +229,12 @@ function initExitIntentModal() {
       '<div class="exit-modal__backdrop"></div>',
       '<div class="exit-modal__dialog">',
       '  <button type="button" class="exit-modal__close" id="exitModalClose" aria-label="關閉視窗">✕</button>',
-      '  <div class="exit-modal__badge">🌸 離開前專屬好禮</div>',
-      '  <h3 class="exit-modal__title" id="exitModalTitle">在離開之前，免費帶走這份《新手居家瑜伽 3 步驟圖解手冊》？</h3>',
-      '  <p class="exit-modal__desc">零基礎友善、免輔具！呼吸調息 × 溫和貓牛式 × 深層大休息，每天 10 分鐘，在家就能跟著高清圖解找回身體輕盈感。</p>',
+      '  <div class="exit-modal__badge">🌸 離開前專屬建議</div>',
+      '  <h3 class="exit-modal__title" id="exitModalTitle">先別盲目拉筋！帶走圖解手冊，或預約 20 分鐘 AI 體態檢測</h3>',
+      '  <p class="exit-modal__desc">不確定自己肩頸、腰背緊繃從哪來？可免費看居家 3 步驟圖解，或預約左營現場首次 NT$299 AI 姿勢分析由老師當面解讀。</p>',
       '  <div class="exit-modal__actions">',
-      '    <a href="beginner-yoga-guide.html" class="btn exit-modal__btn-primary">📖 免費線上閱讀 3 步驟圖解</a>',
-      '    <a href="body-tension-map.html" class="btn exit-modal__btn-secondary">🗺️ 動手點選全身緊繃地圖</a>',
+      '    <a href="assessment.html" class="btn exit-modal__btn-primary">🎯 了解首次 NT$299 AI 體態檢測</a>',
+      '    <a href="beginner-yoga-guide.html" class="btn exit-modal__btn-secondary">📖 免費看 3 步驟居家圖解</a>',
       '  </div>',
       '  <button type="button" class="exit-modal__dismiss" id="exitModalDismiss">謝謝，我先逛逛（不再提示）</button>',
       '</div>'
@@ -266,31 +267,59 @@ function initExitIntentModal() {
     m.setAttribute("aria-hidden", "false");
   }
 
-  // 電腦端：滑鼠向上離開視窗頂部
+  // 僅保留電腦端滑鼠向上離開視窗頂部（避免手機端回滑找預約鈕時誤跳彈窗阻斷轉換）
   document.addEventListener("mouseleave", function (e) {
     if (e.clientY <= 20) {
       showModal();
     }
   });
+}
 
-  // 手機端：停留 >25 秒且快速向上滑動
-  var startTs = Date.now();
-  var lastScrollY = window.scrollY;
-  var lastScrollTs = Date.now();
+// 11. 捲動深度與 10 秒實質停留追蹤（診斷 4 秒跳出與頁面承接瓶頸）
+function initScrollAndEngagementTelemetry() {
+  var firedDepths = {};
+  var depths = [25, 50, 75];
+  var ticking = false;
+
+  function checkScroll() {
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) {
+      ticking = false;
+      return;
+    }
+    var pct = (window.scrollY / docHeight) * 100;
+    depths.forEach(function (d) {
+      if (!firedDepths[d] && pct >= d) {
+        firedDepths[d] = true;
+        try {
+          gtag("event", "scroll_depth_milestone", {
+            percent_scrolled: d,
+            page_path: window.location.pathname,
+            transport_type: "beacon"
+          });
+        } catch (err) {}
+      }
+    });
+    ticking = false;
+  }
 
   window.addEventListener("scroll", function () {
-    var now = Date.now();
-    var currentY = window.scrollY;
-    var dt = now - lastScrollTs;
-    var dy = currentY - lastScrollY;
-
-    if (now - startTs > 22000 && dt < 200 && dy < -100 && currentY < 300) {
-      showModal();
+    if (!ticking) {
+      window.requestAnimationFrame(checkScroll);
+      ticking = true;
     }
-
-    lastScrollY = currentY;
-    lastScrollTs = now;
   }, { passive: true });
+
+  window.setTimeout(function () {
+    if (document.visibilityState === "visible") {
+      try {
+        gtag("event", "page_engaged_10s", {
+          page_path: window.location.pathname,
+          transport_type: "beacon"
+        });
+      } catch (err) {}
+    }
+  }, 10000);
 }
 
 // 10. 毫秒級即時關鍵字模糊搜尋與標籤過濾
@@ -380,6 +409,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initReadingProgressBar();
   initTheme();
   initExitIntentModal();
+  initScrollAndEngagementTelemetry();
   initInstantSearch();
   initShareButtons();
   // LINE reservation buttons
@@ -396,9 +426,9 @@ document.addEventListener("DOMContentLoaded", function () {
       var leadValue = Number(body.getAttribute("data-lead-value")) || 299;
       var leadName = body.getAttribute("data-lead-name") || "LINE AI posture assessment reservation";
       var leadCategory = body.getAttribute("data-lead-category") || "AI posture assessment";
-      // 頁面可用 <body data-line-event="Contact"> 把 LINE 點擊降級成「詢問」事件，
-      // 讓真正的轉換（如站內表單）保留 Lead 給廣告優化用。未設定時維持原行為（Lead），不影響其他既有頁面。
-      var lineEventName = a.getAttribute("data-line-event") || body.getAttribute("data-line-event") || "Lead";
+      // 修正 Meta 演算法餵毒：未經表單或後端確認的純 LINE 連結點擊預設送 Contact，
+      // 真正完成站內預約表單的提交才保留標準 Lead 給廣告演算法優化用。
+      var lineEventName = a.getAttribute("data-line-event") || body.getAttribute("data-line-event") || "Contact";
       // 按鈕層級用途分類（同一訊號也驅動下方 Meta 的 LineClick / ReservationIntent）。
       var linePurpose = a.getAttribute("data-line-purpose") || "";
 
@@ -466,9 +496,18 @@ document.addEventListener("DOMContentLoaded", function () {
         ? (isMobile ? "https://line.me/R/oaMessage/" + encodeURIComponent(LINE_OA_ID) + "/?" + encodeURIComponent(lineMessage) : LINE_URL)
         : LINE_URL;
 
-      window.setTimeout(function () {
-        window.open(openUrl, "_blank", "noopener");
-      }, 400);
+      if (isMobile) {
+        window.setTimeout(function () {
+          window.location.href = openUrl;
+        }, 180);
+      } else {
+        if (lineMessage && window.showToast) {
+          window.showToast("✓ 已複製預約詢問文字，加入 LINE 後可直接貼上送出！", 3200);
+        }
+        window.setTimeout(function () {
+          window.open(openUrl, "_blank", "noopener");
+        }, 220);
+      }
     });
   });
 

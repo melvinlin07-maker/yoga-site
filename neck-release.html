@@ -7,6 +7,8 @@
 
 <meta name="description" content="高雄左營・近巨蛋捷運：50 分鐘一對一瑜伽調整＋10 分鐘深層筋膜放鬆，原價 NT$2000；首次再加贈價值 NT$699 的 AI 體態檢測，當場由老師解讀你的肩線、頭部前傾與脊椎骨盆角度。總價值 NT$2699，首次體驗 NT$1500，每人限一次。">
 <link rel="preload" as="image" href="assets/assessment-sample.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" media="print" onload="this.media='all'">
@@ -856,7 +858,7 @@
 </div>
 
 <noscript><style>.fade{opacity:1!important;transform:none!important}</style></noscript>
-<script src="site.js?v=20261020-part3"></script>
+<script src="site.js?v=20261112-p0"></script>
 <script>
 // 進場淡入
 if('IntersectionObserver' in window){
@@ -928,12 +930,30 @@ form.addEventListener('submit', function(e){
     document.getElementById('reserveThanks').scrollIntoView({behavior:'smooth', block:'center'});
   }
 
+  function handleWebhookError(){
+    btn.disabled = false;
+    btn.textContent = '送出預約 · 首次 NT$1,500';
+    var fallbackText = '老師您好，我想預約一對一肩頸調整 NT$1,500（姓名：' + name + '／手機：' + digits + '／方便時段：' + time + (note ? '／困擾：' + note : '') + '）';
+    var directLineBtn = document.querySelector('a[data-cta-location="neck_direct_line"]');
+    if(directLineBtn){
+      directLineBtn.setAttribute('data-line-message', fallbackText);
+    }
+    errEl.textContent = '預約系統暫時忙碌，為避免遺漏您的名額，請直接點擊下方綠色「直接用 LINE 快速預約」按鈕，系統已幫您帶好聯絡資料！';
+    errEl.classList.add('show');
+    try{ gtag('event', 'form_webhook_error', { page_path: location.pathname, transport_type: 'beacon' }); }catch(err){}
+  }
+
   if(WEBHOOK_URL){
     fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(payload)
-    }).then(function(){ done(); }).catch(function(){ done(); });
+    }).then(function(res){
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      done();
+    }).catch(function(){
+      handleWebhookError();
+    });
   }else{
     setTimeout(done, 500);
   }
