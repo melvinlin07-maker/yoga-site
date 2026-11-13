@@ -215,7 +215,7 @@ function initTheme() {
 function initExitIntentModal() {
   if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
   var path = window.location.pathname || "";
-  if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test/i.test(path)) return;
+  if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test|contact/i.test(path)) return;
 
   function createModal() {
     if (document.getElementById("exitIntentModal")) return document.getElementById("exitIntentModal");
