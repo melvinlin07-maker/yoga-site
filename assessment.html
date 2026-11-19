@@ -79,6 +79,7 @@
 .turn-compare-table th{background:var(--green-dk);color:#fff;padding:14px 16px;text-align:left;font-weight:700}
 .turn-compare-table th:last-child{background:#5a283b;color:var(--gold-lt)}
 .turn-compare-table td{padding:14px 16px;border-top:1px solid var(--line-lt);vertical-align:top;line-height:1.7;color:var(--ink)}
+.turn-compare-table th:first-child,.turn-compare-table td:first-child{width:84px;min-width:76px;white-space:nowrap}
 .turn-compare-table td:last-child{background:rgba(198,161,91,.08);font-weight:500}
 [data-theme="dark"] .turn-compare-table table{background:#261820}
 [data-theme="dark"] .turn-compare-table td{color:#f2e5e9;border-color:var(--line-lt)}
@@ -120,7 +121,9 @@
 @media(max-width:640px){
   .assess-reviews{grid-template-columns:1fr}
   .ar-band{gap:20px}
-  .turn-compare-table th,.turn-compare-table td{padding:11px 10px;font-size:13.5px}
+  .turn-compare-table th,.turn-compare-table td{padding:10px 8px;font-size:13px;line-height:1.55}
+  .turn-compare-table th:first-child,.turn-compare-table td:first-child{width:68px;min-width:64px;white-space:nowrap;font-size:12.5px}
+  .hero-ai-head small{white-space:nowrap}
   .price-card--wide{padding:26px 16px 24px}
 }
 </style>
@@ -271,7 +274,7 @@
           <span class="h-pill">📍 高雄左營 · 近巨蛋捷運站</span>
           <span class="h-pill h-pill--pink">⏱️ 全程約 20 分鐘 · 老師當面解讀</span>
         </div>
-        <h1>肩頸反覆緊、站直也很累？<br>先看懂<em>身體哪裡在替你硬撐</em>。</h1>
+        <h1>肩頸反覆緊、站直也很累？<br>先看懂<span class="keep-phrase"><em>身體哪裡在替你硬撐</em>。</span></h1>
         <p class="hero-lead">很多時候不是你拉筋不夠努力，而是日常看不見的「高低肩、頭前傾、骨盆微歪」讓緊繃一再回來。不用先會瑜伽，花 20 分鐘拍出真實角度，由老師當面陪你找出身體的代償起點。</p>
         <div class="hero-micro-steps" aria-label="20分鐘檢測三核心">
           <div class="hms-item"><b>01｜現場光學拍攝</b><span>量化肩線、頭前傾、脊椎與骨盆角度</span></div>
@@ -287,7 +290,7 @@
 
       <div class="hero-ai-card" aria-label="AI 體態檢測實際報告畫面預覽">
         <div class="hero-ai-head">
-          <span>📸 你當場會拿到的 AI 角度畫面</span>
+          <span>📸 當場拿到的 AI 角度畫面</span>
           <small>正面 ＋ 側面雙視角</small>
         </div>
         <div class="hero-ai-pair">
