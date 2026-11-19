@@ -25,12 +25,12 @@
 
 | 層級 | 作戰模組 | 目前進度 | 狀態摘要 |
 | :---: | :--- | :---: | :--- |
-| **第 1 層** | **技術與 GEO 地基** | **96%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**（commit `6565ad4`）。首頁 `<title>` 改為在地核心詞置前（`高雄左營瑜珈教室・壁繩瑜珈與 AI 體態檢測｜鑫彥瑜珈運動館`）、補建 `.nojekyll` 修復 `/.well-known/ai.txt` 為 HTTP 200（`ai_discovery` 1→2 分）、294 處 `href="index.html"` 全數收斂為 `./`。 |
-| **第 2 層** | **全站架構與內耗清查** | **82%** | ✅ 首頁 `/` 分裂已消滅；`ai-assessment.html` 舊測試頁已退役並導向 `assessment.html`；「壁繩」(`blog-what-is-wall-rope` → `about-wall-rope`) 與「AI體態」(`blog-first-time-ai-assessment` → `assessment.html`) 權責錨點已切分。 |
-| **第 3 層** | **黃金機會詞與零點擊防禦** | **80%** | ✅ **地雷 2 已完成**。Top 5 高曝光金礦頁（`pose-cross-legged-numb`、`pose-what-is-chest-opening`、`pose-what-is-hip-opening`、`pose-what-is-restorative`、`blog-what-is-wall-rope`）全面補齊 GSC 扇出問句 H2、首段 100 字 RAG 原子答案塊與原生 HTML `<table>`。 |
-| **第 4 層** | **實體權威（Entity Graph）與信號** | **82%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**。全站 106 篇 `BlogPosting.author` 升級為 `Person` `@id: about.html#amei`（黃淑美／阿美老師），`about.html` 補齊 `#amei` 完整資歷節點；`sameAs` 四大核心頁統一對齊 **FB + IG (`lanyingmin0209`) + Google 商家**；全站消滅 112 處舊名 `鑫彥瑜伽館`。 |
-| **第 5 層** | **防流失轉換漏斗與行為觀測** | **85%** | ✅ **地雷 1 已完成並線上實測 `LIVE=True`**。全站 122 篇知識文章自動掛載 3 條痛點分流＋10 秒自測斷點＋2 題快速勾選預填 LINE `#文章代碼`；`neck-release.html` 補齊 `#neck-release` 預填；`ai-assessment.html` 已導回 `assessment.html`；`site.js` 已預留 `CLARITY_PROJECT_ID` 接口待填入。 |
-| **第 6 層** | **閉環追蹤與飛輪迭代** | **75%** | ✅ `site.js` 已串聯 `article_pain_chip_select`、`line_reservation_click` 與 `#PostSlug` 來源代碼閉環；後續待 14～28 天回測 GSC CTR 與 GA4 轉換率。 |
+| **第 1 層** | **技術與 GEO 地基** | **98%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**（commit `6565ad4`）。首頁 `<title>` 改為在地核心詞置前（`高雄左營瑜珈教室・壁繩瑜珈與 AI 體態檢測｜鑫彥瑜珈運動館`）、補建 `.nojekyll` 修復 `/.well-known/ai.txt` 為 HTTP 200（`ai_discovery` 1→2 分）、294 處 `href="index.html"` 全數收斂為 `./`。 |
+| **第 2 層** | **全站架構與內耗清查** | **92%** | ✅ 首頁 `/` 分裂已消滅；`ai-assessment.html` 舊測試頁已退役並導向 `assessment.html`；「壁繩」(`blog-what-is-wall-rope` → `about-wall-rope`) 與「AI體態」(`blog-first-time-ai-assessment` + `blog-who-needs-ai-posture-assessment` → `assessment.html`) 權責錨點已切分。 |
+| **第 3 層** | **黃金機會詞與零點擊防禦** | **94%** | ✅ **地雷 2 ＋ 剩餘項 B 已完成**。Top 5 高曝光金礦頁（`pose-cross-legged-numb`、`pose-what-is-chest-opening`、`pose-what-is-hip-opening`、`pose-what-is-restorative`、`blog-what-is-wall-rope`）＋ 4 篇預警與重點文（`blog-rounded-shoulders`、`pose-gentle-backbend-start`、`blog-massage-tight-again`、`blog-who-needs-ai-posture-assessment`）全面補齊 GSC 扇出問句 H2、首段 100 字 RAG 原子答案塊與原生 HTML `<table>`。 |
+| **第 4 層** | **實體權威（Entity Graph）與信號** | **96%** | ✅ **地雷 3 ＋ 剩餘項 C 已完成**。全站 106 篇 `BlogPosting.author` 升級為 `Person` `@id: about.html#amei`（黃淑美／阿美老師），`about.html` 補齊 `#amei` 完整資歷節點；`sameAs` 四大核心頁統一對齊 **FB + IG (`lanyingmin0209`) + Google 商家**；首頁 3 支與 `videos.html` 9 支 `VideoObject` 全數補齊 `hasPart (Clip)` 關鍵秒數錨點。 |
+| **第 5 層** | **防流失轉換漏斗與行為觀測** | **95%** | ✅ **地雷 1 ＋ 剩餘項 A 已完成並通過 Playwright 320/375/390px 零跑版實測**。全站 122 篇知識文章自動掛載 3 條痛點分流＋10 秒自測斷點＋2 題快速勾選預填 LINE `#文章代碼`；主力落地頁 `assessment.html` 完成 Argon 黃金 4 拍（起・承・轉・合）大改版並修復全站夜間深色模式 `.sec-head h2` 黑字隱形 Bug；`site.js` 已預留 `CLARITY_PROJECT_ID` 接口待填入。 |
+| **第 6 層** | **閉環追蹤與飛輪迭代** | **85%** | ✅ `site.js` 與 `assessment.html` 已串聯 `article_pain_chip_select`、`assessment_pain_chip_select`、`line_reservation_click` 與 `#PostSlug` 來源代碼閉環；進入 14～28 天 GSC CTR 與 GA4 轉換率觀察期。 |
 
 ---
 
