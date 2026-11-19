@@ -910,8 +910,37 @@ footer.site b .fb-tag{white-space:nowrap}
 [data-theme="dark"] .tile h3,
 [data-theme="dark"] .tile b,
 [data-theme="dark"] .review strong,
-[data-theme="dark"] .faq-item summary {
+[data-theme="dark"] .faq-item summary,
+[data-theme="dark"] .sec-head h1,
+[data-theme="dark"] .sec-head h2,
+[data-theme="dark"] .quote,
+[data-theme="dark"] .ar-band b,
+[data-theme="dark"] .series-card strong {
   color: #fff;
+}
+
+[data-theme="dark"] .fit-grid > div,
+[data-theme="dark"] .check-list > div,
+[data-theme="dark"] .assess-reviews .ar,
+[data-theme="dark"] .series-card,
+[data-theme="dark"] .steps--light li,
+[data-theme="dark"] .frame {
+  background-color: #261820;
+  border-color: var(--line-lt);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .fit-grid b,
+[data-theme="dark"] .check-list b,
+[data-theme="dark"] .steps--light li b {
+  color: var(--gold-lt);
+}
+
+[data-theme="dark"] .fit-grid span,
+[data-theme="dark"] .check-list span,
+[data-theme="dark"] .assess-reviews .ar p,
+[data-theme="dark"] .frame figcaption {
+  color: #e8dae0;
 }
 
 [data-theme="dark"] .part-chip,

@@ -46,6 +46,21 @@
 .ar-band{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:28px;text-align:center}
 .ar-band span{color:var(--muted);font-size:14px}
 .ar-band b{display:block;font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;color:var(--green-dk);line-height:1.1}
+.page-back--auto{display:none}
+.page-back--auto.is-visible{display:block}
+[data-theme="dark"] .ar-band b{color:var(--gold-lt)}
+[data-theme="dark"] .assess-reviews .ar{background:#261820;border-color:var(--line-lt)}
+[data-theme="dark"] .assess-reviews .ar p{color:#f3e6ea}
+[data-theme="dark"] .assess-reviews .ar cite{color:#cbb7bf}
+.price-card--wide{max-width:540px}
+.offer-picker{margin:20px 0 18px;padding:16px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(224,178,75,.35);text-align:left}
+.afp-label{display:block;font-size:13px;font-weight:700;color:var(--gold-lt);margin:0 0 8px}
+.afp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.afp-chip{appearance:none;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;padding:7px 11px;border-radius:999px;font-size:12.5px;font-family:inherit;cursor:pointer;transition:all .18s ease}
+.afp-chip:hover{border-color:var(--gold-lt)}
+.afp-chip.is-selected{background:linear-gradient(135deg,#e0b24b,#c6892e);color:#20140a;border-color:#e0b24b;font-weight:700}
+.afp-preview{background:rgba(0,0,0,.28);border:1px dashed rgba(224,178,75,.45);border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.65;color:#f3e5e9;margin-top:4px}
+.afp-preview small{display:block;color:var(--gold-lt);font-size:11.5px;margin-bottom:3px}
 @media(max-width:640px){.assess-reviews{grid-template-columns:1fr}.ar-band{gap:20px}}
 </style>
 <meta property="og:type" content="website">
@@ -164,7 +179,7 @@
 (function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
 </head>
-<body data-line-message="你好，我想預約首次 NT$299 AI 體態檢測！">
+<body data-line-message="老師您好，我想預約高雄左營首次 NT$299 AI 體態檢測（來源代碼：#assessment），請幫我安排方便時段！">
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="./">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
@@ -181,7 +196,7 @@
   <button type="button" class="theme-toggle-btn" aria-label="切換夜間護眼模式" title="切換夜間護眼模式">🌙</button>
   <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
-<div class="page-back wrap"><a class="page-back-link" href="./" data-back-link>← 回到上頁</a></div>
+<div class="page-back page-back--auto wrap" id="autoBackWrap"><a class="page-back-link" href="./" data-back-link>← 回到上頁</a></div>
 
 <header class="hero hero--short assessment-hero">
 <img src="assets/assessment-consult-main.jpg" alt="專業老師在高雄左營教室，當面為學員解讀 AI 體態檢測畫面" width="1706" height="960" fetchpriority="high">
@@ -229,7 +244,7 @@
 
 <section class="section"><div class="wrap wrap--narrow">
   <div class="sec-head"><div class="eyebrow" style="color:var(--pink)">這是什麼</div><h2>AI 體態檢測是什麼？</h2></div>
-  <p style="color:var(--muted)">你來到教室後，老師會使用 <b style="color:var(--ink)">AI 姿勢分析</b>協助拍攝，呈現肩線、頭部前傾、脊椎與骨盆等姿勢角度。接著由老師<b style="color:var(--ink)">當場為你解讀</b>，協助你理解目前的體態觀察與可以優先留意的地方——不是機器給一個分數就結束。</p>
+  <p style="color:var(--muted)">你來到高雄左營教室後，老師會使用 <b style="color:var(--ink)">AI 姿勢分析（AI 體態檢測）</b>進行約 20 分鐘的現場拍攝與評估，量化呈現你的<b style="color:var(--ink)">肩線左右高低、頭部前傾角度、胸椎與骨盆前後傾軸線</b>。接著由擁有 10 年以上教學經驗的老師<b style="color:var(--ink)">當場為你解讀</b>，協助你理解目前的體態代償起點與優先調整方向——不是機器給一個冷冰冰的分數就結束（屬運動功能性姿勢觀察，非醫學診斷）。</p>
   <div class="check-list" aria-label="AI 體態檢測觀察項目">
     <div><b>肩線與左右高低</b><span>看見肩膀是否有明顯高低差或前縮傾向。</span></div>
     <div><b>頭部前傾與頸部位置</b><span>協助理解肩頸緊繃可能相關的姿勢線索。</span></div>
@@ -327,7 +342,7 @@
     <div class="eyebrow">首次到店方案</div>
     <h2>先用一次檢測，了解自己的體態</h2>
   </div>
-  <div class="price-card">
+  <div class="price-card price-card--wide" id="assessFastPicker">
     <span class="ptag">FIRST VISIT · 首次到店限定</span>
     <p class="pname">AI 體態檢測（現場拍攝、姿勢角度分析、老師當面解讀）</p>
     <p class="price-compare"><span>原價 NT$699</span><b>首次到店優惠</b></p>
@@ -339,7 +354,27 @@
       <li>預約是否成立，以 LINE 回覆確認的時段為準</li>
       <li>檢測後不強迫報名課程</li>
     </ul>
-    <a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="price_card" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 體態檢測</a>
+    <div class="offer-picker">
+      <span class="afp-label">① 點選你目前最想了解的狀況（免打字自動帶入 LINE）：</span>
+      <div class="afp-chips" data-afp-group="pain">
+        <button type="button" class="afp-chip is-selected" data-val="肩頸反覆緊／頭部前傾">肩頸反覆緊／頭前傾</button>
+        <button type="button" class="afp-chip" data-val="圓肩駝背／胸口打不開">圓肩駝背</button>
+        <button type="button" class="afp-chip" data-val="骨盆歪斜感／左右不平衡">骨盆歪斜／左右不平衡</button>
+        <button type="button" class="afp-chip" data-val="練了卻抓不到發力感覺">練了抓不到感覺</button>
+      </div>
+      <span class="afp-label">② 方便到左營教室的時段：</span>
+      <div class="afp-chips" data-afp-group="time">
+        <button type="button" class="afp-chip is-selected" data-val="平日白天">平日白天</button>
+        <button type="button" class="afp-chip" data-val="平日晚上">平日晚上</button>
+        <button type="button" class="afp-chip" data-val="週末時段">週末時段</button>
+        <button type="button" class="afp-chip" data-val="都可以">都可以</button>
+      </div>
+      <div class="afp-preview">
+        <small>💬 點擊預約將自動幫你填好這段話（按送出即可）：</small>
+        <span id="afpPreviewText"></span>
+      </div>
+    </div>
+    <a href="#" id="afpLineBtn" class="btn js-line" data-line-purpose="reservation" data-cta-location="price_card" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 體態檢測</a>
   </div>
 </div></section>
 
@@ -435,11 +470,60 @@
 // 「免費肩頸壓力檢測」按鈕：點擊時先把預填文字寫進 body data-line-message，
 // 讓 site.js?v=20261020-part3 既有的 LINE 預填機制（未改動 site.js?v=20261020-part3 本身）帶出「我要肩頸壓力自測」，
 // 只影響有 data-slot-message 的這幾顆按鈕，其餘 js-line 按鈕維持原行為。
+(function initSmartBackBar() {
+  try {
+    if (document.referrer && new URL(document.referrer).origin === window.location.origin) {
+      var w = document.getElementById('autoBackWrap');
+      if (w) w.classList.add('is-visible');
+    }
+  } catch (e) {}
+})();
+
 document.querySelectorAll('a.js-line[data-slot-message]').forEach(function (a) {
   a.addEventListener('click', function () {
     document.body.setAttribute('data-line-message', a.getAttribute('data-slot-message'));
   });
 });
+
+(function initAssessmentFastPicker() {
+  var picker = document.getElementById('assessFastPicker');
+  if (!picker) return;
+  var pain = '肩頸反覆緊／頭部前傾';
+  var time = '平日白天';
+  var preview = document.getElementById('afpPreviewText');
+  var btn = document.getElementById('afpLineBtn');
+
+  function sync() {
+    var msg = '老師您好，我想預約高雄左營首次 NT$299 AI 體態檢測（來源代碼：#assessment），我目前最想了解【' + pain + '】，比較方便的時段是【' + time + '】，再麻煩協助確認可約時間！';
+    if (preview) preview.textContent = msg;
+    if (btn) btn.setAttribute('data-line-message', msg);
+    document.body.setAttribute('data-line-message', msg);
+  }
+  sync();
+
+  picker.querySelectorAll('.afp-chips').forEach(function (group) {
+    var kind = group.getAttribute('data-afp-group');
+    group.querySelectorAll('.afp-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        group.querySelectorAll('.afp-chip').forEach(function (c) { c.classList.remove('is-selected'); });
+        chip.classList.add('is-selected');
+        var val = chip.getAttribute('data-val');
+        if (kind === 'pain') pain = val;
+        if (kind === 'time') time = val;
+        sync();
+        try {
+          if (window.gtag) {
+            gtag('event', 'assessment_pain_chip_select', {
+              chip_group: kind,
+              chip_value: val,
+              page_path: window.location.pathname
+            });
+          }
+        } catch (err) {}
+      });
+    });
+  });
+})();
 
 // 「免費體態訊號掃描」按鈕：導向站內掃描頁，同時保留原本的追蹤訊號。
 // Meta Pixel 照舊送 Contact（與改版前一致）；GA4 改送 posture_scan_click，
