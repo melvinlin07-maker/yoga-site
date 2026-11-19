@@ -1014,3 +1014,111 @@ footer.site b .fb-tag{white-space:nowrap}
   text-align: center;
   display: none;
 }
+
+/* ============================================================
+   第 5 層防流失轉換機關：知識文 10 秒代償斷點 ＋ 3 秒痛點勾選預填 LINE
+   ============================================================ */
+.sinyan-conv-widget {
+  margin-top: 22px;
+  padding: 22px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 178, 75, 0.42);
+  text-align: left;
+}
+.sinyan-conv-gap {
+  background: rgba(224, 178, 75, 0.14);
+  border-left: 3px solid var(--gold-lt);
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #f6eaed;
+}
+.sinyan-conv-gap b {
+  color: var(--gold-lt);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14.5px;
+}
+.sinyan-conv-step {
+  margin-bottom: 14px;
+}
+.sinyan-conv-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--gold-lt);
+  margin-bottom: 8px;
+}
+.sinyan-conv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sinyan-chip {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.07);
+  color: #f7ecef;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1.4;
+}
+.sinyan-chip:hover {
+  border-color: var(--gold-lt);
+  background: rgba(224, 178, 75, 0.18);
+}
+.sinyan-chip.is-selected {
+  background: linear-gradient(135deg, #e0b24b, #c6892e);
+  color: #20140a;
+  border-color: #e0b24b;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(224, 178, 75, 0.32);
+}
+.sinyan-conv-preview {
+  margin: 14px 0 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px dashed rgba(224, 178, 75, 0.45);
+  font-size: 13px;
+  line-height: 1.7;
+  color: #f1e3e7;
+}
+.sinyan-conv-preview small {
+  display: block;
+  font-size: 11.5px;
+  color: var(--gold-lt);
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.sinyan-conv-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+.sinyan-conv-actions .btn {
+  width: 100%;
+  min-height: 48px;
+}
+.sinyan-conv-sub {
+  text-align: center;
+  font-size: 12.5px;
+  color: #e2ced4;
+}
+@media (max-width: 520px) {
+  .sinyan-conv-widget {
+    padding: 16px 14px;
+  }
+  .sinyan-chip {
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+}

@@ -4,9 +4,19 @@ var LINE_URL = "https://lin.ee/5rWzdNd";
 var LINE_OA_ID = "@561wigip";
 var GA_MEASUREMENT_ID = "G-6X3PD7NMMG";
 var META_PIXEL_ID = "1594348069032790";
+var CLARITY_PROJECT_ID = ""; // 填入 Microsoft Clarity 10 碼 Project ID 即可全站啟用熱圖與錄影
 
 window.dataLayer = window.dataLayer || [];
 function gtag() { window.dataLayer.push(arguments); }
+
+(function loadMicrosoftClarity() {
+  if (!CLARITY_PROJECT_ID) return;
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+})();
 
 (function loadGoogleAnalytics() {
   var script = document.createElement("script");
@@ -405,6 +415,130 @@ function initInstantSearch() {
   });
 }
 
+// 12. 第 5 層防流失轉換引擎：全站 122 篇知識文章自動分流（10 秒代償盲區自測 ＋ 3 秒痛點勾選 → 動態預填 LINE #文章代碼）
+function initArticleConversionWidget() {
+  var path = (window.location.pathname || "").replace(/^\/+/, "");
+  if (!/^(blog-|pose-)/i.test(path)) return;
+  var slug = path.replace(/\.html$/i, "");
+  var ctaBox = document.querySelector("article .article-cta:not(.soft)");
+  if (!ctaBox || ctaBox.querySelector(".sinyan-conv-widget")) return;
+
+  // 若文章本身已有自訂多按鈕對照（如 blog-choosing-first-class-format.html），保留原按鈕但仍補齊預設 body data-line-message
+  var hasCustomSlot = ctaBox.querySelector("[data-slot-message]");
+
+  var trackType = "wallrope";
+  if (/neck|shoulder|chest|hunch|headache|arm|jaw|sleep|bedtime|pillow|backbend|breath|massage|phone|office|chair|bracing|winter|tired|crick|frozen|upper/i.test(slug)) {
+    trackType = "upper";
+  } else if (/hip|pelvic|knee|numb|squat|glute|butt|low-back|standing|walking|feet|hamstring|period|balance|lifting|housework|flight|fold|hinge/i.test(slug)) {
+    trackType = "lower";
+  }
+
+  var tracks = {
+    upper: {
+      gapTitle: "🔍 10 秒鏡前單側自測（為什麼自己拉完很快又緊回來？）",
+      gapDesc: "居家伸展多半只鬆到表淺張力；如果左右肩線一高一低、轉頭兩邊緊繃差明顯，或按完隔天又緊回去，代表胸椎活動度與深層肩胛代償還沒對位。",
+      pains: ["肩頸反覆緊／按摩隔天又緊", "圓肩駝背／胸口打不開", "高低肩／左右轉頭緊繃差", "想先用 AI 看懂肩頸角度"],
+      offerName: "首次 NT$299 AI 體態檢測（原價 NT$699）",
+      offerCode: "ai_assessment",
+      offerValue: "299"
+    },
+    lower: {
+      gapTitle: "🔍 10 秒坐姿／站姿單側自測（找出骨盆與下肢代償起點）",
+      gapDesc: "盤腿一側膝蓋特別高、久站腰痠或下樓梯單側膝蓋卡卡，往往不是「筋太硬」，而是骨盆前後傾與深層髂腰肌／臀中肌張力失衡。",
+      pains: ["盤腿坐不住／容易腳麻", "骨盆前傾／小腹凸或久站腰痠", "開髖卡卡／左右腳跨步不對稱", "想先用 AI 看懂骨盆與下肢力線"],
+      offerName: "首次 NT$299 AI 體態檢測（原價 NT$699）",
+      offerCode: "ai_assessment",
+      offerValue: "299"
+    },
+    wallrope: {
+      gapTitle: "🔍 10 秒新手避坑檢查（不用筋軟也能安全開始）",
+      gapDesc: "多數新手不是不適合練瑜伽，而是少了支點、一用力就變成聳肩折腰代償。先看懂自己目前的活動度起點，再決定從壁繩或小班切入最安心。",
+      pains: ["筋骨很硬／零基礎怕跟不上", "想體驗壁繩瑜伽支撐減壓", "不確定該選團課還是一對一", "想先做 NT$299 AI 體態檢測再決定"],
+      offerName: "首次 NT$299 AI 體態檢測（或詢問零基礎入門班）",
+      offerCode: "ai_assessment",
+      offerValue: "299"
+    }
+  };
+
+  var cfg = tracks[trackType];
+  var times = ["平日白天", "平日晚上", "週末時段", "都可以，請推薦"];
+  var selectedPain = cfg.pains[0];
+  var selectedTime = times[0];
+
+  function buildMsg() {
+    return "老師您好，我看完文章（來源代碼：#" + slug + "），目前最困擾的是【" + selectedPain + "】，方便時段是【" + selectedTime + "】，想預約了解 " + cfg.offerName + "！";
+  }
+
+  // 先寫入 body 預設預填訊息，確保頁面上所有浮動/導覽/頁尾 LINE 按鈕都帶來源代碼
+  if (!document.body.getAttribute("data-line-message")) {
+    document.body.setAttribute("data-line-message", buildMsg());
+  }
+
+  if (hasCustomSlot) return;
+
+  var existingBtn = ctaBox.querySelector("a.js-line");
+  if (existingBtn) {
+    existingBtn.style.display = "none";
+  }
+
+  var widget = document.createElement("div");
+  widget.className = "sinyan-conv-widget";
+  widget.innerHTML = [
+    '<div class="sinyan-conv-gap"><b>' + cfg.gapTitle + '</b>' + cfg.gapDesc + '</div>',
+    '<div class="sinyan-conv-step">',
+    '  <span class="sinyan-conv-label">① 點選你目前最像的身體狀態（1 秒完成）：</span>',
+    '  <div class="sinyan-conv-chips" data-group="pain">' + cfg.pains.map(function (p, i) {
+      return '<button type="button" class="sinyan-chip' + (i === 0 ? ' is-selected' : '') + '" data-val="' + p + '">' + p + '</button>';
+    }).join("") + '</div>',
+    '</div>',
+    '<div class="sinyan-conv-step">',
+    '  <span class="sinyan-conv-label">② 你比較方便到高雄左營教室的時段：</span>',
+    '  <div class="sinyan-conv-chips" data-group="time">' + times.map(function (t, i) {
+      return '<button type="button" class="sinyan-chip' + (i === 0 ? ' is-selected' : '') + '" data-val="' + t + '">' + t + '</button>';
+    }).join("") + '</div>',
+    '</div>',
+    '<div class="sinyan-conv-preview"><small>💬 點擊下方按鈕將自動帶入以下詢問文字（免打字、零壓力）：</small><span class="sinyan-preview-text"></span></div>',
+    '<div class="sinyan-conv-actions">',
+    '  <a href="#" class="btn js-line sinyan-conv-btn" data-line-purpose="reservation" data-cta-location="article_prefill_widget" data-offer="' + cfg.offerCode + '" data-offer-value="' + cfg.offerValue + '">💬 一鍵開啟 LINE 預填詢問（首次 NT$299 AI 檢測）→</a>',
+    '  <span class="sinyan-conv-sub">高雄左營新庄仔路 726 號 3 樓（近巨蛋捷運站）· 檢測後不強迫購課</span>',
+    '</div>'
+  ].join("");
+
+  ctaBox.appendChild(widget);
+
+  var previewEl = widget.querySelector(".sinyan-preview-text");
+  var lineBtn = widget.querySelector(".sinyan-conv-btn");
+
+  function syncMessage() {
+    var msg = buildMsg();
+    previewEl.textContent = msg;
+    lineBtn.setAttribute("data-line-message", msg);
+    document.body.setAttribute("data-line-message", msg);
+  }
+  syncMessage();
+
+  widget.querySelectorAll(".sinyan-conv-chips").forEach(function (group) {
+    var kind = group.getAttribute("data-group");
+    group.querySelectorAll(".sinyan-chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        group.querySelectorAll(".sinyan-chip").forEach(function (c) { c.classList.remove("is-selected"); });
+        chip.classList.add("is-selected");
+        if (kind === "pain") selectedPain = chip.getAttribute("data-val");
+        if (kind === "time") selectedTime = chip.getAttribute("data-val");
+        syncMessage();
+        try {
+          gtag("event", "article_pain_chip_select", {
+            article_slug: slug,
+            chip_group: kind,
+            chip_value: chip.getAttribute("data-val"),
+            page_path: window.location.pathname
+          });
+        } catch (err) {}
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initReadingProgressBar();
   initTheme();
@@ -412,6 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAndEngagementTelemetry();
   initInstantSearch();
   initShareButtons();
+  initArticleConversionWidget();
   // LINE reservation buttons
   document.querySelectorAll("a.js-line").forEach(function (a) {
     a.href = LINE_URL;
