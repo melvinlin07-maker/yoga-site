@@ -25,12 +25,12 @@
 
 | 層級 | 作戰模組 | 目前進度 | 狀態摘要 |
 | :---: | :--- | :---: | :--- |
-| **第 1 層** | **技術與 GEO 地基** | **88%** | `geo audit` 總分 **91/100（Excellent）**。`robots.txt`、`llms.txt`、圖片 Alt（100%）、GSC 網址乾淨度（零 `/amp/`、零參數污染）皆已完成；**唯一缺口為首頁 `<title>` 品牌名置前（吃掉手機點擊率），以及全站品牌名稱三種混用、缺少 `/.well-known/ai.txt` 與 `/ai/service.json`**。 |
-| **第 2 層** | **全站架構與內耗清查** | **55%** | 127 頁 Sitemap 架構完整、零實質內容衰退（近 90 天曝光逆勢暴增）；但**「壁繩瑜珈」與「AI 體態檢測」兩大核心詞簇出現 4～10 頁嚴重互搶（Cannibalization）**，且站內 `index.html` 連結導致首頁流量分裂成 `/` 與 `/index.html`，主力落地頁 `/assessment.html` 平均互動僅 10.8～13.0 秒。 |
-| **第 3 層** | **黃金機會詞與零點擊防禦** | **40%** | 抓出 **5 大高曝光 0 點擊／低 CTR 金礦頁**（`pose-cross-legged-numb.html`、`pose-what-is-chest-opening.html`、`pose-what-is-restorative.html`、`pose-what-is-hip-opening.html`、`blog-what-is-wall-rope.html`），急需補入「GSC 扇出問句 H2 ＋ 首段 100 字 RAG 原子答案塊」。 |
-| **第 4 層** | **實體權威（Entity Graph）與信號** | **45%** | 首頁已具備 `@graph` 與 `VideoObject`；但**全站 138 頁僅 4 頁有 `sameAs`（且僅含 FB 與 Google Maps），122 篇知識文章的 `author` 寫死為機構名 `鑫彥瑜伽館` 而非 `黃淑美（阿美老師）` `@id` 實體**，且 `VideoObject` 缺少 `hasPart (Clip)` 秒數錨點。 |
-| **第 5 層** | **防流失轉換漏斗與行為觀測** | **25%** | `site.js` 已內建 GA4 (`G-6X3PD7NMMG`)、Meta Pixel 與 `oaMessage` 預填底層引擎；但**全站 100% 未安裝 Microsoft Clarity（0/138 頁）**，且 **122 篇知識文章有 120 篇未掛載 `data-line-message` / 3 秒痛點勾選分流**，導致全站知識庫（含 63 PV 的壁繩冠軍文、46 PV 的髖部情緒文、35 PV 的開胸文）**LINE 預約點擊近乎為 0（僅 1 次點擊）**！ |
-| **第 6 層** | **閉環追蹤與飛輪迭代** | **30%** | `site.js` 已具備 `line_reservation_click` / `line_contact_click` / `posture_scan_click` 事件分流，但文章未帶入 `#PostSlug` 來源追蹤碼，無法在 LINE 後台追蹤哪一篇文章帶來真實付費客。 |
+| **第 1 層** | **技術與 GEO 地基** | **96%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**（commit `6565ad4`）。首頁 `<title>` 改為在地核心詞置前（`高雄左營瑜珈教室・壁繩瑜珈與 AI 體態檢測｜鑫彥瑜珈運動館`）、補建 `.nojekyll` 修復 `/.well-known/ai.txt` 為 HTTP 200（`ai_discovery` 1→2 分）、294 處 `href="index.html"` 全數收斂為 `./`。 |
+| **第 2 層** | **全站架構與內耗清查** | **82%** | ✅ 首頁 `/` 分裂已消滅；`ai-assessment.html` 舊測試頁已退役並導向 `assessment.html`；「壁繩」(`blog-what-is-wall-rope` → `about-wall-rope`) 與「AI體態」(`blog-first-time-ai-assessment` → `assessment.html`) 權責錨點已切分。 |
+| **第 3 層** | **黃金機會詞與零點擊防禦** | **80%** | ✅ **地雷 2 已完成**。Top 5 高曝光金礦頁（`pose-cross-legged-numb`、`pose-what-is-chest-opening`、`pose-what-is-hip-opening`、`pose-what-is-restorative`、`blog-what-is-wall-rope`）全面補齊 GSC 扇出問句 H2、首段 100 字 RAG 原子答案塊與原生 HTML `<table>`。 |
+| **第 4 層** | **實體權威（Entity Graph）與信號** | **82%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**。全站 106 篇 `BlogPosting.author` 升級為 `Person` `@id: about.html#amei`（黃淑美／阿美老師），`about.html` 補齊 `#amei` 完整資歷節點；`sameAs` 四大核心頁統一對齊 **FB + IG (`lanyingmin0209`) + Google 商家**；全站消滅 112 處舊名 `鑫彥瑜伽館`。 |
+| **第 5 層** | **防流失轉換漏斗與行為觀測** | **85%** | ✅ **地雷 1 已完成並線上實測 `LIVE=True`**。全站 122 篇知識文章自動掛載 3 條痛點分流＋10 秒自測斷點＋2 題快速勾選預填 LINE `#文章代碼`；`neck-release.html` 補齊 `#neck-release` 預填；`ai-assessment.html` 已導回 `assessment.html`；`site.js` 已預留 `CLARITY_PROJECT_ID` 接口待填入。 |
+| **第 6 層** | **閉環追蹤與飛輪迭代** | **75%** | ✅ `site.js` 已串聯 `article_pain_chip_select`、`line_reservation_click` 與 `#PostSlug` 來源代碼閉環；後續待 14～28 天回測 GSC CTR 與 GA4 轉換率。 |
 
 ---
 
