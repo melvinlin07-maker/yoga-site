@@ -163,15 +163,45 @@
   display: none !important;
 }
 
+  #review-reserve{scroll-margin-top:90px}
+  .review-booking-card{max-width:640px;margin:0 auto 24px;padding:26px 22px 22px;border:1.5px solid #ac8949;border-radius:16px;background:#24392f;color:#fff}
+  .review-booking-card fieldset{border:0;padding:0;min-inline-size:0;margin:0 0 15px}
+  .review-booking-card legend{font-size:14px;color:#f0d79c;font-weight:700;margin-bottom:7px}
+  .review-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .review-chips label{position:relative;max-width:100%;cursor:pointer}
+  .review-chips input{position:absolute;opacity:0;width:1px;height:1px}
+  .review-chips span{display:block;padding:8px 12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:14px;line-height:1.5}
+  .review-chips input:checked + span{background:linear-gradient(135deg,#e0b24b,#c6892e);color:#20140a;font-weight:700;border-color:#e0b24b}
+  .review-chips input:focus-visible + span{outline:2px solid white;outline-offset:2px}
+  .review-preview{padding:12px 14px;margin:0 0 14px;background:rgba(0,0,0,.32);border:1px dashed #b99550;border-radius:10px;color:#f3e5e9}
+  .review-preview small{color:#f0d79c}
+  .review-preview p{margin:4px 0 0;color:#fff;font-size:14px;line-height:1.65}
+  .review-booking-card .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;text-align:center}
+
+[data-theme="dark"] .trans-feature-wrap,[data-theme="dark"] .tmnl-wrap{background:#211820;color:#f5e9ef}
+[data-theme="dark"] .trans-card,[data-theme="dark"] .tmnl{background:#30222c;color:#f5e9ef}
+[data-theme="dark"] .trans-user-tag,[data-theme="dark"] .tmnl .nm{color:#f5e9ef}
+[data-theme="dark"] .trans-issue-tag,[data-theme="dark"] .trans-point--before b{color:#f0b8c8}
+[data-theme="dark"] .trans-point--before p,[data-theme="dark"] .trans-point--ai p,[data-theme="dark"] .trans-point--after p,[data-theme="dark"] .tmnl .say,[data-theme="dark"] .tmnl .src,[data-theme="dark"] .rev-note{color:#f0e0e9}
+[data-theme="dark"] .trans-point--ai b,[data-theme="dark"] .tmnl .stars{color:#f0d79c}
+[data-theme="dark"] .trans-point--after b{color:#b7e6c1}
+[data-theme="dark"] .trans-quote{background:#493542;color:#f9e9f1}
+[data-theme="dark"] .rev-links a.ghostlink,[data-theme="dark"] .r-btn{background:#30222c;color:#f5e9ef}
+[data-theme="dark"] .r-btn.is-active{background:#e0b24b;border-color:#e0b24b;color:#20140a}
+.review-booking-card{text-align:left}
+.cta-band .review-preview p{margin:4px 0 0;color:#fff}
+.line-float.is-booking-visible{opacity:0;visibility:hidden;pointer-events:none;transition:none}
+@media(max-width:640px){.review-booking-card{padding:16px 13px}}
+
 </style>
 <!-- SEO-GEO:PAGE-GRAPH -->
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/reviews.html#webpage","url":"https://sinyanyoga.com.tw/reviews.html","name":"他們來過、練過，然後留了下來。","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":{"@id":"https://sinyanyoga.com.tw/#organization"},"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/reviews.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"學員見證","item":"https://sinyanyoga.com.tw/reviews.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/reviews.html#webpage","url":"https://sinyanyoga.com.tw/reviews.html","name":"他們來過、練過，然後留了下來。","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":{"@id":"https://sinyanyoga.com.tw/#organization"},"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"},"dateModified":"2026-11-20","author":{"@type":"Organization","@id":"https://sinyanyoga.com.tw/#organization","name":"鑫彥瑜伽館"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/reviews.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"學員見證","item":"https://sinyanyoga.com.tw/reviews.html"}]}]}</script>
 <!-- /SEO-GEO:PAGE-GRAPH -->
 <script>
 (function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
 </head>
-<body data-line-message="你好，看到學員好評分享，我想預約首次 NT$299 AI 體態檢測！">
+<body data-line-message="老師您好，我看完學員見證（來源代碼：#reviews），想預約首次 NT$299 AI 體態檢測。">
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="./">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
@@ -184,7 +214,7 @@
     <li><a href="blog.html">部落格</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
   </ul>
-  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$299 檢測</a>
+  <a href="#" class="btn js-line nav-cta-btn" data-line-purpose="reservation" data-cta-location="nav" data-offer="ai_assessment" data-offer-value="299">LINE 預約體驗</a>
   <button type="button" class="theme-toggle-btn" aria-label="切換夜間護眼模式" title="切換夜間護眼模式">🌙</button>
   <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
@@ -197,7 +227,7 @@
     <div class="eyebrow">學員的真實聲音</div>
     <h1>他們來過、練過，<br>然後留了下來。</h1>
     <p>下面每一則，都是高雄左營的學員在 Google 與 Facebook 留下的真實評價。沒有修飾、沒有代寫——就是他們親身體驗後，想說的話。</p>
-    <div class="cta"><a href="#" class="btn js-line">加 LINE，換你來體驗 →</a></div>
+    <div class="cta"><a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="hero" data-offer="ai_assessment" data-offer-value="299">加 LINE，換你來體驗 →</a></div>
   </div></div>
 </section>
 
@@ -474,21 +504,52 @@
 </div></div></section>
 
 <!-- CTA -->
-<section class="cta-band">
-  <div class="eyebrow" style="justify-content:center">換你了</div>
-  <h2>下一則好評，想不想是你寫的？</h2>
-  <p>先從一次 AI 體態檢測開始——原價 NT$699，首次到店優惠 NT$299。看懂自己的身體，再決定怎麼練。加 LINE，我們幫你安排。</p>
-  <a href="#" class="btn js-line">預約首次 NT$299 AI 體態檢測</a>
+<section class="cta-band" id="review-reserve" aria-labelledby="review-reserve-title">
+  <h2 id="review-reserve-title">想先體驗哪一種？</h2>
+    <div class="review-booking-card">
+      <fieldset>
+        <legend>1. 看完見證，你最想先體驗哪一種？</legend>
+        <div class="review-chips">
+          <label><input type="radio" name="review-pick-0" value="首次 NT$299 AI 體態檢測" data-offer="ai_assessment" data-offer-value="299" checked><span>首次 NT$299 AI 體態檢測</span></label>
+          <label><input type="radio" name="review-pick-0" value="NT$399 零基礎入門班" data-offer="beginner_yoga_monday" data-offer-value="399"><span>NT$399 零基礎入門班</span></label>
+          <label><input type="radio" name="review-pick-0" value="壁繩小團課／先領課表" data-offer="wall_rope_group" data-offer-value="399"><span>壁繩小團課／先領課表</span></label>
+          <label><input type="radio" name="review-pick-0" value="NT$1,500 一對一肩頸調整" data-offer="one_on_one_neck_1500" data-offer-value="1500"><span>NT$1,500 一對一肩頸調整</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>2. 你目前最接近哪一種身體狀態？</legend>
+        <div class="review-chips">
+          <label><input type="radio" name="review-pick-1" value="肩頸反覆緊繃／圓肩" checked><span>肩頸反覆緊繃／圓肩</span></label>
+          <label><input type="radio" name="review-pick-1" value="筋骨硬／零基礎怕跟不上"><span>筋骨硬／零基礎怕跟不上</span></label>
+          <label><input type="radio" name="review-pick-1" value="久坐腰痠／骨盆或下肢卡"><span>久坐腰痠／骨盆或下肢卡</span></label>
+          <label><input type="radio" name="review-pick-1" value="想找有支點的安全運動"><span>想找有支點的安全運動</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>3. 方便到高雄左營教室的時段？</legend>
+        <div class="review-chips">
+          <label><input type="radio" name="review-pick-2" value="平日白天" checked><span>平日白天</span></label>
+          <label><input type="radio" name="review-pick-2" value="平日晚上"><span>平日晚上</span></label>
+          <label><input type="radio" name="review-pick-2" value="週末時段"><span>週末時段</span></label>
+          <label><input type="radio" name="review-pick-2" value="請先傳課表參考"><span>請先傳課表參考</span></label>
+        </div>
+      </fieldset>
+      <div class="review-preview">
+        <small>開啟 LINE 後可修改文字再送出，課程以館方回覆為準。</small>
+        <p id="review-line-preview" aria-live="polite">老師您好，我看完學員見證（來源代碼：#reviews）。想體驗：【首次 NT$299 AI 體態檢測】。我的狀態：【肩頸反覆緊繃／圓肩】。方便時段：【平日白天】。請幫我確認可約時段，謝謝！</p>
+      </div>
+      <a href="https://lin.ee/5rWzdNd" class="btn js-line" data-line-purpose="reservation" data-cta-location="reviews_master_picker" data-offer="ai_assessment" data-offer-value="299" data-line-message="老師您好，我看完學員見證（來源代碼：#reviews）。想體驗：【首次 NT$299 AI 體態檢測】。我的狀態：【肩頸反覆緊繃／圓肩】。方便時段：【平日白天】。請幫我確認可約時段，謝謝！">開啟 LINE 詢問體驗</a>
+    </div>
 </section>
 
 <footer class="site">
   <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
-  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$299 AI 體態檢測</a><br>
-  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" data-line-purpose="reservation" data-cta-location="footer" data-offer="ai_assessment" data-offer-value="299" href="#">LINE 預約體驗</a><br>
+  <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>  <small class="legal">內容審校：<a href="about.html" rel="author">鑫彥瑜伽館</a> · 最後更新：<time datetime="2026-11-20">2026-11-20</time> · 請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
 </footer>
 
-<a class="line-float js-line" href="#" aria-label="預約首次 NT$299 AI 體態檢測"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b></a>
-<script src="site.js?v=20261112-p0"></script>
+<a class="line-float js-line" data-line-purpose="reservation" data-cta-location="float" data-offer="ai_assessment" data-offer-value="299" href="#" aria-label="LINE 預約體驗"><span>LINE 預約</span><b>選擇適合你的體驗</b></a>
+<script src="site.js?v=20261120-entry-article"></script>
 
 <script>
 (function(){
@@ -509,6 +570,52 @@
       });
     });
   });
+})();
+</script>
+<script>
+(function syncReviewFloatingBooking() {
+  var card = document.querySelector('.review-booking-card');
+  var button = document.querySelector('.line-float');
+  function update() {
+    var rect = card.getBoundingClientRect();
+    button.classList.toggle('is-booking-visible', rect.top < window.innerHeight && rect.bottom > 0);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('pageshow', update);
+  if ('IntersectionObserver' in window) new IntersectionObserver(update).observe(card);
+  update();
+})();
+
+
+(function initReviewPicker() {
+  var picker = document.getElementById('review-reserve');
+  var buttons = document.querySelectorAll('.js-line[data-line-purpose="reservation"]');
+  var preview = document.getElementById('review-line-preview');
+  var entry = '';
+  try {
+    var stored = sessionStorage.getItem('sinyan_entry_article') || '';
+    if (/^(?:blog|pose)-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(stored)) entry = stored;
+  } catch (error) {
+    // Preserve ordinary LINE booking if storage is blocked.
+  }
+  function sync() {
+    var selected = picker.querySelectorAll('input:checked');
+    var offer = selected[0].dataset;
+    var message = '老師您好，我看完學員見證（來源代碼：#reviews）。' +
+      '想體驗：【' + selected[0].value + '】。我的狀態：【' + selected[1].value +
+      '】。方便時段：【' + selected[2].value + '】。請幫我確認可約時段，謝謝！';
+    if (entry) message += '（初次閱讀：#' + entry + '）';
+    preview.textContent = message;
+    document.body.dataset.leadValue = offer.offerValue;
+    buttons.forEach(function (button) {
+      button.dataset.lineMessage = message;
+      button.dataset.offer = offer.offer;
+      button.dataset.offerValue = offer.offerValue;
+    });
+  }
+  picker.addEventListener('change', sync);
+  sync();
 })();
 </script>
 </body>
