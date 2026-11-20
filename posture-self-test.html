@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sinyanyoga.com.tw/assets/og/og-self-test.jpg">
 <link rel="canonical" href="https://sinyanyoga.com.tw/posture-self-test.html">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/posture-self-test.html#webpage","url":"https://sinyanyoga.com.tw/posture-self-test.html","name":"體態訊號掃描","isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":["體態調整","壁繩瑜伽","高雄左營瑜伽"],"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/posture-self-test.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"體態知識庫","item":"https://sinyanyoga.com.tw/blog.html"},{"@type":"ListItem","position":3,"name":"體態訊號掃描","item":"https://sinyanyoga.com.tw/posture-self-test.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://sinyanyoga.com.tw/posture-self-test.html#webpage","url":"https://sinyanyoga.com.tw/posture-self-test.html","name":"體態訊號掃描","dateModified":"2026-11-21","author":{"@type":"Organization","@id":"https://sinyanyoga.com.tw/#organization","name":"鑫彥瑜伽館"},"isPartOf":{"@id":"https://sinyanyoga.com.tw/#website"},"about":["體態調整","壁繩瑜伽","高雄左營瑜伽"],"inLanguage":"zh-Hant","publisher":{"@id":"https://sinyanyoga.com.tw/#organization"}},{"@type":"BreadcrumbList","@id":"https://sinyanyoga.com.tw/posture-self-test.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://sinyanyoga.com.tw/"},{"@type":"ListItem","position":2,"name":"體態知識庫","item":"https://sinyanyoga.com.tw/blog.html"},{"@type":"ListItem","position":3,"name":"體態訊號掃描","item":"https://sinyanyoga.com.tw/posture-self-test.html"}]}]}</script>
 <style>
   /* 45–60 歲為主要讀者：內文最小 17px、說明不用等寬字、對比拉高 */
   .scan{
@@ -383,6 +383,34 @@
     font-family: inherit;
   }
 
+
+  .observation-card { margin: 24px 0; padding: clamp(14px, 4vw, 28px); border: 1px solid var(--hair); border-radius: 14px; background: var(--sf); color: var(--tx); }
+  .observation-card h3 { margin: 8px 0; }
+  .observation-card p { color: var(--dim); }
+  .observation-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); gap: 12px; }
+  .observation-day { margin: 0; min-width: 0; padding: 10px; border: 1px solid var(--hair); border-radius: 8px; }
+  .observation-day legend { color: var(--gold); padding: 0 4px; }
+  .observation-day label { display: block; font-size: .9rem; }
+  .observation-day select, .observation-day textarea { display: block; width: 100%; margin: 4px 0 8px; padding: 6px; border: 1px solid var(--hair); border-radius: 4px; color: var(--tx); background: var(--sf2); font: inherit; color-scheme: dark; }
+  .observation-day textarea { resize: vertical; }
+  .observation-card a { max-width: 100%; white-space: normal; text-align: center; }
+  .line-float.scan-float-hidden { opacity: 0; pointer-events: none; visibility: hidden; transition: none; }
+  html:not([data-theme="dark"]) .scan {
+    --gr:#fbf4ed; --sf:#fff9f3; --sf2:#f1e5da; --hair:#b39889;
+    --tx:#2d2325; --dim:#514348; --dim2:#64535a; --gold:#784a20; --gold-hi:#623910;
+    --low:#255a44; --mid:#794719; --high:#883b2c;
+  }
+  html:not([data-theme="dark"]) .sc-open::after { background: radial-gradient(120% 90% at 72% 30%, rgba(251,244,237,.6), var(--gr) 74%); }
+  html:not([data-theme="dark"]) .go, html:not([data-theme="dark"]) .sc-ai-bridge-badge,
+  html:not([data-theme="dark"]) .sc-ai-book-btn, html:not([data-theme="dark"]) .btn-copy-preview:hover { color: #fff; }
+  html:not([data-theme="dark"]) .sc-ai-bridge,
+  html:not([data-theme="dark"]) .sc-ai-bridge-card { background: var(--sf); }
+  html:not([data-theme="dark"]) .thumb .cap { color: #fff4ec; }
+  html:not([data-theme="dark"]) .sc-ai-bridge h3 { color: var(--tx); }
+  html:not([data-theme="dark"]) .sc-ai-msg-preview code { background: var(--sf2); color: var(--tx); }
+  html:not([data-theme="dark"]) .observation-day select,
+  html:not([data-theme="dark"]) .observation-day textarea { color-scheme: light; }
+  html:not([data-theme="dark"]) :is(.segs i,.chart .bar,.ctrack) { background-color: var(--hair); }
 </style>
 <script>
 (function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
@@ -527,14 +555,14 @@
 
   <!-- 現場精密 AI 檢測升級引導卡 -->
   <div class="sc-ai-bridge">
-    <div class="sc-ai-bridge-badge">現場精密驗證 · 首次到店限定 NT$299</div>
+    <div class="sc-ai-bridge-badge">路線 A · 想請老師當面看</div>
     <div class="sc-ai-bridge-grid">
       <div class="sc-ai-bridge-text">
-        <h3>線上自測指出了方向，現場 AI 檢測能看見「精準角度」</h3>
-        <p>自測表整理出你的日常代償感覺；到高雄左營教室，專業老師會透過 AI 姿勢分析拍攝，20 分鐘精準測量你的<strong>頭部前傾、高低肩落差、脊椎與骨盆傾斜角度</strong>，並當面為你解讀。</p>
+        <h3>帶著你的日常線索，預約首次 NT$299 AI 體態檢測</h3>
+        <p>把剛勾選的時刻帶到高雄左營教室。約 20 分鐘，老師會和你看拍攝的站姿角度，對照你平常最有感的動作。</p>
         <ul class="sc-ai-bridge-points">
           <li>✔ <b>現場 AI 骨骼地標拍攝分析</b>（運動功能性評估，非醫療診斷）</li>
-          <li>✔ <b>找出肉眼難以察覺的深層代償</b>，不再猜測哪裡緊</li>
+          <li>✔ <b>一起對照日常感受與站姿影像</b></li>
           <li>✔ <b>專業老師當面解讀建議</b>，檢測後不強迫推銷課程</li>
         </ul>
       </div>
@@ -556,6 +584,8 @@
       </div>
     </div>
   </div>
+
+  <div id="observation-result-slot"></div>
 
   <!-- 詳細數據（降級） -->
   <div class="sect">
@@ -612,6 +642,43 @@
   </div>
 
 </div></section>
+<div class="scan-wrap" id="observation-return-slot">
+<section class="observation-card" id="observation-card" aria-labelledby="observation-title" hidden>
+  <span class="lbl">路線 B · 今天想先自己觀察</span>
+  <h3 id="observation-title">先記三天，看看它通常在什麼時候出現</h3>
+  <p>免登入，每天挑一個最有感的情境就好。紀錄留在這個瀏覽器，只有你選擇開啟 LINE 時才會帶入訊息。</p>
+  <p>自測與觀察卡用來回顧日常姿勢線索，不能用於醫療診斷或風險分型。</p>
+  <div class="observation-days">
+    <fieldset class="observation-day">
+      <legend>Day 1 · 第 1 天</legend>
+      <label for="observation-scene-1">今天最常注意到的情境</label>
+      <select id="observation-scene-1"><option value="">選一個情境</option><option>開會久坐</option><option>低頭滑手機</option><option>開車轉頭</option><option>剛睡醒</option><option>站久或走久</option></select>
+      <label for="observation-note-1">簡短備註（選填）</label>
+      <textarea id="observation-note-1" maxlength="60" rows="2" placeholder="例如：下午開會後比較有感"></textarea>
+    </fieldset>
+    <fieldset class="observation-day">
+      <legend>Day 2 · 第 2 天</legend>
+      <label for="observation-scene-2">今天最常注意到的情境</label>
+      <select id="observation-scene-2"><option value="">選一個情境</option><option>開會久坐</option><option>低頭滑手機</option><option>開車轉頭</option><option>剛睡醒</option><option>站久或走久</option></select>
+      <label for="observation-note-2">簡短備註（選填）</label>
+      <textarea id="observation-note-2" maxlength="60" rows="2" placeholder="例如：下午開會後比較有感"></textarea>
+    </fieldset>
+    <fieldset class="observation-day">
+      <legend>Day 3 · 第 3 天</legend>
+      <label for="observation-scene-3">今天最常注意到的情境</label>
+      <select id="observation-scene-3"><option value="">選一個情境</option><option>開會久坐</option><option>低頭滑手機</option><option>開車轉頭</option><option>剛睡醒</option><option>站久或走久</option></select>
+      <label for="observation-note-3">簡短備註（選填）</label>
+      <textarea id="observation-note-3" maxlength="60" rows="2" placeholder="例如：下午開會後比較有感"></textarea>
+    </fieldset>
+  </div>
+  <p id="observation-status" role="status"></p>
+  <div id="observation-summary" hidden>
+    <h4>3 天觀察總結</h4>
+    <p id="observation-summary-text" aria-live="polite"></p>
+    <a href="https://lin.ee/5rWzdNd" class="btn js-line" id="observation-line" data-line-purpose="contact" data-cta-location="selftest_observation">把這 3 天觀察紀錄帶進 LINE 問老師</a>
+  </div>
+</section>
+</div>
 </div>
 
 <section class="content-bridge"><div class="wrap content-bridge-grid">
@@ -623,12 +690,34 @@
   <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
   高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$299 AI 體態檢測</a><br>
   <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="blog.html" class="footer-secondary">體態文章</a> · <a href="resources.html" class="footer-secondary">免費資源</a><br>
+  <small>內容審校：<a href="about.html" rel="author">鑫彥瑜伽館</a> · 最後更新：<time datetime="2026-11-21">2026-11-21</time></small><br>
   <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
 </footer>
 
 <a class="line-float js-line" href="#" aria-label="想多了解，加 LINE 問老師"><span>LINE 詢問</span><b>掃描完想多了解？</b></a>
 <script src="site.js?v=20261112-p0"></script>
 <script>
+
+// Keep the site navigation and LINE initialization working when theme storage is blocked.
+try {
+  localStorage.setItem('sinyan_scan_storage_probe', '1');
+  localStorage.removeItem('sinyan_scan_storage_probe');
+} catch (error) {
+  window.initTheme = function () {
+    var button = document.querySelector('.theme-toggle-btn');
+    var dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    function apply() {
+      if (dark) document.documentElement.dataset.theme = 'dark';
+      else delete document.documentElement.dataset.theme;
+      button.textContent = dark ? '☀️' : '🌙';
+      button.title = dark ? '切換日間模式' : '切換夜間護眼模式';
+      button.setAttribute('aria-label', button.title);
+    }
+    button.addEventListener('click', function(){ dark = !dark; apply(); });
+    apply();
+  };
+}
+
 (function(){
   var LABEL = {shoulder:"圓肩駝背",neck:"肩頸緊繃",pelvis:"骨盆・下半身",sedentary:"久坐生活",sleep:"睡眠・放鬆"};
   var ORDER = ["shoulder","neck","pelvis","sedentary","sleep"];
@@ -736,6 +825,105 @@
   var tNow = document.getElementById('t-now'), tScene = document.getElementById('t-scene'), tWhy = document.getElementById('t-why');
   var askedEl = document.getElementById('asked'), undo = document.getElementById('undo'), cap = document.getElementById('thumb-cap');
   var imA = document.getElementById('im-a'), imB = document.getElementById('im-b'), front = imA;
+
+
+  var observation = document.getElementById('observation-card');
+  var fields = Array.from(observation.querySelectorAll('fieldset'));
+  var observationKey = 'sinyan_posture_observation_v1';
+  var observationSummary = document.getElementById('observation-summary');
+  var observationText = document.getElementById('observation-summary-text');
+  var observationLine = document.getElementById('observation-line');
+  var observationStatus = document.getElementById('observation-status');
+  var firstArticle = '';
+  try {
+    var entry = sessionStorage.getItem('sinyan_entry_article') || '';
+    if (/^(?:blog|pose)-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry)) firstArticle = '（初次閱讀：#' + entry + '）';
+  } catch (error) {}
+
+  var storedDays = [];
+  try {
+    var savedDays = JSON.parse(localStorage.getItem(observationKey));
+    if (Array.isArray(savedDays)) storedDays = savedDays;
+  } catch (error) {}
+
+  fields.forEach(function(field, i) {
+    var record = storedDays[i];
+    if (!record) return;
+    var select = field.querySelector('select');
+    if (Array.from(select.options).some(function(option){ return option.value === record.scene; })) select.value = record.scene;
+    if (typeof record.note === 'string') field.querySelector('textarea').value = record.note.slice(0, 60);
+  });
+
+  var revisiting = fields.some(function(field) {
+    return field.querySelector('select').value || field.querySelector('textarea').value;
+  });
+  if (revisiting) observation.hidden = false;
+
+  function readObservation() {
+    return fields.map(function(field){
+      return {scene: field.querySelector('select').value, note: field.querySelector('textarea').value.trim().slice(0, 60)};
+    });
+  }
+
+  function renderObservation(days) {
+    var recorded = days.filter(function(day){ return day.scene; });
+    observationSummary.hidden = !(recorded.length && (revisiting || recorded.length === 3));
+    if (!recorded.length) return;
+
+    var counts = new Map();
+    recorded.forEach(function(day){ counts.set(day.scene, (counts.get(day.scene) || 0) + 1); });
+    var most = Math.max.apply(null, Array.from(counts.values()));
+    var scenes = Array.from(counts.keys()).filter(function(scene){ return counts.get(scene) === most; });
+    observationText.textContent = '已記 ' + recorded.length + '／3 天。' +
+      (most > 1 ? '出現最多：' + scenes.join('、') + '（各 ' + most + ' 次）。' : '目前沒有重複的情境。');
+    var lines = days.map(function(day, i) {
+      return day.scene ? 'Day ' + (i + 1) + '：' + day.scene + (day.note ? '（' + day.note + '）' : '') : '';
+    }).filter(Boolean);
+    observationLine.dataset.lineMessage = '老師您好，想請教這幾天觀察到的日常線索（來源代碼：#posture-self-test-3day）。\n' +
+      lines.join('\n') + '\n' + observationText.textContent + firstArticle;
+  }
+
+  function saveObservation() {
+    var days = readObservation();
+    try {
+      localStorage.setItem(observationKey, JSON.stringify(days));
+      observationStatus.textContent = '已儲存在此瀏覽器。';
+    } catch (error) {
+      observationStatus.textContent = '此瀏覽器目前無法儲存，這次仍可繼續填寫或帶進 LINE。';
+    }
+    renderObservation(days);
+  }
+
+  observation.addEventListener('change', saveObservation);
+  observation.addEventListener('input', function(event){
+    if (event.target.matches('textarea')) saveObservation();
+  });
+  observationLine.addEventListener('click', function(){
+    var filled = readObservation().filter(function(day){ return day.scene; }).length;
+    if (filled && typeof window.gtag === 'function') {
+      window.gtag('event', 'observation_card_save', {page_path: location.pathname, recorded_days: filled, action: 'send_to_line', transport_type: 'beacon'});
+    }
+  }, true);
+  renderObservation(readObservation());
+
+  var bookingCard = document.querySelector('.sc-ai-bridge');
+  var floating = document.querySelector('.line-float');
+  function syncFloating() {
+    var rect = bookingCard.getBoundingClientRect();
+    var logRect = observation.getBoundingClientRect();
+    var hide = (!rep.hidden && rect.top < innerHeight && rect.bottom > 0) ||
+      (!observation.hidden && logRect.top < innerHeight && logRect.bottom > 0);
+    floating.classList.toggle('scan-float-hidden', hide);
+  }
+  window.addEventListener('scroll', syncFloating, {passive: true});
+  window.addEventListener('resize', syncFloating);
+  window.addEventListener('pageshow', syncFloating);
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(syncFloating);
+    observer.observe(bookingCard);
+    observer.observe(observation);
+  }
+  syncFloating();
 
   var segsEl = document.getElementById('segs');
   boxes.forEach(function(){ segsEl.appendChild(document.createElement('i')); });
@@ -1013,20 +1201,14 @@
       !writeLast({score:score, top:tops[0] || null, lv:lv.map(function(v){ return v || 0; }), ts:Date.now()});
 
     /* ── LINE 智能客製化預約文字 ── */
-    var summaryTag =
-      n === 0 ? '平時日常保養'
-      : matched.length ? matched[0].ch.h
-      : tops.length ? LABEL[tops[0]]
-      : '綜合體態代償';
-
-    var lineMsg =
-      n === 0
-        ? '你好，我剛完成體態自測，10 個時刻都沒有明顯訊號。想預約首次 NT$299 現場 AI 體態檢測做基礎了解'
-        : '你好，我剛完成體態自測，測出【' + summaryTag + '】（指數 ' + score + ' 分），想預約首次 NT$299 現場 AI 體態檢測，請老師幫我評估！';
-
-    /* 保險：預填訊息不讓它無限長，避免極端情況下深連結出問題 */
-    if(lineMsg.length > 95) lineMsg = lineMsg.slice(0, 93) + '…';
-    document.body.setAttribute('data-line-message', lineMsg);
+    var clues = boxes.map(function(box, i){
+      return lv[i] > 0 ? box.getAttribute('data-scene') + (lv[i] === 2 ? '（經常）' : '（偶爾）') : '';
+    }).filter(Boolean);
+    var lineMsg = '老師您好，我想預約首次 NT$299 AI 體態檢測（來源代碼：#posture-self-test）。' +
+      (clues.length ? '這次勾選的日常線索：' + clues.join('、') + '。' : '這次沒有勾選明顯線索，想先了解。') + firstArticle;
+    document.body.dataset.lineMessage = lineMsg;
+    document.getElementById('btn-line-bridge').dataset.lineMessage = lineMsg;
+    document.getElementById('btn-ends-line').dataset.lineMessage = lineMsg;
 
     var previewEl = document.getElementById('preview-text');
     if (previewEl) {
@@ -1034,6 +1216,9 @@
     }
 
     run.hidden = true; rep.hidden = false;
+    document.getElementById("observation-result-slot").appendChild(observation);
+    observation.hidden = false;
+    syncFloating();
     wrap.querySelectorAll('.ctrack i').forEach(function(el){ void el.offsetWidth; el.style.width = el.getAttribute('data-w') + '%'; });
     if(tops.length) { var l = wrap.querySelector('.crow.lead'); if(l) l.classList.add('open'); }
     rep.scrollIntoView({behavior:'smooth', block:'start'});
@@ -1079,6 +1264,9 @@
   document.getElementById('redo').addEventListener('click', function(){
     lv = new Array(total).fill(null); idx = 0;
     rep.hidden = true; run.hidden = false;
+    document.getElementById("observation-return-slot").appendChild(observation);
+    observation.hidden = !readObservation().some(function(day){ return day.scene || day.note; });
+    syncFloating();
     document.getElementById('arc').style.strokeDashoffset = 302;
     paint(0);
     run.scrollIntoView({behavior:'smooth', block:'start'});
