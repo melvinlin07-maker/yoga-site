@@ -256,8 +256,9 @@ flowchart TD
 
 | 實體欄位 | 官方統一標準值（全站 Schema / Footer / `llms.txt` / `ai/summary.json` 唯一口徑） |
 | :--- | :--- |
-| **主品牌實體名稱** | `鑫彥瑜珈運動館`（簡稱：`鑫彥瑜珈`；禁止再使用 `鑫彥瑜伽館`） |
-| **核心專家實體 (`@id`)** | `https://sinyanyoga.com.tw/about.html#amei` — **黃淑美（阿美老師）**（RYT-200 / RYT-95 / 艾揚格壁繩研習 180+ 小時 / 10 年+左營實體教學） |
+| **主品牌實體名稱** | `鑫彥瑜珈運動館`（簡稱：`鑫彥瑜珈`） |
+| **文章作者與內容審校統一署名** | **`鑫彥瑜伽館`**（依館方明確規範，全站 108 頁可見「內容審校」與 `BlogPosting/WebPage.author` 皆統一署名 `鑫彥瑜伽館`，指向 `about.html`；師資介紹節點則保留於 `about.html#amei`） |
+| **核心師資節點 (`@id`)** | `https://sinyanyoga.com.tw/about.html#amei` — **黃淑美（阿美老師）**（RYT-200 / RYT-95 / 艾揚格壁繩研習 180+ 小時 / 10 年+左營實體教學） |
 | **教室地址與電話** | 高雄市左營區新庄仔路 726 號 3 樓（近捷運巨蛋站步行 5–7 分鐘）｜`07-556-7387`｜每日 `09:00–20:30` |
 | **官方 `sameAs` 實體圖譜** | • Facebook：`https://www.facebook.com/sinyanyoga`<br>• Instagram：`https://www.instagram.com/lanyingmin0209/`<br>• Google 商家：`https://maps.google.com/?cid=3869696325150721929`（4.9★ / 91 則好評）<br>• 官方 LINE：`@561wigip`（`https://lin.ee/5rWzdNd`） |
 
