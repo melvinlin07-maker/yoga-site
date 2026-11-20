@@ -1,10 +1,11 @@
 # 鑫彥瑜珈運動館（`sinyanyoga.com.tw`）— SEO × GEO × 轉換 6 層作戰總規紀錄
 
-> **建立／最後實測時間**：`2026-11-19`
+> **建立／最後實測時間**：`2026-11-20`
 > **最高指導原則**：
 > 1. **第 0 條數據防呆鐵律**：GSC 資源固定為 `sc-domain:sinyanyoga.com.tw`；GA4 固定為 `ga4-yoga`（Property ID：`547750681`，目標網域：`sinyanyoga.com.tw`）。每次拉取 GA4 報表第一步必驗 `hostName == sinyanyoga.com.tw`，剔除 `localhost` / `127.0.0.1` 測試雜訊。
 > 2. **先實測現況、禁止做白工**：所有頁面修改前必先查驗線上真實原始碼與 `Last-Modified`，已到位項目直接標記「✅ 已完成／進入觀察期」。
-> 3. **6 層回報鐵律**：每次交付必標註「① 完成 6 層地圖的第幾層、② 該層進度、③ 下一層最大瓶頸」。
+> 3. **6 層誠實回報鐵律**：每次交付必標註「① 完成 6 層地圖的第幾層、② 該層真實進度（禁止把單頁微調虛報成全站 95%）、③ 下一層最大瓶頸」。
+> 4. **黃金標竿母版鐵律**：比照台灣撥筋站以 `臉部撥筋課程-學習方案/` 作為導覽列母版，瑜珈站以 **`classes.html`（8 段完整版＋3 支實拍短影音嵌入＋文字摘錄＋3 秒預填預約）** 作為全站第 1 號黃金標竿母版，經使用者驗收後再橫向複製到其餘 5 個導覽主頁與高流量主角文章。
 
 ---
 
@@ -21,16 +22,16 @@
 
 ---
 
-## 🗺️ 全站 6 層作戰進度總覽
+## 🗺️ 全站 6 層作戰進度總覽（2026-11-20 誠實校準版）
 
-| 層級 | 作戰模組 | 目前進度 | 狀態摘要 |
+| 層級 | 作戰模組 | 目前真實進度 | 狀態摘要（已完成 vs 尚未補齊） |
 | :---: | :--- | :---: | :--- |
-| **第 1 層** | **技術與 GEO 地基** | **98%** | ✅ **地雷 3 已完成並線上實測 `LIVE=True`**（commit `6565ad4`）。首頁 `<title>` 改為在地核心詞置前（`高雄左營瑜珈教室・壁繩瑜珈與 AI 體態檢測｜鑫彥瑜珈運動館`）、補建 `.nojekyll` 修復 `/.well-known/ai.txt` 為 HTTP 200（`ai_discovery` 1→2 分）、294 處 `href="index.html"` 全數收斂為 `./`。 |
-| **第 2 層** | **全站架構與內耗清查** | **92%** | ✅ 首頁 `/` 分裂已消滅；`ai-assessment.html` 舊測試頁已退役並導向 `assessment.html`；「壁繩」(`blog-what-is-wall-rope` → `about-wall-rope`) 與「AI體態」(`blog-first-time-ai-assessment` + `blog-who-needs-ai-posture-assessment` → `assessment.html`) 權責錨點已切分。 |
-| **第 3 層** | **黃金機會詞與零點擊防禦** | **94%** | ✅ **地雷 2 ＋ 剩餘項 B 已完成**。Top 5 高曝光金礦頁（`pose-cross-legged-numb`、`pose-what-is-chest-opening`、`pose-what-is-hip-opening`、`pose-what-is-restorative`、`blog-what-is-wall-rope`）＋ 4 篇預警與重點文（`blog-rounded-shoulders`、`pose-gentle-backbend-start`、`blog-massage-tight-again`、`blog-who-needs-ai-posture-assessment`）全面補齊 GSC 扇出問句 H2、首段 100 字 RAG 原子答案塊與原生 HTML `<table>`。 |
-| **第 4 層** | **實體權威（Entity Graph）與信號** | **96%** | ✅ **地雷 3 ＋ 剩餘項 C 已完成**。全站 106 篇 `BlogPosting.author` 升級為 `Person` `@id: about.html#amei`（黃淑美／阿美老師），`about.html` 補齊 `#amei` 完整資歷節點；`sameAs` 四大核心頁統一對齊 **FB + IG (`lanyingmin0209`) + Google 商家**；首頁 3 支與 `videos.html` 9 支 `VideoObject` 全數補齊 `hasPart (Clip)` 關鍵秒數錨點。 |
-| **第 5 層** | **防流失轉換漏斗與行為觀測** | **95%** | ✅ **地雷 1 ＋ 剩餘項 A 已完成並通過 Playwright 320/375/390px 零跑版實測**。全站 122 篇知識文章自動掛載 3 條痛點分流＋10 秒自測斷點＋2 題快速勾選預填 LINE `#文章代碼`；主力落地頁 `assessment.html` 完成 Argon 黃金 4 拍（起・承・轉・合）大改版並修復全站夜間深色模式 `.sec-head h2` 黑字隱形 Bug；`site.js` 已預留 `CLARITY_PROJECT_ID` 接口待填入。 |
-| **第 6 層** | **閉環追蹤與飛輪迭代** | **85%** | ✅ `site.js` 與 `assessment.html` 已串聯 `article_pain_chip_select`、`assessment_pain_chip_select`、`line_reservation_click` 與 `#PostSlug` 來源代碼閉環；進入 14～28 天 GSC CTR 與 GA4 轉換率觀察期。 |
+| **第 1 層** | **技術與 GEO 地基** | **92%** | ✅ 首頁 `<title>` 改為在地核心詞置前、補建 `.nojekyll` 修復 `/.well-known/ai.txt` 為 HTTP 200、294 處 `href="index.html"` 收斂為 `./`、夜間深色模式 `.sec-head h2` 隱形 Bug 修復。<br>⏳ 尚待：`geo audit` 上線後重跑驗收、`classes.html` 以外頁面之 `VideoObject` 實景播放器覆蓋。 |
+| **第 2 層** | **全站架構與內耗清查** | **78%** | ✅ 已完成全站 127 頁樹狀分層盤點（6 樹根 → 12 樞紐 → 5 樹幹唯一主角頁 → 106 樹枝）、`ai-assessment.html` 退役導向 `assessment.html`、壁繩與 AI 體態 2 大內耗區錨點切分。<br>⏳ 尚待：將 5 條樹幹共 106 篇樹枝文的導流內鏈全面收斂指向各自「唯一主角頁」＋ 70/30 擴寫清單執行。 |
+| **第 3 層** | **黃金機會詞與零點擊防禦** | **62%** | ✅ 已完成 Top 5 高曝光金礦頁＋4 篇預警文（共 9 篇）之問句 H2、RAG 原子答案塊與 HTML `<table>` 改版；`classes.html` 已補齊原生 HTML 4 大方案規格總表。<br>⏳ 尚待：其餘 5 大樹幹主角頁（骨盆前傾、膝髖連動、久坐失憶臀、熟齡防跌平衡、深蹲卡關）深度改寫＋嵌入對應實拍短影音。 |
+| **第 4 層** | **實體權威（Entity Graph）與影音信號** | **65%** | ✅ 全站 106 篇 `BlogPosting.author` 連回 `about.html#amei`（黃淑美／阿美老師）；四大核心頁 `sameAs` 統一對齊 FB + IG (`lanyingmin0209`) + GBP；`classes.html` 已實嵌 3 支 MP4 短影音＋Video Transcript＋`VideoObject/Clip`。<br>⏳ 尚待：**實景影音覆蓋率目前僅 4 / 127 頁（`index`, `videos`, `blog`, `classes`）**，需將 9 支實拍 Reels 陸續嵌入其餘 4 個導覽頁與 Top 8 主角文章。 |
+| **第 5 層** | **防流失轉換漏斗與黃金標竿母版** | **58%** | ✅ **第 1 號導覽列黃金標竿完整版 `classes.html`（比照台灣站 8 段架構）已完成並通過 320/375/390/1280px 亮／暗雙模式零跑版實測**；`assessment.html` 4 拍改版完成；122 篇知識文掛載 3 條痛點分流預填引擎。<br>⏳ 尚待：依 `classes.html` 黃金母版橫向升級其餘 5 個導覽主頁（`about-wall-rope`, `assessment`, `neck-release`, `about`, `reviews`）＋填入 Microsoft Clarity ID。 |
+| **第 6 層** | **閉環追蹤與飛輪迭代** | **55%** | ✅ `site.js`、`assessment.html`、`classes.html` 已串聯 `#PostSlug` / `#classes` 來源代碼與 GA4 互動事件。<br>⏳ 尚待：全站導覽頁與影音嵌入到位後，進行 14～28 天 GSC CTR × GA4 轉換率實測複盤與 Clarity 熱圖驗屍。 |
 
 ---
 
@@ -222,3 +223,116 @@ flowchart TD
    - **證據**：「盤腿坐腳麻（120+ 曝 0 點）」、「修復瑜伽（133 曝 0 點）」、「如何自己開胸（CTR 2.5%）」、「AI體態（65 曝 0 點，5 篇部落格把主力頁 `assessment.html` 擠到第 10 名）」、「壁繩瑜珈（6 頁互搶）」。文章 H2 未對齊 GSC 真實扇出問句，且舊制 `pose-*.html` 缺首段 100 字量化 RAG 原子答案塊與結構化 `<table>`。
 3. **【地雷 3｜第 1 & 4 層首頁標題違規與實體圖譜斷鏈】首頁 `<title>` 品牌名置前（吃掉高雄在地詞點擊）＋ 導覽列 `index.html` 分裂首頁權重 ＋ 122 篇文章 `Author` 實體與 `about.html#amei` 斷鏈**
    - **證據**：首頁是全站 138 頁中唯一把 `鑫彥瑜珈運動館 | ` 放在 `<title>` 最前面的頁面，導致「高雄瑜珈 (pos 8.3)」、「瑜珈教室 (pos 7.2)」0 點擊；導覽列指向 `index.html` 造成 GA4 分裂出 140 PV 的 `/index.html`；且 122 篇文章作者寫成不一致的 `鑫彥瑜伽館`，未連回 `about.html#amei` 阿美老師 `Person` 實體。
+
+
+---
+
+## 🏆 黃金標竿母版制度（比照台灣撥筋站 `臉部撥筋課程-學習方案/` 8 段架構）
+
+為徹底避免零碎修補、缺乏全站基準，瑜珈站比照台灣撥筋站 `https://bojin-expert.com/臉部撥筋課程-學習方案/`，建立 **8 段黃金標竿完整版母版**，以 **`classes.html`（課程方式與費用方案）** 作為第 1 號標竿頁完成實作與亮／暗雙模式 RWD 驗收：
+
+| 段次 | 黃金標竿必備模組 | 台灣撥筋站對照原件 | 瑜珈站 `classes.html` 實作內容 |
+| :---: | :--- | :--- | :--- |
+| **第 1 段** | 定位 Hero ＋ 痛點開場 ＋ 信任條 | 課程主標＋三定位＋4.9★ | 「身體很硬、怕跟不上團課？先看懂身體，再選怎麼練」＋Google 4.9★ (91則)＋10年+左營深耕＋壁繩卸載 30%–50%＋不強迫包堂 |
+| **第 2 段** | 4 大方案階梯卡片 ＋ 原生 HTML 規格總表 `<table>` | 四梯次課程卡片＋原生規格比較表 | `$299 AI 體態檢測`、`$399 零基礎入門班`、`壁繩瑜伽小團課`、`$1,500 一對一結構調整`＋原生 HTML 規格對照表（適用對象／時長／輔具／費用／下一步） |
+| **第 3 段** | 實作拆解 3 步驟（方法論可視化） | 手把手三步拆解 | 校正 01 先看角度再動手（AI 標線）→ 校正 02 壁繩卸重 30%–50%（關節減壓）→ 校正 03 墊邊逐一微調退階 |
+| **第 4 段** | **真實課堂／動作實拍影片直接播放 ＋ 文字摘錄 (Transcript)** | 課堂實景影片＋步驟解說 | **實嵌 3 支可直播 HTML5 MP4 短片**（`reel-9.mp4` 椅子式膝代償、`reel-2.mp4` 四足跪姿骨盆代償、`reel-4.mp4` 下樓梯膝內扣）＋可展開 `<details>` 教學文字摘錄＋完整 `VideoObject` & `Clip` JSON-LD |
+| **第 5 段** | 三段式學員真實案例（① 卡點 → ② 課堂怎麼調 → ③ 練完感受） | 學員回饋三段式＋五星驗證 | 3 位具名 Google / FB 5★ 真實學員三段式案例＋外部 Google 商家 / FB 評論查證連結 |
+| **第 6 段** | 報名前最常問 5 大 Q&A（含 `FAQPage` Schema） | 報名前常見問題 | 涵蓋筋骨硬、不推銷包堂、AI 檢測 vs 直接上課、舊傷/熟齡安全邊界、零基礎課表時段 |
+| **第 7 段** | 3 秒互動勾選（方案＋身體狀態＋時段）→ 自動預填 LINE `#classes` | 互動選擇＋LINE 預填預約 | 點選即組裝含 `#classes` 來源碼之完整詢問文字，手機喚起 `oaMessage`、桌機自動複製＋Toast 提示 |
+| **第 8 段** | 「選課之前，先把問題看清楚」雙欄主題集群導流 | 報名前必讀雙欄文章導流 | 左欄「比較上課方式與壁繩入門」＋右欄「對照身體卡點」，把權重精準灌回各樹幹唯一主角頁 |
+
+### 導覽列主頁橫向對齊清單（依 `classes.html` 母版推進）
+1. ✅ **`classes.html`**（第 1 號黃金標竿母版 — 已完成 8 段完整架構＋3 支實拍 MP4＋亮暗模式 320/375/390/1280px 零跑版實測）
+2. ⏳ **`about-wall-rope.html`**（壁繩瑜伽支柱主頁 — 下一順位：補齊實拍壁繩動作短片＋8 段規格與對比表）
+3. ⏳ **`assessment.html`**（AI 體態檢測主力成交頁 — 已完成 4 拍改版，補齊實拍 AI 檢測／對錯短片＋三段式案例＋雙欄導流）
+4. ⏳ **`neck-release.html`**（$1,500 一對一肩頸調整頁 — 0 轉換重災區，比照母版補齊實拍影片＋三段案例＋3 秒預填預約）
+5. ⏳ **`about.html`**（關於鑫彥與阿美老師 — 補齊實體環境／教學實拍短片＋資歷時間軸＋雙欄導流）
+6. ⏳ **`reviews.html`**（學員見證頁 — 升級三段式分類案例＋影片回饋＋直通體驗預填）
+
+---
+
+## 🪪 官方實體檔案庫（Official Entity Profile Archive）
+
+| 實體欄位 | 官方統一標準值（全站 Schema / Footer / `llms.txt` / `ai/summary.json` 唯一口徑） |
+| :--- | :--- |
+| **主品牌實體名稱** | `鑫彥瑜珈運動館`（簡稱：`鑫彥瑜珈`；禁止再使用 `鑫彥瑜伽館`） |
+| **核心專家實體 (`@id`)** | `https://sinyanyoga.com.tw/about.html#amei` — **黃淑美（阿美老師）**（RYT-200 / RYT-95 / 艾揚格壁繩研習 180+ 小時 / 10 年+左營實體教學） |
+| **教室地址與電話** | 高雄市左營區新庄仔路 726 號 3 樓（近捷運巨蛋站步行 5–7 分鐘）｜`07-556-7387`｜每日 `09:00–20:30` |
+| **官方 `sameAs` 實體圖譜** | • Facebook：`https://www.facebook.com/sinyanyoga`<br>• Instagram：`https://www.instagram.com/lanyingmin0209/`<br>• Google 商家：`https://maps.google.com/?cid=3869696325150721929`（4.9★ / 91 則好評）<br>• 官方 LINE：`@561wigip`（`https://lin.ee/5rWzdNd`） |
+
+---
+
+## 🌳 全站 127 頁樹狀總架構清點（樹根 → 樞紐 → 5 大樹幹唯一主角頁 → 106 篇樹枝）
+
+> **盤點基準**：`sitemap.xml` 實測共 **127 個正式收錄網址**（不含 10 個 `noindex` 實驗頁），嚴格區分為 **6 樹根成交頁 ＋ 12 樞紐／信任／互動頁 ＋ 3 法規頁 ＋ 106 篇主題集群文章（分屬 5 大樹幹，每幹僅設 1～2 個唯一主角頁防止內耗）**。
+
+### 一、樹根層（Conversion Roots，6 頁 — 商業變現與實體到店終點）
+1. `index.html`（`/`）— 首頁總樞紐（高雄左營瑜珈教室・壁繩瑜珈與 AI 體態檢測）
+2. `classes.html` — 🏆 課程方式與費用方案（**第 1 號黃金標竿母版**）
+3. `assessment.html` — 首次 NT$299 AI 體態檢測主力落地頁
+4. `neck-release.html` — NT$1,500 一對一肩頸與體態結構調整頁
+5. `contact.html` — 左營教室交通、停車、營業時間與聯絡頁
+6. `rental.html` — 教室空間出租與開課老師合作招募頁
+
+### 二、樞紐與互動護城河層（Hubs & Trust Moat，12 頁）
+- **知識支柱樞紐（5 頁）**：`know-yoga.html`、`about-wall-rope.html`、`about-poses.html`、`blog.html`、`practice-guide.html`
+- **互動自測護城河（4 頁）**：`posture-self-test.html`、`body-tension-map.html`、`resources.html`、`beginner-yoga-guide.html`
+- **品牌信任與影音庫（3 頁）**：`about.html`、`reviews.html`、`videos.html`
+- **法規頁（3 頁）**：`privacy.html`、`terms.html`、`disclaimer.html`
+
+### 三、5 大樹幹「唯一主角頁」與 106 篇樹枝全盤點
+
+#### 🪵 樹幹 1｜壁繩瑜伽與輔具卸載集群（7 篇）
+- **🎯 唯一主角頁**：`about-wall-rope.html`（定義／好處／誰適合）＋ `blog-what-is-wall-rope.html`（第一次上課 5 流程，已切分權責指向支柱頁）
+- **🌿 樹枝支援文（6 篇）**：
+  - `blog-wall-rope-vs-yoga.html`、`blog-stiff-body-wall-rope.html`、`blog-wall-rope-seniors.html`、`blog-wall-rope-anterior-pelvic-tilt.html`、`blog-massage-gun-vs-wall-rope.html`、`blog-honest-limits-wall-rope.html`
+
+#### 🪵 樹幹 2｜上肢・開胸・圓肩駝背與肩頸代償集群（30 篇）
+- **🎯 唯一主角頁**：`pose-what-is-chest-opening.html`（開胸與圓肩調整核心，932 曝）＋ `blog-massage-tight-again.html`（肩頸反覆緊繃與代償源頭）
+- **🌿 樹枝支援文（28 篇）**：
+  - **圓肩／駝背／高低肩（8 篇）**：`blog-rounded-shoulders.html`、`blog-rounded-shoulder-self-test.html`、`blog-rounded-shoulder-where-to-start.html`、`blog-rounded-shoulders-hunchback-uneven-shoulders-different.html`、`blog-hunchback-height.html`、`blog-why-i-look-hunched-in-photos.html`、`blog-why-sit-up-straight-fails.html`、`blog-uneven-shoulders-hips.html`
+  - **肩頸／富貴包／3C 低頭／落枕／頭痛（12 篇）**：`blog-neck-hump.html`、`blog-phone-posture.html`、`blog-office-neck-release.html`、`blog-headache-neck.html`、`blog-jaw-tmj-tension.html`、`blog-stiff-neck-crick.html`、`blog-recurring-neck-tightness-not-just-neck.html`、`blog-is-it-frozen-shoulder.html`、`blog-winter-cold-shoulders.html`、`blog-breathing-shoulder-release.html`、`blog-posture-bracing-compensation.html`、`blog-arm-flab-rounded-shoulders.html`
+  - **椅子／書包／手部／開胸後彎動作（8 篇）**：`blog-choosing-a-chair.html`、`blog-students-backpack-posture.html`、`blog-hand-wrist-elbow-pain-comparison.html`、`blog-tired-cant-sleep-chest.html`、`pose-chest-tight-front.html`、`pose-backbend-not-folding.html`、`pose-gentle-backbend-start.html`、`pose-protect-wrist-neck-knee.html`
+
+#### 🪵 樹幹 3｜下肢・開髖・盤腿麻・骨盆與護膝集群（30 篇）
+- **🎯 唯一主角頁**：`pose-cross-legged-numb.html`（盤腿腳麻 990 曝）＋ `pose-what-is-hip-opening.html`（開髖 411 曝）＋ `blog-anterior-pelvic-tilt.html`（骨盆前傾）＋ `blog-knee-hip-connection.html`（膝蓋與髖代償）
+- **🌿 樹枝支援文（26 篇）**：
+  - **骨盆／下背／臀肌／女性（9 篇）**：`blog-low-back-core.html`、`blog-dead-butt-glutes.html`、`blog-emotions-stored-in-hips.html`、`blog-pelvic-floor-leaks.html`、`blog-postpartum-menopause-posture.html`、`blog-yoga-period-cramps.html`、`blog-sitting-8-hours.html`、`blog-standing-low-back.html`、`blog-housework-bending.html`
+  - **下肢／深蹲／防跌／步態／足弓（10 篇）**：`blog-squat-functional-mobility.html`、`blog-balance-midlife.html`、`blog-feet-shoes-foundation.html`、`blog-walking-gait-posture.html`、`blog-lifting-carrying-daily.html`、`blog-commute-posture.html`、`blog-long-flight-stiffness.html`、`blog-sprain-strain-comeback.html`、`pose-protect-knees.html`、`pose-balance-midline.html`
+  - **前彎／腿後／站姿動作（7 篇）**：`pose-forward-fold-toes.html`、`pose-hinge-not-bend.html`、`pose-hip-opening-myths.html`、`pose-tight-hamstrings.html`、`pose-root-through-feet.html`、`pose-standing-foundation.html`、`pose-period-pregnancy-injury.html`
+
+#### 🪵 樹幹 4｜呼吸・修復瑜伽與睡眠減壓集群（10 篇）
+- **🎯 唯一主角頁**：`pose-what-is-restorative.html`（修復瑜伽 271 曝）＋ `pose-inhale-or-exhale.html`（呼吸配合 497 曝）
+- **🌿 樹枝支援文（8 篇）**：
+  - `pose-belly-breathing.html`、`pose-why-breath-matters.html`、`blog-bedtime-back-release.html`、`blog-sleep-position-pillow.html`、`blog-40-min-break.html`、`blog-gentle-movement-stress.html`、`blog-morning-or-evening-practice.html`、`blog-post-illness-stiffness.html`
+
+#### 🪵 樹幹 5｜AI 體態檢測決策・選課比較與觀念破除集群（29 篇）
+- **🎯 唯一主角頁**：`blog-first-time-ai-assessment.html`（AI 檢測流程，導流至 `assessment.html`）＋ `blog-choosing-first-class-format.html`（選課分流，導流至 `classes.html`）
+- **🌿 樹枝支援文（27 篇）**：
+  - **AI 檢測與學習週期決策（14 篇）**：`blog-who-needs-ai-posture-assessment.html`、`blog-ai-assessment-not-just-numbers.html`、`blog-reading-your-assessment-report.html`、`blog-no-pain-ai-posture-assessment.html`、`blog-class-massage-or-ai-assessment.html`、`blog-after-first-yoga-class.html`、`blog-first-class-what-to-bring.html`、`blog-home-practice-vs-studio.html`、`blog-how-long-to-see-results.html`、`blog-first-three-months-journey.html`、`blog-progress-plateau.html`、`blog-maintain-dont-relapse.html`、`blog-restarting-after-a-break.html`、`blog-too-late-to-start.html`
+  - **迷思破除與動作哲學（13 篇）**：`blog-yoga-vs-strength-training.html`、`blog-yoga-vs-stretching.html`、`blog-yoga-myths-busted.html`、`blog-overstretching-risk.html`、`blog-forward-head-daily.html`、`blog-posture-looking-older.html`、`pose-what-is-asana.html`、`pose-movement-categories.html`、`pose-alignment-over-depth.html`、`pose-core-not-situps.html`、`pose-no-pain-no-gain-myth.html`、`pose-roll-up-spine.html`、`pose-advanced-poses-needed.html`
+
+### 四、70 / 30 擴寫鐵律（避免發新文自我內耗）
+- **70% 精力鎖死舊文翻新＋實景影片嵌入**：優先翻修上述 5 大樹幹主角頁與排名 4–15 的既有樹枝文（補問句 H2、RAG 原子答案塊、HTML `<table>`、實拍短影音）。
+- **30% 精力僅允許開「目前 127 頁完全沒有」的新切入長尾需求**（如高雄在地社群／熟齡族群／特定生活場景新問句），開文前必先核對上方 106 篇清單，確認無重疊才准動筆。
+
+---
+
+## 🎬 影音實景串接總地圖（Video Embedding Master Map）
+
+> **現況盤點（2026-11-20）**：全站目前僅 **4 / 127 頁**（`index.html`、`videos.html`、`blog.html`、`classes.html`）實際嵌入可播放影音。以下為本館 **9 支實拍對錯拆解短片（`assets/reels/reel-1.mp4`～`reel-9.mp4`）** 之全站嵌入作戰分配表（每處嵌入必附 HTML5 `<video controls>` ＋ `<details>` 文字摘錄 ＋ `VideoObject` / `Clip` Schema）：
+
+| 影片編號 | 實拍主題與檔案（核對自 `videos.html` 真實素材） | 已嵌入頁面 | 下一波必嵌目標（導覽主頁 ＋ 對應主角文章） |
+| :---: | :--- | :--- | :--- |
+| **`reel-1.mp4`** | 膝蓋碰到牆，腳跟別偷偷抬起來！（足踝活動度・防塌陷） | `videos.html`, `index.html` | ⏳ `blog-squat-functional-mobility.html`, `blog-feet-shoes-foundation.html` |
+| **`reel-2.mp4`** | **破 10 萬觀看**｜屁股一往後坐，腰就先拱起來？（四足跪姿・骨盆腰背代償） | `videos.html`, `index.html`, ✅ **`classes.html`** | ⏳ `about-wall-rope.html`, `blog-anterior-pelvic-tilt.html`, `blog-low-back-core.html`, `pose-hinge-not-bend.html` |
+| **`reel-3.mp4`** | 穿褲子一抬腳，身體東倒西歪？（站姿平衡・熟齡防跌定錨） | `videos.html` | ⏳ `blog-balance-midlife.html`, `pose-balance-midline.html` |
+| **`reel-4.mp4`** | 下樓梯時，膝蓋有沒有偷偷往裡跑？（承重動態・膝內扣預防） | `videos.html`, `index.html`, ✅ **`classes.html`** | ⏳ `blog-knee-hip-connection.html`, `pose-protect-knees.html` |
+| **`reel-5.mp4`** | 手一伸遠，腳踝先忙了？（重心路徑・動態平衡） | `videos.html` | ⏳ `assessment.html`, `pose-standing-foundation.html`, `blog-walking-gait-posture.html` |
+| **`reel-6.mp4`** | 越想站穩，腳趾反而抓得越緊？（足底筋膜・三點支撐） | `videos.html` | ⏳ `pose-root-through-feet.html`, `blog-feet-shoes-foundation.html` |
+| **`reel-7.mp4`** | 妳不是坐下，是最後幾公分直接掉下去？（日常動態・臀肌離心力） | `videos.html` | ⏳ `blog-dead-butt-glutes.html`, `blog-lifting-carrying-daily.html` |
+| **`reel-8.mp4`** | 踮腳時，腳趾會不會偷偷抓住地板？（小腿活動度・腳趾控制） | `videos.html` | ⏳ `pose-tight-hamstrings.html`, `blog-standing-low-back.html` |
+| **`reel-9.mp4`** | 以為在練臀腿，結果先燒的是大腿前側？（椅子式對位・臀肌啟動） | `videos.html`, ✅ **`classes.html`** | ⏳ `about-wall-rope.html`, `blog-what-is-wall-rope.html`, `pose-cross-legged-numb.html` |
+
+> **🚨 Red Team 影音缺口預警**：實測 `assets/reels/` 現有 9 支本機 MP4 全數屬於「下肢・足踝・膝蓋・骨盆・平衡」主題，**尚未有「肩頸開胸／壁繩懸吊實景／AI 體態檢測實測」的 MP4 短片**！建議下一波從 FB/IG Reels 匯出或補錄 2～3 支（`reel-10` 肩頸開胸、`reel-11` 壁繩上課實景、`reel-12` AI 檢測現場流程），專門用來灌入 `neck-release.html`、`about-wall-rope.html`、`assessment.html` 與 `pose-what-is-chest-opening.html`。
