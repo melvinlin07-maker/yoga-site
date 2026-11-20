@@ -393,7 +393,9 @@
   .neck-swipe{display:none;font-size:13px;margin-bottom:8px}
   .neck-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .neck-video{border:1px solid #cbbfb5;border-radius:12px;overflow:hidden;scroll-margin-top:90px}
-  .neck-video video{display:block;width:100%;aspect-ratio:4/5;object-fit:contain;background:#161019}
+  .neck-video-frame{aspect-ratio:9/14;overflow:hidden;background:#161019}
+  .neck-video-frame video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+  #video-pelvis-kneel video{object-position:center top}
   .neck-video-body{padding:14px;font-size:14px;line-height:1.65}
   .neck-video-body small{display:inline-block;background:#efe5d8;color:#43222f;padding:3px 9px;border-radius:99px;margin-bottom:6px}
   .neck-video-body details{margin-top:8px}
@@ -421,8 +423,8 @@
   footer a{color:#7a666d}
 
   /* 浮動 CTA */
-  .dock{position:fixed; left:0; right:0; bottom:0; z-index:50; display:flex; justify-content:center; padding:14px; background:linear-gradient(180deg,transparent,rgba(22,16,25,.4)); opacity:0; pointer-events:none; transition:opacity .4s ease}
-  .dock.show{opacity:1; pointer-events:auto}
+  .dock{position:fixed; left:0; right:0; bottom:0; z-index:50; display:flex; justify-content:center; padding:14px; background:linear-gradient(180deg,transparent,rgba(22,16,25,.4)); opacity:0; visibility:hidden; pointer-events:none; transition:none}
+  .dock.show{opacity:1; visibility:visible; pointer-events:auto; transition:opacity .4s ease}
   .dock a{position:relative; overflow:hidden; background:linear-gradient(135deg,#f6e6b8,var(--gold-lt) 45%,var(--gold)); color:#231800; font-weight:800; font-size:15px; padding:14px 30px; border-radius:999px; text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,.4); animation:dockPulse 2.4s ease-in-out infinite}
   .dock a::before{content:""; position:absolute; top:0; left:-70%; width:45%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent); transform:skewX(-20deg); animation:ctaShine 5s ease-in-out infinite; pointer-events:none}
   @keyframes dockPulse{
@@ -449,7 +451,6 @@
     .neck-booking-card{padding:18px 14px}
     .neck-swipe{display:block}
     .neck-video-grid{grid-template-columns:1fr}
-    .neck-video video{max-height:380px}
     /* 手機：課程流程膠囊置中，單顆 AI 膠囊才不會孤零零靠左 */
     .hero-formula{align-items:center; width:100%}
     .hf-row{justify-content:center}
@@ -593,10 +594,12 @@
     </div>
     <div class="neck-video-grid">
       <article class="neck-video" id="video-pelvis-kneel">
-        <video controls preload="none" poster="assets/reels/reel-cover-2.jpg" playsinline aria-labelledby="neck-video-2-title">
-          <source src="assets/reels/reel-2.mp4" type="video/mp4">
-          <a href="assets/reels/reel-2.mp4">觀看四足跪姿示範</a>
-        </video>
+        <div class="neck-video-frame">
+          <video controls preload="none" poster="assets/reels/reel-cover-2.jpg" playsinline aria-labelledby="neck-video-2-title">
+            <source src="assets/reels/reel-2.mp4" type="video/mp4">
+            <a href="assets/reels/reel-2.mp4">觀看四足跪姿示範</a>
+          </video>
+        </div>
         <div class="neck-video-body">
           <small>骨盆與下背代償</small>
           <h3 id="neck-video-2-title">四足跪姿往後坐，為什麼腰先拱？</h3>
@@ -608,10 +611,12 @@
         </div>
       </article>
       <article class="neck-video" id="video-chair-wallrope">
-        <video controls preload="none" poster="assets/reels/reel-cover-9.jpg" playsinline aria-labelledby="neck-video-9-title">
-          <source src="assets/reels/reel-9.mp4" type="video/mp4">
-          <a href="assets/reels/reel-9.mp4">觀看椅子式示範</a>
-        </video>
+        <div class="neck-video-frame">
+          <video controls preload="none" poster="assets/reels/reel-cover-9.jpg" playsinline aria-labelledby="neck-video-9-title">
+            <source src="assets/reels/reel-9.mp4" type="video/mp4">
+            <a href="assets/reels/reel-9.mp4">觀看椅子式示範</a>
+          </video>
+        </div>
         <div class="neck-video-body">
           <small>椅子式與重心對位</small>
           <h3 id="neck-video-9-title">做椅子式，大腿前側為什麼先用力？</h3>
@@ -733,7 +738,7 @@
 </div>
 
 <noscript><style>.fade{opacity:1!important;transform:none!important}</style></noscript>
-<script src="site.js?v=20261112-p0"></script>
+<script src="site.js?v=20261120-entry-article"></script>
 <script>
 // 進場淡入
 if('IntersectionObserver' in window){
@@ -748,11 +753,13 @@ if('IntersectionObserver' in window){
 // 浮動 CTA
 var dock = document.getElementById('dock');
 var bookingCard = document.getElementById('reserve');
-window.addEventListener('scroll', function(){
-  var y = window.scrollY;
-  var fTop = bookingCard.getBoundingClientRect().top;
-  dock.classList.toggle('show', y > window.innerHeight*1.1 && fTop > window.innerHeight*.5);
-},{passive:true});
+function syncBookingDock() {
+  var cardTop = bookingCard.getBoundingClientRect().top;
+  dock.classList.toggle('show', window.scrollY > window.innerHeight * 1.1 && cardTop >= window.innerHeight);
+}
+window.addEventListener('scroll', syncBookingDock, {passive:true});
+window.addEventListener('resize', syncBookingDock);
+syncBookingDock();
 
 // 勾選後同步預覽與共用 LINE 點擊處理器讀取的訊息。
 (function () {

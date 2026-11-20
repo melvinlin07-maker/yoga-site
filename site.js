@@ -223,9 +223,13 @@ function initTheme() {
 
 // 7. 離開意圖溫柔挽留彈窗（僅在知識閱讀頁／首頁的桌面端離開視窗時觸發，不干擾高意圖成交頁與手機回滑操作）
 function initExitIntentModal() {
-  if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
   var path = window.location.pathname || "";
   if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test|contact/i.test(path)) return;
+  try {
+    if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
+  } catch (error) {
+    return;
+  }
 
   function createModal() {
     if (document.getElementById("exitIntentModal")) return document.getElementById("exitIntentModal");
@@ -540,6 +544,25 @@ function initArticleConversionWidget() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  var articleSlugPattern = /^(?:blog|pose)-[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  var pageSlug = window.location.pathname.split("/").pop().replace(/\.html$/, "");
+  var isReservationPage = /^(assessment|classes|neck-release)$/.test(pageSlug);
+  var entryArticle = "";
+  if (isReservationPage || articleSlugPattern.test(pageSlug)) {
+    try {
+      var entryKey = "sinyan_entry_article";
+      var storedArticle = sessionStorage.getItem(entryKey) || "";
+      if (articleSlugPattern.test(storedArticle)) {
+        entryArticle = storedArticle;
+      } else if (articleSlugPattern.test(pageSlug)) {
+        sessionStorage.setItem(entryKey, pageSlug);
+        entryArticle = pageSlug;
+      }
+    } catch (error) {
+      // Privacy settings can block storage; the original LINE message still works.
+    }
+  }
+
   initReadingProgressBar();
   initTheme();
   initExitIntentModal();
@@ -623,6 +646,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // 桌機端開啟 LINE 加好友/QR 頁面（避免桌面瀏覽器 line.me/R 302 轉跳行銷首頁），用戶可直接貼上預填文字。
       // 未設定時維持原行為（開啟 LINE_URL），不影響其他既有頁面。
       var lineMessage = a.getAttribute("data-line-message") || body.getAttribute("data-line-message");
+      if (lineMessage && linePurpose === "reservation" && isReservationPage && entryArticle) {
+        lineMessage += "（初次閱讀：#" + entryArticle + "）";
+      }
       if (lineMessage && navigator.clipboard && navigator.clipboard.writeText) {
         try { navigator.clipboard.writeText(lineMessage); } catch (e) {}
       }
