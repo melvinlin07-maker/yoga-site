@@ -498,7 +498,7 @@
     <li><a href="neck-release.html">一對一調整</a></li>
     <li><a href="classes.html">課程方式</a></li>
     <li><a href="reviews.html">學員見證</a></li>
-    <li><a href="blog.html" class="active">部落格</a></li>
+    <li><a class="active" aria-current="page">部落格</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
   </ul>
   <a href="posture-self-test.html" class="btn nav-cta-btn js-scan" data-cta-location="nav">免費體態訊號掃描</a>
@@ -1036,7 +1036,7 @@ document.querySelectorAll('a.js-scan').forEach(function (a) {
         </div>
         <a href="#" class="btn js-line" data-line-purpose="reservation" data-cta-location="blog_video_modal" data-offer="ai_assessment" data-offer-value="299">預約首次 NT$299 AI 檢測 →</a>
       </div>
-      <a id="vmBlogLink" href="blog.html" class="v-modal-cta">
+      <a id="vmBlogLink" class="v-modal-cta">
         📖 深入閱讀完整生物力學解析文章 →
       </a>
       <a href="videos.html" class="v-modal-more-link">
@@ -1067,13 +1067,15 @@ document.querySelectorAll('a.js-scan').forEach(function (a) {
     var views = card.getAttribute('data-views') || '';
     var title = card.getAttribute('data-title') || '';
     var desc = card.getAttribute('data-desc') || '';
-    var blog = card.getAttribute('data-blog') || 'blog.html';
+    var blog = card.getAttribute('data-blog');
 
     vmCat.textContent = cat;
     vmViews.textContent = views ? ('🔥 ' + views + ' 觀看') : '';
     vmTitle.textContent = title;
     vmDesc.textContent = desc;
-    vmBlogLink.href = blog;
+    if (blog) vmBlogLink.href = blog;
+    else vmBlogLink.removeAttribute('href');
+    vmBlogLink.style.display = blog ? '' : 'none';
 
     vmPlayer.poster = vPoster;
     vmPlayer.src = vSrc;
