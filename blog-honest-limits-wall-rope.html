@@ -46,6 +46,18 @@
   .article .opportunity-table thead th { background: var(--table-head); }
   .article .opportunity-hint { display: none; }
   @media (max-width: 680px) { .article .opportunity-hint { display: block; } }
+
+  .article .rope-next { margin: 28px 0; padding: clamp(16px, 4vw, 28px); background: #fff4e7; color: #34232a; border: 1px solid #c3a38e; border-radius: 14px; }
+  .article .rope-next h2 { margin-top: 0; }
+  .article .rope-ask { margin: 22px 0 0; padding: 14px 16px; border: 1px solid #b492a0; border-radius: 10px; color: #34232a; background: #fffbf7; }
+  .article .rope-ask summary { cursor: pointer; font-weight: 700; }
+  .article .rope-ask-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,220px),1fr)); gap: 12px; margin-bottom: 12px; }
+  .article .rope-ask label { min-width: 0; }
+  .article .rope-ask select { display: block; width: 100%; min-height: 44px; padding: 6px 8px; font: inherit; color: inherit; background: #fff; border: 1px solid #9d7487; border-radius: 6px; }
+  .article .rope-ask a { color: #71364e; }
+  [data-theme="dark"] .article :is(.rope-next,.rope-ask) { background: #30232d; color: #fff2f6; border-color: #a7899a; }
+  [data-theme="dark"] .article .rope-ask select { background: #3e2a37; color-scheme: dark; }
+  [data-theme="dark"] .article .rope-ask a { color: #ffd0e0; }
 </style>
 </head>
 <body>
@@ -61,7 +73,7 @@
     <li><a href="blog.html" class="active">部落格</a></li>
     <li><a href="about.html">關於鑫彥</a></li>
   </ul>
-  <a href="#" class="btn js-line nav-cta-btn">預約首次 NT$299 檢測</a>
+  <button type="button" class="theme-toggle-btn" aria-label="切換夜間護眼模式" title="切換夜間護眼模式">🌙</button>
   <button class="nav-toggle" aria-label="選單" aria-controls="menu" aria-expanded="false" type="button">☰</button>
 </div></nav>
 <div class="page-back wrap"><a class="page-back-link" href="blog.html" data-back-link>← 回到上頁</a></div>
@@ -98,19 +110,7 @@
   <p>可以先看你想解決的是上課節奏、需要較多個別動作回饋，還是單純想建立練習習慣。這些需求可對照<a class="inlink" href="blog-choosing-first-class-format.html">第一次練習怎麼選團課、入門班或一對一</a>；想確認費用、課型和時段，再看<a class="inlink" href="classes.html">現有課程方式與費用</a>。</p>
   <figure class="frame article-hero"><img src="assets/res-desk-relief.jpg" alt="老師在教室指導練習" loading="lazy" decoding="async"></figure>
 
-  <div class="article-cta">
-    <h3>先說清楚你的期待，再決定怎麼開始</h3>
-    <p>可以先問老師課堂會觀察什麼，想清楚自己更在意哪個動作與哪種上課節奏。</p>
-    <a class="btn js-line" href="#">預約首次 NT$299 AI 體態檢測（原價 NT$699）</a>
-  </div>
-
   <p class="note-safety">本文是一般動作與課程資訊。若練習引發明顯不適，先停止並依情況尋求醫療專業評估。</p>
-  <div class="article-cta soft">
-    <h3>還想先自己觀察？</h3>
-    <p>從一個最常有感的生活時刻開始。</p>
-    <a class="btn" href="resources.html">查看本期免費資源 →</a>
-  </div>
-
   <section class="section" id="faq" style="padding:0;margin:32px 0">
     <div class="sec-head" style="margin-bottom:16px"><h2 style="font-size:20px">常見問題</h2></div>
     <div class="faq">
@@ -122,7 +122,11 @@
     </div>
   </section>
 
-  <p class="opportunity-scan">還沒想好要預約，可以先回想一次最近覺得最需要硬撐的情境。<a class="inlink" href="posture-self-test.html">開始免費體態訊號掃描</a>。</p>
+  <section class="rope-next" aria-labelledby="rope-next-title">
+    <h2 id="rope-next-title">先挑一個日常動作，看看它什麼時候最有感</h2>
+    <p>可以從起身、抬手或久坐後的感受擇一，用免費體態訊號掃描整理。想多看幾天，也可以用免登入的觀察卡記下來。</p>
+    <a class="btn" href="posture-self-test.html">開始免費體態訊號掃描 →</a>
+  </section>
 
   <div class="related">
     <span class="lab">延伸閱讀</span>
@@ -134,15 +138,45 @@
   <div class="topic-return"><span>想了解壁繩原理或選課？</span><a href="about-wall-rope.html">認識壁繩瑜伽原理與好處</a><a href="classes.html">查看壁繩課程與費用方案</a></div>
 
   <p class="center" style="margin-top:26px"><a href="blog.html" style="color:var(--pink);font-weight:600">← 回部落格</a></p>
+  <details class="rope-ask" id="rope-ask">
+    <summary>想問老師一個問題？</summary>
+    <p>可以直接開啟 LINE。下面兩個欄位都可以留空。</p>
+    <div class="rope-ask-fields">
+      <label for="rope-topic">想問什麼（選填）
+        <select id="rope-topic"><option value="">先不選</option><option>想確認課堂可以觀察什麼</option><option>想問某個日常動作</option><option>想了解如何從小幅度開始</option></select>
+      </label>
+      <label for="rope-time">方便時段（選填）
+        <select id="rope-time"><option value="">先不選</option><option>平日白天</option><option>平日晚上</option><option>週末</option></select>
+      </label>
+    </div>
+    <a class="text-link js-line" href="https://lin.ee/5rWzdNd" data-line-purpose="contact" data-cta-location="wall_rope_article_question" data-line-message="老師您好，我看完這篇文章，想請教壁繩課程。（來源代碼：#blog-honest-limits-wall-rope）">用 LINE 問老師 →</a>
+  </details>
 </article>
 
 <footer class="site">
   <b>鑫彥瑜珈<span class="fb-sep"> · </span><span class="fb-tag">壁繩瑜伽 × 體態調整</span></b><br>
-  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387　|　<a class="js-line" href="#">預約首次 NT$299 AI 體態檢測</a><br>
+  高雄市左營區新庄仔路 726 號 3 樓　|　每日 09:00–20:30　|　07-556-7387<br>
   <a href="contact.html" class="footer-secondary">交通與聯絡</a> · <a href="resources.html" class="footer-secondary">免費資源</a> · <a href="rental.html" class="footer-secondary">場地出租・老師合作</a><br>  <small class="legal">請尊重智慧財產權<span class="legal-links"><a href="terms.html">使用條款</a><a href="privacy.html">隱私政策</a><a href="disclaimer.html">免責說明</a></span></small>
 </footer>
 
-<a class="line-float js-line" href="#" aria-label="預約首次 NT$299 AI 體態檢測"><span>LINE 預約</span><b>原⁠價 NT$699｜首⁠次 NT$299 AI 檢⁠測</b></a>
 <script src="site.js?v=20261120-entry-article"></script>
+
+<script>
+(function () {
+  var form = document.getElementById('rope-ask');
+  var link = form.querySelector('.js-line');
+  var topic = document.getElementById('rope-topic');
+  var time = document.getElementById('rope-time');
+  var intro = link.dataset.lineMessage;
+  function syncMessage() {
+    link.dataset.lineMessage = intro +
+      (topic.value ? ' 想詢問：' + topic.value + '。' : '') +
+      (time.value ? ' 方便時段：' + time.value + '。' : '');
+  }
+  form.addEventListener('change', syncMessage);
+  window.addEventListener('pageshow', syncMessage);
+  syncMessage();
+})();
+</script>
 </body>
 </html>
