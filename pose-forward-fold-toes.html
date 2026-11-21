@@ -54,6 +54,16 @@
   .article .reader-followup a, .article .reader-contact a { color: #71364e; text-underline-offset: 3px; }
   [data-theme="dark"] .article .reader-next { background: #30232d; border-color: #ad899a; color: #fff2f6; }
   [data-theme="dark"] .article :is(.reader-followup,.reader-contact) a { color: #ffd0e0; }
+  .fold-practice { --fold-bg: #fff7ef; --fold-key: #74364c; --fold-ink: #392820; --fold-border: #caa696; margin-bottom: 30px; }
+  [data-theme="dark"] .fold-practice { --fold-bg: #352933; --fold-key: #ffd3e3; --fold-ink: #fff2f6; --fold-border: #957287; }
+  .fold-scenes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .fold-scenes > div { border: 1px solid var(--fold-border); border-radius: 12px; padding: 14px; background: var(--fold-bg); color: var(--fold-ink); }
+  .article .fold-scenes h3 { margin: 0 0 3px; }
+  .fold-scenes p { margin: 5px 0 0; }
+  .fold-setting { color: var(--fold-key); font-weight: 700; font-size: .9rem; }
+  .fold-takeaway { margin-top: 13px; padding-inline-start: 14px; border-inline-start: 3px solid var(--fold-border); }
+  .fold-takeaway p { margin: 4px 0 0; }
+  @media (max-width: 620px) { .fold-scenes { grid-template-columns: 1fr; gap: 9px; } }
 </style>
 </head>
 <body data-cta-mode="soft-scan">
@@ -80,10 +90,20 @@
   <h1>前彎摸不到腳尖，可以判斷柔軟度或髖活動度嗎？</h1>
   <p class="meta">骨盆・下背・開髖 · 閱讀約 3 分鐘<br><time datetime="2026-07-29">發布：2026-07-29</time> · <time datetime="2026-11-21">更新：2026-11-21</time></p>
 
-  <figure class="frame article-hero"><img src="assets/pose-forward-fold-toes.jpg" alt="前彎伸展"></figure>
+  <p class="lead opportunity-opening">你早上坐著，襪子順利穿好了。到瑜伽課上，手卻連腳尖都碰不到。兩次都是往前彎，為什麼感覺差那麼多？</p>
+  <section class="fold-practice" aria-labelledby="fold-practice-title">
+    <h2 id="fold-practice-title">同一個人，三種前彎</h2>
+    <div class="fold-scenes">
+      <div><h3>穿襪子</h3><p class="fold-setting">有椅面，腳可以移近</p><p>坐穩後把腳移近一點。襪子穿得上，就已達成目的。</p></div>
+      <div><h3>拿低處的物品</h3><p class="fold-setting">可以站近，也可以彎膝</p><p>先靠近物品再伸手。留意拿到後能不能穩穩站回來。</p></div>
+      <div><h3>課堂前彎</h3><p class="fold-setting">腳的位置固定，手往前伸</p><p>可以先把手停在大腿上，或在老師引導下借支撐。比一比哪個版本能從容回位。</p></div>
+    </div>
+    <div class="fold-takeaway"><strong>看的是動作怎麼完成</strong><p>同樣是伸手，腳能不能移近、有沒有支撐、需不需要把東西帶回來，都會改變任務。</p></div>
+  </section>
 
-  <p class="lead opportunity-opening">老師帶到坐姿前彎，隔壁同學手已經碰到腳尖，你還停在小腿。你不一定想下得更深，只是想知道是不是自己的身體特別硬。</p>
   <p class="opportunity-answer">前彎能不能碰到腳尖，會受身體比例、膝蓋角度、骨盆和背部的動作分配，以及有無支點影響。可在相近條件下比較扶桌、膝略彎或減少幅度時的感受。手到哪裡只是一次觀察，不能單獨判定柔軟度、髖活動度或是哪個部位卡住。刺痛或麻木時先停止。</p>
+
+  <figure class="frame article-hero"><img src="assets/pose-forward-fold-toes.jpg" alt="前彎伸展"></figure>
 
   <h2>前彎摸不到腳尖，這個結果能說明什麼？</h2>
   <p>它可以描述你在這次站法、膝蓋角度和幅度下，手到達的位置。若突然改了站距、膝蓋角度或支點，結果也可能不同。可以記下是想抓腳尖才用力，還是做小幅度就不舒服，再決定下一步。</p>
@@ -131,7 +151,7 @@
     <a href="pose-tight-hamstrings.html">腿後總是很緊，一直拉就會鬆嗎？</a>
     <a href="pose-what-is-hip-opening.html">「開髖」到底在開哪裡？久坐族為什麼特別需要</a>
   </div>
-  <div class="topic-return"><span>想進一步看懂髖部與骨盆的用力方式？</span><a href="pose-what-is-hip-opening.html">看懂開髖與骨盆代償</a><a href="assessment.html">首次 $299 AI 體態檢測</a></div>
+  <div class="topic-return"><span>想進一步看懂髖部與骨盆的用力方式？</span><a href="pose-what-is-hip-opening.html">看懂開髖與骨盆代償</a><a href="pose-tight-hamstrings.html">看看腿後反覆緊時可以觀察什麼</a></div>
 
   <p class="center" style="margin-top:26px"><a href="about-poses.html" style="color:var(--pink);font-weight:600">← 回認識瑜伽動作</a></p>
 </article>

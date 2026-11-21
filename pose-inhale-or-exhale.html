@@ -54,6 +54,21 @@
   .article .reader-followup a, .article .reader-contact a { color: #71364e; text-underline-offset: 3px; }
   [data-theme="dark"] .article .reader-next { background: #30232d; border-color: #ad899a; color: #fff2f6; }
   [data-theme="dark"] .article :is(.reader-followup,.reader-contact) a { color: #ffd0e0; }
+  .breath-practice { --beat-bg: #fff7ed; --beat-ink: #382721; --beat-edge: #ad7769; --beat-key: #813956; margin-bottom: 30px; }
+  [data-theme="dark"] .breath-practice { --beat-bg: #332730; --beat-ink: #fff2f6; --beat-edge: #c388a2; --beat-key: #ffd2e1; }
+  .article .breath-sequence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0; padding: 0; list-style: none; }
+  .article .breath-sequence li { padding: 15px; border-block-start: 3px solid var(--beat-edge); border-radius: 10px; background: var(--beat-bg); color: var(--beat-ink); }
+  .article .breath-sequence li::before { content: none; }
+  .breath-sequence span { display: block; color: var(--beat-key); font-size: .9rem; }
+  .breath-sequence strong { display: block; margin-top: 4px; }
+  .breath-sequence p { margin: 5px 0 0; }
+  .breath-takeaway { padding-inline-start: 14px; border-inline-start: 3px solid var(--beat-edge); }
+  @media (max-width: 620px) {
+    .article .breath-sequence { grid-template-columns: 1fr; gap: 0; margin-inline-start: 7px; border-inline-start: 2px solid var(--beat-edge); }
+    .article .breath-sequence li { margin: 0 0 8px 16px; border-block-start: 0; }
+    .article .breath-sequence li:last-child { margin-bottom: 0; }
+    .article .breath-sequence li::before { content: ""; inset-inline-start: -22px; top: 19px; width: 10px; height: 10px; border-radius: 50%; background: var(--beat-edge); }
+  }
 </style>
 </head>
 <body data-cta-mode="soft-scan">
@@ -80,10 +95,20 @@
   <h1>瑜伽動作配呼吸，什麼時候吸氣、什麼時候吐氣？</h1>
   <p class="meta">呼吸・修復・睡眠 · 閱讀約 3 分鐘<br><time datetime="2026-07-29">發布：2026-07-29</time> · <time datetime="2026-11-21">更新：2026-11-21</time></p>
 
-  <figure class="frame article-hero"><img src="assets/pose-inhale-or-exhale.jpg" alt="呼吸配合動作"></figure>
+  <p class="lead opportunity-opening">老師已經說「吸氣起身」，你還在前彎裡。你是要立刻追上，還是先留一拍？</p>
+  <section class="breath-practice" aria-labelledby="breath-practice-title">
+    <h2 id="breath-practice-title">錯過一拍，從哪裡接回去？</h2>
+    <ol class="breath-sequence">
+      <li><span>老師的口令</span><strong>「吐氣，往前。」</strong><p>你慢慢前彎，還留在自己能控制的幅度。</p></li>
+      <li><span>你還在上一個動作</span><strong>「吸氣，起身。」</strong><p>先留在有支撐的幅度，讓這口氣自然走完。</p></li>
+      <li><span>重新跟上</span><strong>等下一個熟悉的口令</strong><p>回到站得穩的位置，再跟下一個動作。</p></li>
+    </ol>
+    <p class="breath-takeaway"><strong>下次跟丟口令</strong>　先穩住，再呼吸，最後才接動作。</p>
+  </section>
 
-  <p class="lead opportunity-opening">課堂上老師喊「吸氣打開」，你還在上一個動作裡。等終於跟上，才發現自己一直憋著氣，開始擔心是不是做反了。</p>
   <p class="opportunity-answer">瑜伽課常用吸氣提示延展、吐氣提示前彎或放下。吸氣時胸廓會有擴張的動作，這能當作配合節奏的線索。若忙著追口令反而屏氣，可以放慢、縮小幅度，先維持自然呼吸。吸吐提示會隨動作和教法變化，單靠配氣不能判定動作是否安全。</p>
+
+  <figure class="frame article-hero"><img src="assets/pose-inhale-or-exhale.jpg" alt="呼吸配合動作"></figure>
 
   <h2>瑜伽前彎、伸展和起身，吸吐怎麼配？</h2>
   <p>上舉或延展時有些老師會提示吸氣，前彎或放下時會提示吐氣。先把它當成開始移動的口令，動作還沒做完也可以再呼吸，不必憋著等下一拍。下表列的是常見提示，班上有不同教法時，可以詢問老師這個口令在提醒什麼。</p>

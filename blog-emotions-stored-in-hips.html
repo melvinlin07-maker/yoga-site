@@ -54,6 +54,19 @@
   .article .reader-followup a { color: #71364e; text-underline-offset: 3px; }
   [data-theme="dark"] .article .reader-next { background: #30232d; border-color: #ad899a; color: #fff2f6; }
   [data-theme="dark"] .article .reader-followup a { color: #ffd0e0; }
+  .scene-opening { margin: 24px 0 30px; padding-inline-start: 19px; border-inline-start: 3px solid #af626b; }
+  .scene-opening p { margin: 0 0 10px; font-size: clamp(18px, 2.7vw, 23px); line-height: 1.75; }
+  .scene-choices { --scene-surface: #fff8f0; --scene-line: #d2ae9d; --scene-card: #f0e3d6; --scene-ink: #36251f; margin-bottom: 30px; }
+  [data-theme="dark"] .scene-choices { --scene-surface: #332730; --scene-line: #8d6c7e; --scene-card: #45313e; --scene-ink: #fff2f6; }
+  .scene-choices details { margin-block: 8px; border: 1px solid var(--scene-line); border-radius: 12px; background: var(--scene-surface); color: var(--scene-ink); }
+  .scene-choices summary { cursor: pointer; padding: 12px 16px; font-weight: 700; }
+  .scene-reply { padding: 0 16px 14px; }
+  .scene-reply p { margin: 8px 0; }
+  .scene-speech { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 8px 0; }
+  .scene-takeaway { margin-top: 14px; padding: 13px 16px; border-radius: 12px; background: var(--scene-card); color: var(--scene-ink); }
+  .scene-takeaway p { margin: 4px 0 0; }
+  .scene-reference { margin: 18px 0; }
+  .scene-reference summary { cursor: pointer; font-weight: 700; }
 </style>
 </head>
 <body data-cta-mode="soft-scan">
@@ -79,25 +92,61 @@
   <h1>開髖時突然想哭，情緒真的存在髖部嗎？</h1>
   <p class="meta">骨盆・下半身 · 閱讀約 3 分鐘 · 內容審校：鑫彥瑜伽館<br><time datetime="2026-09-07">發布：2026-09-07</time> · <time datetime="2026-11-21">更新：2026-11-21</time></p>
 
-  <p class="lead opportunity-opening">伸展停到一半，你本來只在意右側髖部比左側緊，下一口氣卻突然鼻酸。你可以先坐起來，等自己想好要不要繼續，課堂上不用交代自己為什麼想哭。</p>
+  <div class="scene-opening">
+    <p>老師說：「再停一個呼吸。」</p>
+    <p>你其實已經想起來了。<br>但你偷看了一眼，整排的人都還沒動。</p>
+  </div>
+  <section class="scene-choices" aria-labelledby="scene-title">
+    <h2 id="scene-title">你最記得的是哪一刻？</h2>
+    <details name="hip-class-scene">
+      <summary>拉到想退，卻還在等口令</summary>
+      <div class="scene-reply">
+        <p>先把動作退小一點，回到你能自己停住的位置。想休息，可以按老師教過的退出方式慢慢離開。</p>
+        <p class="scene-speech"><strong>你可以說</strong>「我想先退出這個姿勢。可以提醒我怎麼出來嗎？」</p>
+      </div>
+    </details>
+    <details name="hip-class-scene">
+      <summary>老師一靠近，我就繃住</summary>
+      <div class="scene-reply">
+        <div class="scene-speech"><strong>老師</strong>「需要我幫你調一下嗎？」</div>
+        <div class="scene-speech"><strong>你</strong>「今天先用說的就好，我想自己試。」</div>
+        <p>可以先說你希望怎麼被引導。想休息也可以直接開口。</p>
+      </div>
+    </details>
+    <details name="hip-class-scene">
+      <summary>坐起來了，卻不知道怎麼接回去</summary>
+      <div class="scene-reply">
+        <p>先留在坐得舒服的位置。等老師帶到你熟悉的動作，再決定要不要跟上。</p>
+        <p class="scene-speech"><strong>你可以問</strong>「如果這段先休息，我可以從哪個動作接回去？」</p>
+      </div>
+    </details>
+    <aside class="scene-takeaway">
+      <strong>下次報名前，可以先問這句</strong>
+      <p>「如果有個動作我想先停，可以怎麼休息、怎麼接回課程？」</p>
+    </aside>
+  </section>
+
   <p class="opportunity-answer">開髖時突然想哭，可能是姿勢感受、呼吸、當下心情或回憶同時變得明顯，單憑落淚無法推知原因，也沒有證據顯示情緒儲存在髖部組織。先停一個動作，看看換姿勢或休息後有何變化。若情緒反覆困擾或影響生活，可以找心理健康專業人員談談。</p>
 
   <figure class="frame article-hero"><img src="assets/res-glute-wake.jpg" alt="女性扶椅做髖部伸展"></figure>
 
   <h2>開髖時的身體感受與情緒可以怎麼區分？</h2>
   <p>開髖時，大腿相對骨盆的角度改變，腹股溝、臀部或大腿內側可能有牽拉感。可以記下哪個位置先有感、換成有支撐的姿勢後是否舒服些。想知道不同練習主要在動哪裡，可參考<a class="inlink" href="pose-what-is-hip-opening.html">開髖動作與骨盆支撐</a>。</p>
-  <p class="opportunity-hint">👆 手機版可左右滑動</p>
-  <div class="opportunity-table" role="region" tabindex="0" aria-labelledby="comparison-caption">
-    <table>
-      <caption id="comparison-caption">開髖練習中感受與選擇</caption>
-      <thead><tr><th scope="col">當下感受</th><th scope="col">可以怎麼做</th><th scope="col">可以留意什麼</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">姿勢拉扯感太強</th><td>縮小幅度或停下。</td><td>換姿勢後哪一處感受改變？</td></tr>
-        <tr><th scope="row">鼻酸或想哭</th><td>坐起來休息，按自己的意願決定要不要繼續。</td><td>當時的情境和感受，記得多少就寫多少。</td></tr>
-        <tr><th scope="row">情緒反覆困擾或影響生活</th><td>找心理健康專業人員討論。</td><td>可以從對日常的影響說起。</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <details class="scene-reference">
+    <summary>展開感受與下一步對照</summary>
+    <p class="opportunity-hint">👆 手機版可左右滑動</p>
+    <div class="opportunity-table" role="region" tabindex="0" aria-labelledby="comparison-caption">
+      <table>
+        <caption id="comparison-caption">開髖練習中感受與選擇</caption>
+        <thead><tr><th scope="col">當下感受</th><th scope="col">可以怎麼做</th><th scope="col">可以留意什麼</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">姿勢拉扯感太強</th><td>縮小幅度或停下。</td><td>換姿勢後哪一處感受改變？</td></tr>
+          <tr><th scope="row">鼻酸或想哭</th><td>坐起來休息，按自己的意願決定要不要繼續。</td><td>當時的情境和感受，記得多少就寫多少。</td></tr>
+          <tr><th scope="row">情緒反覆困擾或影響生活</th><td>找心理健康專業人員討論。</td><td>可以從對日常的影響說起。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 
   <h2>練習到一半情緒上來，怎麼留一點空間？</h2>
   <p>可以先把姿勢做小，或直接坐起休息。如果今天想找一個可以隨時退出、比較有支撐的休息方式，可以看看<a class="inlink" href="pose-what-is-restorative.html">修復瑜伽怎麼用輔具安排休息</a>，再決定是否想試。休息後感受沒有改變，也可以今天先到這裡。</p>
@@ -111,10 +160,9 @@
   </section>
 
   <section class="reader-next" aria-labelledby="reader-next-title">
-    <h2 id="reader-next-title">記下你最有感的時刻</h2>
-    <p>想回想最近哪個動作或哪個時刻特別想停一下？先記你記得的就好。</p>
-    <p>免費約 2 分鐘，免登入、免加 LINE。做完可用 3 天觀察卡整理日常感受。</p>
-    <a class="btn" href="posture-self-test.html">開始免費體態訊號掃描 →</a>
+    <h2 id="reader-next-title">下次想留一點休息空間？</h2>
+    <p><a href="pose-what-is-restorative.html">看看修復瑜伽怎麼用輔具安排休息</a>。</p>
+    <p>若另外想記錄平日坐、站或活動的感受，可做<a href="posture-self-test.html">免費約 2 分鐘體態訊號掃描</a>。免登入、免加 LINE，可用 3 天觀察卡。</p>
   </section>
 
   <div class="topic-return"><span>想進一步看懂髖部與骨盆的用力方式？</span><a href="pose-what-is-hip-opening.html">看懂開髖與骨盆代償</a><a href="pose-what-is-restorative.html">看看有支撐的修復瑜伽</a></div>
