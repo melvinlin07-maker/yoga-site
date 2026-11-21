@@ -225,6 +225,7 @@ function initTheme() {
 function initExitIntentModal() {
   var path = window.location.pathname || "";
   if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test|contact/i.test(path)) return;
+  if (!window.matchMedia("(any-hover: hover) and (any-pointer: fine)").matches) return;
   try {
     if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
   } catch (error) {
@@ -258,7 +259,6 @@ function initExitIntentModal() {
     function closeModal() {
       div.classList.remove("is-active");
       div.setAttribute("aria-hidden", "true");
-      sessionStorage.setItem("sinyan_exit_modal_shown", "true");
     }
 
     div.querySelector("#exitModalClose").addEventListener("click", closeModal);
@@ -274,19 +274,45 @@ function initExitIntentModal() {
   }
 
   function showModal() {
-    if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
-    sessionStorage.setItem("sinyan_exit_modal_shown", "true");
+    try {
+      if (sessionStorage.getItem("sinyan_exit_modal_shown")) return;
+      sessionStorage.setItem("sinyan_exit_modal_shown", "true");
+    } catch (error) {
+      return;
+    }
     var m = createModal();
     m.classList.add("is-active");
     m.setAttribute("aria-hidden", "false");
   }
 
-  // 僅保留電腦端滑鼠向上離開視窗頂部（避免手機端回滑找預約鈕時誤跳彈窗阻斷轉換）
-  document.addEventListener("mouseleave", function (e) {
-    if (e.clientY <= 20) {
-      showModal();
-    }
+  var visibleSince = performance.now();
+  var sawContentPointer = false;
+  var lastPointerY = null;
+  var page = document.documentElement;
+
+  document.addEventListener("visibilitychange", function () {
+    visibleSince = performance.now();
+    sawContentPointer = false;
+    lastPointerY = null;
   });
+
+  page.addEventListener("pointermove", function (e) {
+    if (!e.isTrusted || e.pointerType !== "mouse" || e.buttons) return;
+    if (e.clientY >= 48) sawContentPointer = true;
+    lastPointerY = e.clientY;
+  }, { passive: true });
+
+  // 等滿 30 秒只解除限制，彈窗仍須由滑鼠實際穿過視窗頂緣觸發。
+  page.addEventListener("pointerleave", function (e) {
+    if (!e.isTrusted || e.pointerType !== "mouse") return;
+    var leftUpward = sawContentPointer && lastPointerY !== null && e.clientY < lastPointerY &&
+      e.clientY <= 0 && e.clientX >= 0 && e.clientX < page.clientWidth;
+    sawContentPointer = false;
+    lastPointerY = null;
+    if (!leftUpward || e.relatedTarget || e.buttons || document.visibilityState !== "visible" ||
+        performance.now() - visibleSince < 30000) return;
+    showModal();
+  }, { passive: true });
 }
 
 // 11. 捲動深度與 10 秒實質停留追蹤（診斷 4 秒跳出與頁面承接瓶頸）
