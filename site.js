@@ -222,7 +222,13 @@ function initTheme() {
 }
 
 // 7. 離開意圖溫柔挽留彈窗（僅在知識閱讀頁／首頁的桌面端離開視窗時觸發，不干擾高意圖成交頁與手機回滑操作）
+function hasPageOwnedArticleCta() {
+  var mode = document.body.dataset.ctaMode;
+  return mode === "soft-scan" || mode === "service-first";
+}
+
 function initExitIntentModal() {
+  if (hasPageOwnedArticleCta()) return;
   var path = window.location.pathname || "";
   if (/beginner-yoga-guide|assessment|neck-release|shoulder-checkup|yoga-beginner|posture-self-test|contact/i.test(path)) return;
   if (!window.matchMedia("(any-hover: hover) and (any-pointer: fine)").matches) return;
@@ -447,6 +453,7 @@ function initInstantSearch() {
 
 // 12. 第 5 層防流失轉換引擎：全站 122 篇知識文章自動分流（10 秒代償盲區自測 ＋ 3 秒痛點勾選 → 動態預填 LINE #文章代碼）
 function initArticleConversionWidget() {
+  if (hasPageOwnedArticleCta()) return;
   var path = (window.location.pathname || "").replace(/^\/+/, "");
   if (!/^(blog-|pose-)/i.test(path)) return;
   var slug = path.replace(/\.html$/i, "");
