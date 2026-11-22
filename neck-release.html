@@ -459,6 +459,49 @@
 <script>
 (function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
+<style>
+.coach-hero,.coach-case{color:#34252b;background:#fbf1ec}
+.sc.dusk.turn h2,.sc.dusk.turn p.fade{color:#fff3ef}
+body .page-back .page-back-link{color:#fff5f0}
+.coach-hero h1{text-wrap:balance}
+.coach-hero{padding:clamp(30px,6vw,78px) 22px}
+.coach-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,80px);align-items:center;max-width:1120px;margin:auto}
+.coach-kicker{color:#70445a;font-size:14px;font-weight:750;letter-spacing:.07em;margin:0 0 12px}
+.coach-hero h1,.coach-case h2{color:#34252b;line-height:1.26;margin:0 0 15px;font-size:clamp(30px,4.1vw,49px)}
+.coach-intro{font-size:clamp(16px,2vw,20px);margin:0 0 18px;max-width:32em}
+.coach-offer{font-size:14px;color:#5d484f;margin-bottom:18px}
+.coach-links{display:flex;align-items:flex-start;flex-direction:column;gap:10px}
+.coach-links .btn{color:white;background:#63384e;box-shadow:none;min-height:48px}
+.coach-links a:not(.btn),.coach-next{color:#63384e;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.coach-hero figure{margin:0}
+.coach-hero img{display:block;width:100%;height:auto;border-radius:12px}
+.coach-hero figcaption{font-size:13px;margin-top:5px;color:#5d484f}
+.coach-case{padding:clamp(36px,6vw,78px) 22px;border-block:1px solid #e0c9c7;scroll-margin-top:84px}
+.coach-case-inner{max-width:820px;margin:auto}
+.coach-case h2{font-size:clamp(28px,4vw,48px)}
+.coach-case-lead,.coach-feedback{max-width:36em}
+.coach-takeaway{font-size:clamp(17px,2vw,21px);margin:0 0 12px;color:#63384e}
+.coach-report{max-width:380px;margin:20px auto;text-align:center}
+.coach-report img{width:100%;height:auto;border-radius:10px}
+.coach-report figcaption{margin-top:8px}
+#reserve{scroll-margin-top:88px}
+.coach-booking-note{font-size:13px;margin:8px 0 16px;color:#e8e4d8}
+.coach-mouse-art{margin:20px 0 24px}
+.coach-mouse-art img{width:100%;height:auto;display:block;border-radius:8px}
+.coach-mouse-labels{display:grid;grid-template-columns:1fr 1fr;gap:8px;color:#63384e;font-size:14px;font-weight:700;margin-bottom:6px;text-align:center}
+.coach-mouse-art figcaption{font-size:15px;line-height:1.55;margin-top:8px}
+.coach-mouse-art small{display:block;font-size:13px;color:#5d484f;margin-top:4px}
+.coach-compare{display:grid;grid-template-columns:1fr 1fr;margin:24px 0 14px;border-block:1px solid #d8babf}
+.coach-compare div{padding:15px 16px 16px 0}
+.coach-compare div+div{padding-left:16px;border-left:1px solid #d8babf;background:#f4e2e0}
+.coach-compare dt{font-weight:750;color:#63384e;line-height:1.5;margin-bottom:5px}
+.coach-compare dd{margin:0;line-height:1.65}
+.coach-home{margin:22px 0 14px;padding:14px 16px;border-left:3px solid #75495e;background:#fff9f6}
+.coach-home h3{margin:0 0 5px;font-size:19px;color:#442d37}
+.coach-home p{margin:0}
+.coach-next{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:720px){.coach-hero-grid{grid-template-columns:1fr}.coach-hero img{max-height:320px;object-fit:cover}.coach-case{font-size:15px}.coach-compare div{padding-right:9px}.coach-compare div+div{padding-left:10px}}
+</style>
 </head>
 <body data-lead-value="1500" data-lead-name="AI posture assessment + 1-on-1 neck release" data-lead-category="1-on-1 neck & shoulder release" data-line-event="Contact">
 
@@ -479,31 +522,21 @@
 </div></nav>
 <div class="page-back wrap"><a class="page-back-link" href="./" data-back-link>← 回到上頁</a></div>
 
-<!-- ═══ HERO：診斷主導 ═══ -->
-<section class="sc night open">
-  <div class="open-grid">
+<section class="coach-hero" aria-labelledby="coach-title">
+  <div class="coach-hero-grid">
     <div>
-      <div class="brand"><span class="nb">鑫彥瑜珈</span>・<span class="nb">高雄左營</span>・<span class="nb">近巨蛋捷運</span></div>
-      <h1 class="serif fade">你的肩頸<em>到底哪裡</em>出問題？<br>別再用<em>猜的</em>。</h1>
-      <p class="sub fade">按摩師說你「太緊」、朋友說你「駝背」，但沒人拿得出證據。<b>我們先用 AI 拍出你的肩線、頭前傾與骨盆角度，讓你<span class="nb">親眼看見</span>；<span class="nb">再由老師一對一，</span><span class="nb">練習換一種用力方式。</span></b></p>
-      <div class="hero-formula fade" aria-label="課程流程">
-        <div class="hf-row">
-          <span class="hf hf--ai">① <b>AI</b> 體態檢測・<span class="tlong">當場</span>看見問題</span>
-        </div>
-        <div class="hf-row">
-          <span class="hf">② <b>50</b>分・<span class="tlong">一對一</span>瑜伽調整</span>
-          <span class="hf-op">＋</span>
-          <span class="hf">③ <b>10</b>分・<span class="tlong">深層</span>筋膜放鬆</span>
-        </div>
+      <p class="coach-kicker">高雄左營 · 一對一瑜珈調整</p>
+      <h1 id="coach-title">按摩完有鬆，<br>坐回電腦前又緊了？</h1>
+      <p class="coach-intro">把妳每天覺得費力的動作帶來。老師會看妳做一次，陪妳試一個調整，再一起看第二次有什麼不同。</p>
+      <p class="coach-offer"><strong>首次 NT$1,500</strong> · 含 AI 體態檢測、50 分鐘帶練、10 分鐘放鬆。每人限一次。</p>
+      <div class="coach-links">
+        <a class="btn" href="#reserve">查看一對一體驗與預約</a>
+        <a href="#mouse-case">先看老師怎麼帶練 ↓</a>
       </div>
-      <div class="hero-cta fade"><a class="cta" href="#reserve">預約首次 NT$1500・含 AI 體態檢測</a></div>
-      <p class="hero-note fade"><span class="nb">一對一原價 NT$2,000</span>　＋　<span class="nb">加贈 AI 檢測 NT$699</span><br><span class="nb">首次體驗 <b style="color:var(--gold-lt)">NT$1,500</b></span> · <span class="nb">每人限一次</span></p>
-      <p class="hero-trust fade"><span class="nb">⭐ Google <b>4.9★</b></span> · <span class="nb">91 則真實好評</span> · <span class="nb">高雄左營在地教學 <b>10 年+</b></span></p>
     </div>
-    <figure class="hero-shot fade">
-      <figcaption class="tagline">AI 姿勢分析・實際報告範例</figcaption>
-      <img src="assets/assessment-sample.jpg" alt="AI 體態檢測報告範例：標出肩線、身體軸線與骨盆角度的姿勢分析畫面" width="1333" height="1500" fetchpriority="high">
-      <figcaption class="cap">這就是你會拿到的畫面——<br><b>你的肩頸，第一次被看見。</b></figcaption>
+    <figure>
+      <img src="assets/long-sitting-fatigue-desk.webp" width="1200" height="800" alt="坐在電腦前，手扶著肩頸的工作情境" fetchpriority="high">
+      <figcaption>日常情境示意</figcaption>
     </figure>
   </div>
 </section>
@@ -530,7 +563,7 @@
 </section>
 
 <!-- ═══ STEP 1：AI 體態檢測（看見）═══ -->
-<section class="sc plum">
+<section class="sc plum" id="assessment-explained">
   <div class="sc-inner assess fade">
     <div class="step-head">
       <span class="step-tag">STEP 1・首次加贈・價值 NT$699</span>
@@ -538,7 +571,10 @@
       <p class="lead">一到教室，老師會先用 <b>AI 姿勢分析</b>協助拍攝，呈現你的肩線、頭部前傾、脊椎與骨盆角度，接著<b>當場為你解讀</b>。不是機器丟一個分數就結束——是老師把畫面翻譯成你聽得懂的話。</p>
     </div>
 
-    <p class="assess-note">首屏為實際檢測報告範例。檢測屬運動功能性姿勢評估，非醫學診斷。</p>
+    <figure class="coach-report" id="assessment-report">
+      <img src="assets/assessment-sample.jpg" alt="AI 體態檢測報告範例，標示肩線、身體軸線與骨盆角度" width="1333" height="1500" loading="lazy">
+      <figcaption class="assess-note">到場時，老師會和妳一起看這類站姿畫面。檢測屬運動功能性姿勢評估，非醫學診斷。</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -560,6 +596,32 @@
     <p class="fade">你可能只感覺「就是緊」。老師會用<b>50 分鐘一對一瑜伽調整</b>和你對照不同姿勢的出力感。</p>
 
     <p class="fade"><b>STEP 3・10 分鐘深層筋膜放鬆</b><br>練習後由老師安排放鬆，再整理一個回家可練的用力提示。</p>
+  </div>
+</section>
+
+<section class="coach-case" id="mouse-case" aria-labelledby="mouse-case-title">
+  <div class="coach-case-inner">
+    <p class="coach-kicker">一對一帶練 · 教學情境示意</p>
+    <h2 id="mouse-case-title">右肩又抬起來了。<br>老師會先看哪一刻？</h2>
+    <p class="coach-takeaway"><strong>老師只把滑鼠移近，再請妳伸手一次，比較肩膀從哪一刻開始費力。</strong></p>
+    <p class="coach-case-lead">老師請妳照平常的樣子，從鍵盤伸手去拿滑鼠。她會問：「手還沒碰到滑鼠就費力，還是用了一會兒才有感？」</p>
+    <figure class="coach-mouse-art">
+      <div class="coach-mouse-labels"><span>伸得遠｜肩抬、手腕翹</span><span>移近後｜手肘靠近、手腕平順</span></div>
+      <a href="assets/mouse-reach-anatomy-office.webp">
+        <img src="assets/mouse-reach-anatomy-office.webp" alt="同一位深藍上衣女性的動作示意。左圖伸手較遠、肩抬、手腕上翹。右圖滑鼠移近、手肘靠近身體、手腕較平順。放大框分別顯示手背和手指。" width="1774" height="887" loading="lazy">
+      </a>
+      <figcaption>滑鼠移近後，再伸手一次。留意肩膀從哪一刻開始費力，跟剛才有什麼不同？<small>真人風格解剖示意。從肩頸與肩部看到前臂背側，再用放大框比較手腕、手背與手指。疊圖標示觀察區域，肌肉出力大小需實際測量。可點圖放大。</small></figcaption>
+    </figure>
+    <dl class="coach-compare">
+      <div><dt>第一次｜照平常做</dt><dd>從鍵盤伸手去拿滑鼠。留意肩膀在哪一刻開始費力。</dd></div>
+      <div><dt>第二次｜<strong>只把滑鼠移近</strong></dt><dd>再做同一個伸手動作。手還需要伸那麼遠嗎？肩膀的感覺有什麼不同？</dd></div>
+    </dl>
+    <p class="coach-feedback">如果兩次差不多，老師可以先把滑鼠放回去，再試著給前臂一點支撐，一次比較一個變化。</p>
+    <aside class="coach-home">
+      <h3>回到自己的電腦前，怎麼試？</h3>
+      <p>下次發現肩膀抬起來，先停一下。把滑鼠移到課堂試過的位置，伸手一次，感覺比剛才輕鬆、差不多，還是更費力。把差別記下來，下次可以和老師一起看。</p>
+    </aside>
+    <a href="#reserve" class="coach-next">我也有一個動作想請老師看 ↓</a>
   </div>
 </section>
 
@@ -651,13 +713,16 @@
 <!-- 預約 -->
 <section class="sc day final" aria-labelledby="neck-booking-title">
   <div class="sc-inner">
-    <h2 id="neck-booking-title">先選你的狀態，再用 LINE 預約</h2>
+    <h2 id="neck-booking-title">用 LINE 詢問一對一體驗時段</h2>
     <p class="sub">首次體驗 NT$1,500（含 AI 體態檢測）・約 70 分鐘・每人限一次</p>
     <div class="neck-booking-card" id="reserve">
+      <p>下列三項都可選填，也可以直接開 LINE 詢問。</p>
+      <a href="https://lin.ee/5rWzdNd" class="btn js-line" data-line-purpose="reservation" data-cta-location="neck_master_picker" data-offer="one_on_one_neck_1500" data-offer-value="1500" data-line-message="老師您好，我想詢問一對一肩頸調整首次體驗 NT$1,500（含 AI 體態檢測）的可約時段。（來源代碼：#neck-release）">用 LINE 詢問可約時段</a>
+      <p class="coach-booking-note">開啟 LINE 後請送出訊息，時段以館方回覆為準。</p>
       <fieldset class="neck-choice">
         <legend class="cb-label">1. 最想處理的肩頸狀態</legend>
         <div class="cb-chips">
-          <label><input type="radio" name="neck-0" value="肩頸反覆緊繃" checked><span class="cb-chip">肩頸反覆緊繃</span></label>
+          <label><input type="radio" name="neck-0" value="肩頸反覆緊繃"><span class="cb-chip">肩頸反覆緊繃</span></label>
           <label><input type="radio" name="neck-0" value="圓肩駝背／頭前傾"><span class="cb-chip">圓肩駝背／頭前傾</span></label>
           <label><input type="radio" name="neck-0" value="按摩隔天又緊"><span class="cb-chip">按摩隔天又緊</span></label>
           <label><input type="radio" name="neck-0" value="單側高低肩卡關"><span class="cb-chip">單側高低肩卡關</span></label>
@@ -666,7 +731,7 @@
       <fieldset class="neck-choice">
         <legend class="cb-label">2. 目前最困擾的日常情境</legend>
         <div class="cb-chips">
-          <label><input type="radio" name="neck-1" value="久坐用電腦或低頭" checked><span class="cb-chip">久坐用電腦或低頭</span></label>
+          <label><input type="radio" name="neck-1" value="久坐用電腦或低頭"><span class="cb-chip">久坐用電腦或低頭</span></label>
           <label><input type="radio" name="neck-1" value="睡醒落枕或肩頸緊到頭痛"><span class="cb-chip">睡醒落枕或肩頸緊到頭痛</span></label>
           <label><input type="radio" name="neck-1" value="想了解一對一怎麼調整"><span class="cb-chip">想了解一對一怎麼調整</span></label>
         </div>
@@ -674,17 +739,16 @@
       <fieldset class="neck-choice">
         <legend class="cb-label">3. 方便到高雄左營教室的時段</legend>
         <div class="cb-chips">
-          <label><input type="radio" name="neck-2" value="平日白天" checked><span class="cb-chip">平日白天</span></label>
+          <label><input type="radio" name="neck-2" value="平日白天"><span class="cb-chip">平日白天</span></label>
           <label><input type="radio" name="neck-2" value="平日晚上"><span class="cb-chip">平日晚上</span></label>
           <label><input type="radio" name="neck-2" value="週末時段"><span class="cb-chip">週末時段</span></label>
           <label><input type="radio" name="neck-2" value="都可以，請先給可約時段"><span class="cb-chip">都可以，請先給可約時段</span></label>
         </div>
       </fieldset>
       <div class="cb-preview">
-        <small>開啟 LINE 後送出訊息，時段以館方回覆為準。</small>
-        <p id="neck-preview" aria-live="polite">老師您好，我想預約一對一肩頸調整首次體驗 NT$1,500（含 AI 體態檢測）（來源代碼：#neck-release）。肩頸狀態：【肩頸反覆緊繃】。日常情境：【久坐用電腦或低頭】。方便時段：【平日白天】。請幫我確認可預約的時段，謝謝！</p>
+        <small>LINE 訊息預覽</small>
+        <p id="neck-preview" aria-live="polite">老師您好，我想詢問一對一肩頸調整首次體驗 NT$1,500（含 AI 體態檢測）的可約時段。（來源代碼：#neck-release）</p>
       </div>
-      <a href="https://lin.ee/5rWzdNd" class="btn js-line" data-line-purpose="reservation" data-cta-location="neck_master_picker" data-offer="one_on_one_neck_1500" data-offer-value="1500" data-line-message="老師您好，我想預約一對一肩頸調整首次體驗 NT$1,500（含 AI 體態檢測）（來源代碼：#neck-release）。肩頸狀態：【肩頸反覆緊繃】。日常情境：【久坐用電腦或低頭】。方便時段：【平日白天】。請幫我確認可預約的時段，謝謝！">開啟 LINE 預約首次體驗</a>
     </div>
 
     <div class="faq" style="margin-top:42px">
@@ -729,7 +793,7 @@
   <a href="terms.html">使用條款</a>・
   <a href="privacy.html">隱私政策</a>・
   <a href="disclaimer.html">免責說明</a>
-  <p>內容審校：<a href="about.html" rel="author">鑫彥瑜伽館</a> · 最後更新：<time datetime="2026-11-20">2026-11-20</time></p>
+  <p>內容審校：<a href="about.html" rel="author">鑫彥瑜伽館</a> · 最後更新：<time datetime="2026-11-22">2026-11-22</time></p>
 </footer>
 
 <!-- 浮動 CTA -->
@@ -767,16 +831,19 @@ syncBookingDock();
   var preview = document.getElementById('neck-preview');
   var lineButton = picker.querySelector('.js-line');
 
-  picker.addEventListener('change', function () {
-    var options = Array.from(picker.querySelectorAll('input:checked'), function (input) {
-      return input.value;
+  var baseMessage = lineButton.dataset.lineMessage;
+  var labels = ['肩頸狀態', '日常情境', '方便時段'];
+  function syncMessage() {
+    var details = labels.map(function (label, index) {
+      var choice = picker.querySelector('input[name="neck-' + index + '"]:checked');
+      return choice ? label + '：【' + choice.value + '】。' : '';
     });
-    var message = '老師您好，我想預約一對一肩頸調整首次體驗 NT$1,500（含 AI 體態檢測）（來源代碼：#neck-release）。' +
-      '肩頸狀態：【' + options[0] + '】。日常情境：【' + options[1] + '】。方便時段：【' + options[2] + '】。' +
-      '請幫我確認可預約的時段，謝謝！';
+    var message = baseMessage + details.join('');
     preview.textContent = message;
     lineButton.dataset.lineMessage = message;
-  });
+  }
+  picker.addEventListener('change', syncMessage);
+  syncMessage();
 })();
 
 // 讓結構化資料與文字摘錄的時間連結跳到對應影片片段。
