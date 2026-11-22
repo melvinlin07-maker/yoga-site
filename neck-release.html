@@ -501,6 +501,21 @@ body .page-back .page-back-link{color:#3d2433;background:#fff5f0;border-color:#e
 .coach-home h3{margin:0 0 5px;font-size:19px;color:#442d37}
 .coach-home p{margin:0}
 .coach-next{display:inline-flex;align-items:center;min-height:44px}
+.coach-case.coach-court{background:#f3e9e3;padding-block:32px}
+.coach-court-board{overflow:hidden;border:1px solid #35584c;border-radius:12px;background:#19372f;color:#fff8ef}
+.coach-court-board header{padding:22px 20px 18px}
+.coach-court-board h2{color:#fff8ef;font-size:clamp(24px,4vw,38px);line-height:1.35;margin:0 0 10px;text-wrap:balance}
+.coach-court-board header p{margin:0;color:#fff8ef}
+.coach-court-board .coach-court-kicker{margin-bottom:9px;color:#d5e7c9;font-size:14px;font-weight:700;letter-spacing:.06em}
+.coach-court-board dl{margin:0 20px 20px;border:1px solid #8baa9b;display:grid;grid-template-columns:1fr 1fr}
+.coach-court-board dl div{padding:13px 14px}
+.coach-court-board dl div+div{border-inline-start:1px solid #8baa9b}
+.coach-court-board dt{color:#d5e7c9;font-weight:700;line-height:1.45}
+.coach-court-board dd{margin:5px 0 0;line-height:1.55}
+@media(max-width:480px){
+  .coach-court-board dl{grid-template-columns:1fr}
+  .coach-court-board dl div+div{border-inline-start:0;border-block-start:1px solid #8baa9b}
+}
 @media(max-width:720px){.coach-hero-grid{grid-template-columns:1fr}.coach-hero img{max-height:320px;object-fit:cover}.coach-case{font-size:15px}.coach-compare div{padding-right:9px}.coach-compare div+div{padding-left:10px}}
 </style>
 </head>
@@ -528,9 +543,9 @@ body .page-back .page-back-link{color:#3d2433;background:#fff5f0;border-color:#e
     <div>
       <p class="coach-kicker">高雄左營 · 一對一瑜珈調整</p>
       <h1 id="coach-title">按摩完有鬆，<br>坐回電腦前又緊了？</h1>
-      <p class="coach-intro">把妳每天覺得費力的動作帶來。老師會看妳做一次，陪妳試一個調整，再一起看第二次有什麼不同。</p>
+      <p class="coach-intro">把最困擾妳的那個動作帶來。老師會看妳平常怎麼做，陪妳一次試一個調整。下次坐回電腦前或回到球場，妳會知道可以先試什麼，也知道要留意什麼差別。</p>
       <p class="coach-offer"><strong>首次一對一體驗 NT$1,500</strong><br>50 分鐘個別帶練＋10 分鐘放鬆，<strong>加贈價值 NT$699 的 AI 體態檢測</strong>。每人限一次。</p>
-      <p class="coach-offer"><strong>為什麼先檢測？</strong> 老師先陪妳看站姿畫面裡的肩線和頭部位置，再看妳伸手或抬手時怎麼動。兩個畫面一起看，老師比較能說清楚，妳這堂課可以先練哪個動作。</p>
+      <p class="coach-offer"><strong>為什麼先檢測？</strong> AI 體態檢測先提供站姿線索，例如肩線和頭部位置。老師再看妳做一次平常最費力的動作，把兩個畫面一起看，決定這堂課先試哪個調整、從哪個動作練起。</p>
       <div class="coach-links">
         <a class="btn" href="#reserve">查看一對一體驗與預約</a>
         <a href="#mouse-case">先看老師怎麼帶練 ↓</a>
@@ -627,6 +642,21 @@ body .page-back .page-back-link{color:#3d2433;background:#fff5f0;border-color:#e
   </div>
 </section>
 
+<section class="coach-case coach-court" id="badminton-case" aria-labelledby="badminton-case-title">
+  <div class="coach-case-inner">
+    <div class="coach-court-board">
+      <header>
+        <p class="coach-court-kicker">羽球 · 一對一學員案例</p>
+        <h2 id="badminton-case-title">同一位學員想繼續打球，每次卡的地方不同</h2>
+        <p>老師依他當次最在意的困擾，調整那堂課的練習。</p>
+      </header>
+      <dl>
+        <div><dt>第一次 · 肩背緊</dt><dd>先帶他放鬆肩背和胸口。</dd></div>
+        <div><dt>另一次 · 急停時小腿和腳踝緊</dt><dd>改用輔具，陪他試放鬆和伸展。</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
 <!-- 方案比較與影片示範 -->
 <section class="sc day" aria-labelledby="neck-compare-title">
   <div class="sc-inner">
