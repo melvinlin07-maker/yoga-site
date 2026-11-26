@@ -85,7 +85,7 @@ function copyToClipboard(text, customSuccessMsg) {
 }
 window.copyToClipboard = copyToClipboard;
 
-function fallbackCopy(text, successMsg) {
+function fallbackCopy(text, successMsg, duration) {
   var input = document.createElement("input");
   input.value = text;
   input.style.position = "fixed";
@@ -94,7 +94,7 @@ function fallbackCopy(text, successMsg) {
   input.select();
   try {
     document.execCommand("copy");
-    showToast(successMsg);
+    showToast(successMsg, duration);
   } catch (err) {
     showToast("請手動複製連結：" + text);
   }
@@ -682,10 +682,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (lineMessage && linePurpose === "reservation" && isReservationPage && entryArticle) {
         lineMessage += "（初次閱讀：#" + entryArticle + "）";
       }
-      if (lineMessage && navigator.clipboard && navigator.clipboard.writeText) {
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (!isMobile && lineMessage && navigator.clipboard && navigator.clipboard.writeText) {
         try { navigator.clipboard.writeText(lineMessage); } catch (e) {}
       }
-      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       var openUrl = lineMessage
         ? (isMobile ? "https://line.me/R/oaMessage/" + encodeURIComponent(LINE_OA_ID) + "/?" + encodeURIComponent(lineMessage) : LINE_URL)
         : LINE_URL;
@@ -694,6 +694,22 @@ document.addEventListener("DOMContentLoaded", function () {
         window.setTimeout(function () {
           window.location.href = openUrl;
         }, 180);
+        if (lineMessage) {
+          var copyMessage = "✓ 已複製預約文字，進入 LINE 若未自動帶入可直接貼上送出！";
+          function copyWithFallback() {
+            fallbackCopy(lineMessage, copyMessage, 3500);
+          }
+          window.showToast(copyMessage, 3500);
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            try {
+              navigator.clipboard.writeText(lineMessage).catch(copyWithFallback);
+            } catch (e) {
+              copyWithFallback();
+            }
+          } else {
+            copyWithFallback();
+          }
+        }
       } else {
         if (lineMessage && window.showToast) {
           window.showToast("✓ 已複製預約詢問文字，加入 LINE 後可直接貼上送出！", 3200);

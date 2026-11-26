@@ -111,12 +111,22 @@
 .price-card--wide .btn{width:100%;min-height:50px}
 
 @media(max-width:900px){
-  .hero-split{grid-template-columns:1fr;gap:22px}
+  .hero-split{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero-split>.hero-box{display:contents}
+  .hero-split>.hero-box>*{order:3}
+  .hero-split>.hero-box>.hero-badge-row,.hero-split>.hero-box>h1{order:0}
+  .hero-split>.hero-ai-card{order:1;margin-bottom:14px}
+  .hero-ai-pair img{height:clamp(112px,24svh,200px);aspect-ratio:auto;object-fit:contain}
+  .hero-split .cta{order:2;margin-bottom:18px}
   .hero.assessment-hero .wrap{padding:24px 18px 30px}
   .assessment-hero h1{font-size:27px}
   .hero-micro-steps{grid-template-columns:1fr;gap:8px}
   .pain-story-grid{grid-template-columns:1fr}
   .assessment-hero .cta .btn{width:100%;min-height:48px}
+}
+@media(max-width:900px) and (max-height:700px){
+  .hero-split .cta{order:1;margin-bottom:14px}
+  .hero-split>.hero-ai-card{order:2}
 }
 @media(max-width:640px){
   .assess-reviews{grid-template-columns:1fr}
@@ -253,7 +263,7 @@
 (function(){try{var t=localStorage.getItem('sinyan_theme');if(!t){var h=new Date().getHours();if(h>=21||h<6||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){t='dark';}}if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();
 </script>
 </head>
-<body data-line-event="Lead" data-line-message="老師您好，我想預約高雄左營首次 NT$299 AI 體態檢測（來源代碼：#assessment），請幫我安排方便時段！">
+<body data-line-message="老師您好，我想預約高雄左營首次 NT$299 AI 體態檢測（來源代碼：#assessment），請幫我安排方便時段！">
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="./">鑫彥瑜珈<small>壁繩瑜伽 · 體態調整</small></a>
@@ -526,7 +536,7 @@
         <span id="afpPreviewText"></span>
       </div>
     </div>
-    <a href="#" id="afpLineBtn" class="btn js-line" data-line-purpose="reservation" data-cta-location="price_card" data-offer="ai_assessment" data-offer-value="299">💬 一鍵開啟 LINE 預約首次 NT$299 AI 體態檢測 →</a>
+    <a href="#" id="afpLineBtn" class="btn js-line" data-line-event="Lead" data-line-purpose="reservation" data-cta-location="price_card" data-offer="ai_assessment" data-offer-value="299">💬 一鍵開啟 LINE 預約首次 NT$299 AI 體態檢測 →</a>
   </div>
 </div></section>
 
